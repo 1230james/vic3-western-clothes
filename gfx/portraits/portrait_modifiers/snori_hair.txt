@@ -85,7 +85,6 @@
 #        }
 #    }
 
-#111
     japanese_hair_styles = {
         dna_modifiers = {
             accessory = {
@@ -99,7 +98,7 @@
             base = 0
             modifier = {
                 add = 1000
-				snori_pop_westernize_trigger = no
+                snori_pop_westernize_trigger = no # WCR
                 AND = {
                     exists = scope:pop
                     scope:pop = {
@@ -132,7 +131,6 @@
         }
     }
 
-#111
     japanese_characters_hair_styles = {
         dna_modifiers = {
             accessory = {
@@ -146,7 +144,7 @@
             base = 0
             modifier = {
                 add = 1000
-				snori_character_westernize_trigger = no
+                snori_pop_westernize_trigger = no # WCR
                 AND = {
                     exists = scope:character
                     scope:character = {
@@ -157,6 +155,7 @@
 
                     }
                 }
+                agitator_character_trigger = no
             }
         }
     }
@@ -185,11 +184,14 @@
                                 OR = {
                                     AND = {
                                         exists = scope:character
-                                        scope:character = { owner = c:CSA }
+                                        scope:character = {
+											exists = home_country
+											home_country = c:CSA
+										}
                                     }
                                     AND = {
                                         exists = scope:pop
-                                        scope:pop = { owner = c:CSA }
+                                        scope:pop = { home_country = c:CSA }
                                     }
                                 }
                             }
