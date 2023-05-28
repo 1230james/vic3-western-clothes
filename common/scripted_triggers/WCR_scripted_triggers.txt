@@ -1,0 +1,62 @@
+﻿# Is this even useful? lol
+WCR_is_active_trigger = {
+    if = {
+        limit = {
+            has_global_variable = WCR_is_active
+        }
+        value = yes
+    }
+    else = {
+        value = no
+    }
+}
+
+# Check if country, character, or pop is considered westernized
+WCR_is_westernized_trigger = {
+    OR = {
+        scope:pop ?= {
+            OR = {
+                WCR_is_partially_westernized_pop_westernized_trigger = yes
+                owner ?= {
+                    has_variable = WCR_westernized_nation
+                    THIS.var:WCR_westernized_nation = yes
+                }
+                home_country ?= {
+                    has_variable = WCR_westernized_nation
+                    THIS.var:WCR_westernized_nation = yes
+                }
+                
+            }
+        }
+        scope:character ?= {
+            OR = {
+                WCR_is_partially_westernized_character_westernized_trigger = yes
+                owner ?= {
+                    has_variable = WCR_westernized_nation
+                    THIS.var:WCR_westernized_nation = yes
+                }
+                home_country ?= {
+                    has_variable = WCR_westernized_nation
+                    THIS.var:WCR_westernized_nation = yes
+                }
+            }
+        }
+        scope:country ?= {
+            has_variable = WCR_westernized_nation
+            THIS.var:WCR_westernized_nation = yes
+        }
+    }
+}
+
+# Placeholder
+# Intended for partial westernization; will return true if the owner of this pop's westernization progress is high
+# enough to westernize this pop
+# Intended for internal use only, but if you are a modder looking for triggers to use, feel free to use this
+WCR_is_partially_westernized_pop_westernized_trigger = {
+    always = no
+}
+
+# Same as above but for characters, which have a different westernization schedule
+WCR_is_partially_westernized_character_westernized_trigger = {
+    always = no
+}
