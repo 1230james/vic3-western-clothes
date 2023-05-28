@@ -312,7 +312,7 @@
             modifier = {
                 add = 10000
                 shopkeepers_clothes_pop_trigger = yes
-                WCR_is_westernized_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
             }
         }
     }
@@ -330,7 +330,7 @@
             base = 0
             modifier = {
                 add = 2000
-                WCR_is_westernized_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
                     monarchy_clothes_trigger = yes
                     age > 12
@@ -371,14 +371,18 @@
             modifier = {
                 add = 10000
                 agitator_character_trigger = no
-                WCR_is_westernized_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
                     age > 12
                 }
+                soldier_clothes_pop_trigger = no
                 OR = {
                     AND = {
-                        military_clothes_trigger = yes
+                        WCR_army_clothes_trigger = yes
                         WCR_army_has_german_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
                         WCR_navy_has_german_influence_trigger = yes
                     }
                     AND = {
@@ -422,11 +426,15 @@
             modifier = {
                 add = 10000
                 agitator_character_trigger = no
-                WCR_is_westernized_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                soldier_clothes_pop_trigger = no
                 OR = {
                     AND = {
-                        military_clothes_trigger = yes
+                        WCR_army_clothes_trigger = yes
                         WCR_army_has_american_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
                         WCR_navy_has_american_influence_trigger = yes
                     }
                     AND = {
@@ -479,31 +487,24 @@
             modifier = {
                 add = 2000
                 agitator_character_trigger = no
-                WCR_is_westernized_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
                 republic_clothes_trigger = no
+                soldier_clothes_pop_trigger = no
                 OR = {
-                    AND = {
-                        OR = { # Soldiers, officers, and commanders
-                            military_clothes_trigger = yes
-                            officers_clothes_pop_trigger = yes
-                            AND = {
-                                armed_forces_clothes_trigger = yes
-                                politician_clothes_trigger = yes
-                            }
-                        }
-                        NOR = { # Exclude those with a specific influence
-                            WCR_army_has_american_influence_trigger = yes
-                            WCR_navy_has_american_influence_trigger = yes
-                            WCR_army_has_german_influence_trigger = yes
-                            WCR_navy_has_german_influence_trigger = yes
-                        }
+                    AND = { # Generals
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_american_influence_trigger = no
+                        WCR_army_has_german_influence_trigger   = no
                     }
-                    AND = { # Same thing but for rulers
+                    AND = { # Admirals
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_american_influence_trigger = no
+                        WCR_navy_has_german_influence_trigger   = no
+                    }
+                    AND = { # Rulers
                         ruler_clothes_trigger = yes
-                        NOR = {
-                            WCR_ruler_has_american_influence_trigger = yes
-                            WCR_ruler_has_german_influence_trigger = yes
-                        }
+                        WCR_ruler_has_american_influence_trigger = no
+                        WCR_ruler_has_german_influence_trigger   = no
                     }
                 }
             }
