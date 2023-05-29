@@ -6,7 +6,7 @@ WCR_de_simple_westernization = {
     }
     
     possible = {
-        WCR_can_start_westernizing = yes
+        WCR_can_start_westernizing_trigger = yes
     }
     
     when_taken = {
@@ -68,7 +68,7 @@ WCR_de_start_westernization = {
     }
     
     possible = {
-        WCR_can_start_westernizing = yes
+        WCR_can_start_westernizing_trigger = yes
     }
     
     when_taken = {

@@ -1,0 +1,62 @@
+﻿# JE vs instant westernization
+# AWC behavior: instant ("simple")
+WCR_westernization_type = {
+    default = WCR_complex_westernization
+    
+    WCR_complex_westernization = {}
+    WCR_simple_westernization  = {}
+}
+
+# Westernization influences (always uses generic/hodgepodge uniforms if disabled)
+# AWC behavior: disabled
+WCR_westernization_influences = {
+    default = WCR_enable_influences
+    
+    WCR_enable_influences  = {}
+    WCR_disable_influences = {}
+}
+
+# Allows AI to take westernization decision
+# AWC behavior: blocked
+WCR_AI_westernization = {
+    default = WCR_allow_AI_westernization
+    
+    WCR_allow_AI_westernization = {}
+    WCR_block_AI_westernization = {}
+}
+
+# Allows traditionalist characters to avoid westernizing if set to no
+# AWC behavior: yes
+WCR_westernize_traditionalists = {
+    default = WCR_westernize_traditionalists_no
+    
+    WCR_westernize_traditionalists_yes = {}
+    WCR_westernize_traditionalists_no  = {}
+}
+
+# Allows rural folk IG leader to avoid westernizing if set to no
+# AWC behavior: no
+WCR_westernize_ig_rural_folk = {
+    default = WCR_westernize_ig_rural_folk_no
+    
+    WCR_westernize_ig_rural_folk_yes = {}
+    WCR_westernize_ig_rural_folk_no  = {}
+}
+
+# Allows devout IG leader to avoid westernizing if set to no
+# AWC behavior: no
+WCR_westernize_ig_devout = {
+    default = WCR_westernize_ig_devout_no
+    
+    WCR_westernize_ig_devout_yes = {}
+    WCR_westernize_ig_devout_no  = {}
+}
+
+# Westernizes clothing for farmers & peasants if set to yes; hats still westernize regardless
+# AWC behavior: no
+WCR_westernize_rural_pop_clothing = {
+    default = WCR_westernize_rural_pop_clothing_no
+    
+    WCR_westernize_rural_pop_clothing_yes = {}
+    WCR_westernize_rural_pop_clothing_no  = {}
+}
