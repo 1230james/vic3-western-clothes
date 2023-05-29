@@ -4970,7 +4970,7 @@ buddhist_religious_clothes = {
                         is_ruler    = no
                     }
                     scope:pop ?= {
-                        has_culture = korean
+                        has_pop_culture = cu:korean
                         OR = {
                             officers_clothes_pop_trigger = yes
                             upper_clothes_pop_trigger    = yes
@@ -5063,132 +5063,6 @@ buddhist_religious_clothes = {
         }
     }
     
-    WCR_european_royal_clothes = { #Currently only includes and checks for female clothes.
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = outfits
-                template = european_royal_outfits
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 10000
-                WCR_has_completed_westernization_trigger = yes
-                scope:character ?= {
-                    is_female = yes
-                    is_ruler = yes
-                }
-            }
-        }
-    }
-    
-    WCR_european_ruler_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template = european_coats
-                range = { 0 0.27 } # limiting the set to single-breasted coats, so aiguillettes work
-            }
-            accessory = {
-                mode = add
-                gene = belts
-                template = generic_belts
-                range = { 0 0.49 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = aiguillettes
-                template = all_aiguillettes
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = european_top_layer
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 2000
-                WCR_ruler_has_american_influence_trigger = no
-                WCR_ruler_has_british_influence_trigger = no
-                WCR_ruler_has_french_influence_trigger = no
-                WCR_has_completed_westernization_trigger = yes
-                monarchy_clothes_trigger = yes
-            }
-        }
-    }
-    
-    WCR_european_ruler_republic_clothes = {
-        dna_modifiers = {
-            accessory = {
-               mode = add
-               gene = waistcoats
-               template = european_waistcoats
-               range = { 0 0.67 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = civilian_coats
-                template = european_civilian_coats
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 2000
-                WCR_has_completed_westernization_trigger = yes
-                ruler_clothes_trigger = yes
-                republic_clothes_trigger = yes
-                scope:character ?= {
-                    is_female = no
-                }
-            }
-        }
-    }
-
-    WCR_european_ruler_republic_clothes_female = {
-        dna_modifiers = {
-            accessory = {
-               mode = add
-               gene = outfits
-               template = european_common_outfits
-               range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 2000
-                WCR_has_completed_westernization_trigger = yes
-                ruler_clothes_trigger = yes
-                republic_clothes_trigger = yes
-                scope:character ?= {
-                    is_female = yes
-                }
-            }
-        }
-    }
-    
     WCR_european_politician_clothes = {
         dna_modifiers = {
             accessory = {
@@ -5230,10 +5104,10 @@ buddhist_religious_clothes = {
             }
 
             modifier = { #If we want rulers to dress like politicians later.
-               add = 2000
-               WCR_has_completed_westernization_trigger = yes
-               ruler_clothes_trigger = yes
-               monarchy_clothes_trigger = no
+                add = 2000
+                WCR_has_completed_westernization_trigger = yes
+                ruler_clothes_trigger = yes
+                monarchy_clothes_trigger = no
             }
         }
     }
@@ -5336,6 +5210,292 @@ buddhist_religious_clothes = {
         }
     }
     
+    WCR_european_ruler_republic_clothes = {
+        dna_modifiers = {
+            accessory = {
+               mode = add
+               gene = waistcoats
+               template = european_waistcoats
+               range = { 0 0.67 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = civilian_coats
+                template = european_civilian_coats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                WCR_has_completed_westernization_trigger = yes
+                ruler_clothes_trigger = yes
+                republic_clothes_trigger = yes
+                scope:character ?= {
+                    is_female = no
+                }
+            }
+        }
+    }
+
+    WCR_european_ruler_republic_clothes_female = {
+        dna_modifiers = {
+            accessory = {
+               mode = add
+               gene = outfits
+               template = european_common_outfits
+               range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                WCR_has_completed_westernization_trigger = yes
+                ruler_clothes_trigger = yes
+                republic_clothes_trigger = yes
+                scope:character ?= {
+                    is_female = yes
+                }
+            }
+        }
+    }
+    
+    WCR_european_royal_clothes = { #Currently only includes and checks for female clothes.
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = european_royal_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                WCR_has_completed_westernization_trigger = yes
+                scope:character ?= {
+                    is_female = yes
+                    is_ruler = yes
+                }
+            }
+        }
+    }
+    
+    WCR_european_ruler_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = european_coats
+                range = { 0 0.27 } # limiting the set to single-breasted coats, so aiguillettes work
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                range = { 0 0.49 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = all_aiguillettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = european_top_layer
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                WCR_ruler_has_no_influence_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                monarchy_clothes_trigger = yes
+            }
+        }
+    }
+    
+    WCR_american_ruler_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = american_coats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                range = { 0.8 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                range = { 0.4 0.6 } # The gene has three color sets in it, the one in the middle being dark blue and sky blue.
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = european_top_layer
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                WCR_ruler_has_american_influence_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                monarchy_clothes_trigger = yes
+                military_clothes_trigger = no # Prevent use when king is commanding an army
+            }
+        }
+    }
+    
+    WCR_british_ruler_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = british_coats
+                range = { 0 0.5 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = all_aiguillettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                range = { 0 0.1 } # there's three colors in the gene, the first of which is black
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = european_top_layer
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                WCR_ruler_has_british_influence_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                monarchy_clothes_trigger = yes
+                military_clothes_trigger = no # Prevent use when king is commanding an army
+            }
+        }
+    }
+    
+    WCR_french_ruler_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = french_coats
+                range = { 0 0.5 } # Limited to single-breasted jacket so the aiguillette works properly
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = all_aiguillettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                range = { 0.7 1 } # There's three colors in the gene, the last one of the three being red.
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = european_top_layer
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                WCR_ruler_has_french_influence_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                monarchy_clothes_trigger = yes
+                military_clothes_trigger = no # Prevent use when king is commanding an army
+            }
+        }
+    }
+    
+    WCR_german_ruler_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = prussian_coats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = european_top_layer
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                WCR_ruler_has_german_influence_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                monarchy_clothes_trigger = yes
+                military_clothes_trigger = no # Prevent use when king is commanding an army
+            }
+        }
+    }
+    
     WCR_european_military_clothes = {
         dna_modifiers = {
             accessory = {
@@ -5372,59 +5532,6 @@ buddhist_religious_clothes = {
                         WCR_navy_has_no_influence_trigger = yes
                     }
                 }
-                OR = {
-                    military_clothes_trigger = yes
-                    officers_clothes_pop_trigger = yes
-                    AND = {
-                        armed_forces_clothes_trigger = yes
-                        politician_clothes_trigger = yes
-                    }
-                }
-            }
-        }
-    }
-    
-    WCR_european_soldier_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template = european_coats
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = all_epaulettes
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        } 
-
-        weight = {
-            base = 0
-            modifier = {
-                add = 2000
-                WCR_has_completed_westernization_trigger = yes
-                OR = {
-                    AND = {
-                        WCR_army_clothes_trigger = yes
-                        WCR_army_has_no_influence_trigger = yes
-                    }
-                    AND = {
-                        WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_no_influence_trigger = yes
-                    }
-                }
-                OR = {
-                    soldier_clothes_pop_trigger = yes
-                    officers_clothes_pop_trigger = yes
-                }
             }
         }
     }
@@ -5458,6 +5565,7 @@ buddhist_religious_clothes = {
                 OR = {
                     AND = {
                         monarchy_clothes_trigger = yes
+                        military_clothes_trigger = yes # Here to make sure it only applies when the king is commanding an army
                         WCR_ruler_has_american_influence_trigger = yes
                     }
                     AND = {
@@ -5509,6 +5617,7 @@ buddhist_religious_clothes = {
                 OR = {
                     AND = {
                         monarchy_clothes_trigger = yes
+                        military_clothes_trigger = yes
                         WCR_ruler_has_british_influence_trigger = yes
                     }
                     AND = {
@@ -5595,6 +5704,7 @@ buddhist_religious_clothes = {
                 OR = {
                     AND = {
                         monarchy_clothes_trigger = yes
+                        military_clothes_trigger = yes
                         WCR_ruler_has_french_influence_trigger = yes
                     }
                     AND = {
@@ -5670,16 +5780,14 @@ buddhist_religious_clothes = {
             modifier = {
                 add = 10000
                 WCR_has_completed_westernization_trigger = yes
-                scope:character ?= { # Soldier & officer pops and commanders use the other definition
-                    OR = {           # for Prussian/German uniforms apparently
-                        has_role = ruler
-                        has_role = heir
-                        has_role = politician
-                    }
+                OR = {
+                    monarchy_clothes_trigger = yes   # Only the Armed Forces IG leader and king use this definition in the
+                    politician_clothes_trigger = yes # Prussian/German uniforms logic, apparently
                 }
                 OR = {
                     AND = {
                         monarchy_clothes_trigger = yes
+                        military_clothes_trigger = yes
                         WCR_ruler_has_german_influence_trigger = yes
                     }
                     AND = {
@@ -5724,10 +5832,6 @@ buddhist_religious_clothes = {
                 add = 9000
                 WCR_has_completed_westernization_trigger = yes
                 OR = {
-                    AND = {
-                        monarchy_clothes_trigger = yes
-                        WCR_ruler_has_german_influence_trigger = yes
-                    }
                     AND = {
                         WCR_army_clothes_trigger = yes
                         WCR_army_has_german_influence_trigger = yes

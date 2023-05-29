@@ -38,21 +38,28 @@ WCR_army_clothes_trigger = {
                 }
             }
         }
-        OR = {
-            # Armed Forces IG leader who isn't a general or admiral
-            AND = {
-                armed_forces_clothes_trigger = yes
-                politician_clothes_trigger = yes
-                scope:character ?= {
-                    NOT = {
-                        has_role = admiral
+        AND = {
+            OR = {
+                # Armed Forces IG leader who isn't a general or admiral
+                AND = {
+                    armed_forces_clothes_trigger = yes
+                    politician_clothes_trigger = yes
+                    scope:character ?= {
+                        NOT = {
+                            has_role = admiral
+                        }
                     }
+                }
+                
+                # Generals
+                scope:character ?= {
+                    has_role = general
                 }
             }
             
-            # Generals
+            # Exclude rulers from this trigger (including them in it has been more of a pain than a convenience)
             scope:character ?= {
-                has_role = general
+                is_ruler = no
             }
         }
     }
