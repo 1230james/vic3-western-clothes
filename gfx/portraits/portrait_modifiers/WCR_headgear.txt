@@ -1294,6 +1294,7 @@
                 WCR_has_completed_westernization_trigger = yes
                 politician_clothes_trigger = yes
                 armed_forces_clothes_trigger = no
+                monarchy_clothes_trigger = no
                 scope:character ?= {
                     age > 12
                 }
@@ -1384,8 +1385,8 @@
             accessory = {
                 mode = add
                 gene = headgear
-                template = european_military_headgear
-                range = { 0 1 } # For the randomness to work correctly
+                template = german_military_headgear # peaked caps only # european_military_headgear
+                range = { 0 0.5 } # For the randomness to work correctly
             }
         }
         weight = {
@@ -1427,12 +1428,12 @@
                 soldier_clothes_pop_trigger = no
                 WCR_has_completed_westernization_trigger = yes
                 WCR_navy_clothes_trigger = yes
-                #WCR_navy_has_no_influence_trigger = yes
+                # WCR_navy_has_no_influence_trigger = yes # Hat is same for all flavors
             }
             modifier = { # Republic commanders in chief
                 add = 2000
                 republic_clothes_trigger = yes
-                #WCR_ruler_has_no_influence_trigger = yes
+                # WCR_ruler_has_no_influence_trigger = yes # Hat is same for all flavors
                 scope:character ?= {
                     is_ruler = yes
                     has_role = general

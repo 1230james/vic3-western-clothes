@@ -5520,9 +5520,14 @@ buddhist_religious_clothes = {
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 10000
                 WCR_has_completed_westernization_trigger = yes
                 OR = {
+                    AND = {
+                        ruler_clothes_trigger = yes
+                        military_clothes_trigger = yes # Here to make sure it only applies when the ruler is commanding an army
+                        WCR_army_has_no_influence_trigger = yes
+                    }
                     AND = {
                         WCR_army_clothes_trigger = yes
                         WCR_army_has_no_influence_trigger = yes
@@ -5564,8 +5569,8 @@ buddhist_religious_clothes = {
                 WCR_has_completed_westernization_trigger = yes
                 OR = {
                     AND = {
-                        monarchy_clothes_trigger = yes
-                        military_clothes_trigger = yes # Here to make sure it only applies when the king is commanding an army
+                        ruler_clothes_trigger = yes
+                        military_clothes_trigger = yes
                         WCR_ruler_has_american_influence_trigger = yes
                     }
                     AND = {
@@ -5616,7 +5621,7 @@ buddhist_religious_clothes = {
                 soldier_clothes_pop_trigger = no
                 OR = {
                     AND = {
-                        monarchy_clothes_trigger = yes
+                        ruler_clothes_trigger = yes
                         military_clothes_trigger = yes
                         WCR_ruler_has_british_influence_trigger = yes
                     }
@@ -5703,7 +5708,7 @@ buddhist_religious_clothes = {
                 soldier_clothes_pop_trigger = no
                 OR = {
                     AND = {
-                        monarchy_clothes_trigger = yes
+                        ruler_clothes_trigger = yes
                         military_clothes_trigger = yes
                         WCR_ruler_has_french_influence_trigger = yes
                     }
@@ -5781,12 +5786,12 @@ buddhist_religious_clothes = {
                 add = 10000
                 WCR_has_completed_westernization_trigger = yes
                 OR = {
-                    monarchy_clothes_trigger = yes   # Only the Armed Forces IG leader and king use this definition in the
+                    ruler_clothes_trigger = yes      # Only the Armed Forces IG leader and king use this definition in the
                     politician_clothes_trigger = yes # Prussian/German uniforms logic, apparently
                 }
                 OR = {
                     AND = {
-                        monarchy_clothes_trigger = yes
+                        ruler_clothes_trigger = yes
                         military_clothes_trigger = yes
                         WCR_ruler_has_german_influence_trigger = yes
                     }
