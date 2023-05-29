@@ -1,0 +1,40 @@
+﻿namespace = WCR_ev
+
+WCR_ev.1 = {
+    type      = country_event
+    placement = root
+    
+    title     = WCR_ev_1_title
+    desc      = WCR_ev_1_desc
+    flavor    = WCR_ev_1_flavor
+
+    duration = 2
+
+    event_image = {
+        video = "gfx/event_pictures/europenorthamerica_capitalists_meeting.bk2"
+    }
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    on_opened_soundeffect  = "event:/SFX/Events/europenorthamerica/capitalists_meeting"
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+    trigger = {} # Triggered from journal entry
+    
+    immediate = {
+        set_variable = {
+            name  = snori_clothes_decision_taken
+            value = yes
+        }
+    }
+    
+    option = {
+        name = WCR_ev_1_a
+        default_option = yes
+        
+        add_modifier = {
+            name   = WCR_westernized_modifier
+            months = normal_modifier_time
+        }
+    }
+}
