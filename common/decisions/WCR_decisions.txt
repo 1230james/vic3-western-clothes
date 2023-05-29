@@ -1,8 +1,10 @@
-WCR_de_simple_westernization = {
+﻿WCR_de_simple_westernization = {
     is_shown = {
-        #has_game_rule = 
-        #WCR_is_westernized_trigger = no
-        always = no
+        has_game_rule = WCR_simple_westernization
+        WCR_st_is_country_westernized = no # WCR_is_westernized_trigger doesn't work right here for some reason?
+        NOT = {
+            has_variable = WCR_decision_taken
+        }
     }
     
     possible = {
@@ -10,9 +12,35 @@ WCR_de_simple_westernization = {
     }
     
     when_taken = {
-        # TODO - replace with real logic
-        add_journal_entry = {
-            type = WCR_je_westernization
+        set_variable = {
+            name = WCR_decision_taken
+            days = 120
+        }
+        if = {
+            limit = {
+                has_game_rule = WCR_enable_influences
+            }
+            trigger_event = {
+                id    = WCR_ev.2
+                popup = yes
+            }
+        }
+        else = {
+            set_variable = {
+                name  = WCR_ruler_influence
+                value = 0
+            }
+            set_variable = {
+                name  = WCR_army_influence
+                value = 0
+            }
+            set_variable = {
+                name  = WCR_navy_influence
+                value = 0
+            }
+            trigger_event = {
+                id = WCR_ev.1
+            }
         }
     }
     
@@ -61,9 +89,13 @@ WCR_de_simple_westernization = {
 
 WCR_de_start_westernization = {
     is_shown = {
+        has_game_rule = WCR_complex_westernization
         WCR_st_is_country_westernized = no
         NOT = {
             has_journal_entry = WCR_je_westernization
+        }
+        NOT = {
+            has_variable = WCR_decision_taken
         }
     }
     
@@ -72,12 +104,27 @@ WCR_de_start_westernization = {
     }
     
     when_taken = {
-        add_journal_entry = {
-            type = WCR_je_westernization
+        set_variable = {
+            name = WCR_decision_taken
+            days = 120
         }
-        add_modifier = {
-            name  = WCR_ig_westernization_1_modifier
-            years = -1
+        if = {
+            limit = {
+                has_game_rule = WCR_enable_influences
+            }
+            trigger_event = {
+                id    = WCR_ev.2
+                popup = yes
+            }
+        }
+        else = {
+            add_journal_entry = {
+                type = WCR_je_westernization
+            }
+            add_modifier = {
+                name  = WCR_ig_westernization_1_modifier
+                years = -1
+            }
         }
     }
     

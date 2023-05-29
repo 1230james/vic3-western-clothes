@@ -1,5 +1,5 @@
 ﻿# Internal use utility scripted triggers
-# WCR will not call these from outside other script values, but if you're looking for extra stuff as a modder,
+# WCR will generally not call these from outside other script values, but if you're looking for extra stuff as a modder,
 # feel free to try them out
 
 WCR_st_is_country_westernized = {

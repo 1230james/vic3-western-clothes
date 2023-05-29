@@ -8,7 +8,11 @@ l_english:
     # Decisions
     WCR_de_start_westernization: 0         "Begin Westernizing"
     WCR_de_start_westernization_desc: 0    "Begin the process of westernizing your country.\nUpon completion of westernization, most pops and characters will be wearing western clothes."
-    WCR_de_start_westernization_tooltip: 0 "Begin Westernizing"
+    WCR_de_start_westernization_tooltip: 0 "$WCR_de_start_westernization$"
+    
+    WCR_de_simple_westernization: 0         "Adopt Western Clothing"
+    WCR_de_simple_westernization_desc: 0    "We must join the great powers of the West in their ways of life if we are to stand among them on the world stage. Our people shall adopt western-style clothing as a part of this goal."
+    WCR_de_simple_westernization_tooltip: 0 "$WCR_de_simple_westernization$"
     
     # Tooltips
     WCR_tt_overlord_westernized_sub: 0 "[GetPlayer.GetOverlord.GetName] is #v westernized#!."
