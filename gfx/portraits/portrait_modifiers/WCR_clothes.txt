@@ -4927,7 +4927,61 @@ buddhist_religious_clothes = {
     }
 }
 
-    ## WCR ##
+    ## WCR - Fixes ##
+    
+    WCR_korean_pop_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = korean_low_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        } 
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 1001 # Vanilla: 500
+                scope:pop ?= {
+                    culture = cu:korean
+                }
+            }
+        }
+    }
+
+    WCR_korean_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = korean_common_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 1002 # Vanilla: 100; also accounting for WCR_korean_pop_clothes
+                OR = {
+                    scope:character ?= {
+                        has_culture = cu:korean
+                        is_ruler    = no
+                    }
+                    scope:pop ?= {
+                        has_culture = korean
+                        OR = {
+                            officers_clothes_pop_trigger = yes
+                            upper_clothes_pop_trigger    = yes
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    ## WCR - Additions ##
     
     WCR_european_child_clothes = {
         dna_modifiers = {
@@ -5135,6 +5189,153 @@ buddhist_religious_clothes = {
         }
     }
     
+    WCR_european_politician_clothes = {
+        dna_modifiers = {
+            accessory = {
+               mode = add
+               gene = waistcoats
+               template = european_waistcoats # TODO: No open-collar shirts for intelligentsia, landowners, petty bougie, and industrialists
+               range = { 0 1 } # For the randomness to work correctly
+            }
+
+            accessory = {
+                mode = add
+                gene = civilian_coats
+                template = european_civilian_coats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+            accessory = {
+                mode = add
+                gene = props
+                template = gene_lences
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                WCR_has_completed_westernization_trigger = yes
+                politician_clothes_trigger = yes
+                armed_forces_clothes_trigger = no
+            }
+
+            modifier = { #If we want rulers to dress like politicians later.
+               add = 2000
+               WCR_has_completed_westernization_trigger = yes
+               ruler_clothes_trigger = yes
+               monarchy_clothes_trigger = no
+            }
+        }
+    }
+    
+    WCR_european_poor_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = shirt
+                template = working_class_shirt
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = outfits
+                template = european_working_class_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                WCR_has_completed_westernization_trigger = yes
+                poor_clothes_pop_trigger = yes
+            }
+        }
+    }
+    
+    WCR_european_middle_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = shirt
+                template = european_shirt
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+            accessory = {
+                mode = add
+                gene = outfits
+                template = european_working_class_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                WCR_has_completed_westernization_trigger = yes
+                middle_clothes_pop_trigger = yes
+            }
+        }
+    }
+    
+    WCR_european_upper_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = waistcoats
+                template = european_waistcoats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+            accessory = {
+                mode = add
+                gene = civilian_coats
+                template = european_civilian_coats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                WCR_has_completed_westernization_trigger = yes
+                upper_clothes_pop_trigger = yes
+            }
+        }
+    }
+    
     WCR_european_military_clothes = {
         dna_modifiers = {
             accessory = {
@@ -5178,6 +5379,51 @@ buddhist_religious_clothes = {
                         armed_forces_clothes_trigger = yes
                         politician_clothes_trigger = yes
                     }
+                }
+            }
+        }
+    }
+    
+    WCR_european_soldier_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = european_coats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        } 
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                WCR_has_completed_westernization_trigger = yes
+                OR = {
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_no_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_no_influence_trigger = yes
+                    }
+                }
+                OR = {
+                    soldier_clothes_pop_trigger = yes
+                    officers_clothes_pop_trigger = yes
                 }
             }
         }
@@ -5424,8 +5670,8 @@ buddhist_religious_clothes = {
             modifier = {
                 add = 10000
                 WCR_has_completed_westernization_trigger = yes
-                scope:character ?= { # Soldier & officer pops and commanders use the other definition for Prussian/German uniforms apparently
-                    OR = {
+                scope:character ?= { # Soldier & officer pops and commanders use the other definition
+                    OR = {           # for Prussian/German uniforms apparently
                         has_role = ruler
                         has_role = heir
                         has_role = politician
@@ -5491,55 +5737,6 @@ buddhist_religious_clothes = {
                         WCR_navy_has_german_influence_trigger = yes
                     }
                 }
-            }
-        }
-    }
-    
-    WCR_european_politician_clothes = {
-        dna_modifiers = {
-            accessory = {
-               mode = add
-               gene = waistcoats
-               template = european_waistcoats # TODO: No open-collar shirts for intelligentsia, landowners, petty bougie, and industrialists
-               range = { 0 1 } # For the randomness to work correctly
-            }
-
-            accessory = {
-                mode = add
-                gene = civilian_coats
-                template = european_civilian_coats
-                range = { 0 1 } # For the randomness to work correctly
-            }
-
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
-
-            accessory = {
-                mode = add
-                gene = props
-                template = gene_lences
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-
-        weight = {
-            base = 0
-            modifier = {
-                add = 2000
-                WCR_has_completed_westernization_trigger = yes
-                politician_clothes_trigger = yes
-                armed_forces_clothes_trigger = no
-            }
-
-            modifier = { #If we want rulers to dress like politicians later.
-               add = 2000
-               WCR_has_completed_westernization_trigger = yes
-               ruler_clothes_trigger = yes
-               monarchy_clothes_trigger = no
             }
         }
     }
