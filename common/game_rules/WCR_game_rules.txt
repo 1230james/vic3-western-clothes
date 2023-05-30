@@ -52,11 +52,13 @@ WCR_westernize_ig_devout = {
     WCR_westernize_ig_devout_no  = {}
 }
 
-# Westernizes clothing for farmers & peasants if set to yes; hats still westernize regardless
+# Westernizes clothing for farmers, peasants, and laborers if set to yes
+# Hats will still westernize regardless
+# Machinists will also always westernize
 # AWC behavior: no
-WCR_westernize_rural_pop_clothing = {
-    default = WCR_westernize_rural_pop_clothing_no
+WCR_westernize_poor_pop_clothing = {
+    default = WCR_westernize_poor_pop_clothing_no
     
-    WCR_westernize_rural_pop_clothing_yes = {}
-    WCR_westernize_rural_pop_clothing_no  = {}
+    WCR_westernize_poor_pop_clothing_yes = {}
+    WCR_westernize_poor_pop_clothing_no  = {}
 }

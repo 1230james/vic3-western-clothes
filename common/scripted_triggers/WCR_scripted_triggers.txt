@@ -68,6 +68,7 @@ WCR_navy_clothes_trigger = {
 
 # Check if country, character, or pop is considered westernized
 WCR_is_westernized_trigger = {
+    WCR_westernization_allowed_by_rules_trigger = yes
     OR = {
         WCR_st_is_part_west_pop_westernized_trigger       = yes
         WCR_st_is_part_west_character_westernized_trigger = yes
@@ -100,6 +101,7 @@ WCR_is_westernized_trigger = {
 
 # Check if country, character, or pop is considered westernized, but EXCLUDING those that begin westernized at game start
 WCR_has_completed_westernization_trigger = {
+    WCR_westernization_allowed_by_rules_trigger = yes
     OR = {
         WCR_st_is_part_west_pop_westernized_trigger       = yes
         WCR_st_is_part_west_character_westernized_trigger = yes

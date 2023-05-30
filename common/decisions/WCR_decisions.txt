@@ -5,6 +5,10 @@
         NOT = {
             has_variable = WCR_decision_taken
         }
+        OR = {
+            is_ai = no
+            has_game_rule = WCR_allow_AI_westernization
+        }
     }
     
     possible = {
@@ -96,6 +100,10 @@ WCR_de_start_westernization = {
         }
         NOT = {
             has_variable = WCR_decision_taken
+        }
+        OR = {
+            is_ai = no
+            has_game_rule = WCR_allow_AI_westernization
         }
     }
     

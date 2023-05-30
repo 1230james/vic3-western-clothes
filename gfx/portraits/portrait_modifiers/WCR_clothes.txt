@@ -5139,6 +5139,12 @@ buddhist_religious_clothes = {
                 add = 2000
                 WCR_has_completed_westernization_trigger = yes
                 poor_clothes_pop_trigger = yes
+                
+                # Farmers, Peasants, and Laborers westernization game rule
+                OR = {
+                    machinists_clothes_pop_trigger = yes
+                    has_game_rule = WCR_westernize_poor_pop_clothing_yes
+                }
             }
         }
     }
