@@ -174,6 +174,11 @@ WCR_ev.2 = {
                     relations:root <= relations_threshold:poor
                 }
             }
+            
+            modifier = { # Historical Asian majors
+                add = 10000
+                ROOT = c:JAP
+            }
         }
     }
     option = {
@@ -227,6 +232,14 @@ WCR_ev.2 = {
                 }
                 c:FRA ?= {
                     relations:root <= relations_threshold:poor
+                }
+            }
+            
+            modifier = { # Historical Asian majors
+                add = 10000
+                OR = {
+                    ROOT = c:CHI
+                    ROOT = c:KOR # Korea is a major in my heart :copium:
                 }
             }
         }
@@ -312,8 +325,8 @@ WCR_ev.3 = {
                 }
             }
             
-            modifier = {
-                add = 1000
+            modifier = { # To help maintain consistency, but AI should be allowed to deviate if it decides it wants to
+                add = 5000
                 ROOT.var:WCR_ruler_influence = 1
             }
         }
@@ -355,7 +368,7 @@ WCR_ev.3 = {
             }
             
             modifier = {
-                add = 1000
+                add = 5000
                 ROOT.var:WCR_ruler_influence = 2
             }
         }
@@ -397,7 +410,7 @@ WCR_ev.3 = {
             }
             
             modifier = {
-                add = 1000
+                add = 5000
                 ROOT.var:WCR_ruler_influence = 3
             }
         }
@@ -457,7 +470,7 @@ WCR_ev.3 = {
             }
             
             modifier = {
-                add = 1000
+                add = 5000
                 ROOT.var:WCR_ruler_influence = 4
             }
         }
@@ -481,7 +494,7 @@ WCR_ev.3 = {
         ai_chance = {
             base = 50
             modifier = {
-                add = 1000
+                add = 5000
                 ROOT.var:WCR_ruler_influence = 0
             }
         }
@@ -561,7 +574,7 @@ WCR_ev.4 = {
             }
             
             modifier = {
-                add = 1000
+                add = 5000
                 ROOT.var:WCR_ruler_influence = 1
             }
         }
@@ -616,7 +629,7 @@ WCR_ev.4 = {
             }
             
             modifier = {
-                add = 1000
+                add = 5000
                 ROOT.var:WCR_ruler_influence = 2
             }
         }
@@ -671,7 +684,7 @@ WCR_ev.4 = {
             }
             
             modifier = {
-                add = 1000
+                add = 5000
                 ROOT.var:WCR_ruler_influence = 3
             }
         }
@@ -744,7 +757,7 @@ WCR_ev.4 = {
             }
             
             modifier = {
-                add = 1000
+                add = 5000
                 ROOT.var:WCR_ruler_influence = 4
             }
         }
@@ -781,7 +794,7 @@ WCR_ev.4 = {
         ai_chance = {
             base = 50
             modifier = {
-                add = 1000
+                add = 5000
                 ROOT.var:WCR_ruler_influence = 0
             }
         }
