@@ -45,6 +45,11 @@
             trigger_event = {
                 id = WCR_ev.1
             }
+            add_modifier = {
+                name  = WCR_ig_westernized_modifier
+                years = 10
+                is_decaying = yes
+            }
         }
     }
     
@@ -87,6 +92,36 @@
                 game_date >= 1930.1.1
             }
             add = 300
+        }
+        modifier = {
+            trigger = {
+                has_variable = meiji_var
+            }
+            add = 100
+        }
+        modifier = {
+            trigger = {
+                calc_true_if = {
+                    amount >= 3
+                    ig:ig_landowners = {
+                        is_marginal = no
+                        ig_approval < -5
+                    }
+                    ig:ig_devout = {
+                        is_marginal = no
+                        ig_approval < -5
+                    }
+                    ig:ig_rural_folk = {
+                        is_marginal = no
+                        ig_approval < -5
+                    }
+                    ig:ig_petty_bourgeoisie = {
+                        is_marginal = no
+                        ig_approval < -5
+                    }
+                }
+            }
+            add = -500
         }
     }
 }
@@ -175,6 +210,36 @@ WCR_de_start_westernization = {
                 game_date >= 1930.1.1
             }
             add = 300
+        }
+        modifier = {
+            trigger = {
+                has_variable = meiji_var
+            }
+            add = 100
+        }
+        modifier = {
+            trigger = {
+                calc_true_if = {
+                    amount >= 3
+                    ig:ig_landowners = {
+                        is_marginal = no
+                        ig_approval < -5
+                    }
+                    ig:ig_devout = {
+                        is_marginal = no
+                        ig_approval < -5
+                    }
+                    ig:ig_rural_folk = {
+                        is_marginal = no
+                        ig_approval < -5
+                    }
+                    ig:ig_petty_bourgeoisie = {
+                        is_marginal = no
+                        ig_approval < -5
+                    }
+                }
+            }
+            add = -500
         }
     }
 }

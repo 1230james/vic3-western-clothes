@@ -95,7 +95,7 @@ WCR_ev.2 = {
                 }
             }
             modifier = {
-                subtract = 300
+                add = -300
                 c:USA ?= {
                     relations:root <= relations_threshold:poor
                 }
@@ -132,7 +132,7 @@ WCR_ev.2 = {
                 }
             }
             modifier = {
-                subtract = 300
+                add = -300
                 c:GBR ?= {
                     relations:root <= relations_threshold:poor
                 }
@@ -169,7 +169,7 @@ WCR_ev.2 = {
                 }
             }
             modifier = {
-                subtract = 300
+                add = -300
                 c:FRA ?= {
                     relations:root <= relations_threshold:poor
                 }
@@ -221,7 +221,7 @@ WCR_ev.2 = {
                 }
             }
             modifier = {
-                subtract = 300
+                add = -300
                 OR = {
                     c:PRU ?= {
                         relations:root <= relations_threshold:poor
@@ -319,7 +319,7 @@ WCR_ev.3 = {
                 }
             }
             modifier = {
-                subtract = 300
+                add = -300
                 c:USA ?= {
                     relations:root <= relations_threshold:poor
                 }
@@ -361,7 +361,7 @@ WCR_ev.3 = {
                 }
             }
             modifier = {
-                subtract = 300
+                add = -300
                 c:GBR ?= {
                     relations:root <= relations_threshold:poor
                 }
@@ -403,7 +403,7 @@ WCR_ev.3 = {
                 }
             }
             modifier = {
-                subtract = 300
+                add = -300
                 c:FRA ?= {
                     relations:root <= relations_threshold:poor
                 }
@@ -455,7 +455,7 @@ WCR_ev.3 = {
                 }
             }
             modifier = {
-                subtract = 300
+                add = -300
                 OR = {
                     c:PRU ?= {
                         relations:root <= relations_threshold:poor
@@ -550,6 +550,11 @@ WCR_ev.4 = {
             trigger_event = {
                 id = WCR_ev.1
             }
+            add_modifier = {
+                name  = WCR_ig_westernized_modifier
+                years = 10
+                is_decaying = yes
+            }
         }
         
         ai_chance = {
@@ -567,7 +572,7 @@ WCR_ev.4 = {
                 }
             }
             modifier = {
-                subtract = 300
+                add = -300
                 c:USA ?= {
                     relations:root <= relations_threshold:poor
                 }
@@ -605,6 +610,11 @@ WCR_ev.4 = {
             trigger_event = {
                 id = WCR_ev.1
             }
+            add_modifier = {
+                name  = WCR_ig_westernized_modifier
+                years = 10
+                is_decaying = yes
+            }
         }
         
         ai_chance = {
@@ -622,7 +632,7 @@ WCR_ev.4 = {
                 }
             }
             modifier = {
-                subtract = 300
+                add = -300
                 c:GBR ?= {
                     relations:root <= relations_threshold:poor
                 }
@@ -660,6 +670,11 @@ WCR_ev.4 = {
             trigger_event = {
                 id = WCR_ev.1
             }
+            add_modifier = {
+                name  = WCR_ig_westernized_modifier
+                years = 10
+                is_decaying = yes
+            }
         }
         
         ai_chance = {
@@ -677,7 +692,7 @@ WCR_ev.4 = {
                 }
             }
             modifier = {
-                subtract = 300
+                add = -300
                 c:FRA ?= {
                     relations:root <= relations_threshold:poor
                 }
@@ -715,6 +730,11 @@ WCR_ev.4 = {
             trigger_event = {
                 id = WCR_ev.1
             }
+            add_modifier = {
+                name  = WCR_ig_westernized_modifier
+                years = 10
+                is_decaying = yes
+            }
         }
         
         ai_chance = {
@@ -742,7 +762,7 @@ WCR_ev.4 = {
                 }
             }
             modifier = {
-                subtract = 300
+                add = -300
                 OR = {
                     c:PRU ?= {
                         relations:root <= relations_threshold:poor
@@ -788,6 +808,11 @@ WCR_ev.4 = {
         else = {
             trigger_event = {
                 id = WCR_ev.1
+            }
+            add_modifier = {
+                name  = WCR_ig_westernized_modifier
+                years = 10
+                is_decaying = yes
             }
         }
         
