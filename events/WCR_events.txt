@@ -549,6 +549,7 @@ WCR_ev.4 = {
         else = {
             trigger_event = {
                 id = WCR_ev.1
+                popup = yes
             }
             add_modifier = {
                 name  = WCR_ig_westernized_modifier
@@ -609,6 +610,7 @@ WCR_ev.4 = {
         else = {
             trigger_event = {
                 id = WCR_ev.1
+                popup = yes
             }
             add_modifier = {
                 name  = WCR_ig_westernized_modifier
@@ -669,6 +671,7 @@ WCR_ev.4 = {
         else = {
             trigger_event = {
                 id = WCR_ev.1
+                popup = yes
             }
             add_modifier = {
                 name  = WCR_ig_westernized_modifier
@@ -729,6 +732,7 @@ WCR_ev.4 = {
         else = {
             trigger_event = {
                 id = WCR_ev.1
+                popup = yes
             }
             add_modifier = {
                 name  = WCR_ig_westernized_modifier
@@ -808,6 +812,7 @@ WCR_ev.4 = {
         else = {
             trigger_event = {
                 id = WCR_ev.1
+                popup = yes
             }
             add_modifier = {
                 name  = WCR_ig_westernized_modifier

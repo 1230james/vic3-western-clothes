@@ -12,7 +12,15 @@
     }
     
     possible = {
-        WCR_can_start_westernizing_trigger = yes
+        trigger_if = {
+            limit = {
+                has_game_rule = WCR_WCF_requirements
+            }
+            WCR_can_start_westernizing_trigger = yes
+        }
+        trigger_else = {
+            WCR_snori_can_westernize_trigger = yes
+        }
     }
     
     when_taken = {
@@ -143,7 +151,15 @@ WCR_de_start_westernization = {
     }
     
     possible = {
-        WCR_can_start_westernizing_trigger = yes
+        trigger_if = {
+            limit = {
+                has_game_rule = WCR_WCF_requirements
+            }
+            WCR_can_start_westernizing_trigger = yes
+        }
+        trigger_else = {
+            WCR_snori_can_westernize_trigger = yes
+        }
     }
     
     when_taken = {

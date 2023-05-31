@@ -7,6 +7,16 @@ WCR_westernization_type = {
     WCR_simple_westernization  = {}
 }
 
+# Western Clothes Flavor vs Adopt Western Clothes decision requirements
+# WCF: the convoluted WCR_can_start_westernizing_trigger trigger
+# AWC: independent + at peace + landowners not powerful + intelligentsia in govt
+WCR_decision_requirements_type = {
+    default = WCR_WCF_requirements
+    
+    WCR_WCF_requirements = {}
+    WCR_AWC_requirements = {}
+}
+
 # Westernization influences (always uses generic/hodgepodge uniforms if disabled)
 # AWC behavior: disabled
 WCR_westernization_influences = {
@@ -23,6 +33,15 @@ WCR_AI_westernization = {
     
     WCR_allow_AI_westernization = {}
     WCR_block_AI_westernization = {}
+}
+
+# Westernize pops from an unwesternized home country that are currently living in a westernized country
+# AWC behavior: no
+WCR_westernize_immigrants = {
+    default = WCR_westernize_immigrants_yes
+    
+    WCR_westernize_immigrants_yes = {}
+    WCR_westernize_immigrants_no  = {}
 }
 
 # Allows traditionalist characters to avoid westernizing if set to no
