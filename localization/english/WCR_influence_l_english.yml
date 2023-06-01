@@ -9,12 +9,13 @@ l_english:
     WCR_ev_generic_option: 0  "No specific style is necessary for this one."
     
     # Tooltips
-    WCR_tt_when_in_cmd: 0    "[AddTextIf(Not(EqualTo_string(GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetLawType.GetName, GetLawType('law_monarchy').GetName)), ' when granted command of troops')]"
-    WCR_tt_american_ruler: 0 "[GetPlayer.GetRuler.GetFullNameWithTitle] will wear an #v American uniform#!$WCR_tt_when_in_cmd$."
-    WCR_tt_british_ruler: 0  "[GetPlayer.GetRuler.GetFullNameWithTitle] will wear a #v British uniform#!$WCR_tt_when_in_cmd$."
-    WCR_tt_french_ruler: 0   "[GetPlayer.GetRuler.GetFullNameWithTitle] will wear a #v French uniform#!$WCR_tt_when_in_cmd$."
-    WCR_tt_german_ruler: 0   "[GetPlayer.GetRuler.GetFullNameWithTitle] will wear a #v German uniform#!$WCR_tt_when_in_cmd$."
-    WCR_tt_generic_ruler: 0  "[GetPlayer.GetRuler.GetFullNameWithTitle] will wear a #v generic European uniform#!$WCR_tt_when_in_cmd$."
+    WCR_tt_when_in_cmd: 0    " when granted command of troops"
+    WCR_tt_when_in_cmd_df: 0 "[AddLocalizationIf(Not(EqualTo_string(GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetLawType.GetName, GetLawType('law_monarchy').GetName)), 'WCR_tt_when_in_cmd')]"
+    WCR_tt_american_ruler: 0 "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] will wear an #v American uniform#!$WCR_tt_when_in_cmd_df$."
+    WCR_tt_british_ruler: 0  "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] will wear a #v British uniform#!$WCR_tt_when_in_cmd_df$."
+    WCR_tt_french_ruler: 0   "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] will wear a #v French uniform#!$WCR_tt_when_in_cmd_df$."
+    WCR_tt_german_ruler: 0   "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] will wear a #v German uniform#!$WCR_tt_when_in_cmd_df$."
+    WCR_tt_generic_ruler: 0  "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] will wear a #v generic European uniform#!$WCR_tt_when_in_cmd_df$."
     
     WCR_tt_american_army: 0 "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_barracks').GetName] and [Concept('concept_general', 'Generals')] will wear #v American uniforms#!."
     WCR_tt_british_army: 0  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_barracks').GetName] and [Concept('concept_general', 'Generals')] will wear #v British uniforms#!."
@@ -29,10 +30,18 @@ l_english:
     WCR_tt_generic_navy: 0  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_base').GetName] and [Concept('concept_admiral', 'Admirals')] will wear #v generic European uniforms#!."
     
     # Event text
-    WCR_sire_madam: 0 "[AddTextIf(GetPlayer.GetRuler.IsFemale, 'madam')][AddTextIf(Not(GetPlayer.GetRuler.IsFemale), 'sire')]"
+    WCR_sire: 0     "sire"
+    WCR_madam: 0    "madam"
+    WCR_royal: 0    "Royal"
+    WCR_exec: 0     "Executive"
+    WCR_military: 0 "military "
     
-    WCR_ev_2_title: 0  "The New Royal Attire"
-    WCR_ev_2_desc: 0   "To begin the westernization process, a new [AddTextIf(Not(EqualTo_string(GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetLawType.GetName, GetLawType('law_monarchy').GetName)), 'military ')]uniform for [GetPlayer.GetRuler.GetFullNameWithTitle] is in order."
+    WCR_sire_madam:  0 "[AddLocalizationIf(GetPlayer.GetRuler.IsFemale, 'WCR_madam')][AddLocalizationIf(Not(GetPlayer.GetRuler.IsFemale), 'WCR_sire')]"
+    WCR_royal_exec:  0 "[AddLocalizationIf(Not(EqualTo_string(GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetLawType.GetName, GetLawType('law_monarchy').GetName)), 'WCR_exec')][AddLocalizationIf(EqualTo_string(GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetLawType.GetName, GetLawType('law_monarchy').GetName), 'WCR_royal')]"
+    WCR_military_df: 0 "[AddLocalizationIf(Not(EqualTo_string(GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetLawType.GetName, GetLawType('law_monarchy').GetName)), 'WCR_military')]"
+    
+    WCR_ev_2_title: 0  "The New $WCR_royal_exec$ Attire"
+    WCR_ev_2_desc: 0   "To begin the westernization process, a new $WCR_military_df$uniform for [GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] is in order."
     WCR_ev_2_flavor: 0 ""The European powers each have their own unique styles of dress. Which one would you prefer to wear yourself, $WCR_sire_madam$?""
     
     WCR_ev_3_title: 0  "Army Accoutrements"

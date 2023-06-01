@@ -26,7 +26,7 @@ WCR_cl_westernization_je_status_0 = {
                 exists = heir
             }
             ruler = {
-                WCR_westernization_allowed_by_rules_trigger = yes
+                WCR_st_westernize_traditionalists = yes
             }
         }
         localization_key = WCR_je_westernization_status_0_king
@@ -36,13 +36,12 @@ WCR_cl_westernization_je_status_0 = {
             exists = heir
             AND = {
                 ruler = {
-                    WCR_westernization_allowed_by_rules_trigger = yes
+                    WCR_st_westernize_traditionalists = yes
                 }
                 heir = {
-                    WCR_westernization_allowed_by_rules_trigger = yes
+                    WCR_st_westernize_traditionalists = yes
                 }
             }
-            
         }
         localization_key = WCR_je_westernization_status_0_king_heir
     }
@@ -51,20 +50,163 @@ WCR_cl_westernization_je_status_0 = {
             exists = heir
             AND = {
                 ruler = {
-                    WCR_westernization_allowed_by_rules_trigger = no
+                    WCR_st_westernize_traditionalists = no
                 }
                 heir = {
-                    WCR_westernization_allowed_by_rules_trigger = yes
+                    WCR_st_westernize_traditionalists = yes
                 }
             }
-            
         }
         localization_key = WCR_je_westernization_status_0_heir
     }
     text = {
         trigger = {
-            always = yes
+            OR = {
+                NOT = {
+                    exists = heir
+                }
+                heir ?= {
+                    WCR_st_westernize_traditionalists = no
+                }
+            }
+            ruler = {
+                WCR_st_westernize_traditionalists = no
+            }
         }
         localization_key = WCR_je_westernization_status_0_neither
+    }
+}
+
+WCR_cl_westernization_je_status_10 = {
+    type = country
+    random_valid = no
+    
+    text = {
+        trigger = {
+            ig:ig_industrialists = {
+                leader = {
+                    WCR_st_westernize_traditionalists = yes
+                }
+            }
+            ig:ig_intelligentsia = {
+                leader = {
+                    WCR_st_westernize_traditionalists = yes
+                }
+            }
+        }
+        localization_key = WCR_je_westernization_status_10_both
+    }
+    text = {
+        trigger = { 
+            ig:ig_industrialists = {
+                leader = {
+                    WCR_st_westernize_traditionalists = yes
+                }
+            }
+        }
+        localization_key = WCR_je_westernization_status_10_indus
+    }
+    text = {
+        trigger = {
+            ig:ig_intelligentsia = {
+                leader = {
+                    WCR_st_westernize_traditionalists = yes
+                }
+            }
+        }
+        localization_key = WCR_je_westernization_status_10_intel
+    }
+    text = {
+        trigger = {
+            ig:ig_industrialists = {
+                leader = {
+                    WCR_st_westernize_traditionalists = no
+                }
+            }
+            ig:ig_intelligentsia = {
+                leader = {
+                    WCR_st_westernize_traditionalists = no
+                }
+            }
+        }
+        localization_key = WCR_je_westernization_status_10_neither
+    }
+}
+
+WCR_cl_westernization_je_status_30 = {
+    type = country
+    random_valid = no
+    
+    text = {
+        trigger = {
+            ig:ig_trade_unions = {
+                leader = {
+                    WCR_st_westernize_traditionalists = yes
+                }
+            }
+        }
+        localization_key = WCR_je_westernization_status_30_tu
+    }
+    text = {
+        trigger = {
+            ig:ig_trade_unions = {
+                leader = {
+                    WCR_st_westernize_traditionalists = no
+                }
+            }
+        }
+        localization_key = WCR_je_westernization_status_30_none
+    }
+}
+
+WCR_cl_westernization_je_status_60 = {
+    type = country
+    random_valid = no
+    
+    text = {
+        trigger = {
+            ig:ig_landowners = {
+                leader = {
+                    WCR_st_westernize_traditionalists = yes
+                }
+            }
+        }
+        localization_key = WCR_je_westernization_status_60_land
+    }
+    text = {
+        trigger = {
+            ig:ig_landowners = {
+                leader = {
+                    WCR_st_westernize_traditionalists = no
+                }
+            }
+        }
+        localization_key = WCR_je_westernization_status_60_none
+    }
+}
+
+WCR_cl_westernization_je_status_90 = {
+    type = country
+    random_valid = no
+    
+    text = {
+        trigger = {
+            ig:ig_petty_bourgeoisie = {
+                leader = {
+                    WCR_st_westernize_traditionalists = yes
+                }
+            }
+        }
+        localization_key = WCR_je_westernization_status_90_pb
+    }
+    text = {
+        trigger = {
+            ig:ig_petty_bourgeoisie = {
+                leader = {
+                    WCR_st_westernize_traditionalists = no
+                }
+            }
+        }
+        localization_key = WCR_je_westernization_status_90_none
     }
 }

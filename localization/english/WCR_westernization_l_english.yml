@@ -17,7 +17,7 @@ l_english:
     # Tooltips
     WCR_tt_overlord_westernized_sub: 0 "[GetPlayer.GetOverlord.GetName] is #v westernized#!."
     WCR_tt_overlord_westernized_ind: 0 "The [concept_overlord] of [GetPlayer.GetName] is #v westernized#!."
-    WCR_tt_ruler_support: 0            "[GetPlayer.GetRuler.GetFullName] supports any of the [Concept('concept_interest_group', 'Interest Groups')] below:"
+    WCR_tt_ruler_support: 0            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] supports any of the [Concept('concept_interest_group', 'Interest Groups')] below:"
     
     # Modifiers
     WCR_westernized_modifier: 0         "Recently Westernized"
@@ -65,30 +65,41 @@ l_english:
     WCR_je_westernization_reason_long: 0 "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_powerful_bonus_reason$\n\n$WCR_influential_bonus_reason$\n\n$WCR_powerful_malus_reason$[SCOPE.sCountry('this_country').GetCustom('WCR_cl_GGGG_bonus_reason')]\n\n$WCR_westernized_relations_reason$\n\n$WCR_no_backtracking_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason$\n\n$WCR_LONG_DELIMITER$" 
     
     # Westernization JE status texts
+    # Use of GetPlayer in customizable loc text is mandatory due to data context being changed when going through a customizable loc
     WCR_je_westernization_status_0: 0           "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_0')]"
-    WCR_je_westernization_status_0_king: 0      "Westernization has just begun, with [GetPlayer.GetRuler.GetFullNameWithTitle] adopting foreign dress."
-    WCR_je_westernization_status_0_heir: 0      "Westernization has just begun, and [GetPlayer.GetHeir.GetFullNameWithTitle] has taken it upon [GetPlayer.GetHeir.GetHimselfHerself] to set the example."
-    WCR_je_westernization_status_0_king_heir: 0 "Westernization has just begun, with [GetPlayer.GetRuler.GetFullNameWithTitle] and [GetPlayer.GetHeir.GetFullNameWithTitle] setting examples for the nation."
+    WCR_je_westernization_status_0_king: 0      "Westernization has just begun, with [GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] adopting foreign dress."
+    WCR_je_westernization_status_0_heir: 0      "Westernization has just begun, and [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')] has taken it upon [GetPlayer.GetHeir.GetHimselfHerself] to set the example."
+    WCR_je_westernization_status_0_king_heir: 0 "Westernization has just begun, with [GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] and [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')] setting examples for the nation."
     WCR_je_westernization_status_0_neither: 0   "Westernization has just begun in our country."
     
-    WCR_je_westernization_status_5: 0 "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetLeader.GetFullNameWithTitle], [Concept('concept_commander', 'Commanders')], [GetPopType('officers').GetName], and [GetPopType('bureaucrats').GetName] have been issued western uniforms."
+    WCR_je_westernization_status_5: 0 "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetLeader.GetCustom('GetUniversalFullName')], [Concept('concept_commander', 'Commanders')], [GetPopType('officers').GetName], and [GetPopType('bureaucrats').GetName] have been issued western uniforms."
     
-    WCR_je_westernization_status_10: 0 "[GetPopType('soldiers').GetName] and [GetPopType('clerks').GetName] have been issued western uniforms, while [GetInterestGroupVariant('ig_industrialists', SCOPE.sCountry('this_country')).GetLeader.GetFullNameWithTitle] and [GetInterestGroupVariant('ig_intelligentsia', SCOPE.sCountry('this_country')).GetLeader.GetFullNameWithTitle] have begun to set the example for their peers."
+    WCR_je_westernization_status_10: 0         "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_10')]" 
+    WCR_je_westernization_status_10_both: 0    "[GetPopType('soldiers').GetName] and [GetPopType('clerks').GetName] have been issued western uniforms, while [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] and [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] have begun to set the example for their peers."
+    WCR_je_westernization_status_10_indus: 0   "[GetPopType('soldiers').GetName] and [GetPopType('clerks').GetName] have been issued western uniforms, while [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] has begun to set the example for [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetHerHis] peers."
+    WCR_je_westernization_status_10_intel: 0   "[GetPopType('soldiers').GetName] and [GetPopType('clerks').GetName] have been issued western uniforms, while [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] has begun to set the example for [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetHerHis] peers."
+    WCR_je_westernization_status_10_neither: 0 "[GetPopType('soldiers').GetName] and [GetPopType('clerks').GetName] have been issued western uniforms."
     
     WCR_je_westernization_status_20: 0 "The remaining [GetPopType('capitalists').GetName] have adopted western clothing to appear more presentable to their economic partners."
     
-    WCR_je_westernization_status_30: 0 "All [GetPopType('academics').GetName] and [GetInterestGroupVariant('ig_trade_unions', SCOPE.sCountry('this_country')).GetLeader.GetFullNameWithTitle] have joined the new fashion trend. Westernization is progressing well."
+    WCR_je_westernization_status_30: 0      "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_30')]" 
+    WCR_je_westernization_status_30_tu: 0   "All [GetPopType('academics').GetName] and [GetInterestGroupVariant('ig_trade_unions', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] have joined the new fashion trend. Westernization is progressing well."
+    WCR_je_westernization_status_30_none: 0 "All [GetPopType('academics').GetName] have joined the new fashion trend. Westernization is progressing well."
     
     WCR_je_westernization_status_40: 0 "Influenced by their wealthier coworkers, [GetPopType('engineers').GetName] have begun to wear western clothing."
     
     WCR_je_westernization_status_50: 0 "Foreign fashion continues to trickle down as [GetPopType('machinists').GetName] adopt western clothes."
     
-    WCR_je_westernization_status_60: 0 "[GetInterestGroupVariant('ig_landowners', SCOPE.sCountry('this_country')).GetLeader.GetFullNameWithTitle] has reluctantly joined the fashion trends as it spreads through the cities to the [GetPopType('shopkeepers').GetName]."
+    WCR_je_westernization_status_60: 0      "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_60')]" 
+    WCR_je_westernization_status_60_land: 0 "[GetInterestGroupVariant('ig_landowners', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] has reluctantly joined the fashion trends as they spread through the cities to the [GetPopType('shopkeepers').GetName]."
+    WCR_je_westernization_status_60_none: 0 "The western fashion trends spread through the cities to the [GetPopType('shopkeepers').GetName]."
     
     WCR_je_westernization_status_70: 0 "As the new style becomes more affordable, [GetPopType('laborers').GetName] have incorporated western trends into their dress."
     
     WCR_je_westernization_status_80: 0 "The [GetPopType('aristocrats').GetName] have finally given up on clutching to traditions, adopting the new modern dress to match the rest of the upper class."
     
-    WCR_je_westernization_status_90: 0 "The ever-stubborn [GetInterestGroupVariant('ig_petty_bourgeoisie', SCOPE.sCountry('this_country')).GetLeader.GetFullNameWithTitle] and [GetPopType('farmers').GetName] finally accept western fashion as the new norm."
+    WCR_je_westernization_status_90: 0      "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_90')]" 
+    WCR_je_westernization_status_90_pb: 0   "The ever-stubborn [GetInterestGroupVariant('ig_petty_bourgeoisie', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] and [GetPopType('farmers').GetName] finally accept western fashion as the new norm."
+    WCR_je_westernization_status_90_none: 0 "The ever-stubborn [GetPopType('farmers').GetName] finally accept western fashion as the new norm."
     
     WCR_je_westernization_status_100: 0 "Westernization is complete!"
