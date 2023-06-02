@@ -14,6 +14,12 @@ For full information, please visit the [Steam Workshop](https://steamcommunity.c
 
 If you would like to contribute to localizing WCR, please visit [WCR's Crowdin page](https://crowdin.com/project/vic3-western-clothes-redux/)!
 
+## Modding Info
+
+Some useful triggers can be found in [the scripted_triggers directory](https://github.com/1230james/vic3-western-clothes/tree/master/common/scripted_triggers).
+
+For detecting if WCR is running, please see the comment in `zz_WCR_active_trigger.txt`.
+
 ## Installation
 
 1. Install via [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2981574864), OR
