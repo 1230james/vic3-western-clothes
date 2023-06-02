@@ -5336,6 +5336,7 @@ buddhist_religious_clothes = {
                 WCR_ruler_has_no_influence_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
+                military_clothes_trigger = no # Prevent use when king is commanding an army
             }
         }
     }
@@ -5532,7 +5533,7 @@ buddhist_religious_clothes = {
                     AND = {
                         ruler_clothes_trigger = yes
                         military_clothes_trigger = yes # Here to make sure it only applies when the ruler is commanding an army
-                        WCR_army_has_no_influence_trigger = yes
+                        WCR_ruler_has_no_influence_trigger = yes
                     }
                     AND = {
                         WCR_army_clothes_trigger = yes
