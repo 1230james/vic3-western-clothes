@@ -1246,6 +1246,11 @@
                 academics_clothes_pop_trigger = yes
                 WCR_is_westernized_trigger    = yes # want to include Europe & co. too in this case
             }
+            modifier = {   # Nondisruptive (for Europeans) way to apply it to nations that finished westernization
+                add = 1900 # (i.e. Europe gets the normal weight & Asia, etc. get 2100 to match other WCR definitions
+                academics_clothes_pop_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+            }
         }
     }
     
