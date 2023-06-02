@@ -10,7 +10,7 @@ l_english:
     WCR_de_start_westernization_desc: 0    "Begin the process of westernizing your country.\nUpon completion of westernization, most pops and characters will be wearing western clothes."
     WCR_de_start_westernization_tooltip: 0 "$WCR_de_start_westernization$"
     
-    WCR_de_simple_westernization: 0         "Adopt Western Clothing"
+    WCR_de_simple_westernization: 0         "洋服を導入"
     WCR_de_simple_westernization_desc: 0    "We must join the great powers of the West in their ways of life if we are to stand among them on the world stage. Our people shall adopt western-style clothing as a part of this goal."
     WCR_de_simple_westernization_tooltip: 0 "$WCR_de_simple_westernization$"
     
@@ -31,7 +31,7 @@ l_english:
     WCR_ev_1_title: 0  "Westernize!"
     WCR_ev_1_desc: 0   "After sufficiently long exposure to western technology, society, and culture, elements of their way of life have been integrated into ours."
     WCR_ev_1_flavor: 0 ""The West leads the world in industry, academics, and culture. The world we once knew is collapsing. It's time to join the way of the great powers!""
-    WCR_ev_1_a: 0      "Now we are ready to stand on the world stage!"
+    WCR_ev_1_a: 0      "これで世界の舞台に立つ準備ができました！"
     
     # Westernization JE long text & helpers
     WCR_LONG_DELIMITER: 0 "     @divider_start!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_end!"
