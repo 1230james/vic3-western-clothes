@@ -69,7 +69,7 @@ l_polish:
     # Use of GetPlayer in customizable loc text is mandatory due to data context being changed when going through a customizable loc
     WCR_je_westernization_status_0: 0 "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_0')]"
     WCR_je_westernization_status_0_king: 0 "Westernizacja właśnie się rozpoczęła, z włączeniem zagranicznego ubioru przez [GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]."
-    WCR_je_westernization_status_0_heir: 0 "Westernizacja właśnie się rozpoczęła, a [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')] wziął na siebie obowiązek pokazywania przykładu [GetPlayer.GetHeir.GetHimselfHerself]."
+    WCR_je_westernization_status_0_heir: 0 "Westernizacja właśnie się rozpoczęła, a [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')] wziął na siebie obowiązek pokazywania przykładu [GetPlayer.GetHeir.GetHerselfHimself]."
     WCR_je_westernization_status_0_king_heir: 0 "Westernizacja właśnie się rozpoczęła, w chwili gdy [GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] i [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')] dali przykład swojemu narodowi."
     WCR_je_westernization_status_0_neither: 0 "W naszym kraju rozpoczęła się właśnie Westernizacja."
     
