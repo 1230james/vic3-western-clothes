@@ -68,7 +68,7 @@ l_russian:
     # Use of GetPlayer in customizable loc text is mandatory due to data context being changed when going through a customizable loc
     WCR_je_westernization_status_0: 0           "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_0')]"
     WCR_je_westernization_status_0_king: 0      "Westernization has just begun, with [GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] adopting foreign dress."
-    WCR_je_westernization_status_0_heir: 0      "Westernization has just begun, and [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')] has taken it upon [GetPlayer.GetHeir.GetHimselfHerself] to set the example."
+    WCR_je_westernization_status_0_heir: 0      "Westernization has just begun, and [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')] has taken it upon [GetPlayer.GetHeir.GetHerselfHimself] to set the example."
     WCR_je_westernization_status_0_king_heir: 0 "Westernization has just begun, with [GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] and [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')] setting examples for the nation."
     WCR_je_westernization_status_0_neither: 0   "Westernization has just begun in our country."
     
