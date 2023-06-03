@@ -38,7 +38,7 @@ WCR_st_is_country_westernized = {
 # Will return true if the owner of this pop's westernization progress is high enough to westernize this pop
 WCR_st_is_part_west_pop_westernized_trigger = {
     scope:pop ?= {
-        owner = {
+        owner ?= {
             OR = {
                 # WCR_country_is_westernized = yes # DO NOT USE - we want to leave countries that already start off as westernized alone
                 AND = { # Don't use WCR_has_completed_westernization_trigger (circular dependency, by design)
@@ -131,7 +131,7 @@ WCR_st_is_part_west_pop_westernized_trigger = {
 # Same as above but for characters, which have a different westernization schedule
 WCR_st_is_part_west_character_westernized_trigger = {
     scope:character ?= {
-        owner = {
+        owner ?= {
             OR = {
                 # WCR_country_is_westernized = yes # DO NOT USE - we want to leave countries that already start off as westernized alone
                 AND = { # Don't use WCR_has_completed_westernization_trigger (circular dependency, by design)
@@ -157,14 +157,14 @@ WCR_st_is_part_west_character_westernized_trigger = {
                                 OR = {
                                     has_role = general
                                     has_role = admiral
-                                    interest_group = { is_interest_group_type = ig_armed_forces }
+                                    interest_group ?= { is_interest_group_type = ig_armed_forces }
                                 }
                             }
                         }
                         AND = {
                             owner.var:WCR_westernization_progress >= 10
                             scope:character = {
-                                interest_group = {
+                                interest_group ?= {
                                     OR = {
                                         is_interest_group_type = ig_industrialists
                                         is_interest_group_type = ig_intelligentsia
@@ -175,19 +175,19 @@ WCR_st_is_part_west_character_westernized_trigger = {
                         AND = {
                             owner.var:WCR_westernization_progress >= 30
                             scope:character = {
-                                interest_group = { is_interest_group_type = ig_trade_unions }
+                                interest_group ?= { is_interest_group_type = ig_trade_unions }
                             }
                         }
                         AND = {
                             owner.var:WCR_westernization_progress >= 60
                             scope:character = {
-                                interest_group = { is_interest_group_type = ig_landowners }
+                                interest_group ?= { is_interest_group_type = ig_landowners }
                             }
                         }
                         AND = {
                             owner.var:WCR_westernization_progress >= 90
                             scope:character = {
-                                interest_group = { is_interest_group_type = ig_petty_bourgeoisie }
+                                interest_group ?= { is_interest_group_type = ig_petty_bourgeoisie }
                             }
                         }
                     }

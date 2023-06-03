@@ -1256,6 +1256,25 @@
     
     ## WCR - Additions ##
     
+    WCR_european_agitator_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = european_headgear_agitators
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                WCR_has_completed_westernization_trigger = yes
+                agitator_character_trigger = yes
+            }
+        }
+    }
+    
     WCR_european_royal_headgear = {
         dna_modifiers = {
             accessory = {
@@ -1425,6 +1444,7 @@
             modifier = { # Monarchy commanders in chief
                 add = 2100
                 monarchy_clothes_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_no_influence_trigger = yes
                 scope:character ?= {
                     is_ruler = yes
@@ -1456,6 +1476,7 @@
             modifier = { # Republic commanders in chief
                 add = 2100
                 republic_clothes_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
                 # WCR_ruler_has_no_influence_trigger = yes # Hat is same for all flavors
                 scope:character ?= {
                     is_ruler = yes
@@ -1487,6 +1508,7 @@
             modifier = {
                 add = 2100
                 monarchy_clothes_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_american_influence_trigger = yes
                 scope:character ?= {
                     is_ruler = yes
@@ -1518,6 +1540,7 @@
             modifier = {
                 add = 2100
                 monarchy_clothes_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_british_influence_trigger = yes
                 scope:character ?= {
                     is_ruler = yes
@@ -1549,6 +1572,7 @@
             modifier = {
                 add = 2100
                 monarchy_clothes_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_french_influence_trigger = yes
                 scope:character ?= {
                     is_ruler = yes
@@ -1580,6 +1604,7 @@
             modifier = {
                 add = 2100
                 monarchy_clothes_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_german_influence_trigger = yes
                 scope:character ?= {
                     is_ruler = yes

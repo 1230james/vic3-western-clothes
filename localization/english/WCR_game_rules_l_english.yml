@@ -8,7 +8,7 @@ l_english:
     setting_WCR_complex_westernization: 0      "#b Gradual#!"
     setting_WCR_complex_westernization_desc: 0 "#v Westernization#! will occur gradually through a [concept_journal_entry]."
     setting_WCR_simple_westernization: 0       "#b Instantaneous#!"
-    setting_WCR_simple_westernization_desc: 0  "#v Westernization#! will occur instaneously through a decision. $WCR_AWC_behavior_text$"
+    setting_WCR_simple_westernization_desc: 0  "#v Westernization#! will occur instantaneously through a decision. $WCR_AWC_behavior_text$"
     
     rule_WCR_decision_requirements_type: 0 "WCR | Westernization Requirements"
     setting_WCR_WCF_requirements: 0        "#b Normal#!"
