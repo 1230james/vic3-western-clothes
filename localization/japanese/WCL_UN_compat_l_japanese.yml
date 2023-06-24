@@ -1,4 +1,4 @@
-﻿l_english:
+﻿l_japanese:
     WCR_UN_full_name: 0     "[ROOT.GetCharacter.GetFullName]"
     WCR_UN_title_ruler: 0   "[ROOT.GetCharacter.GetCountry.GetRuler.GetPrimaryRoleTitle] "
     WCR_UN_title_heir: 0    "[ROOT.GetCharacter.GetPrimaryRoleTitle] "
