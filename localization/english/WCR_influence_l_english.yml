@@ -17,17 +17,17 @@ l_english:
     WCR_tt_german_ruler: 0   "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] will wear a #v German uniform#!$WCR_tt_when_in_cmd_df$."
     WCR_tt_generic_ruler: 0  "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] will wear a #v generic European uniform#!$WCR_tt_when_in_cmd_df$."
     
-    WCR_tt_american_army: 0 "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_barracks').GetName] and [Concept('concept_general', 'Generals')] will wear #v American uniforms#!."
-    WCR_tt_british_army: 0  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_barracks').GetName] and [Concept('concept_general', 'Generals')] will wear #v British uniforms#!."
-    WCR_tt_french_army: 0   "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_barracks').GetName] and [Concept('concept_general', 'Generals')] will wear #v French uniforms#!."
-    WCR_tt_german_army: 0   "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_barracks').GetName] and [Concept('concept_general', 'Generals')] will wear #v German uniforms#!."
-    WCR_tt_generic_army: 0  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_barracks').GetName] and [Concept('concept_general', 'Generals')] will wear #v generic European uniforms#!."
+    WCR_tt_american_army: 1 "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_barracks').GetName] and [Concept('concept_general', '$concept_generals$')] will wear #v American uniforms#!."
+    WCR_tt_british_army: 1  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_barracks').GetName] and [Concept('concept_general', '$concept_generals$')] will wear #v British uniforms#!."
+    WCR_tt_french_army: 1   "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_barracks').GetName] and [Concept('concept_general', '$concept_generals$')] will wear #v French uniforms#!."
+    WCR_tt_german_army: 1   "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_barracks').GetName] and [Concept('concept_general', '$concept_generals$')] will wear #v German uniforms#!."
+    WCR_tt_generic_army: 1  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_barracks').GetName] and [Concept('concept_general', '$concept_generals$')] will wear #v generic European uniforms#!."
     
-    WCR_tt_american_navy: 0 "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_base').GetName] and [Concept('concept_admiral', 'Admirals')] will wear #v American uniforms#!."
-    WCR_tt_british_navy: 0  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_base').GetName] and [Concept('concept_admiral', 'Admirals')] will wear #v British uniforms#!."
-    WCR_tt_french_navy: 0   "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_base').GetName] and [Concept('concept_admiral', 'Admirals')] will wear #v French uniforms#!."
-    WCR_tt_german_navy: 0   "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_base').GetName] and [Concept('concept_admiral', 'Admirals')] will wear #v German uniforms#!."
-    WCR_tt_generic_navy: 0  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_base').GetName] and [Concept('concept_admiral', 'Admirals')] will wear #v generic European uniforms#!."
+    WCR_tt_american_navy: 1 "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_base').GetName] and [Concept('concept_admiral', '$concept_admirals$')] will wear #v American uniforms#!."
+    WCR_tt_british_navy: 1  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_base').GetName] and [Concept('concept_admiral', '$concept_admirals$')] will wear #v British uniforms#!."
+    WCR_tt_french_navy: 1   "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_base').GetName] and [Concept('concept_admiral', '$concept_admirals$')] will wear #v French uniforms#!."
+    WCR_tt_german_navy: 1   "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_base').GetName] and [Concept('concept_admiral', '$concept_admirals$')] will wear #v German uniforms#!."
+    WCR_tt_generic_navy: 1  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_base').GetName] and [Concept('concept_admiral', '$concept_admirals$')] will wear #v generic European uniforms#!."
     
     # Event text
     WCR_sire: 0     "sire"

@@ -17,7 +17,7 @@ l_english:
     # Tooltips
     WCR_tt_overlord_westernized_sub: 0 "[GetPlayer.GetOverlord.GetName] is #v westernized#!."
     WCR_tt_overlord_westernized_ind: 0 "The [concept_overlord] of [GetPlayer.GetName] is #v westernized#!."
-    WCR_tt_ruler_support: 0            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] supports any of the [Concept('concept_interest_group', 'Interest Groups')] below:"
+    WCR_tt_ruler_support: 1            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] supports any of the [Concept('concept_interest_group', '$concept_interest_groups$')] below:"
     
     # Modifiers
     WCR_westernized_modifier: 0         "Recently Westernized"
@@ -72,7 +72,7 @@ l_english:
     WCR_je_westernization_status_0_king_heir: 0 "Westernization has just begun, with [GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] and [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')] setting examples for the nation."
     WCR_je_westernization_status_0_neither: 0   "Westernization has just begun in our country."
     
-    WCR_je_westernization_status_5: 0 "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetLeader.GetCustom('GetUniversalFullName')], [Concept('concept_commander', 'Commanders')], [GetPopType('officers').GetName], and [GetPopType('bureaucrats').GetName] have been issued western uniforms."
+    WCR_je_westernization_status_5: 1 "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetLeader.GetCustom('GetUniversalFullName')], [Concept('concept_commander', '$concept_commanders$')], [GetPopType('officers').GetName], and [GetPopType('bureaucrats').GetName] have been issued western uniforms."
     
     WCR_je_westernization_status_10: 0         "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_10')]" 
     WCR_je_westernization_status_10_both: 0    "[GetPopType('soldiers').GetName] and [GetPopType('clerks').GetName] have been issued western uniforms, while [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] and [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] have begun to set the example for their peers."
