@@ -17,17 +17,17 @@ l_japanese:
     WCR_tt_german_ruler: "$WCR_tt_when_in_cmd_df$[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]は#v ドイツの制服#!を着用する。"
     WCR_tt_generic_ruler: "$WCR_tt_when_in_cmd_df$[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]は#v 汎用の制服#!を着用する。"
     
-    WCR_tt_american_army: "[GetBuildingType('building_barracks').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_general', 'Generals')]は#v アメリカの軍服#!を着用する。"
-    WCR_tt_british_army: "[GetBuildingType('building_barracks').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_general', 'Generals')]は#v イギリスの軍服#!を着用する。"
-    WCR_tt_french_army: "[GetBuildingType('building_barracks').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_general', 'Generals')]は#v フランスの軍服#!を着用する。"
-    WCR_tt_german_army: "[GetBuildingType('building_barracks').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_general', 'Generals')]は#v ドイツの軍服#!を着用する。"
-    WCR_tt_generic_army: "[GetBuildingType('building_barracks').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_general', 'Generals')]は#v 汎用の軍服#!を着用する。"
+    WCR_tt_american_army: "[GetBuildingType('building_barracks').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_general', '$concept_generals$')]は#v アメリカの軍服#!を着用する。"
+    WCR_tt_british_army: "[GetBuildingType('building_barracks').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_general', '$concept_generals$')]は#v イギリスの軍服#!を着用する。"
+    WCR_tt_french_army: "[GetBuildingType('building_barracks').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_general', '$concept_generals$')]は#v フランスの軍服#!を着用する。"
+    WCR_tt_german_army: "[GetBuildingType('building_barracks').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_general', '$concept_generals$')]は#v ドイツの軍服#!を着用する。"
+    WCR_tt_generic_army: "[GetBuildingType('building_barracks').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_general', '$concept_generals$')]は#v 汎用の軍服#!を着用する。"
     
-    WCR_tt_american_navy: "[GetBuildingType('building_naval_base').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_admiral', 'Admirals')]は#v アメリカの軍服#!を着用する。"
-    WCR_tt_british_navy: "[GetBuildingType('building_naval_base').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_admiral', 'Admirals')]は#v イギリスの軍服#!を着用する。"
-    WCR_tt_french_navy: "[GetBuildingType('building_naval_base').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_admiral', 'Admirals')]は#v フランスの軍服#!を着用する。"
-    WCR_tt_german_navy: "[GetBuildingType('building_naval_base').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_admiral', 'Admirals')]は#v ドイツの軍服#!を着用する。"
-    WCR_tt_generic_navy: "[GetBuildingType('building_naval_base').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_admiral', 'Admirals')]は#v 汎用の軍服#!を着用する。"
+    WCR_tt_american_navy: "[GetBuildingType('building_naval_base').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_admiral', '$concept_admirals$')]は#v アメリカの軍服#!を着用する。"
+    WCR_tt_british_navy: "[GetBuildingType('building_naval_base').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_admiral', '$concept_admirals$')]は#v イギリスの軍服#!を着用する。"
+    WCR_tt_french_navy: "[GetBuildingType('building_naval_base').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_admiral', '$concept_admirals$')]は#v フランスの軍服#!を着用する。"
+    WCR_tt_german_navy: "[GetBuildingType('building_naval_base').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_admiral', '$concept_admirals$')]は#v ドイツの軍服#!を着用する。"
+    WCR_tt_generic_navy: "[GetBuildingType('building_naval_base').GetName]で働く[GetPopType('officers').GetName]と[GetPopType('soldiers').GetName]、[Concept('concept_admiral', '$concept_admirals$')]は#v 汎用の軍服#!を着用する。"
 
     # Event text
     WCR_sire: "閣下"
