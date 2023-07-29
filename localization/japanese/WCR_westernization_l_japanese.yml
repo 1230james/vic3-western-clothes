@@ -49,7 +49,7 @@ l_japanese:
     
     WCR_powerful_bonus_reason: "西洋化は、各項目が満たされるごとに、#p 1%#! ずつ #v 増加する#!:\n- $WCR_ig_intelligentsia$ が [concept_powerful]\n- $WCR_ig_industrialists$ が [concept_powerful]\n- $WCR_ig_armed_forces$ が [concept_powerful]\n- $WCR_ig_trade_unions$ が [concept_powerful]"
     
-    WCR_influential_bonus_reason: "西洋化は、各項目が満たされるごとに、#p.5%#! ずつ #v 増加する#!:\n- $WCR_ig_intelligentsia$ が [concept_influential]\n- $WCR_ig_industrialists$ が [concept_influential]\n- $WCR_ig_armed_forces$ が [concept_influential]\n- $WCR_ig_trade_unions$ が [concept_influential]"
+    WCR_influential_bonus_reason: "西洋化は、各項目が満たされるごとに、#p 0.5%#! ずつ #v 増加する#!:\n- $WCR_ig_intelligentsia$ が [concept_influential]\n- $WCR_ig_industrialists$ が [concept_influential]\n- $WCR_ig_armed_forces$ が [concept_influential]\n- $WCR_ig_trade_unions$ が [concept_influential]"
     
     WCR_powerful_malus_reason: "西洋化は、各項目が満たされるごとに、#p 1%#! ずつ #v 減少する#!:\n- $WCR_ig_landowners$ が [concept_powerful]\n- $WCR_ig_devout$ が [concept_powerful]\n- $WCR_ig_rural_folk$ が [concept_powerful]\n- $WCR_ig_petty_bourgeoisie$ が [concept_powerful]"
     
