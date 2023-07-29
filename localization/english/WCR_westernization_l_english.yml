@@ -56,7 +56,7 @@ l_english:
     WCR_GGGG_bonus_reason_blank: 0 ""
     WCR_GGGG_bonus_reason: 0 "\n\nWesternization will #v increase#! by #p [Add_CFixedPoint(SCOPE.ScriptValue('GGGG_sv_pm_usage_full_dress'), SCOPE.ScriptValue('GGGG_sv_pm_usage_helmets_drab_caps_coats'))|2]%#! due to your current adoption of #v $pm_GGGG_full_dress$#!, #v $pm_GGGG_modern_uniform$#!, and/or #v $pm_GGGG_modern_uniform_navy$#! across #bold all military units#!."
     
-    WCR_westernized_relations_reason: 0 "Westernization will #v increase#! by an extra #p 10%#! of the #v current monthly rate#! if we have #p Amicable#! [concept_relations] (#v 50#! or higher) with any westernized nation."
+    WCR_westernized_relations_reason: 0 "Westernization will #v increase#! by an extra #p 10%#! of the #v current monthly rate#! if we have $relations_amicable$ [concept_relations] (#v 50#! or higher) with any westernized nation."
     
     WCR_no_backtracking_reason: 0 "In the event that monthly westernization progress is determined to be #n negative#!, westernization progress will halt for that month. It will never go backwards."
     

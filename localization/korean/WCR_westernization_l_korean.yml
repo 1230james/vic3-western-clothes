@@ -49,7 +49,7 @@ l_korean:
     
     WCR_powerful_bonus_reason: "서구화는 다음 각 항목에 의해 #p 1%#!씩 #v 증가#!합니다:\n- $WCR_ig_intelligentsia$(이)가 [concept_powerful] 상태임\n- $WCR_ig_industrialists$(이)가 [concept_powerful] 상태임\n- $WCR_ig_armed_forces$(이)가 [concept_powerful] 상태임\n- $WCR_ig_trade_unions$(이)가 [concept_powerful] 상태임"
     
-    WCR_influential_bonus_reason: "서구화는 다음 각 항목에 의해 #p.5%#!씩 #v 증가#!합니다:\n- $WCR_ig_intelligentsia$(이)가 [concept_influential] 상태임\n- $WCR_ig_industrialists$(이)가 [concept_influential] 상태임\n- $WCR_ig_armed_forces$(이)가 [concept_influential] 상태임\n- $WCR_ig_trade_unions$(이)가 [concept_influential] 상태임"
+    WCR_influential_bonus_reason: "서구화는 다음 각 항목에 의해 #p 0.5%#!씩 #v 증가#!합니다:\n- $WCR_ig_intelligentsia$(이)가 [concept_influential] 상태임\n- $WCR_ig_industrialists$(이)가 [concept_influential] 상태임\n- $WCR_ig_armed_forces$(이)가 [concept_influential] 상태임\n- $WCR_ig_trade_unions$(이)가 [concept_influential] 상태임"
     
     WCR_powerful_malus_reason: "서구화는 다음 각 항목에 의해 #n 1%#!씩 #v 감소#!합니다:\n- $WCR_ig_landowners$(이)가 [concept_powerful] 상태임\n- $WCR_ig_devout$(이)가 [concept_powerful] 상태임\n- $WCR_ig_rural_folk$(이)가 [concept_powerful] 상태임\n- $WCR_ig_petty_bourgeoisie$(이)가 [concept_powerful] 상태임"
     
