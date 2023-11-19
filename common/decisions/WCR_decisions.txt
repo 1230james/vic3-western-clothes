@@ -32,6 +32,7 @@
         if = {
             limit = {
                 has_game_rule = WCR_enable_influences
+                WCR_has_vanilla_uniform_rule = no
             }
             trigger_event = {
                 id    = WCR_ev.2
@@ -39,17 +40,37 @@
             }
         }
         else = {
-            set_variable = {
-                name  = WCR_ruler_influence
-                value = 0
+            if = {
+                limit = {
+                    has_game_rule = WCR_enable_influences
+                    WCR_has_vanilla_uniform_rule = yes
+                }
+                set_variable = {
+                    name  = WCR_ruler_influence
+                    value = -1
+                }
+                set_variable = {
+                    name  = WCR_army_influence
+                    value = -1
+                }
+                set_variable = {
+                    name  = WCR_navy_influence
+                    value = -1
+                }
             }
-            set_variable = {
-                name  = WCR_army_influence
-                value = 0
-            }
-            set_variable = {
-                name  = WCR_navy_influence
-                value = 0
+            else = {
+                set_variable = {
+                    name  = WCR_ruler_influence
+                    value = 0
+                }
+                set_variable = {
+                    name  = WCR_army_influence
+                    value = 0
+                }
+                set_variable = {
+                    name  = WCR_navy_influence
+                    value = 0
+                }
             }
             trigger_event = {
                 id = WCR_ev.1
@@ -172,6 +193,7 @@ WCR_de_start_westernization = {
         if = {
             limit = {
                 has_game_rule = WCR_enable_influences
+                WCR_has_vanilla_uniform_rule = no
             }
             trigger_event = {
                 id    = WCR_ev.2
@@ -179,6 +201,25 @@ WCR_de_start_westernization = {
             }
         }
         else = {
+            if = {
+                limit = {
+                    has_game_rule = WCR_enable_influences
+                    WCR_has_vanilla_uniform_rule = yes
+                }
+                set_variable = {
+                    name  = WCR_ruler_influence
+                    value = -1
+                }
+                set_variable = {
+                    name  = WCR_army_influence
+                    value = -1
+                }
+                set_variable = {
+                    name  = WCR_navy_influence
+                    value = -1
+                }
+            }
+            
             add_journal_entry = {
                 type = WCR_je_westernization
             }

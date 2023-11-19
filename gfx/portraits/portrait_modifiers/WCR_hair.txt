@@ -3,7 +3,7 @@
     selection_behavior = weighted_random
     
     # Purpose of this is to REMOVE the Japanese hairstyles when they westernize
-    WCR_japanese_hair_styles = {
+    WCR_westernized_japanese_hair_styles = {
         dna_modifiers = {
             accessory = {
                 mode = replace
@@ -49,6 +49,31 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+    
+    # This one is for preserving unwesternized styles
+    WCR_japanese_hair_styles = {
+        dna_modifiers = {
+            accessory = {
+                mode = replace
+                gene = hairstyles
+                template = japanese_hairstyles
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 900
+                AND = {
+                    exists = scope:pop
+                    scope:pop = {
+                        culture = cu:japanese
+                    }
+                    poor_clothes_pop_trigger = no
                 }
             }
         }

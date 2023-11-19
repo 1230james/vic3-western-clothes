@@ -2,7 +2,7 @@
     usage = game
     selection_behavior = weighted_random
 
-    ## WCR - Fixes ##
+    ## WCR - Fixes/Vanilla Overrides ##
     
     WCR_korean_pop_clothes = {
         dna_modifiers = {
@@ -11,6 +11,38 @@
                 gene = outfits
                 template = korean_low_outfits
                 range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = coats
+                template = no_coat
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = no_aiguillettes
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = no_legwear
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = no_epaulette
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear
+                range = { 0 1 }
             }
         } 
 
@@ -32,6 +64,38 @@
                 gene = outfits
                 template = korean_common_outfits
                 range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = coats
+                template = no_coat
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = no_aiguillettes
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = no_legwear
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = no_epaulette
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear
+                range = { 0 1 }
             }
         }
 
@@ -167,15 +231,379 @@
         }
     }
     
+    WCR_japanese_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = japanese_common_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = japanese_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = japanese_belts
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = coats
+                template = no_coat
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = no_aiguillettes
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = no_epaulette
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear
+                range = { 0 1 }
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add  = 1100
+                OR = {
+                    scope:pop ?= {
+                        owner ?= {
+                            c:JAP ?= this
+                        }
+                    }
+                    scope:character ?= {
+                        owner ?= {
+                            c:JAP ?= this
+                        }
+                    }
+                }
+                OR = {
+                    AND = {
+                        exists = scope:pop
+                        scope:pop = {
+                            culture = cu:japanese
+                        }
+                        OR = {
+                            soldier_clothes_pop_trigger = yes
+                            officers_clothes_pop_trigger = yes
+                        }   
+                    }
+                    AND = {
+                        exists = scope:character
+                        scope:character = {
+                            has_culture = cu:japanese
+                            monarchy_clothes_trigger = yes
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    WCR_japanese_officers_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = japanese_common_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = japanese_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = japanese_belts
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = japanese_top_layer
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = coats
+                template = no_coat
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = no_aiguillettes
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = no_epaulette
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = sashes
+                template = no_sash
+                range = { 0 1 }
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add  = 1200
+                 AND = {
+                    japanese_clothes_trigger = yes
+                    OR = {
+                        AND = {
+                            military_clothes_trigger = yes
+                        }
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            politician_clothes_trigger = yes
+                        }
+                    } 
+                }    
+            }
+        }
+    }
+    
+    WCR_japanese_imperial_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = japanese_imperial_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = coats
+                template = no_coat
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = no_aiguillettes
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = no_epaulette
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = headgear
+                template = Japanese_imperial_headgear # stolen from vanilla headgear
+                range = { 0 1 }
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 1900 # 2000
+                scope:character ?= {
+                    owner ?= {
+                        c:JAP ?= this
+                    }
+                    is_ruler = yes
+                }
+            }
+        }
+    }
+
+    # WCR_japanese_pop_clothes = {}
+    # Not needed because the vanilla definition already ignores the restoration
+
+    WCR_japanese_pop_mid_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = japanese_common_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = japanese_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = japanese_top_layer
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = coats
+                template = no_coat
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = shirt
+                template = no_shirts
+                range = { 0 1 }
+            }
+        } 
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                OR = {
+                    AND = {
+                        japanese_clothes_pop_trigger = yes
+                        poor_clothes_pop_trigger = no
+                    }
+                    AND = {
+                        japanese_clothes_trigger = yes
+                        scope:character ?= {
+                            is_in_exile_pool = yes
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    WCR_japanese_common_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = japanese_common_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = japanese_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = japanese_top_layer
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = coats
+                template = no_coat
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear
+                range = { 0 1 }
+            }
+            accessory = {
+               mode = add
+               gene = waistcoats
+               template = no_waistcoat
+               range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = civilian_coats
+                template = no_coat
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = props
+                template = no_prop
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                AND = {
+                    agitator_character_trigger = no
+                    scope:character ?= {
+                        OR = {
+                            AND = {
+                                has_culture = cu:japanese
+                                monarchy_clothes_trigger = no
+                            }
+                            has_culture = cu:ainu
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     ## WCR - Additions ##
     
     WCR_european_child_clothes = {
         dna_modifiers = {
-             accessory = {
+            accessory = {
                 mode = add
                 gene = outfits
                 template = children_outfit_royal
                 range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = no_top_layer
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = necklaces
+                template = no_necklace
+                range = { 0 1 }
             }
         }
         weight = {
@@ -428,14 +856,12 @@
                 template = european_waistcoats
                 range = { 0 1 } # For the randomness to work correctly
             }
-
             accessory = {
                 mode = add
                 gene = legwear
                 template = european_legwear
                 range = { 0 1 } # For the randomness to work correctly
             }
-
             accessory = {
                 mode = add
                 gene = civilian_coats
@@ -460,6 +886,12 @@
                 mode = add
                 gene = necklaces
                 template = no_necklace
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = shirt
+                template = no_shirts
                 range = { 0 1 }
             }
         }
@@ -1391,9 +1823,148 @@
         }
     }
     
+    WCR_russian_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = russian_coats
+                range = { 0 0.5 } # Limited to single-breasted jacket so the aiguillette works properly
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = all_aiguillettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = slavic_legwear
+                range = { 0 1 } 
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = no_belt
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = no_top_layer
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = necklaces
+                template = no_necklace
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                WCR_has_completed_westernization_trigger = yes
+                soldier_clothes_pop_trigger = no
+                OR = {
+                    AND = {
+                        monarchy_clothes_trigger = yes
+                        WCR_ruler_has_russian_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_russian_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_russian_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+
+    WCR_russian_military_clothes_soldier = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = russian_coats
+                range = { 0 1 }
+            }
+            # the common soldier gets no aguillettes or epaulettes :(
+            accessory = {
+                mode = add
+                gene = legwear
+                template = slavic_legwear
+                range = { 0 1 } 
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = no_belt
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = no_top_layer
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = necklaces
+                template = no_necklace
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                WCR_has_completed_westernization_trigger = yes
+                soldier_clothes_pop_trigger = yes
+                OR = {
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_russian_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_russian_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+    
     WCR_korean_empire_military_clothes = {
         dna_modifiers = {
-             accessory = {
+            accessory = {
                 mode = add
                 gene = coats
                 template = korean_empire_coats

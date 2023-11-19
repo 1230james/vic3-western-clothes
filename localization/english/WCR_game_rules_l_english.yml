@@ -35,15 +35,15 @@ l_english:
     setting_WCR_modded_KOR_westernization:       "#b WCR#!"
     setting_WCR_modded_KOR_westernization_desc:  "#v $KOR$#! will westernize using only the mechanics and conditions added by WCR."
     setting_WCR_mixed_KOR_westernization:        "#b Mixed#!"
-    setting_WCR_mixed_KOR_westernization_desc:   "#v $KOR$#! will westernize using the mechanics added by WCR, but will be able to bypass the westernization requirements after declaring the #v $dyn_c_empire_of_korea$#!."
+    setting_WCR_mixed_KOR_westernization_desc:   "#v $KOR$#! will westernize using the mechanics added by WCR, but will be able to bypass the westernization requirements after proclaiming the #v $dyn_c_empire_of_korea$#!."
     setting_WCR_vanilla_KOR_westernization:      "#b Unmodded#!"
-    setting_WCR_vanilla_KOR_westernization_desc: "#v $KOR$#! will be ignored by WCR and westernize automatically after declaring the #v $dyn_c_empire_of_korea$#!."
+    setting_WCR_vanilla_KOR_westernization_desc: "#v $KOR$#! will be ignored by WCR and westernize automatically after proclaiming the #v $dyn_c_empire_of_korea$#!."
     
     rule_WCR_KOR_uniforms:                 "#yellow WCR#! | $KOR_ADJ$ Western Uniforms"
     setting_WCR_modded_KOR_uniforms:       "$setting_WCR_modded_KOR_westernization$"
     setting_WCR_modded_KOR_uniforms_desc:  "The style of $KOR_ADJ$ uniforms will be determined through WCR as per the current game rules. If the #v $setting_WCR_enable_influences$#! rule is active, the special #v $dyn_c_empire_of_korea$ uniforms#! from the base game will be a selectable option."
     setting_WCR_vanilla_KOR_uniforms:      "$setting_WCR_vanilla_KOR_westernization$"
-    setting_WCR_vanilla_KOR_uniforms_desc: "The style of $KOR_ADJ$ uniforms will always be the special #v $dyn_c_empire_of_korea$ uniforms#! from the base game."
+    setting_WCR_vanilla_KOR_uniforms_desc: "The style of $KOR_ADJ$ uniforms will always be the special #v $dyn_c_empire_of_korea$ uniforms#! from the base game, except when the #v $setting_WCR_disable_influences$#! rule is active."
     
     rule_WCR_JAP_westernization:                 "#yellow WCR#! | $JAP_ADJ$ Westernization Behavior"
     setting_WCR_modded_JAP_westernization:       "$setting_WCR_modded_KOR_westernization$"
@@ -57,7 +57,7 @@ l_english:
     setting_WCR_modded_JAP_uniforms:       "$setting_WCR_modded_KOR_westernization$"
     setting_WCR_modded_JAP_uniforms_desc:  "The style of $JAP_ADJ$ uniforms will be determined through WCR as per the current game rules. If the #v $setting_WCR_enable_influences$#! rule is active, the special #v $dyn_c_empire_of_japan$ uniforms#! from the base game will be a selectable option."
     setting_WCR_vanilla_JAP_uniforms:      "$setting_WCR_vanilla_KOR_westernization$"
-    setting_WCR_vanilla_JAP_uniforms_desc: "The style of $JAP_ADJ$ uniforms will always be the special #v $dyn_c_empire_of_japan$ uniforms#! from the base game."
+    setting_WCR_vanilla_JAP_uniforms_desc: "The style of $JAP_ADJ$ uniforms will always be the special #v $dyn_c_empire_of_japan$ uniforms#! from the base game, except when the #v $setting_WCR_disable_influences$#! rule is active."
     
     rule_WCR_westernize_immigrants:             "#yellow WCR#! | Always Westernize Immigrants"
     setting_WCR_westernize_immigrants_yes:      "$WCR_rule_yes$"

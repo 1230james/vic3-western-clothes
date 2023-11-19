@@ -48,6 +48,18 @@ WCR_ruler_has_german_influence_trigger = {
         }
     }
 }
+WCR_ruler_has_russian_influence_trigger = {
+    scope:character ?= {
+        owner ?= {
+            has_variable = WCR_ruler_influence
+            THIS.var:WCR_ruler_influence = 5
+        }
+        home_country ?= {
+            has_variable = WCR_ruler_influence
+            THIS.var:WCR_ruler_influence = 5
+        }
+    }
+}
 WCR_ruler_has_domestic_influence_trigger = {
     scope:character ?= {
         owner ?= {
@@ -65,6 +77,7 @@ WCR_ruler_has_no_influence_trigger = {
     WCR_ruler_has_british_influence_trigger  = no
     WCR_ruler_has_french_influence_trigger   = no
     WCR_ruler_has_german_influence_trigger   = no
+    WCR_ruler_has_russian_influence_trigger  = no
     WCR_ruler_has_domestic_influence_trigger = no
 }
 
@@ -164,6 +177,30 @@ WCR_army_has_german_influence_trigger = {
         }
     }
 }
+WCR_army_has_russian_influence_trigger = {
+    OR = {
+        scope:pop ?= {
+            owner ?= {
+                has_variable = WCR_army_influence
+                THIS.var:WCR_army_influence = 5
+            }
+            home_country ?= {
+                has_variable = WCR_army_influence
+                THIS.var:WCR_army_influence = 5
+            }
+        }
+        scope:character ?= {
+            owner ?= {
+                has_variable = WCR_army_influence
+                THIS.var:WCR_army_influence = 5
+            }
+            home_country ?= {
+                has_variable = WCR_army_influence
+                THIS.var:WCR_army_influence = 5
+            }
+        }
+    }
+}
 WCR_army_has_domestic_influence_trigger = {
     OR = {
         scope:pop ?= {
@@ -193,6 +230,7 @@ WCR_army_has_no_influence_trigger = {
     WCR_army_has_british_influence_trigger  = no
     WCR_army_has_french_influence_trigger   = no
     WCR_army_has_german_influence_trigger   = no
+    WCR_army_has_russian_influence_trigger  = no
     WCR_army_has_domestic_influence_trigger = no
 }
 
@@ -292,6 +330,30 @@ WCR_navy_has_german_influence_trigger = {
         }
     }
 }
+WCR_navy_has_russian_influence_trigger = {
+    OR = {
+        scope:pop ?= {
+            owner ?= {
+                has_variable = WCR_navy_influence
+                THIS.var:WCR_navy_influence = 5
+            }
+            home_country ?= {
+                has_variable = WCR_navy_influence
+                THIS.var:WCR_navy_influence = 5
+            }
+        }
+        scope:character ?= {
+            owner ?= {
+                has_variable = WCR_navy_influence
+                THIS.var:WCR_navy_influence = 5
+            }
+            home_country ?= {
+                has_variable = WCR_navy_influence
+                THIS.var:WCR_navy_influence = 5
+            }
+        }
+    }
+}
 WCR_navy_has_domestic_influence_trigger = {
     OR = {
         scope:pop ?= {
@@ -321,5 +383,6 @@ WCR_navy_has_no_influence_trigger = {
     WCR_navy_has_british_influence_trigger  = no
     WCR_navy_has_french_influence_trigger   = no
     WCR_navy_has_german_influence_trigger   = no
+    WCR_navy_has_russian_influence_trigger  = no
     WCR_navy_has_domestic_influence_trigger = no
 }

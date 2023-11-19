@@ -181,7 +181,29 @@ WCR_navy_clothes_trigger = {
 # Used to control if westernization decision can be taken
 WCR_can_start_westernizing_trigger = {
     OR = {
-        # Option A: Be a subject of a westernized nation
+        # Option A: Mixed WCR+Vanilla requirements for qualifying nations if game rule is set
+        trigger_if = {
+            limit = {
+                c:KOR ?= THIS
+                has_game_rule = WCR_mixed_KOR_westernization
+            }
+            custom_tooltip = {
+                text = WCR_tt_KOR_req_bypass
+                has_variable = KOR_korean_empire_declared
+            }
+        }
+        trigger_if = {
+            limit = {
+                c:JAP ?= THIS
+                has_game_rule = WCR_mixed_JAP_westernization
+            }
+            custom_tooltip = {
+                text = WCR_tt_JAP_req_bypass
+                has_variable = meiji_restoration_complete
+            }
+        }
+        
+        # Option B: Be a subject of a westernized nation
         AND = {
             is_subject = yes
             trigger_if = {
@@ -206,7 +228,7 @@ WCR_can_start_westernizing_trigger = {
             }
         }
         
-        # Option B: Progressives have sufficient clout
+        # Option C: Progressives have sufficient clout
         AND = {
             # Traditionalists cannot be powerful
             AND = {
@@ -312,6 +334,20 @@ WCR_is_using_vanilla_rules = {
         AND = {
             c:JAP ?= THIS
             has_game_rule = WCR_vanilla_JAP_westernization
+        }
+    }
+}
+
+# Checks if country is affected by a vanilla uniform game rule (thus bypassing the style selection)
+WCR_has_vanilla_uniform_rule = {
+    OR = {
+        AND = {
+            c:KOR ?= THIS
+            has_game_rule = WCR_vanilla_KOR_uniforms
+        }
+        AND = {
+            c:JAP ?= THIS
+            has_game_rule = WCR_vanilla_JAP_uniforms
         }
     }
 }

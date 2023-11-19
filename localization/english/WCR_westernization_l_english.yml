@@ -18,7 +18,10 @@ l_english:
     # Tooltips
     WCR_tt_overlord_westernized_sub: "[GetPlayer.GetOverlord.GetName] is #v westernized#!."
     WCR_tt_overlord_westernized_ind: "The [concept_overlord] of [GetPlayer.GetName] is #v westernized#!."
-    WCR_tt_ruler_support: 1            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] supports any of the [Concept('concept_interest_group', '$concept_interest_groups$')] below:"
+    WCR_tt_ruler_support:            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] supports any of the [Concept('concept_interest_group', '$concept_interest_groups$')] below:"
+    
+    WCR_tt_KOR_req_bypass: "The #b $dyn_c_empire_of_korea$#! has been proclaimed."
+    WCR_tt_JAP_req_bypass: "The #b $je_meiji_restoration$#! [concept_journal_entry] has been completed."
     
     # Modifiers
     WCR_westernized_modifier:         "Recently Westernized"
@@ -50,18 +53,18 @@ l_english:
     
     WCR_powerful_bonus_reason: "Westernization will #v increase#! by #p 1%#! for each of the following that is true:\n- $WCR_ig_intelligentsia$ are [concept_powerful]\n- $WCR_ig_industrialists$ are [concept_powerful]\n- $WCR_ig_armed_forces$ are [concept_powerful]\n- $WCR_ig_trade_unions$ are [concept_powerful]"
     
-    WCR_influential_bonus_reason: "Westernization will #v increase#! by #p.5%#! for each of the following that is true:\n- $WCR_ig_intelligentsia$ are [concept_influential]\n- $WCR_ig_industrialists$ are [concept_influential]\n- $WCR_ig_armed_forces$ are [concept_influential]\n- $WCR_ig_trade_unions$ are [concept_influential]"
+    WCR_influential_bonus_reason: "Westernization will #v increase#! by #p 0.5%#! for each of the following that is true:\n- $WCR_ig_intelligentsia$ are [concept_influential]\n- $WCR_ig_industrialists$ are [concept_influential]\n- $WCR_ig_armed_forces$ are [concept_influential]\n- $WCR_ig_trade_unions$ are [concept_influential]"
     
     WCR_powerful_malus_reason: "Westernization will #v decrease#! by #n 1%#! for each of the following that is true:\n- $WCR_ig_landowners$ are [concept_powerful]\n- $WCR_ig_devout$ are [concept_powerful]\n- $WCR_ig_rural_folk$ are [concept_powerful]\n- $WCR_ig_petty_bourgeoisie$ are [concept_powerful]"
     
     WCR_GGGG_bonus_reason_blank: ""
     WCR_GGGG_bonus_reason: "\n\nWesternization will #v increase#! by #p [Add_CFixedPoint(SCOPE.ScriptValue('GGGG_sv_pm_usage_full_dress'), SCOPE.ScriptValue('GGGG_sv_pm_usage_helmets_drab_caps_coats'))|2]%#! due to your current adoption of #v $pm_GGGG_full_dress$#!, #v $pm_GGGG_modern_uniform$#!, and/or #v $pm_GGGG_modern_uniform_navy$#! across #bold all military units#!."
     
-    WCR_westernized_relations_reason: "Westernization will #v increase#! by an extra #p 10%#! of the #v current monthly rate#! if we have $relations_amicable$ [concept_relations] (#v 50#! or higher) with any westernized nation."
+    WCR_westernized_relations_reason: "Westernization will #v increase#! by an extra #p0%#! of the #v current monthly rate#! if we have $relations_amicable$ [concept_relations] (#v 50#! or higher) with any westernized nation."
     
     WCR_no_backtracking_reason: "In the event that monthly westernization progress is determined to be #n negative#!, westernization progress will halt for that month. It will never go backwards."
     
-    WCR_ig_opinion_reason: "For every #v 25%#! westernization progresses:\n- $WCR_ig_intelligentsia$ will gain #p 1#! [concept_approval]\n- $WCR_ig_industrialists$ will gain #p 1#! [concept_approval]\n- $WCR_ig_armed_forces$ will gain #p 1#! [concept_approval]\n- $WCR_ig_trade_unions$ will gain #p 1#! [concept_approval]\n- $WCR_ig_landowners$ will lose #n 1#! [concept_approval]\n- $WCR_ig_devout$ will lose #n 1#! [concept_approval]\n- $WCR_ig_rural_folk$ will lose #n 1#! [concept_approval]\n- $WCR_ig_petty_bourgeoisie$ will lose #n 1#! [concept_approval]\n\nUpon #v completion#! of westernization, the total [concept_approval] gained or lost will decay over a long period of time."
+    WCR_ig_opinion_reason: "For every #v 25%#! westernization progresses:\n- $WCR_ig_intelligentsia$ will gain #p#! [concept_approval]\n- $WCR_ig_industrialists$ will gain #p#! [concept_approval]\n- $WCR_ig_armed_forces$ will gain #p#! [concept_approval]\n- $WCR_ig_trade_unions$ will gain #p#! [concept_approval]\n- $WCR_ig_landowners$ will lose #n#! [concept_approval]\n- $WCR_ig_devout$ will lose #n#! [concept_approval]\n- $WCR_ig_rural_folk$ will lose #n#! [concept_approval]\n- $WCR_ig_petty_bourgeoisie$ will lose #n#! [concept_approval]\n\nUpon #v completion#! of westernization, the total [concept_approval] gained or lost will decay over a long period of time."
     
     WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_powerful_bonus_reason$\n\n$WCR_influential_bonus_reason$\n\n$WCR_powerful_malus_reason$[SCOPE.sCountry('this_country').GetCustom('WCR_cl_GGGG_bonus_reason')]\n\n$WCR_westernized_relations_reason$\n\n$WCR_no_backtracking_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason$\n\n$WCR_LONG_DELIMITER$" 
     
@@ -73,7 +76,7 @@ l_english:
     WCR_je_westernization_status_0_king_heir: "Westernization has just begun, with [GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] and [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')] setting examples for the nation."
     WCR_je_westernization_status_0_neither:   "Westernization has just begun in our country."
     
-    WCR_je_westernization_status_5: 1 "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetLeader.GetCustom('GetUniversalFullName')], [Concept('concept_commander', '$concept_commanders$')], [GetPopType('officers').GetName], and [GetPopType('bureaucrats').GetName] have been issued western uniforms."
+    WCR_je_westernization_status_5: "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetLeader.GetCustom('GetUniversalFullName')], [Concept('concept_commander', '$concept_commanders$')], [GetPopType('officers').GetName], and [GetPopType('bureaucrats').GetName] have been issued western uniforms."
     
     WCR_je_westernization_status_10:         "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_10')]" 
     WCR_je_westernization_status_10_both:    "[GetPopType('soldiers').GetName] and [GetPopType('clerks').GetName] have been issued western uniforms, while [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] and [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] have begun to set the example for their peers."
