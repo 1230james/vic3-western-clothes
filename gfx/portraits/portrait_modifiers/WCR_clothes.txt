@@ -296,6 +296,12 @@
             }
             accessory = {
                 mode = add
+                gene = top_layer
+                template = no_top_layer
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
                 gene = necklaces
                 template = no_necklace
                 range = { 0 1 }
@@ -407,8 +413,9 @@
             base = 0
             modifier = {
                 add = 2000
-                WCR_has_completed_westernization_trigger = yes
                 middle_clothes_pop_trigger = yes
+                clergy_clothes_pop_trigger = no
+                WCR_has_completed_westernization_trigger = yes
             }
         }
     }
@@ -1378,6 +1385,362 @@
                     AND = {
                         WCR_navy_clothes_trigger = yes
                         WCR_navy_has_german_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_korean_empire_military_clothes = {
+        dna_modifiers = {
+             accessory = {
+                mode = add
+                gene = coats
+                template = korean_empire_coats
+                range = { 0 0.5 } # Limited to single-breasted jacket so the aiguillette works properly
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = all_aiguillettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                range = { 0.34 1 } #
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 11000 # Vanilla: 10000
+                OR = {
+                    AND = {
+                        OR = {
+                            has_game_rule = WCR_modded_KOR_westernization
+                            has_game_rule = WCR_mixed_KOR_westernization
+                        }
+                        WCR_has_completed_westernization_trigger = yes
+                        scope:character ?= {
+                            exists = owner
+                            c:KOR ?= owner
+                        }
+                        OR = {
+                            AND = {
+                                monarchy_clothes_trigger = yes
+                                # military_clothes_trigger = yes
+                                WCR_ruler_has_domestic_influence_trigger = yes
+                            }
+                            AND = {
+                                WCR_army_clothes_trigger = yes
+                                WCR_army_has_domestic_influence_trigger = yes
+                            }
+                            AND = {
+                                WCR_navy_clothes_trigger = yes
+                                WCR_navy_has_domestic_influence_trigger = yes
+                            }
+                        }
+                    }
+                    AND = {
+                        has_game_rule = WCR_vanilla_KOR_westernization
+                        scope:character ?= {
+                            # age > 10
+                            # culture = cu:korean
+                            owner ?= {
+                                c:KOR ?= this
+                                has_variable = KOR_korean_empire_declared
+                            }
+                        }
+                        OR = {
+                            military_clothes_trigger = yes
+                            monarchy_clothes_trigger = yes
+                            AND = {
+                                armed_forces_clothes_trigger = yes
+                                politician_clothes_trigger = yes
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    WCR_korean_empire_soldier_clothes = { 
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = korean_empire_coats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                range = { 0.34 1 } # There's three colors in the gene, the second being blue and the third being red.
+            }
+
+            #accessory = {
+            #    mode = add
+            #    gene = epaulettes
+            #    template = all_epaulettes
+            #    range = { 0.5 0.8 } # For the randomness to work correctly
+            #}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+        } 
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 11000 # Vanilla: 10000
+                OR = {
+                    AND = {
+                        OR = {
+                            has_game_rule = WCR_modded_KOR_westernization
+                            has_game_rule = WCR_mixed_KOR_westernization
+                        }
+                        WCR_has_completed_westernization_trigger = yes
+                        scope:pop ?= {
+                            exists = owner
+                            c:KOR ?= owner
+                        }
+                        OR = {
+                            AND = {
+                                WCR_army_clothes_trigger = yes
+                                WCR_army_has_domestic_influence_trigger = yes
+                            }
+                            AND = {
+                                WCR_navy_clothes_trigger = yes
+                                WCR_navy_has_domestic_influence_trigger = yes
+                            }
+                        }
+                    }
+                    AND = {
+                        has_game_rule = WCR_vanilla_KOR_westernization
+                        scope:pop ?= {
+                            # culture = cu:korean
+                            owner ?= {
+                                c:KOR ?= this
+                                has_variable = KOR_korean_empire_declared
+                            }
+                        }
+                        OR = {
+                            soldier_clothes_pop_trigger = yes
+                            officers_clothes_pop_trigger = yes
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_japanese_meiji_military_clothes = {
+        dna_modifiers = {
+             accessory = {
+                mode = add
+                gene = coats
+                template = french_coats
+                range = { 0 0.5 } # Limited to single-breasted jacket so the aiguillette works properly
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = all_aiguillettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                range = { 0.34 1 } #
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = no_top_layer
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = no_belt
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 11000 # Vanilla: 10000
+                OR = {
+                    AND = {
+                        OR = {
+                            has_game_rule = WCR_modded_JAP_westernization
+                            has_game_rule = WCR_mixed_JAP_westernization
+                        }
+                        WCR_has_completed_westernization_trigger = yes
+                        scope:character ?= {
+                            exists = owner
+                            c:JAP ?= owner
+                        }
+                        OR = {
+                            AND = {
+                                monarchy_clothes_trigger = yes
+                                # military_clothes_trigger = yes
+                                WCR_ruler_has_domestic_influence_trigger = yes
+                            }
+                            AND = {
+                                WCR_army_clothes_trigger = yes
+                                WCR_army_has_domestic_influence_trigger = yes
+                            }
+                            AND = {
+                                WCR_navy_clothes_trigger = yes
+                                WCR_navy_has_domestic_influence_trigger = yes
+                            }
+                        }
+                    }
+                    AND = {
+                        has_game_rule = WCR_vanilla_JAP_westernization
+                        scope:character ?= {
+                            age > 10
+                            # culture = cu:japanese
+                            owner ?= {
+                                c:JAP ?= this
+                                has_variable = meiji_restoration_complete
+                            }
+                        }
+                        OR = {
+                            military_clothes_trigger = yes
+                            monarchy_clothes_trigger = yes
+                            AND = {
+                                armed_forces_clothes_trigger = yes
+                                politician_clothes_trigger = yes
+                            }
+                        }   
+                    }
+                }
+            }
+        }
+    }
+
+    WCR_japanese_meiji_soldier_clothes = { 
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_coats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                range = { 0.34 1 } # There's three colors in the gene, the second being blue and the third being red.
+            }
+
+            #accessory = {
+            #    mode = add
+            #    gene = epaulettes
+            #    template = all_epaulettes
+            #    range = { 0.5 0.8 } # For the randomness to work correctly
+            #}
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = outfits
+                template = no_outfit
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = no_top_layer
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = no_belt
+                range = { 0 1 }
+            }
+        } 
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 11000 # Vanilla: 10000
+                OR = {
+                    AND = {
+                        OR = {
+                            has_game_rule = WCR_modded_JAP_westernization
+                            has_game_rule = WCR_mixed_JAP_westernization
+                        }
+                        WCR_has_completed_westernization_trigger = yes
+                        scope:pop ?= {
+                            exists = owner
+                            c:JAP ?= owner
+                        }
+                        OR = {
+                            AND = {
+                                WCR_army_clothes_trigger = yes
+                                WCR_army_has_domestic_influence_trigger = yes
+                            }
+                            AND = {
+                                WCR_navy_clothes_trigger = yes
+                                WCR_navy_has_domestic_influence_trigger = yes
+                            }
+                        }
+                    }
+                    AND = {
+                        has_game_rule = WCR_vanilla_JAP_westernization
+                        scope:pop ?= {
+                            # culture = cu:japanese
+                            owner ?= {
+                                c:JAP ?= this
+                                has_variable = meiji_restoration_complete
+                            }
+                        }
+                        OR = {
+                            soldier_clothes_pop_trigger = yes
+                            officers_clothes_pop_trigger = yes
+                        }
                     }
                 }
             }

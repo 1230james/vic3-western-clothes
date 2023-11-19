@@ -35,9 +35,13 @@
             modifier = {
                 add = 2000
                 WCR_has_completed_westernization_trigger = yes
+                WCR_ruler_has_domestic_influence_trigger = no
                 scope:character ?= {
                     monarchy_clothes_trigger = yes
                     age > 12
+                    owner ?= {
+                        WCR_is_using_vanilla_rules = no
+                    }
                 }
             }
         }
@@ -155,7 +159,7 @@
 
     WCR_commander_accessories = {
         dna_modifiers = {
-             accessory = {
+            accessory = {
                 mode = add
                 gene = medals
                 template = generic_medals
@@ -189,26 +193,34 @@
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 20000
                 agitator_character_trigger = no
                 WCR_has_completed_westernization_trigger = yes
                 republic_clothes_trigger = no
                 soldier_clothes_pop_trigger = no
+                scope:character ?= {
+                    owner ?= {
+                        WCR_is_using_vanilla_rules = no
+                    }
+                }
                 OR = {
                     AND = { # Generals
                         WCR_army_clothes_trigger = yes
                         WCR_army_has_american_influence_trigger = no
                         WCR_army_has_german_influence_trigger   = no
+                        WCR_army_has_domestic_influence_trigger = no
                     }
                     AND = { # Admirals
                         WCR_navy_clothes_trigger = yes
                         WCR_navy_has_american_influence_trigger = no
                         WCR_navy_has_german_influence_trigger   = no
+                        WCR_navy_has_domestic_influence_trigger = no
                     }
                     AND = { # Rulers
                         ruler_clothes_trigger = yes
                         WCR_ruler_has_american_influence_trigger = no
                         WCR_ruler_has_german_influence_trigger   = no
+                        WCR_ruler_has_domestic_influence_trigger = no
                     }
                 }
             }

@@ -16,9 +16,39 @@
             base = 0
             modifier = {
                 add = 1000
-                WCR_has_completed_westernization_trigger = yes
-                scope:pop ?= {
-                    culture = cu:japanese
+                OR = {
+                    scope:pop ?= {
+                        culture = cu:japanese
+                    }
+                    scope:character ?= {
+                        culture = cu:japanese
+                    }
+                }
+                OR = {
+                    AND = {
+                        OR = {
+                            has_game_rule = WCR_modded_JAP_westernization
+                            has_game_rule = WCR_mixed_JAP_westernization
+                        }
+                        WCR_has_completed_westernization_trigger = yes
+                    }
+                    AND = {
+                        has_game_rule = WCR_vanilla_JAP_westernization
+                        OR = {
+                            scope:pop ?= {
+                                owner ?= {
+                                    c:JAP ?= this
+                                    has_variable = meiji_restoration_complete
+                                }
+                            }
+                            scope:character ?= {
+                                owner ?= {
+                                    c:JAP ?= this
+                                    has_variable = meiji_restoration_complete
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

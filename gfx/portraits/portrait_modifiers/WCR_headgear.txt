@@ -388,4 +388,196 @@
         }
     }
     
+    WCR_korean_empire_monarch_headgear = { # emperor_gojong_pickelhaube.png
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = german_military_headgear
+                accessory = male_headgear_european_military_10 # pickelhaube
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2200
+                monarchy_clothes_trigger = yes
+                OR = {
+                    AND = {
+                        OR = {
+                            has_game_rule = WCR_modded_KOR_westernization
+                            has_game_rule = WCR_mixed_KOR_westernization
+                        }
+                        WCR_has_completed_westernization_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        has_game_rule = WCR_vanilla_KOR_westernization
+                        c:KOR ?= {
+                            has_variable = KOR_korean_empire_declared
+                        }
+                    }
+                }
+                scope:character ?= {
+                    exists = owner
+                    c:KOR ?= owner
+                    is_ruler = yes
+                    has_role = general
+                }
+            }
+        }
+    }
+    
+    WCR_korean_empire_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = korean_empire_military_headgear
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2200 # Vanilla: 1200
+                OR = {
+                    AND = {
+                        OR = {
+                            has_game_rule = WCR_modded_KOR_westernization
+                            has_game_rule = WCR_mixed_KOR_westernization
+                        }
+                        OR = {
+                            scope:pop ?= {
+                                exists = owner
+                                c:KOR ?= owner
+                            }
+                            scope:character ?= {
+                                exists = owner
+                                c:KOR ?= owner
+                            }
+                        }
+                        agitator_character_trigger = no
+                        WCR_has_completed_westernization_trigger = yes
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        has_game_rule = WCR_vanilla_KOR_westernization
+                        scope:character ?= {
+                            # culture = cu:korean
+                            owner ?= {
+                                c:KOR ?= this
+                                has_variable = KOR_korean_empire_declared
+                            }
+                        }
+                        OR = {
+                            scope:character = {
+                                has_role = general
+                            }
+                            AND = {
+                                politician_clothes_trigger = yes
+                                armed_forces_clothes_trigger = yes
+                                # scope:character ?= {
+                                    # NOT = { has_ideology = ideology:ideology_traditionalist }
+                                # }
+                            }
+                        }
+                        agitator_character_trigger = no
+                    }
+                    AND = {
+                        has_game_rule = WCR_vanilla_KOR_westernization
+                        scope:pop ?= {
+                            # culture = cu:korean
+                            owner ?= {
+                                c:KOR ?= this
+                                has_variable = KOR_korean_empire_declared
+                            }
+                        }
+                        OR = {
+                            soldier_clothes_pop_trigger = yes
+                            officers_clothes_pop_trigger = yes
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    japanese_meiji_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = european_military_02_colors
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2200 # Vanilla: 1200
+                OR = {
+                    AND = {
+                        OR = {
+                            has_game_rule = WCR_modded_JAP_westernization
+                            has_game_rule = WCR_mixed_JAP_westernization
+                        }
+                        OR = {
+                            scope:pop ?= {
+                                exists = owner
+                                c:JAP ?= owner
+                            }
+                            scope:character ?= {
+                                exists = owner
+                                c:JAP ?= owner
+                            }
+                        }
+                        agitator_character_trigger = no
+                        WCR_has_completed_westernization_trigger = yes
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        has_game_rule = WCR_vanilla_JAP_westernization
+                        scope:character ?= {
+                            # culture = cu:japanese
+                            owner = {
+                                c:JAP ?= this
+                                has_variable = meiji_restoration_complete
+                            }
+                        }
+                        OR = {
+                            scope:character = {
+                                has_role = general
+                            }
+                            AND = {
+                                politician_clothes_trigger = yes
+                                armed_forces_clothes_trigger = yes
+                                # scope:character ?= {
+                                    # NOT = { has_ideology = ideology:ideology_traditionalist }
+                                # }
+                            }
+                        }
+                        agitator_character_trigger = no
+                    }
+                    AND = {
+                        has_game_rule = WCR_vanilla_JAP_westernization
+                        scope:pop ?= {
+                            # culture = cu:japanese
+                            owner = {
+                                c:JAP ?= this
+                                has_variable = meiji_restoration_complete
+                            }
+                        }
+                        OR = {
+                            soldier_clothes_pop_trigger = yes
+                            officers_clothes_pop_trigger = yes
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 }
