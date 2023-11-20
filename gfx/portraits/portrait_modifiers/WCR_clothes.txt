@@ -2,8 +2,11 @@
     usage = game
     selection_behavior = weighted_random
 
-    ## WCR - Fixes/Vanilla Overrides ##
+    ## WCR - Vanilla Overrides ##
     
+    # Preserve vanilla Korean pops behavior
+    # As of 1.5.9: soldiers -> chinese clothes, officers -> hanbok, other middle strata -> mix of both
+    # Why? idk, ask PDX
     WCR_korean_pop_clothes = {
         dna_modifiers = {
             accessory = {
@@ -44,15 +47,27 @@
                 template = no_headgear
                 range = { 0 1 }
             }
+            accessory = {
+                mode = add
+                gene = shirt
+                template = no_shirts
+                range = { 0 1 }
+            }
         } 
 
         weight = {
             base = 0
             modifier = {
-                add = 1001 # Vanilla: 500
+                add = 500
                 scope:pop ?= {
                     culture = cu:korean
                 }
+                OR = {
+                    WCR_army_clothes_trigger = yes
+                    WCR_navy_clothes_trigger = yes
+                    middle_clothes_pop_trigger = yes
+                }
+                WCR_has_completed_westernization_trigger = no
             }
         }
     }
@@ -102,7 +117,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 1002 # Vanilla: 100; also accounting for WCR_korean_pop_clothes
+                add = 100
                 OR = {
                     scope:character ?= {
                         has_culture = cu:korean
@@ -116,117 +131,104 @@
                         }
                     }
                 }
-            }
-        }
-    }
-    
-    WCR_vanilla_prussian_clothes = { # Make Prussia-formed NGF and Germany keep Prussian uniforms
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template = prussian_coats
-                range = { 0 1 } # For the randomness to work correctly
-            }
-
-            # no aiguillettes because they don't work with double-breasted coats, which is all the Prussians have
-
-            accessory = {
-                mode = add
-                gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-
-        weight = {
-            base = 0
-            modifier = {
-                add = 5001 # Vanilla: 5000
-                scope:character ?= {
-                    home_country ?= {
-                        OR = {
-                            c:PRU ?= this
-                            was_formed_from = PRU # Catches NGF and Prussia-formed Germany
-                        }
-                    }
-                    age > 10
-                    OR = {
-                        AND = {
-                            is_ruler = yes
-                            home_country = {
-                                has_law = law_type:law_monarchy
-                            }
-                        }
-                        AND = {
-                            has_role = politician
-                            is_ruler = no
-                            is_interest_group_type = ig_armed_forces
-                        }
-                    }
+                OR = {
+                    WCR_army_clothes_trigger = yes
+                    WCR_navy_clothes_trigger = yes
                 }
+                WCR_has_completed_westernization_trigger = no
             }
         }
     }
     
-    WCR_vanilla_prussian_soldier_clothes = { 
+    WCR_chinese_common_clothes = {
         dna_modifiers = {
             accessory = {
                 mode = add
+                gene = outfits
+                template = chinese_common_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
                 gene = coats
-                template = prussian_coats
-                range = { 0 0.2 } # For the randomness to work correctly
+                template = no_coat
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = no_aiguillettes
+                range = { 0 1 }
             }
             accessory = {
                 mode = add
                 gene = legwear
-                template = european_legwear
-                range = { 0 1 } # For the randomness to work correctly
+                template = no_legwear
+                range = { 0 1 }
             }
-
             accessory = {
                 mode = add
                 gene = epaulettes
-                template = all_epaulettes
-                range = { 0.1 0.2 } # For the randomness to work correctly
+                template = no_epaulette
+                range = { 0 1 }
             }
-        } 
-
+            accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear
+                range = { 0 1 }
+            }
+        }
         weight = {
             base = 0
             modifier = {
-                add = 10001 # Vanilla: 10000
-                OR = {
-                    AND = {
-                        scope:pop ?= {
-                            home_country ?= {
-                                OR = {
-                                    c:PRU ?= this
-                                    was_formed_from = PRU
-                                }
-                            }
-                        }
-                        OR = {
-                            soldier_clothes_pop_trigger = yes
-                            officers_clothes_pop_trigger = yes
-                        }
-                    }
-                    AND = {
-                        scope:character ?= {
-                            age > 10
-                            OR = {
-                                has_role = general
-                                has_role = admiral
-                            }
-                            home_country ?= {
-                                OR = {
-                                    c:PRU ?= this
-                                    was_formed_from = PRU
-                                }
-                            }
-                        }     
+                add = 1000
+                scope:pop ?= {
+                    owner ?= {
+                        c:KOR ?= THIS
                     }
                 }
+                soldier_clothes_pop_trigger = yes
+                WCR_has_completed_westernization_trigger = no
+                PCT_is_active_trigger = no
+            }
+        }
+    }
+    
+    WCR_chinese_middle_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = chinese_common_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
+            accessory = {
+                mode = add
+                gene = shirt
+                template = no_shirts
+                range = { 0 1 }
+            }
+        } 
+        weight = {
+            base = 0
+            modifier = {
+                add = 500
+                scope:pop ?= {
+                    owner ?= {
+                        c:KOR ?= THIS
+                    }
+                }
+                OR = {
+                    middle_clothes_pop_trigger = yes
+                    clergy_clothes_pop_trigger = yes
+                }
+                WCR_has_completed_westernization_trigger = no
+                PCT_is_active_trigger = no
             }
         }
     }
@@ -550,7 +552,7 @@
             accessory = {
                 mode = add
                 gene = civilian_coats
-                template = no_coat
+                template = no_civilian_coat
                 range = { 0 1 } # For the randomness to work correctly
             }
             accessory = {

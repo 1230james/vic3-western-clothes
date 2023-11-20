@@ -2,28 +2,73 @@
     usage = game
     selection_behavior = weighted_random
 
-    ## WCR - Fixes ##
+    ## WCR - Vanilla Overrides ##
     
-    WCR_academic_clothes = { # this was such a simple fix; idk why they didnt just do it
-        dna_modifiers = {    # better open a half-point story up on the agile board :kekw:
+    # Ethnic hats to preserve poor pop westernization rule behaviors
+    # Most or all of these should just be clones of vanilla definitions
+    WCR_chinese_common_headgear = {
+        dna_modifiers = {
             accessory = {
                 mode = add
-                gene = headgear         # according to the PE, it's in headgear, not in props
-                template = academic_cap # and it's called academic_cap, not academic_cap_01
+                gene = headgear
+                template = chinese_common_headgear
                 range = { 0 1 } # For the randomness to work correctly
             }
         }
         weight = {
             base = 0
             modifier = {
-                add = 200
-                academics_clothes_pop_trigger = yes
-                WCR_is_westernized_trigger    = yes # want to include Europe & co. too in this case
+                add = 100
+                chinese_manchu_queue_hairstyle_pops_trigger = yes
+                poor_clothes_pop_trigger = yes
             }
-            modifier = {   # Nondisruptive (for Europeans) way to apply it to nations that finished westernization
-                add = 1900 # (i.e. Europe gets the normal weight & Asia, etc. get 2100 to match other WCR definitions
-                academics_clothes_pop_trigger = yes
-                WCR_has_completed_westernization_trigger = yes
+        }
+    }
+    
+    WCR_japanese_common_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = Japanese_common_headgear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                japanese_clothes_pop_trigger = yes
+                scope:pop ?= {
+                    OR = {
+                        is_pop_type = farmers
+                        is_pop_type = peasants
+                        is_pop_type = laborers
+                        AND = {
+                            is_pop_type = machinists
+                            WCR_has_completed_westernization_trigger = no
+                        }
+                    }
+                }   
+            }
+        }
+    }
+    
+    WCR_native_american_bandanna = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = native_american_common_headgear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                native_american_clothes_pop_trigger = yes   
             }
         }
     }

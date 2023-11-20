@@ -2,7 +2,7 @@
 
 l_english:
     WCR_AWC_behavior_text:     "This is the original behavior from #bold Adopt Western Clothes#!."
-    WCR_vanilla_behavior_text: "This is the original behavior from #bold unmodded games#!."
+    WCR_vanilla_behavior_text: "This is the original behavior from #bold the base game#!."
     
     WCR_rule_yes: "#b Yes#!"
     WCR_rule_no:  "#b No#!"
@@ -71,20 +71,20 @@ l_english:
     setting_WCR_westernize_traditionalists_no:       "$WCR_rule_no$"
     setting_WCR_westernize_traditionalists_no_desc:  "[Concept('concept_character', '$concept_characters$')] with the #v $ideology_traditionalist$#! [concept_ideology] #n will not#! westernize. They will still westernize if they are the [concept_leader] of the #v $ig_armed_forces$#! [concept_interest_group] or are a [concept_commander]."
     
-    rule_WCR_westernize_ig_rural_folk:             "#yellow WCR#! | Westernize #green $ig_rural_folk$#! IG"
+    rule_WCR_westernize_ig_rural_folk:             "#yellow WCR#! | Westernize the #green @rural_folk! $ig_rural_folk$#!"
     setting_WCR_westernize_ig_rural_folk_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_ig_rural_folk_yes_desc: "The [concept_leader] of the #v $ig_rural_folk$#! [concept_interest_group] #p will#! westernize."
+    setting_WCR_westernize_ig_rural_folk_yes_desc: "The [concept_leader] of the #v @rural_folk! $ig_rural_folk$#! [concept_interest_group] #p will#! westernize."
     setting_WCR_westernize_ig_rural_folk_no:       "$WCR_rule_no$"
-    setting_WCR_westernize_ig_rural_folk_no_desc:  "The [concept_leader] of the #v $ig_rural_folk$#! [concept_interest_group] #n will not#! westernize. $WCR_AWC_behavior_text$"
+    setting_WCR_westernize_ig_rural_folk_no_desc:  "The [concept_leader] of the #v @rural_folk! $ig_rural_folk$#! [concept_interest_group] #n will not#! westernize. $WCR_AWC_behavior_text$"
     
-    rule_WCR_westernize_ig_devout:             "#yellow WCR#! | Westernize #blue $ig_devout$#! IG"
+    rule_WCR_westernize_ig_devout:             "#yellow WCR#! | Westernize the #blue @devout! $ig_devout$#!"
     setting_WCR_westernize_ig_devout_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_ig_devout_yes_desc: "The [concept_leader] of the #v $ig_devout$#! [concept_interest_group] #p will#! westernize."
+    setting_WCR_westernize_ig_devout_yes_desc: "The [concept_leader] of the #v @devout! $ig_devout$#! [concept_interest_group] #p will#! westernize."
     setting_WCR_westernize_ig_devout_no:       "$WCR_rule_no$"
-    setting_WCR_westernize_ig_devout_no_desc:  "The [concept_leader] of the #v $ig_devout$#! [concept_interest_group] #n will not#! westernize. $WCR_AWC_behavior_text$"
+    setting_WCR_westernize_ig_devout_no_desc:  "The [concept_leader] of the #v @devout! $ig_devout$#! [concept_interest_group] #n will not#! westernize. $WCR_AWC_behavior_text$"
     
     rule_WCR_westernize_poor_pop_clothing:             "#yellow WCR#! | Westernize Poor Pop Clothing"
     setting_WCR_westernize_poor_pop_clothing_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_poor_pop_clothing_yes_desc: "Farmers, peasants, and laborers will westernize #v their entire outfit#!. They will also #v only wear western hats#!."
+    setting_WCR_westernize_poor_pop_clothing_yes_desc: "#yellow $farmers$#!, #yellow $peasants$#!, and #yellow $laborers$#! will westernize #v their entire outfit#!. They will also #v only wear western hats#!."
     setting_WCR_westernize_poor_pop_clothing_no:       "$WCR_rule_no$"
-    setting_WCR_westernize_poor_pop_clothing_no_desc:  "Farmers, peasants, and laborers will only westernize #v their hats#! by #v mixing them with their original hats#!. Machinists will still westernize completely. $WCR_AWC_behavior_text$"
+    setting_WCR_westernize_poor_pop_clothing_no_desc:  "#yellow $farmers$#!, #yellow $peasants$#!, and #yellow $laborers$#! will only westernize #v their hats#! by #v mixing them with their original hats#!. #yellow $machinists$#! will still westernize completely. $WCR_AWC_behavior_text$"

@@ -104,7 +104,7 @@ WCR_westernize_traditionalists = {
 # Allows rural folk IG leader to avoid westernizing if set to no
 # AWC behavior: no
 WCR_westernize_ig_rural_folk = {
-    default = WCR_westernize_ig_rural_folk_no
+    default = WCR_westernize_ig_rural_folk_yes
     
     WCR_westernize_ig_rural_folk_yes = {}
     WCR_westernize_ig_rural_folk_no  = {}
