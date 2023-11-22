@@ -2,105 +2,108 @@
 
 l_simp_chinese:
     # Journal entries
-    WCR_je_westernization: 0 "西洋化"
-    WCR_je_westernization_reason: 0 "如果我们要在这个快速工业化的世界上成为一个重要的大国，并防止失去我们的主权，我们的国家必须与西方人平起平坐，不管这要付出什么代价。在这其中包括必须将一部分西方习俗融入我们的社会。\n\n$WCR_je_westernization_reason_long$"
+    WCR_je_westernization:        "西洋化"
+    WCR_je_westernization_goal:   "" # Defined to silence errors
+    WCR_je_westernization_reason: "如果我们要在这个快速工业化的世界上成为一个重要的大国，并防止失去我们的主权，我们的国家必须与西方人平起平坐，不管这要付出什么代价。在这其中包括必须将一部分西方习俗融入我们的社会。\n\n$WCR_je_westernization_reason_long$"
     
     # Decisions
-    WCR_de_start_westernization: 0 "开始进行西洋化"
-    WCR_de_start_westernization_desc: 0 "在你的国家开始西洋化进程。\n在西洋化完成之后，大多数的人群与角色将会穿上西式服装。"
-    WCR_de_start_westernization_tooltip: 0 "$WCR_de_start_westernization$"
+    WCR_de_start_westernization:         "开始进行西洋化"
+    WCR_de_start_westernization_desc:    "在你的国家开始西洋化进程。\n在西洋化完成之后，大多数的人群与角色将会穿上西式服装。"
+    WCR_de_start_westernization_tooltip: "$WCR_de_start_westernization$"
     
-    WCR_de_simple_westernization: 0 "采用西洋样式服装"
-    WCR_de_simple_westernization_desc: 0 "如果我们想要与西方列强一同站立在世界舞台之上，我们就必须加入西方列强的生活方式。我们的人民将会采用西洋服装作为这个目标的一部分。"
-    WCR_de_simple_westernization_tooltip: 0 "$WCR_de_simple_westernization$"
+    WCR_de_simple_westernization:         "采用西洋样式服装"
+    WCR_de_simple_westernization_desc:    "如果我们想要与西方列强一同站立在世界舞台之上，我们就必须加入西方列强的生活方式。我们的人民将会采用西洋服装作为这个目标的一部分。"
+    WCR_de_simple_westernization_tooltip: "$WCR_de_simple_westernization$"
     
     # Tooltips
-    WCR_tt_overlord_westernized_sub: 0 "[GetPlayer.GetOverlord.GetName]已经#v 西洋化#!。"
-    WCR_tt_overlord_westernized_ind: 0 "[GetPlayer.GetName]的[concept_overlord]已经#v 西洋化#!。"
-    WCR_tt_ruler_support: 0 "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]支持以下任一[Concept('concept_interest_group', '$concept_interest_groups$')]："
+    WCR_tt_overlord_westernized_sub: "[GetPlayer.GetOverlord.GetName]已经#v 西洋化#!。"
+    WCR_tt_overlord_westernized_ind: "[GetPlayer.GetName]的[concept_overlord]已经#v 西洋化#!。"
+    WCR_tt_ruler_support:            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]支持以下任一[Concept('concept_interest_group', '$concept_interest_groups$')]："
+    
+    WCR_tt_KOR_req_bypass: "The #b $dyn_c_empire_of_korea$#! has been proclaimed."
+    WCR_tt_JAP_req_bypass: "The #b $je_meiji_restoration$#! [concept_journal_entry] has been completed."
     
     # Modifiers
-    WCR_westernized_modifier: 0 "近期已西洋化"
-    WCR_ig_westernization_1_modifier: 0 "西化开始"
-    WCR_ig_westernization_2_modifier: 0 "$WCR_ig_westernization_1_modifier$"
-    WCR_ig_westernization_3_modifier: 0 "不完全的西洋化"
-    WCR_ig_westernization_4_modifier: 0 "$WCR_ig_westernization_3_modifier$"
-    WCR_ig_westernized_modifier: 0 "西方化国家"
+    WCR_westernized_modifier:         "近期已西洋化"
+    WCR_ig_westernization_1_modifier: "西化开始"
+    WCR_ig_westernization_2_modifier: "$WCR_ig_westernization_1_modifier$"
+    WCR_ig_westernization_3_modifier: "不完全的西洋化"
+    WCR_ig_westernization_4_modifier: "$WCR_ig_westernization_3_modifier$"
+    WCR_ig_westernized_modifier:      "西方化国家"
     
     # Events
-    WCR_ev_1_title: 0 "西方化！"
-    WCR_ev_1_desc: 0 "在充分接触西方的科学技术、社会与文化足够长时间之后，他们的生活方式中的点滴之处早已融入到我们的生活之中。"
-    WCR_ev_1_flavor: 0 "“西洋人在世界上主导着工业、学术和文化，我们所知的旧世界正在崩塌，现在是时候加入到诸列强之列了！”"
-    WCR_ev_1_a: 0 "现在我们已经准备好站立在世界舞台上了！"
+    WCR_ev_1_title:  "西方化！"
+    WCR_ev_1_desc:   "在充分接触西方的科学技术、社会与文化足够长时间之后，他们的生活方式中的点滴之处早已融入到我们的生活之中。"
+    WCR_ev_1_flavor: "“西洋人在世界上主导着工业、学术和文化，我们所知的旧世界正在崩塌，现在是时候加入到诸列强之列了！”"
+    WCR_ev_1_a:      "现在我们已经准备好站立在世界舞台上了！"
     
     # Westernization JE long text & helpers
-    WCR_LONG_DELIMITER: 0 "     @divider_start!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_end!"
+    WCR_LONG_DELIMITER: "     @divider_start!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_end!"
     
-    WCR_ig_armed_forces: 0 "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_devout: 0 "[GetInterestGroupVariant('ig_devout', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_industrialists: 0 "[GetInterestGroupVariant('ig_industrialists', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_intelligentsia: 0 "[GetInterestGroupVariant('ig_intelligentsia', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_landowners: 0 "[GetInterestGroupVariant('ig_landowners', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_petty_bourgeoisie: 0 "[GetInterestGroupVariant('ig_petty_bourgeoisie', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_rural_folk: 0 "[GetInterestGroupVariant('ig_rural_folk', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_trade_unions: 0 "[GetInterestGroupVariant('ig_trade_unions', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_armed_forces:      "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_devout:            "[GetInterestGroupVariant('ig_devout', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_industrialists:    "[GetInterestGroupVariant('ig_industrialists', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_intelligentsia:    "[GetInterestGroupVariant('ig_intelligentsia', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_landowners:        "[GetInterestGroupVariant('ig_landowners', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_petty_bourgeoisie: "[GetInterestGroupVariant('ig_petty_bourgeoisie', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_rural_folk:        "[GetInterestGroupVariant('ig_rural_folk', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_trade_unions:      "[GetInterestGroupVariant('ig_trade_unions', SCOPE.sCountry('this_country')).GetName]"
     
-    WCR_overview_reason: 0 "西化进程将#v 每月递增#!，其速率取决于下面列出的多个因素。\n\n西化目前预计下个月将增加#v [SCOPE.ScriptValue('WCR_sv_calculate_westernization_progress_delta')|2]%#!。"
+    WCR_overview_reason: "西化进程将#v 每月递增#!，其速率取决于下面列出的多个因素。\n\n西化目前预计下个月将增加#v [SCOPE.ScriptValue('WCR_sv_calculate_westernization_progress_delta')|2]%#!。"
     
-    WCR_powerful_bonus_reason: 0 "以下每一条因素将让西洋化#v 增加#!#p 1%#!：\n-$WCR_ig_intelligentsia$是[concept_powerful]\n-$WCR_ig_industrialists$是[concept_powerful]\n-$WCR_ig_armed_forces$是[concept_powerful]\n-$WCR_ig_trade_unions$是[concept_powerful]"
+    WCR_powerful_bonus_reason: "以下每一条因素将让西洋化#v 增加#!#p 1%#!：\n-$WCR_ig_intelligentsia$是[concept_powerful]\n-$WCR_ig_industrialists$是[concept_powerful]\n-$WCR_ig_armed_forces$是[concept_powerful]\n-$WCR_ig_trade_unions$是[concept_powerful]"
     
-    WCR_influential_bonus_reason: 0 "以下每一条因素将让西洋化#v 增加#!#p 0.5%#!：\n-$WCR_ig_intelligentsia$是[concept_influential]\n-$WCR_ig_industrialists$是[concept_influential]\n-$WCR_ig_armed_forces$是[concept_influential]\n-$WCR_ig_trade_unions$是[concept_influential]"
+    WCR_influential_bonus_reason: "以下每一条因素将让西洋化#v 增加#!#p 0.5%#!：\n-$WCR_ig_intelligentsia$是[concept_influential]\n-$WCR_ig_industrialists$是[concept_influential]\n-$WCR_ig_armed_forces$是[concept_influential]\n-$WCR_ig_trade_unions$是[concept_influential]"
     
-    WCR_powerful_malus_reason: 0 "以下每一条因素将让西洋化#v 减少#!#n 1%#!：\n-$WCR_ig_landowners$是[concept_powerful]\n-$WCR_ig_devout$是[concept_powerful]\n-$WCR_ig_rural_folk$是[concept_powerful]\n-$WCR_ig_petty_bourgeoisie$是[concept_powerful]"
+    WCR_powerful_malus_reason: "以下每一条因素将让西洋化#v 减少#!#n 1%#!：\n-$WCR_ig_landowners$是[concept_powerful]\n-$WCR_ig_devout$是[concept_powerful]\n-$WCR_ig_rural_folk$是[concept_powerful]\n-$WCR_ig_petty_bourgeoisie$是[concept_powerful]"
     
-    WCR_GGGG_bonus_reason_blank: 0 ""
+    WCR_GGGG_bonus_reason_blank: ""
+    WCR_GGGG_bonus_reason: "\n\n由于你在#bold 所有的军事单位#!中采用了#v $pm_GGGG_full_dress$#!、#v $pm_GGGG_modern_uniform$#!和/或者#v $pm_GGGG_modern_uniform_navy$#!，西洋化将会#v 增加#!#p [Add_CFixedPoint(SCOPE.ScriptValue('GGGG_sv_pm_usage_full_dress'), SCOPE.ScriptValue('GGGG_sv_pm_usage_helmets_drab_caps_coats'))|2]%#!。"
     
-    WCR_GGGG_bonus_reason: 0 "\n\n由于你在#bold 所有的军事单位#!中采用了#v $pm_GGGG_full_dress$#!、#v $pm_GGGG_modern_uniform$#!和/或者#v $pm_GGGG_modern_uniform_navy$#!，西洋化将会#v 增加#!#p [Add_CFixedPoint(SCOPE.ScriptValue('GGGG_sv_pm_usage_full_dress'), SCOPE.ScriptValue('GGGG_sv_pm_usage_helmets_drab_caps_coats'))|2]%#!。"
+    WCR_westernized_relations_reason: "如果我们与任何西方化国家有着$relations_amicable$[concept_relations]（#v 50#!或更高），西洋化的#v 当前每月速率#!将会额外#v 增加#!#p 10%#!。"
     
-    WCR_westernized_relations_reason: 0 "如果我们与任何西方化国家有着$relations_amicable$[concept_relations]（#v 50#!或更高），西洋化的#v 当前每月速率#!将会额外#v 增加#!#p 10%#!。"
+    WCR_no_backtracking_reason: "假如每月西化的进程确定为#n 负值#!，西化进程将会在当月停止，它将永远不会倒退。"
     
-    WCR_no_backtracking_reason: 0 "假如每月西化的进程确定为#n 负值#!，西化进程将会在当月停止，它将永远不会倒退。"
+    WCR_ig_opinion_reason: "每#v 25%#!的西化进程：\n-$WCR_ig_intelligentsia$将获得#p 1#![concept_approval]\n-$WCR_ig_industrialists$将获得#p 1#![concept_approval]\n-$WCR_ig_armed_forces$将获得#p 1#![concept_approval]\n-$WCR_ig_trade_unions$将获得#p 1#![concept_approval]\n-$WCR_ig_landowners$将失去#n 1#![concept_approval]\n-$WCR_ig_devout$将失去#n 1#![concept_approval]\n-$WCR_ig_rural_folk$将失去#n 1#![concept_approval]\n-$WCR_ig_petty_bourgeoisie$将失去#n 1#![concept_approval]\n\n在西洋化#v 完成#!之后，全部获得或失去的[concept_approval]将会在很长一段时间内衰减。"
     
-    WCR_ig_opinion_reason: 0 "每#v 25%#!的西化进程：\n-$WCR_ig_intelligentsia$将获得#p 1#![concept_approval]\n-$WCR_ig_industrialists$将获得#p 1#![concept_approval]\n-$WCR_ig_armed_forces$将获得#p 1#![concept_approval]\n-$WCR_ig_trade_unions$将获得#p 1#![concept_approval]\n-$WCR_ig_landowners$将失去#n 1#![concept_approval]\n-$WCR_ig_devout$将失去#n 1#![concept_approval]\n-$WCR_ig_rural_folk$将失去#n 1#![concept_approval]\n-$WCR_ig_petty_bourgeoisie$将失去#n 1#![concept_approval]\n\n在西洋化#v 完成#!之后，全部获得或失去的[concept_approval]将会在很长一段时间内衰减。"
-    
-    WCR_je_westernization_reason_long: 0 "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_powerful_bonus_reason$\n\n$WCR_influential_bonus_reason$\n\n$WCR_powerful_malus_reason$[SCOPE.sCountry('this_country').GetCustom('WCR_cl_GGGG_bonus_reason')]\n\n$WCR_westernized_relations_reason$\n\n$WCR_no_backtracking_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason$\n\n$WCR_LONG_DELIMITER$"
+    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_powerful_bonus_reason$\n\n$WCR_influential_bonus_reason$\n\n$WCR_powerful_malus_reason$[SCOPE.sCountry('this_country').GetCustom('WCR_cl_GGGG_bonus_reason')]\n\n$WCR_westernized_relations_reason$\n\n$WCR_no_backtracking_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason$\n\n$WCR_LONG_DELIMITER$" 
     
     # Westernization JE status texts
     # Use of GetPlayer in customizable loc text is mandatory due to data context being changed when going through a customizable loc
-    WCR_je_westernization_status_0: 0 "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_0')]"
-    WCR_je_westernization_status_0_king: 0 "西洋化才刚刚开始，[GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]采用了外国服装。"
-    WCR_je_westernization_status_0_heir: 0 "西洋化才刚刚开始，[GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')]就已经以[GetPlayer.GetHeir.GetHerselfHimself]自己作为榜样。"
-    WCR_je_westernization_status_0_king_heir: 0 "西洋化才刚刚开始，[GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]和[GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')]为国家树立了榜样。"
-    WCR_je_westernization_status_0_neither: 0 "西洋化已经在我们的国家开始了。"
+    WCR_je_westernization_status_0:           "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_0')]"
+    WCR_je_westernization_status_0_king:      "西洋化才刚刚开始，[GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]采用了外国服装。"
+    WCR_je_westernization_status_0_heir:      "西洋化才刚刚开始，[GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')]就已经以[GetPlayer.GetHeir.GetHerselfHimself]自己作为榜样。"
+    WCR_je_westernization_status_0_king_heir: "西洋化才刚刚开始，[GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]和[GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')]为国家树立了榜样。"
+    WCR_je_westernization_status_0_neither:   "西洋化已经在我们的国家开始了。"
     
-    WCR_je_westernization_status_5: 0 "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetLeader.GetCustom('GetUniversalFullName')]、[Concept('concept_commander', '$concept_commanders$')]、[GetPopType('officers').GetName]和[GetPopType('bureaucrats').GetName]已经配发西式制服。"
+    WCR_je_westernization_status_5: "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetLeader.GetCustom('GetUniversalFullName')]、[Concept('concept_commander', '$concept_commanders$')]、[GetPopType('officers').GetName]和[GetPopType('bureaucrats').GetName]已经配发西式制服。"
     
-    WCR_je_westernization_status_10: 0 "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_10')]"
-    WCR_je_westernization_status_10_both: 0 "[GetPopType('soldiers').GetName]和[GetPopType('clerks').GetName]已经配发西式制服，同时[GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')]和[GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')]也已经开始为同行树立榜样。"
-    WCR_je_westernization_status_10_indus: 0 "[GetPopType('soldiers').GetName]和[GetPopType('clerks').GetName]已经配发西式制服，同时[GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')]已经开始为[GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetHerHis]的同行树立了榜样。"
-    WCR_je_westernization_status_10_intel: 0 "[GetPopType('soldiers').GetName]和[GetPopType('clerks').GetName]已经配发西式制服，同时[GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')]已经开始为[GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetHerHis]的同行树立了榜样。"
-    WCR_je_westernization_status_10_neither: 0 "[GetPopType('soldiers').GetName]和[GetPopType('clerks').GetName]已经配发西式制服。"
+    WCR_je_westernization_status_10:         "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_10')]" 
+    WCR_je_westernization_status_10_both:    "[GetPopType('soldiers').GetName]和[GetPopType('clerks').GetName]已经配发西式制服，同时[GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')]和[GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')]也已经开始为同行树立榜样。"
+    WCR_je_westernization_status_10_indus:   "[GetPopType('soldiers').GetName]和[GetPopType('clerks').GetName]已经配发西式制服，同时[GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')]已经开始为[GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetHerHis]的同行树立了榜样。"
+    WCR_je_westernization_status_10_intel:   "[GetPopType('soldiers').GetName]和[GetPopType('clerks').GetName]已经配发西式制服，同时[GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')]已经开始为[GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetHerHis]的同行树立了榜样。"
+    WCR_je_westernization_status_10_neither: "[GetPopType('soldiers').GetName]和[GetPopType('clerks').GetName]已经配发西式制服。"
     
-    WCR_je_westernization_status_20: 0 "余下的[GetPopType('capitalists').GetName]们已经采用了西式服装，以便在他们的经济伙伴面前显得更加得体。"
+    WCR_je_westernization_status_20: "余下的[GetPopType('capitalists').GetName]们已经采用了西式服装，以便在他们的经济伙伴面前显得更加得体。"
     
-    WCR_je_westernization_status_30: 0 "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_30')]"
-    WCR_je_westernization_status_30_tu: 0 "全体[GetPopType('academics').GetName]与[GetInterestGroupVariant('ig_trade_unions', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')]都加入到了新的时尚潮流之中，西洋化进展顺利。"
-    WCR_je_westernization_status_30_none: 0 "全体[GetPopType('academics').GetName]都加入到了新的时尚潮流之中，西洋化进展顺利。"
+    WCR_je_westernization_status_30:      "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_30')]" 
+    WCR_je_westernization_status_30_tu:   "全体[GetPopType('academics').GetName]与[GetInterestGroupVariant('ig_trade_unions', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')]都加入到了新的时尚潮流之中，西洋化进展顺利。"
+    WCR_je_westernization_status_30_none: "全体[GetPopType('academics').GetName]都加入到了新的时尚潮流之中，西洋化进展顺利。"
     
-    WCR_je_westernization_status_40: 0 "在[GetPopType('engineers').GetName]们的那些富裕同事的影响下，他们开始穿上了洋装。"
+    WCR_je_westernization_status_40: "在[GetPopType('engineers').GetName]们的那些富裕同事的影响下，他们开始穿上了洋装。"
     
-    WCR_je_westernization_status_50: 0 "随着[GetPopType('machinists').GetName]们采用西式服装，国外潮流继续逐渐渗透进来。"
+    WCR_je_westernization_status_50: "随着[GetPopType('machinists').GetName]们采用西式服装，国外潮流继续逐渐渗透进来。"
     
-    WCR_je_westernization_status_60: 0 "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_60')]"
-    WCR_je_westernization_status_60_land: 0 "时尚洋风穿城过，传至[GetPopType('shopkeepers').GetName]中，[GetInterestGroupVariant('ig_landowners', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')]虽不欲为，然洋装风尚已至，勉而为之。"
-    WCR_je_westernization_status_60_none: 0 "时尚洋风穿过城市传入[GetPopType('shopkeepers').GetName]之中。"
+    WCR_je_westernization_status_60:      "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_60')]" 
+    WCR_je_westernization_status_60_land: "时尚洋风穿城过，传至[GetPopType('shopkeepers').GetName]中，[GetInterestGroupVariant('ig_landowners', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')]虽不欲为，然洋装风尚已至，勉而为之。"
+    WCR_je_westernization_status_60_none: "时尚洋风穿过城市传入[GetPopType('shopkeepers').GetName]之中。"
     
-    WCR_je_westernization_status_70: 0 "随着新的款式变得更便宜，[GetPopType('laborers').GetName]们已将西洋潮流融入到他们的服装之中。"
+    WCR_je_westernization_status_70: "随着新的款式变得更便宜，[GetPopType('laborers').GetName]们已将西洋潮流融入到他们的服装之中。"
     
-    WCR_je_westernization_status_80: 0 "[GetPopType('aristocrats').GetName]们为了与其他上流人士相匹配，终于放弃了固守传统，穿上了新的现代服饰。"
+    WCR_je_westernization_status_80: "[GetPopType('aristocrats').GetName]们为了与其他上流人士相匹配，终于放弃了固守传统，穿上了新的现代服饰。"
     
-    WCR_je_westernization_status_90: 0 "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_90')]"
-    WCR_je_westernization_status_90_pb: 0 "一向固执的[GetInterestGroupVariant('ig_petty_bourgeoisie', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')]和[GetPopType('farmers').GetName]最终将西洋时尚作为一个新常态而接受了。"
-    WCR_je_westernization_status_90_none: 0 "一向固执的[GetPopType('farmers').GetName]最终将西洋时尚作为一个新常态而接受了。"
+    WCR_je_westernization_status_90:      "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_90')]" 
+    WCR_je_westernization_status_90_pb:   "一向固执的[GetInterestGroupVariant('ig_petty_bourgeoisie', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')]和[GetPopType('farmers').GetName]最终将西洋时尚作为一个新常态而接受了。"
+    WCR_je_westernization_status_90_none: "一向固执的[GetPopType('farmers').GetName]最终将西洋时尚作为一个新常态而接受了。"
     
-    WCR_je_westernization_status_100: 0 "西洋化已完成！"
+    WCR_je_westernization_status_100: "西洋化已完成！"

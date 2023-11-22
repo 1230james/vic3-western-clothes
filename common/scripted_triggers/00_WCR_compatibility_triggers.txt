@@ -4,3 +4,8 @@
 GGGG_is_active_trigger = {
     always = no
 }
+
+# James's Pop Clothing Tweaks
+PCT_is_active_trigger = {
+    always = no
+}

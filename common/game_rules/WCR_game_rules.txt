@@ -35,6 +35,54 @@ WCR_AI_westernization = {
     WCR_block_AI_westernization = {}
 }
 
+# Korea westernization rules
+# Modded: Use WCR rules and mechanics
+# Vanilla: Westernize upon declaring the Empire
+# Mixed: Use WCR mechanics but unlock decision upon declaring the Empire
+WCR_KOR_westernization = {
+    default = WCR_modded_KOR_westernization
+    
+    WCR_modded_KOR_westernization  = {}
+    WCR_mixed_KOR_westernization   = {}
+    WCR_vanilla_KOR_westernization = {}
+}
+
+# Korea western uniform rules
+# Modded: Player's choice
+#   - Influences enabled -> Vanilla uniform is included in options
+#   - Influences disabled -> Generic European uniform
+# Vanilla: Always vanilla Korean Empire uniform
+WCR_KOR_uniforms = {
+    default = WCR_modded_KOR_uniforms
+    
+    WCR_modded_KOR_uniforms  = {}
+    WCR_vanilla_KOR_uniforms = {}
+}
+
+# Japan westernization rules
+# Modded: Use WCR rules and mechanics
+# Vanilla: Westernize upon Restoration
+# Mixed: Use WCR mechanics but unlock decision upon Restoration
+WCR_JAP_westernization = {
+    default = WCR_modded_JAP_westernization
+    
+    WCR_modded_JAP_westernization  = {}
+    WCR_mixed_JAP_westernization   = {}
+    WCR_vanilla_JAP_westernization = {}
+}
+
+# Japan western uniform rules
+# Modded: Player's choice
+#   - Influences enabled -> Vanilla uniform is included in options
+#   - Influences disabled -> Generic European uniform
+# Vanilla: Always vanilla Japanese Empire uniform
+WCR_JAP_uniforms = {
+    default = WCR_modded_JAP_uniforms
+    
+    WCR_modded_JAP_uniforms  = {}
+    WCR_vanilla_JAP_uniforms = {}
+}
+
 # Westernize pops from an unwesternized home country that are currently living in a westernized country
 # AWC behavior: no
 WCR_westernize_immigrants = {
@@ -56,7 +104,7 @@ WCR_westernize_traditionalists = {
 # Allows rural folk IG leader to avoid westernizing if set to no
 # AWC behavior: no
 WCR_westernize_ig_rural_folk = {
-    default = WCR_westernize_ig_rural_folk_no
+    default = WCR_westernize_ig_rural_folk_yes
     
     WCR_westernize_ig_rural_folk_yes = {}
     WCR_westernize_ig_rural_folk_no  = {}

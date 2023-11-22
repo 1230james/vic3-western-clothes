@@ -66,6 +66,44 @@ WCR_ev.2 = {
     immediate = {}
     
     option = {
+        name = WCR_ev_domestic_option
+        highlighted_option = yes
+        
+        trigger = {
+            trigger_if = {
+                limit = {
+                    c:KOR ?= this
+                }
+                c:KOR ?= this
+            }
+            trigger_else_if = {
+                limit = {
+                    c:JAP ?= this
+                }
+                c:JAP ?= this
+            }
+            trigger_else = {
+                always = no
+            }
+        }
+        
+        custom_tooltip = {
+            text = WCR_tt_domestic_ruler
+            set_variable = {
+                name  = WCR_ruler_influence
+                value = -1
+            }
+            trigger_event = {
+                id    = WCR_ev.3
+                popup = yes
+            }
+        }
+        
+        ai_chance = {
+            base = 1000000
+        }
+    }
+    option = {
         name = WCR_ev_american_option
         
         custom_tooltip = {
@@ -174,11 +212,6 @@ WCR_ev.2 = {
                     relations:root <= relations_threshold:poor
                 }
             }
-            
-            modifier = { # Historical Asian majors
-                add = 10000
-                ROOT = c:JAP
-            }
         }
     }
     option = {
@@ -230,16 +263,49 @@ WCR_ev.2 = {
                         relations:root <= relations_threshold:poor
                     }
                 }
-                c:FRA ?= {
-                    relations:root <= relations_threshold:poor
-                }
             }
             
             modifier = { # Historical Asian majors
                 add = 10000
                 OR = {
                     ROOT = c:CHI
-                    ROOT = c:KOR # Korea is a major in my heart :copium:
+                }
+            }
+        }
+    }
+    option = {
+        name = WCR_ev_russian_option
+        
+        custom_tooltip = {
+            text = WCR_tt_russian_ruler
+            set_variable = {
+                name  = WCR_ruler_influence
+                value = 5
+            }
+            trigger_event = {
+                id    = WCR_ev.3
+                popup = yes
+            }
+        }
+        
+        ai_chance = {
+            base = 10
+            modifier = {
+                add = 100
+                c:RUS ?= {
+                    relations:root >= relations_threshold:amicable
+                }
+            }
+            modifier = {
+                add = 200
+                c:RUS ?= {
+                    relations:root >= relations_threshold:friendly
+                }
+            }
+            modifier = {
+                add = -300
+                c:RUS ?= {
+                    relations:root <= relations_threshold:poor
                 }
             }
         }
@@ -289,6 +355,44 @@ WCR_ev.3 = {
     
     immediate = {}
     
+    option = {
+        name = WCR_ev_domestic_option
+        highlighted_option = yes
+        
+        trigger = {
+            trigger_if = {
+                limit = {
+                    c:KOR ?= this
+                }
+                c:KOR ?= this
+            }
+            trigger_else_if = {
+                limit = {
+                    c:JAP ?= this
+                }
+                c:JAP ?= this
+            }
+            trigger_else = {
+                always = no
+            }
+        }
+        
+        custom_tooltip = {
+            text = WCR_tt_domestic_army
+            set_variable = {
+                name  = WCR_army_influence
+                value = -1
+            }
+            trigger_event = {
+                id    = WCR_ev.4
+                popup = yes
+            }
+        }
+        
+        ai_chance = {
+            base = 1000000
+        }
+    }
     option = {
         name = WCR_ev_american_option
         
@@ -464,14 +568,53 @@ WCR_ev.3 = {
                         relations:root <= relations_threshold:poor
                     }
                 }
-                c:FRA ?= {
+            }
+            
+            modifier = {
+                add = 5000
+                ROOT.var:WCR_ruler_influence = 4
+            }
+        }
+    }
+    option = {
+        name = WCR_ev_russian_option
+        
+        custom_tooltip = {
+            text = WCR_tt_russian_army
+            set_variable = {
+                name  = WCR_army_influence
+                value = 5
+            }
+            trigger_event = {
+                id    = WCR_ev.4
+                popup = yes
+            }
+        }
+        
+        ai_chance = {
+            base = 10
+            modifier = {
+                add = 100
+                c:RUS ?= {
+                    relations:root >= relations_threshold:amicable
+                }
+            }
+            modifier = {
+                add = 200
+                c:RUS ?= {
+                    relations:root >= relations_threshold:friendly
+                }
+            }
+            modifier = {
+                add = -300
+                c:RUS ?= {
                     relations:root <= relations_threshold:poor
                 }
             }
             
             modifier = {
                 add = 5000
-                ROOT.var:WCR_ruler_influence = 4
+                ROOT.var:WCR_ruler_influence = 5
             }
         }
     }
@@ -524,6 +667,63 @@ WCR_ev.4 = {
     
     immediate = {}
     
+    option = {
+        name = WCR_ev_domestic_option
+        highlighted_option = yes
+        
+        trigger = {
+            trigger_if = {
+                limit = {
+                    c:KOR ?= this
+                }
+                c:KOR ?= this
+            }
+            trigger_else_if = {
+                limit = {
+                    c:JAP ?= this
+                }
+                c:JAP ?= this
+            }
+            trigger_else = {
+                always = no
+            }
+        }
+        
+        custom_tooltip = {
+            text = WCR_tt_domestic_navy
+            set_variable = {
+                name  = WCR_navy_influence
+                value = -1
+            }
+        }
+        if = {
+            limit = {
+                has_game_rule = WCR_complex_westernization
+            }
+            add_journal_entry = {
+                type = WCR_je_westernization
+            }
+            add_modifier = {
+                name  = WCR_ig_westernization_1_modifier
+                years = -1
+            }
+        }
+        else = {
+            trigger_event = {
+                id = WCR_ev.1
+                popup = yes
+            }
+            add_modifier = {
+                name  = WCR_ig_westernized_modifier
+                years = 10
+                is_decaying = yes
+            }
+        }
+        
+        ai_chance = {
+            base = 1000000
+        }
+    }
     option = {
         name = WCR_ev_american_option
         
@@ -775,14 +975,72 @@ WCR_ev.4 = {
                         relations:root <= relations_threshold:poor
                     }
                 }
-                c:FRA ?= {
+            }
+            
+            modifier = {
+                add = 5000
+                ROOT.var:WCR_ruler_influence = 4
+            }
+        }
+    }
+    option = {
+        name = WCR_ev_russian_option
+        
+        custom_tooltip = {
+            text = WCR_tt_russian_navy
+            set_variable = {
+                name  = WCR_navy_influence
+                value = 5
+            }
+        }
+        if = {
+            limit = {
+                has_game_rule = WCR_complex_westernization
+            }
+            add_journal_entry = {
+                type = WCR_je_westernization
+            }
+            add_modifier = {
+                name  = WCR_ig_westernization_1_modifier
+                years = -1
+            }
+        }
+        else = {
+            trigger_event = {
+                id = WCR_ev.1
+                popup = yes
+            }
+            add_modifier = {
+                name  = WCR_ig_westernized_modifier
+                years = 10
+                is_decaying = yes
+            }
+        }
+        
+        ai_chance = {
+            base = 10
+            modifier = {
+                add = 100
+                c:RUS ?= {
+                    relations:root >= relations_threshold:amicable
+                }
+            }
+            modifier = {
+                add = 200 # for 300 total
+                c:RUS ?= {
+                    relations:root >= relations_threshold:friendly
+                }
+            }
+            modifier = {
+                add = -300
+                c:RUS ?= {
                     relations:root <= relations_threshold:poor
                 }
             }
             
             modifier = {
                 add = 5000
-                ROOT.var:WCR_ruler_influence = 4
+                ROOT.var:WCR_ruler_influence = 5
             }
         }
     }

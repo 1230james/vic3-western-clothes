@@ -1,0 +1,7 @@
+﻿l_english:
+    WCR_UN_full_name:     "[ROOT.GetCharacter.GetFullName]"
+    WCR_UN_title_ruler:   "[ROOT.GetCharacter.GetCountry.GetRuler.GetPrimaryRoleTitle] "
+    WCR_UN_title_heir:    "[ROOT.GetCharacter.GetPrimaryRoleTitle] "
+    WCR_UN_title_general: "$concept_general$ "
+    WCR_UN_title_admiral: "$concept_admiral$ "
+    WCR_UN_title_none:    ""

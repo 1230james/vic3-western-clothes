@@ -1,10 +1,18 @@
 {
     "name" : "Western Clothes: Redux",
     "id" : "",
-    "version" : "2.2.0",
-    "supported_game_version" : "1.4.*",
+    "version" : "2.3.0",
+    "supported_game_version" : "1.5.*",
     "short_description" : "",
-    "tags" : [],
+    "tags" : [
+        "Alternative History",
+        "Events",
+        "Gameplay",
+        "Graphics",
+        "Historical",
+        "Journal Entries",
+        "Pops"
+    ],
     "relationships" : [],
     "game_custom_data" : {
         "multiplayer_synchronized" : true

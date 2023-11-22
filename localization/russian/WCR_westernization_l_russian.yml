@@ -2,48 +2,52 @@
 
 l_russian:
     # Journal entries
-    WCR_je_westernization: "Вестернизация"
-    WCR_je_westernization_reason: "Если мы хотим стать серьезной державой в этом быстро индустриализирующемся миреи не потерять суверенитет, наша нация должна иметь паритет с западными странами, какой бы ни была цена. Частично это должно включать внедрение западных обычаев в наше общество.\n\n$WCR_je_westernization_reason_long$"
-
+    WCR_je_westernization:        "Вестернизация"
+    WCR_je_westernization_goal:   "" # Defined to silence errors
+    WCR_je_westernization_reason: "Если мы хотим стать серьезной державой в этом быстро индустриализирующемся мире и не потерять суверенитет, наша нация должна иметь паритет с западными странами, какой бы ни была цена. Частично это должно включать внедрение западных обычаев в наше общество.\n\n$WCR_je_westernization_reason_long$"
+    
     # Decisions
-    WCR_de_start_westernization: "Начать вестернизацию"
-    WCR_de_start_westernization_desc: "Начать процесс вестернизации вашей страны.\nПо завершении вестернизации большинство попов и персонажей будут носить западную одежду."
+    WCR_de_start_westernization:         "Начать вестернизацию"
+    WCR_de_start_westernization_desc:    "Начать процесс вестернизации вашей страны.\nПо завершении вестернизации большинство попов и персонажей будут носить западную одежду."
     WCR_de_start_westernization_tooltip: "$WCR_de_start_westernization$"
     
-    WCR_de_simple_westernization: "Принять западную моду"
-    WCR_de_simple_westernization_desc: "Мы должны присоединиться к великим державам Запада в их образе жизни, если хотим быть среди них на мировой арене. Наш народ должен принять одежду западного образца как часть этой цели."
+    WCR_de_simple_westernization:         "Принять западную моду"
+    WCR_de_simple_westernization_desc:    "Мы должны присоединиться к великим державам Запада в их образе жизни, если хотим быть среди них на мировой арене. Наш народ должен принять одежду западного образца как часть этой цели."
     WCR_de_simple_westernization_tooltip: "$WCR_de_simple_westernization$"
-
+    
     # Tooltips
     WCR_tt_overlord_westernized_sub: "[GetPlayer.GetOverlord.GetName] является #v вестернизированна#!"
     WCR_tt_overlord_westernized_ind: "[concept_overlord] из [GetPlayer.GetName] является #v вестернизированной#!"
-    WCR_tt_ruler_support: "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] поддерживает любой из [Concept('concept_interest_group', '$concept_interest_groups$')] ниже:"
-
+    WCR_tt_ruler_support:            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] поддерживает любой из [Concept('concept_interest_group', '$concept_interest_groups$')] ниже:"
+    
+    WCR_tt_KOR_req_bypass: "The #b $dyn_c_empire_of_korea$#! has been proclaimed."
+    WCR_tt_JAP_req_bypass: "The #b $je_meiji_restoration$#! [concept_journal_entry] has been completed."
+    
     # Modifiers
-    WCR_westernized_modifier: "Недавно вестернизированный"
+    WCR_westernized_modifier:         "Недавно вестернизированный"
     WCR_ig_westernization_1_modifier: "Началась вестернизация"
     WCR_ig_westernization_2_modifier: "$WCR_ig_westernization_1_modifier$"
     WCR_ig_westernization_3_modifier: "Частичная вестернизация"
     WCR_ig_westernization_4_modifier: "$WCR_ig_westernization_3_modifier$"
-    WCR_ig_westernized_modifier: "Вестернизированная нация"
-
+    WCR_ig_westernized_modifier:      "Вестернизированная нация"
+    
     # Events
-    WCR_ev_1_title: "Вестернизация!"
-    WCR_ev_1_desc: "После достаточно длительного воздействия западных технологий, общества и культуры, элементы их образа жизни интегрировались в нашу."
+    WCR_ev_1_title:  "Вестернизация!"
+    WCR_ev_1_desc:   "После достаточно длительного воздействия западных технологий, общества и культуры, элементы их образа жизни интегрировались в нашу."
     WCR_ev_1_flavor: ""Запад лидирует в мире в промышленности, науке и культуре. Мир, который мы когда-то знали, рушится. Пришло время встать на путь великих держав!""
-    WCR_ev_1_a: "В таких одёжках можно покорять мировую сцену!"
-
+    WCR_ev_1_a:      "В таких одёжках можно покорять мировую сцену!"
+    
     # Westernization JE long text & helpers
     WCR_LONG_DELIMITER: "     @divider_start!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_end!"
     
-    WCR_ig_armed_forces: "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_devout: "[GetInterestGroupVariant('ig_devout', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_industrialists: "[GetInterestGroupVariant('ig_industrialists', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_intelligentsia: "[GetInterestGroupVariant('ig_intelligentsia', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_landowners: "[GetInterestGroupVariant('ig_landowners', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_armed_forces:      "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_devout:            "[GetInterestGroupVariant('ig_devout', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_industrialists:    "[GetInterestGroupVariant('ig_industrialists', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_intelligentsia:    "[GetInterestGroupVariant('ig_intelligentsia', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_landowners:        "[GetInterestGroupVariant('ig_landowners', SCOPE.sCountry('this_country')).GetName]"
     WCR_ig_petty_bourgeoisie: "[GetInterestGroupVariant('ig_petty_bourgeoisie', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_rural_folk: "[GetInterestGroupVariant('ig_rural_folk', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_trade_unions: "[GetInterestGroupVariant('ig_trade_unions', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_rural_folk:        "[GetInterestGroupVariant('ig_rural_folk', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_trade_unions:      "[GetInterestGroupVariant('ig_trade_unions', SCOPE.sCountry('this_country')).GetName]"
     
     WCR_overview_reason: "Прогресс вестернизации будет #v увеличиваться ежемесячно#!, а скорость его изменения зависит от множества факторов, перечисленных ниже.\n\nВ настоящее время ожидается, что в следующем месяце прогресс вестернизации составит #v [SCOPE.ScriptValue('WCR_sv_calculate_westernization_progress_delta')|2]%#!"
     
@@ -62,35 +66,35 @@ l_russian:
     
     WCR_ig_opinion_reason: "За каждые #v 25%#! продвижения вестернизации:\n- $WCR_ig_intelligentsia$ получит #p 1#! [concept_approval]\n- $WCR_ig_industrialists$ получит #p 1#! [concept_approval]\n- $WCR_ig_armed_forces$ получат #p 1#! [concept_approval]\n- $WCR_ig_trade_unions$ получит #p 1#! [concept_approval]\n- $WCR_ig_landowners$ потеряют #n 1#! [concept_approval]\n- $WCR_ig_devout$ потеряет #n 1#! [concept_approval]\n- $WCR_ig_rural_folk$ потеряет #n 1#! [concept_approval]\n- $WCR_ig_petty_bourgeoisie$ потеряет #n 1#! [concept_approval]\n\nПосле #v завершения#! вестернизации общее [concept_approval], полученное или потерянное, будет уменьшаться в течение длительного периода времени."
     
-    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_powerful_bonus_reason$\n\n$WCR_influential_bonus_reason$\n\n$WCR_powerful_malus_reason$[SCOPE.sCountry('this_country').GetCustom('WCR_cl_GGGG_bonus_reason')]\n\n$WCR_westernized_relations_reason$\n\n$WCR_no_backtracking_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason$\n\n$WCR_LONG_DELIMITER$"
-
+    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_powerful_bonus_reason$\n\n$WCR_influential_bonus_reason$\n\n$WCR_powerful_malus_reason$[SCOPE.sCountry('this_country').GetCustom('WCR_cl_GGGG_bonus_reason')]\n\n$WCR_westernized_relations_reason$\n\n$WCR_no_backtracking_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason$\n\n$WCR_LONG_DELIMITER$" 
+    
     # Westernization JE status texts
     # Use of GetPlayer in customizable loc text is mandatory due to data context being changed when going through a customizable loc
-    WCR_je_westernization_status_0: "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_0')]"
-    WCR_je_westernization_status_0_king: "Вестернизация только началась: [GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] принимают иностранную одежду."
-    WCR_je_westernization_status_0_heir: "Вестернизация только началась, и [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')] взял на себя обязанность [GetPlayer.GetHeir.GetHerselfHimself] показать пример."
+    WCR_je_westernization_status_0:           "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_0')]"
+    WCR_je_westernization_status_0_king:      "Вестернизация только началась: [GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] принимают иностранную одежду."
+    WCR_je_westernization_status_0_heir:      "Вестернизация только началась, и [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')] взял на себя обязанность [GetPlayer.GetHeir.GetHerselfHimself] показать пример."
     WCR_je_westernization_status_0_king_heir: "Вестернизация только началась, и [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')] взял на себя обязанность [GetPlayer.GetHeir.GetHerselfHimself] показать пример нации."
-    WCR_je_westernization_status_0_neither: "Вестернизация в нашей стране только началась."
+    WCR_je_westernization_status_0_neither:   "Вестернизация в нашей стране только началась."
     
     WCR_je_westernization_status_5: "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetLeader.GetCustom('GetUniversalFullName')], [Concept('concept_commander', '$concept_commanders$')], [GetPopType('officers').GetName] и [GetPopType('bureaucrats').GetName] получили западную форму."
     
-    WCR_je_westernization_status_10: "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_10')]"
-    WCR_je_westernization_status_10_both: "[GetPopType('soldiers').GetName] и [GetPopType('clerks').GetName] получили западную форму, а [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] и [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] начали подавать пример своим коллегам."
-    WCR_je_westernization_status_10_indus: "[GetPopType('soldiers').GetName] и [GetPopType('clerks').GetName] получили западную форму, а [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] начал подавать пример сверстникам [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetHerHis]."
-    WCR_je_westernization_status_10_intel: "[GetPopType('soldiers').GetName] и [GetPopType('clerks').GetName] получили западную форму, а [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] начал подавать пример сверстникам [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetHerHis]."
+    WCR_je_westernization_status_10:         "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_10')]" 
+    WCR_je_westernization_status_10_both:    "[GetPopType('soldiers').GetName] и [GetPopType('clerks').GetName] получили западную форму, а [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] и [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] начали подавать пример своим коллегам."
+    WCR_je_westernization_status_10_indus:   "[GetPopType('soldiers').GetName] и [GetPopType('clerks').GetName] получили западную форму, а [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] начал подавать пример сверстникам [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetHerHis]."
+    WCR_je_westernization_status_10_intel:   "[GetPopType('soldiers').GetName] и [GetPopType('clerks').GetName] получили западную форму, а [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] начал подавать пример сверстникам [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetHerHis]."
     WCR_je_westernization_status_10_neither: "[GetPopType('soldiers').GetName] и [GetPopType('clerks').GetName] получили западную униформу."
     
     WCR_je_westernization_status_20: "Остальные [GetPopType('capitalists').GetName] приняли западную одежду, чтобы выглядеть более презентабельно перед своими экономическими партнерами."
     
-    WCR_je_westernization_status_30: "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_30')]"
-    WCR_je_westernization_status_30_tu: "Все [GetPopType('academics').GetName] и [GetInterestGroupVariant('ig_trade_unions', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] присоединились к новой модной тенденции. Вестернизация идет полным ходом."
+    WCR_je_westernization_status_30:      "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_30')]" 
+    WCR_je_westernization_status_30_tu:   "Все [GetPopType('academics').GetName] и [GetInterestGroupVariant('ig_trade_unions', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] присоединились к новой модной тенденции. Вестернизация идет полным ходом."
     WCR_je_westernization_status_30_none: "Все [GetPopType('academics').GetName] присоединились к новой модной тенденции. Вестернизация идет полным ходом."
     
     WCR_je_westernization_status_40: "Под влиянием своих более богатых коллег [GetPopType('engineers').GetName] стали носить западную одежду."
     
     WCR_je_westernization_status_50: "Иностранная мода продолжает просачиваться, поскольку [GetPopType('machinists').GetName] перенимают западную одежду."
     
-    WCR_je_westernization_status_60: "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_60')]"
+    WCR_je_westernization_status_60:      "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_60')]" 
     WCR_je_westernization_status_60_land: "[GetInterestGroupVariant('ig_landowners', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] неохотно присоединился к модным тенденциям, распространяющимся по городам, чтобы [GetPopType('shopkeepers').GetName]."
     WCR_je_westernization_status_60_none: "Западные модные тенденции распространились по городам и дошли до [GetPopType('shopkeepers').GetName]."
     
@@ -98,8 +102,8 @@ l_russian:
     
     WCR_je_westernization_status_80: "[GetPopType('aristocrats').GetName] наконец-то перестали держаться за традиции, приняв новую современную одежду, чтобы соответствовать остальным представителям высшего класса."
     
-    WCR_je_westernization_status_90: "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_90')]"
-    WCR_je_westernization_status_90_pb: "Вечно упрямые [GetInterestGroupVariant('ig_petty_bourgeoisie', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] и [GetPopType('farmers').GetName] наконец-то принимают западную моду как новую норму."
+    WCR_je_westernization_status_90:      "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_90')]" 
+    WCR_je_westernization_status_90_pb:   "Вечно упрямые [GetInterestGroupVariant('ig_petty_bourgeoisie', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] и [GetPopType('farmers').GetName] наконец-то принимают западную моду как новую норму."
     WCR_je_westernization_status_90_none: "Вечно упрямые [GetPopType('farmers').GetName] наконец-то принимают западную моду как новую норму."
     
     WCR_je_westernization_status_100: "Вестернизация завершена!"

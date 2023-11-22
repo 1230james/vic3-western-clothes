@@ -2,48 +2,52 @@
 
 l_korean:
     # Journal entries
-    WCR_je_westernization: "서구화"
+    WCR_je_westernization:        "서구화"
+    WCR_je_westernization_goal:   "" # Defined to silence errors
     WCR_je_westernization_reason: "우리가 이 급속하게 산업화되는 세계에서 위험한 강대국에게 주권을 잃는 것을 막으려면, 우리는 어떤 대가를 치르더라도 서양인들과 동등해져야 합니다. 이 과정의 일부는 서양의 관습을 우리 사회에 통합하는 것을 포함해야 합니다.\n\n$WCR_je_westernization_reason_long$"
-
+    
     # Decisions
-    WCR_de_start_westernization: "서구화 시작"
-    WCR_de_start_westernization_desc: "해당 국가를 서구화하는 과정을 시작합니다.\n서구화가 완료되면 대부분의 인구과 인물들은 서양식 복장을 입을 것입니다."
+    WCR_de_start_westernization:         "서구화 시작"
+    WCR_de_start_westernization_desc:    "해당 국가를 서구화하는 과정을 시작합니다.\n서구화가 완료되면 대부분의 인구과 인물들은 서양식 복장을 입을 것입니다."
     WCR_de_start_westernization_tooltip: "$WCR_de_start_westernization$"
     
-    WCR_de_simple_westernization: "서양식 복식을 채용"
-    WCR_de_simple_westernization_desc: "우리가 세계 무대에 서려면 서구 열강들의 삶의 방식을 따라야 합니다. 우리 국민들은 이 목표의 일부로 서양식 복장을 채택할 것입니다."
+    WCR_de_simple_westernization:         "서양식 복식을 채용"
+    WCR_de_simple_westernization_desc:    "우리가 세계 무대에 서려면 서구 열강들의 삶의 방식을 따라야 합니다. 우리 국민들은 이 목표의 일부로 서양식 복장을 채택할 것입니다."
     WCR_de_simple_westernization_tooltip: "$WCR_de_simple_westernization$"
-
+    
     # Tooltips
     WCR_tt_overlord_westernized_sub: "[GetPlayer.GetOverlord.GetName]는 #v 서구화#!되었음."
     WCR_tt_overlord_westernized_ind: "[GetPlayer.GetName]의 [concept_overlord]은 #v 서구화#!되었음."
-    WCR_tt_ruler_support: "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]은(는) 아무 [Concept('concept_interest_group', '이해 집단')]을 후원:"
-
+    WCR_tt_ruler_support:            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]은(는) 아무 [Concept('concept_interest_group', '이해 집단')]을 후원:"
+    
+    WCR_tt_KOR_req_bypass: "The #b $dyn_c_empire_of_korea$#! has been proclaimed."
+    WCR_tt_JAP_req_bypass: "The #b $je_meiji_restoration$#! [concept_journal_entry] has been completed."
+    
     # Modifiers
-    WCR_westernized_modifier: "최근 서구화됨"
+    WCR_westernized_modifier:         "최근 서구화됨"
     WCR_ig_westernization_1_modifier: "서구화 시작"
     WCR_ig_westernization_2_modifier: "$WCR_ig_westernization_1_modifier$"
     WCR_ig_westernization_3_modifier: "부분적 서구화"
     WCR_ig_westernization_4_modifier: "$WCR_ig_westernization_3_modifier$"
-    WCR_ig_westernized_modifier: "서구화된 국가"
-
+    WCR_ig_westernized_modifier:      "서구화된 국가"
+    
     # Events
-    WCR_ev_1_title: "서구화!"
-    WCR_ev_1_desc: "서양의 기술과 사회 그리고 문화에 충분히 오랫동안 노출된 결과, 그들이 살아가는 방식의 요소들이 우리에게 흡수되었습니다."
-    WCR_ev_1_flavor: "\"서양은 산업, 학문, 문화 부문에서 세계를 이끌고 있고 우리가 한때 알았던 세상은 무너지고 있습니다. 열강의 길에 동참할 때입니다!\""
-    WCR_ev_1_a: "이로써 세계 무대에 설 준비가 되었다!"
-
+    WCR_ev_1_title:  "서구화!"
+    WCR_ev_1_desc:   "서양의 기술과 사회 그리고 문화에 충분히 오랫동안 노출된 결과, 그들이 살아가는 방식의 요소들이 우리에게 흡수되었습니다."
+    WCR_ev_1_flavor: ""서양은 산업, 학문, 문화 부문에서 세계를 이끌고 있고 우리가 한때 알았던 세상은 무너지고 있습니다. 열강의 길에 동참할 때입니다!""
+    WCR_ev_1_a:      "이로써 세계 무대에 설 준비가 되었다!"
+    
     # Westernization JE long text & helpers
     WCR_LONG_DELIMITER: "     @divider_start!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_end!"
     
-    WCR_ig_armed_forces: "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_devout: "[GetInterestGroupVariant('ig_devout', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_industrialists: "[GetInterestGroupVariant('ig_industrialists', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_intelligentsia: "[GetInterestGroupVariant('ig_intelligentsia', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_landowners: "[GetInterestGroupVariant('ig_landowners', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_armed_forces:      "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_devout:            "[GetInterestGroupVariant('ig_devout', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_industrialists:    "[GetInterestGroupVariant('ig_industrialists', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_intelligentsia:    "[GetInterestGroupVariant('ig_intelligentsia', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_landowners:        "[GetInterestGroupVariant('ig_landowners', SCOPE.sCountry('this_country')).GetName]"
     WCR_ig_petty_bourgeoisie: "[GetInterestGroupVariant('ig_petty_bourgeoisie', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_rural_folk: "[GetInterestGroupVariant('ig_rural_folk', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_trade_unions: "[GetInterestGroupVariant('ig_trade_unions', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_rural_folk:        "[GetInterestGroupVariant('ig_rural_folk', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_trade_unions:      "[GetInterestGroupVariant('ig_trade_unions', SCOPE.sCountry('this_country')).GetName]"
     
     WCR_overview_reason: "서구화 진행률은 #v 매달 증가#!하며, 그 속도는 아래 나열된 여러 요인에 따라 달라집니다.\n\n서구화는 현재 다음 달에 #v [SCOPE.ScriptValue('WCR_sv_calculate_westernization_progress_delta')|2]%#! 정도 진행될 것으로 예상됩니다."
     
@@ -62,35 +66,35 @@ l_korean:
     
     WCR_ig_opinion_reason: "서구화 진행률이 #v 25%#! 증가할 때마다:\n- #p +1#! $WCR_ig_intelligentsia$ [concept_approval]\n- #p +1#! $WCR_ig_industrialists$ [concept_approval]\n- #p +1#! $WCR_ig_armed_forces$ [concept_approval]\n- #p +1#! $WCR_ig_trade_unions$ [concept_approval] \n- #n -1#! $WCR_ig_landowners$ [concept_approval]\n- #n -1#! $WCR_ig_devout$ [concept_approval]\n- #n -1#! $WCR_ig_rural_folk$ [concept_approval]\n- #n -1#! $WCR_ig_petty_bourgeoisie$ [concept_approval]\n\n서구화가 #v 완료#!되면 획득하거나 손실한 [concept_approval]은 장기간에 걸쳐 소멸합니다."
     
-    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_powerful_bonus_reason$\n\n$WCR_influential_bonus_reason$\n\n$WCR_powerful_malus_reason$[SCOPE.sCountry('this_country').GetCustom('WCR_cl_GGGG_bonus_reason')]\n\n$WCR_westernized_relations_reason$\n\n$WCR_no_backtracking_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason$\n\n$WCR_LONG_DELIMITER$"
-
+    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_powerful_bonus_reason$\n\n$WCR_influential_bonus_reason$\n\n$WCR_powerful_malus_reason$[SCOPE.sCountry('this_country').GetCustom('WCR_cl_GGGG_bonus_reason')]\n\n$WCR_westernized_relations_reason$\n\n$WCR_no_backtracking_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason$\n\n$WCR_LONG_DELIMITER$" 
+    
     # Westernization JE status texts
     # Use of GetPlayer in customizable loc text is mandatory due to data context being changed when going through a customizable loc
-    WCR_je_westernization_status_0: "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_0')]"
-    WCR_je_westernization_status_0_king: "서구화가 이제 막 시작되었고 [GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')](은)는 외국의 복장을 채택했습니다."
-    WCR_je_westernization_status_0_heir: "서구화가 이제 막 시작되었고, [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')] [GetPlayer.GetHeir.GetCustom('GetUniversalFullName')](은)는 본보기를 보여주는 일을 [GetPlayer.GetHeir.GetHerselfHimself] 스스로 맡았습니다."
+    WCR_je_westernization_status_0:           "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_0')]"
+    WCR_je_westernization_status_0_king:      "서구화가 이제 막 시작되었고 [GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')](은)는 외국의 복장을 채택했습니다."
+    WCR_je_westernization_status_0_heir:      "서구화가 이제 막 시작되었고, [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')] [GetPlayer.GetHeir.GetCustom('GetUniversalFullName')](은)는 본보기를 보여주는 일을 [GetPlayer.GetHeir.GetHerselfHimself] 스스로 맡았습니다."
     WCR_je_westernization_status_0_king_heir: "[GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] 그리고 [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')](이)가 국가에 모범을 보이기 위해 서구화를 시작했습니다."
-    WCR_je_westernization_status_0_neither: "우리나라는 이제 막 서구화가 시작되었습니다."
+    WCR_je_westernization_status_0_neither:   "우리나라는 이제 막 서구화가 시작되었습니다."
     
     WCR_je_westernization_status_5: "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetLeader.GetCustom('GetUniversalFullName')], [Concept('concept_commander', '지휘관')], [GetPopType('officers').GetName] 그리고 [GetPopType('bureaucrats').GetName]는 서양식 복장을 지급받았습니다."
     
-    WCR_je_westernization_status_10: "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_10')]"
-    WCR_je_westernization_status_10_both: "[GetPopType('soldiers').GetName] 그리고 [GetPopType('clerks').GetName]이 서양식 복장을 받는 동안 [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')], [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')](은)는 모범을 보이기 위해 복장을 착용했습니다."
-    WCR_je_westernization_status_10_indus: "[GetPopType('soldiers').GetName], [GetPopType('clerks').GetName](은)는 서양식 옷을 받았고, [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')](은)는 [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetHerHis]의 동료들에게 모범을 보이기 위해 서양식 옷을 입었습니다."
-    WCR_je_westernization_status_10_intel: "[GetPopType('soldiers').GetName], [GetPopType('clerks').GetName]은 서양식 옷을 받았고, [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')](은)는 [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetHerHis]의 동료들에게 모범을 보이기 위해 서양식 옷을 입었습니다."
+    WCR_je_westernization_status_10:         "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_10')]" 
+    WCR_je_westernization_status_10_both:    "[GetPopType('soldiers').GetName] 그리고 [GetPopType('clerks').GetName]이 서양식 복장을 받는 동안 [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')], [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')](은)는 모범을 보이기 위해 복장을 착용했습니다."
+    WCR_je_westernization_status_10_indus:   "[GetPopType('soldiers').GetName], [GetPopType('clerks').GetName](은)는 서양식 옷을 받았고, [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')](은)는 [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetHerHis]의 동료들에게 모범을 보이기 위해 서양식 옷을 입었습니다."
+    WCR_je_westernization_status_10_intel:   "[GetPopType('soldiers').GetName], [GetPopType('clerks').GetName]은 서양식 옷을 받았고, [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')](은)는 [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetHerHis]의 동료들에게 모범을 보이기 위해 서양식 옷을 입었습니다."
     WCR_je_westernization_status_10_neither: "[GetPopType('soldiers').GetName] 그리고 [GetPopType('clerks').GetName]은 서양식 옷을 입었습니다."
     
     WCR_je_westernization_status_20: "아직까지 서양 옷을 입지 않았던 [GetPopType('capitalists').GetName]는 거래처에게 더 잘 보이기 위해 옷을 새로 샀습니다."
     
-    WCR_je_westernization_status_30: "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_30')]"
-    WCR_je_westernization_status_30_tu: "[GetPopType('academics').GetName]와 [GetInterestGroupVariant('ig_trade_unions', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')](이)가 모두 새로운 유행에 합류했습니다. 서구화도 잘 진행되고 있습니다."
+    WCR_je_westernization_status_30:      "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_30')]" 
+    WCR_je_westernization_status_30_tu:   "[GetPopType('academics').GetName]와 [GetInterestGroupVariant('ig_trade_unions', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')](이)가 모두 새로운 유행에 합류했습니다. 서구화도 잘 진행되고 있습니다."
     WCR_je_westernization_status_30_none: "[GetPopType('academics').GetName]가 새로운 유행에 합류했습니다. 서구화는 원활하게 진행되고 있습니다."
     
     WCR_je_westernization_status_40: "부유한 동료들의 영향을 받아, [GetPopType('engineers').GetName]도 서양식 옷을 입기 시작했습니다."
     
     WCR_je_westernization_status_50: "[GetPopType('machinists').GetName]이 서양 옷을 입을 정도로 외국의 복장은 계속해서 유행하고 있습니다."
     
-    WCR_je_westernization_status_60: "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_60')]"
+    WCR_je_westernization_status_60:      "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_60')]" 
     WCR_je_westernization_status_60_land: "[GetInterestGroupVariant('ig_landowners', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')](은)는 마지못해 유행에 합류했고, 그 나비효과는 도시를 통해 [GetPopType('shopkeepers').GetName]에게 퍼져나갔습니다."
     WCR_je_westernization_status_60_none: "서양의 풍조는 도시를 통해 [GetPopType('shopkeepers').GetName]에게도 영향을 미쳤습니다."
     
@@ -98,8 +102,8 @@ l_korean:
     
     WCR_je_westernization_status_80: "[GetPopType('aristocrats').GetName]의 가족은 마침내 전통을 고집하는 것을 포기했고, 상류층의 다른 이들과 어울리는 새로운 현대적인 의복을 착용했습니다."
     
-    WCR_je_westernization_status_90: "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_90')]"
-    WCR_je_westernization_status_90_pb: "완고했던 [GetInterestGroupVariant('ig_petty_bourgeoisie', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')](와)과 [GetPopType('farmers').GetName]가 마침내 서양식 복장을 받아들였습니다."
+    WCR_je_westernization_status_90:      "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_90')]" 
+    WCR_je_westernization_status_90_pb:   "완고했던 [GetInterestGroupVariant('ig_petty_bourgeoisie', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')](와)과 [GetPopType('farmers').GetName]가 마침내 서양식 복장을 받아들였습니다."
     WCR_je_westernization_status_90_none: "고집불통이었던 [GetPopType('farmers').GetName]는 마침내 서양식 복장을 받아들였습니다."
     
     WCR_je_westernization_status_100: "서구화가 완료되다!"
