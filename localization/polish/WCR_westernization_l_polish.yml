@@ -2,105 +2,108 @@
 
 l_polish:
     # Journal entries
-    WCR_je_westernization: 0 "Westernizacja"
-    WCR_je_westernization_reason: 0 "Jeśli mamy stać się liczącą się siłą w tym szybko uprzemysławiającym się świecie i nie dopuścić do utraty suwerenności, nasz naród musi być równy z mieszkańcami Zachodu, bez względu na cenę. Częścią tego musi być włączenie zachodnich zwyczajów do naszego społeczeństwa.\n\n$WCR_je_westernization_reason_long$"
+    WCR_je_westernization:        "Westernizacja"
+    WCR_je_westernization_goal:   "" # Defined to silence errors
+    WCR_je_westernization_reason: "Jeśli mamy stać się liczącą się siłą w tym szybko uprzemysławiającym się świecie i nie dopuścić do utraty suwerenności, nasz naród musi być równy z mieszkańcami Zachodu, bez względu na cenę. Częścią tego musi być włączenie zachodnich zwyczajów do naszego społeczeństwa.\n\n$WCR_je_westernization_reason_long$"
     
     # Decisions
-    WCR_de_start_westernization: 0 "Początek Westernizacji"
-    WCR_de_start_westernization_desc: 0 "Rozpocznij proces westernizacji swojego kraju.\nPo zakończeniu westernizacji większość członków zbiorowości i postaci będzie nosić ubrania w stylu zachodnim."
-    WCR_de_start_westernization_tooltip: 0 "$WCR_de_start_westernization$"
+    WCR_de_start_westernization:         "Początek Westernizacji"
+    WCR_de_start_westernization_desc:    "Rozpocznij proces westernizacji swojego kraju.\nPo zakończeniu westernizacji większość członków zbiorowości i postaci będzie nosić ubrania w stylu zachodnim."
+    WCR_de_start_westernization_tooltip: "$WCR_de_start_westernization$"
     
-    WCR_de_simple_westernization: 0 "Zaadoptuj ubrania w stylu zachodnim"
-    WCR_de_simple_westernization_desc: 0 "Musimy dołączyć do wielkich mocarstw Zachodu, również w ich sposobie życia, jeśli mamy stanąć wśród nich na arenie światowej. W ramach tego celu nasi obywatele zaadaptują odzież w stylu zachodnim."
-    WCR_de_simple_westernization_tooltip: 0 "$WCR_de_simple_westernization$"
+    WCR_de_simple_westernization:         "Zaadoptuj ubrania w stylu zachodnim"
+    WCR_de_simple_westernization_desc:    "Musimy dołączyć do wielkich mocarstw Zachodu, również w ich sposobie życia, jeśli mamy stanąć wśród nich na arenie światowej. W ramach tego celu nasi obywatele zaadaptują odzież w stylu zachodnim."
+    WCR_de_simple_westernization_tooltip: "$WCR_de_simple_westernization$"
     
     # Tooltips
-    WCR_tt_overlord_westernized_sub: 0 "[GetPlayer.GetOverlord.GetName] jest #v zwesternizowany#!."
-    WCR_tt_overlord_westernized_ind: 0 "The [concept_overlord] of [GetPlayer.GetName] is #v westernized#!."
-    WCR_tt_ruler_support: 0 "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] supports any of the [Concept('concept_interest_group', 'Interest Groups')] below:"
+    WCR_tt_overlord_westernized_sub: "[GetPlayer.GetOverlord.GetName] jest #v zwesternizowany#!."
+    WCR_tt_overlord_westernized_ind: "The [concept_overlord] of [GetPlayer.GetName] is #v westernized#!."
+    WCR_tt_ruler_support:            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] supports any of the [Concept('concept_interest_group', '$concept_interest_groups$')] below:"
+    
+    WCR_tt_KOR_req_bypass: "The #b $dyn_c_empire_of_korea$#! has been proclaimed."
+    WCR_tt_JAP_req_bypass: "The #b $je_meiji_restoration$#! [concept_journal_entry] has been completed."
     
     # Modifiers
-    WCR_westernized_modifier: 0 "Niedawna Westernizacja"
-    WCR_ig_westernization_1_modifier: 0 "Zacznijmy Westernizację"
-    WCR_ig_westernization_2_modifier: 0 "$WCR_ig_westernization_1_modifier$"
-    WCR_ig_westernization_3_modifier: 0 "Częściowa Westernizacja"
-    WCR_ig_westernization_4_modifier: 0 "$WCR_ig_westernization_3_modifier$"
-    WCR_ig_westernized_modifier: 0 "Naród Zwesternizowany"
+    WCR_westernized_modifier:         "Niedawna Westernizacja"
+    WCR_ig_westernization_1_modifier: "Zacznijmy Westernizację"
+    WCR_ig_westernization_2_modifier: "$WCR_ig_westernization_1_modifier$"
+    WCR_ig_westernization_3_modifier: "Częściowa Westernizacja"
+    WCR_ig_westernization_4_modifier: "$WCR_ig_westernization_3_modifier$"
+    WCR_ig_westernized_modifier:      "Naród Zwesternizowany"
     
     # Events
-    WCR_ev_1_title: 0 "Szerzmy Kulturę Zachodu!"
-    WCR_ev_1_desc: 0 "Po wystarczająco długim kontakcie z zachodnią kulturą, społeczeństwem i technologią, elementy ich stylu życia zostały zintegrowane z naszym."
-    WCR_ev_1_flavor: 0 ""Zachód przewodzi światu w przemyśle, nauce i kulturze. Świat, który kiedyś znaliśmy, się kończy. Nadszedł czas, abyśmy dołączyli wielkich mocarstw!""
-    WCR_ev_1_a: 0 "Teraz jesteśmy gotowi stanąć na arenie międzynarodowej!"
+    WCR_ev_1_title:  "Szerzmy Kulturę Zachodu!"
+    WCR_ev_1_desc:   "Po wystarczająco długim kontakcie z zachodnią kulturą, społeczeństwem i technologią, elementy ich stylu życia zostały zintegrowane z naszym."
+    WCR_ev_1_flavor: ""Zachód przewodzi światu w przemyśle, nauce i kulturze. Świat, który kiedyś znaliśmy, się kończy. Nadszedł czas, abyśmy dołączyli wielkich mocarstw!""
+    WCR_ev_1_a:      "Teraz jesteśmy gotowi stanąć na arenie międzynarodowej!"
     
     # Westernization JE long text & helpers
-    WCR_LONG_DELIMITER: 0 "     @divider_start!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_end!"
+    WCR_LONG_DELIMITER: "     @divider_start!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_end!"
     
-    WCR_ig_armed_forces: 0 "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_devout: 0 "[GetInterestGroupVariant('ig_devout', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_industrialists: 0 "[GetInterestGroupVariant('ig_industrialists', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_intelligentsia: 0 "[GetInterestGroupVariant('ig_intelligentsia', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_landowners: 0 "[GetInterestGroupVariant('ig_landowners', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_petty_bourgeoisie: 0 "[GetInterestGroupVariant('ig_petty_bourgeoisie', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_rural_folk: 0 "[GetInterestGroupVariant('ig_rural_folk', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_trade_unions: 0 "[GetInterestGroupVariant('ig_trade_unions', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_armed_forces:      "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_devout:            "[GetInterestGroupVariant('ig_devout', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_industrialists:    "[GetInterestGroupVariant('ig_industrialists', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_intelligentsia:    "[GetInterestGroupVariant('ig_intelligentsia', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_landowners:        "[GetInterestGroupVariant('ig_landowners', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_petty_bourgeoisie: "[GetInterestGroupVariant('ig_petty_bourgeoisie', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_rural_folk:        "[GetInterestGroupVariant('ig_rural_folk', SCOPE.sCountry('this_country')).GetName]"
+    WCR_ig_trade_unions:      "[GetInterestGroupVariant('ig_trade_unions', SCOPE.sCountry('this_country')).GetName]"
     
-    WCR_overview_reason: 0 "Postęp Westernizacji będzie #v rosnąć miesięcznie#!, a tempo, w jakim to zrobi, zależeć od czynników wymienionych poniżej.\n\nObecnie przewiduje się, że postęp Westernizacji wzrośnie o #v [SCOPE.ScriptValue('WCR_sv_calculate_westernization_progress_delta')|2]%#! w następnym miesiącu."
+    WCR_overview_reason: "Postęp Westernizacji będzie #v rosnąć miesięcznie#!, a tempo, w jakim to zrobi, zależeć od czynników wymienionych poniżej.\n\nObecnie przewiduje się, że postęp Westernizacji wzrośnie o #v [SCOPE.ScriptValue('WCR_sv_calculate_westernization_progress_delta')|2]%#! w następnym miesiącu."
     
-    WCR_powerful_bonus_reason: 0 "Postęp Westernizacji będzie #v rosnąć#! o #p 1%#! za każdą z wymienionych rzeczy:\n- $WCR_ig_intelligentsia$ are [concept_powerful]\n- $WCR_ig_industrialists$ are [concept_powerful]\n- $WCR_ig_armed_forces$ are [concept_powerful]\n- $WCR_ig_trade_unions$ are [concept_powerful]"
+    WCR_powerful_bonus_reason: "Postęp Westernizacji będzie #v rosnąć#! o #p 1%#! za każdą z wymienionych rzeczy:\n- $WCR_ig_intelligentsia$ are [concept_powerful]\n- $WCR_ig_industrialists$ are [concept_powerful]\n- $WCR_ig_armed_forces$ are [concept_powerful]\n- $WCR_ig_trade_unions$ are [concept_powerful]"
     
-    WCR_influential_bonus_reason: 0 "Postęp Westernizacji będzie #v rosnąć#! o #p 0.5%#! za każdą z wymienionych rzeczy:\n- $WCR_ig_intelligentsia$ are [concept_influential]\n- $WCR_ig_industrialists$ are [concept_influential]\n- $WCR_ig_armed_forces$ are [concept_influential]\n- $WCR_ig_trade_unions$ are [concept_influential]"
+    WCR_influential_bonus_reason: "Postęp Westernizacji będzie #v rosnąć#! o #p 0.5%#! za każdą z wymienionych rzeczy:\n- $WCR_ig_intelligentsia$ are [concept_influential]\n- $WCR_ig_industrialists$ are [concept_influential]\n- $WCR_ig_armed_forces$ are [concept_influential]\n- $WCR_ig_trade_unions$ are [concept_influential]"
     
-    WCR_powerful_malus_reason: 0 "Postęp Westernizacji będzie #v maleć#! o #n 1%#! za każdą z wymienionych rzeczy:\n- $WCR_ig_landowners$ are [concept_powerful]\n- $WCR_ig_devout$ are [concept_powerful]\n- $WCR_ig_rural_folk$ are [concept_powerful]\n- $WCR_ig_petty_bourgeoisie$ are [concept_powerful]"
+    WCR_powerful_malus_reason: "Postęp Westernizacji będzie #v maleć#! o #n 1%#! za każdą z wymienionych rzeczy:\n- $WCR_ig_landowners$ are [concept_powerful]\n- $WCR_ig_devout$ are [concept_powerful]\n- $WCR_ig_rural_folk$ are [concept_powerful]\n- $WCR_ig_petty_bourgeoisie$ are [concept_powerful]"
     
-    WCR_GGGG_bonus_reason_blank: 0 ""
+    WCR_GGGG_bonus_reason_blank: ""
+    WCR_GGGG_bonus_reason: "\n\nPostęp Westernizacji będzie #v rosnąć#! o #p [Add_CFixedPoint(SCOPE.ScriptValue('GGGG_sv_pm_usage_full_dress'), SCOPE.ScriptValue('GGGG_sv_pm_usage_helmets_drab_caps_coats'))|2]%#! na podstawie twojego obecnego poziomu postępu #v $pm_GGGG_full_dress$#!, #v $pm_GGGG_modern_uniform$#!, i/lub #v $pm_GGGG_modern_uniform_navy$#! przez #bold all military units#!."
     
-    WCR_GGGG_bonus_reason: 0 "\n\nPostęp Westernizacji będzie #v rosnąć#! o #p [Add_CFixedPoint(SCOPE.ScriptValue('GGGG_sv_pm_usage_full_dress'), SCOPE.ScriptValue('GGGG_sv_pm_usage_helmets_drab_caps_coats'))|2]%#! na podstawie twojego obecnego poziomu postępu #v $pm_GGGG_full_dress$#!, #v $pm_GGGG_modern_uniform$#!, i/lub #v $pm_GGGG_modern_uniform_navy$#! przez #bold all military units#!."
+    WCR_westernized_relations_reason: "Postęp Westernizacji będzie #v rosnąć#! o dodatkowe #p 10%#! #v aktualnego miesięcznego postępu#! Jeśli mamy #p Przyjazne#! [concept_relations] (#v 50#! lub wyższe) z Zwesternizowanym narodem."
     
-    WCR_westernized_relations_reason: 0 "Postęp Westernizacji będzie #v rosnąć#! o dodatkowe #p 10%#! #v aktualnego miesięcznego postępu#! Jeśli mamy #p Przyjazne#! [concept_relations] (#v 50#! lub wyższe) z Zwesternizowanym narodem."
+    WCR_no_backtracking_reason: "W przypadku #n negatywnych#! wydarzeń związanych miesięcznym postępem Westernizacji, postęp westernizacji zostanie zatrzymany na ten miesiąc, choć się nie cofnie."
     
-    WCR_no_backtracking_reason: 0 "W przypadku #n negatywnych#! wydarzeń związanych miesięcznym postępem Westernizacji, postęp westernizacji zostanie zatrzymany na ten miesiąc, choć się nie cofnie."
+    WCR_ig_opinion_reason: "Za każde #v 25%#! progresu Westernizacji:\n- $WCR_ig_intelligentsia$ zyska #p 1#! [concept_approval]\n- $WCR_ig_industrialists$ zyskają #p 1#! [concept_approval]\n- $WCR_ig_armed_forces$ zyskają #p 1#! [concept_approval]\n- $WCR_ig_trade_unions$ zyskają #p 1#! [concept_approval]\n- $WCR_ig_landowners$ stracą #n 1#! [concept_approval]\n- $WCR_ig_devout$ straci #n 1#! [concept_approval]\n- $WCR_ig_rural_folk$ straci #n 1#! [concept_approval]\n- $WCR_ig_petty_bourgeoisie$ straci #n 1#! [concept_approval]\n\nPo #v ukończeniu#! Westernizacji, [concept_approval] stracą/uzyskają na przestrzeni czasu całe uzyskane/utracone poparcie."
     
-    WCR_ig_opinion_reason: 0 "Za każde #v 25%#! progresu Westernizacji:\n- $WCR_ig_intelligentsia$ zyska #p 1#! [concept_approval]\n- $WCR_ig_industrialists$ zyskają #p 1#! [concept_approval]\n- $WCR_ig_armed_forces$ zyskają #p 1#! [concept_approval]\n- $WCR_ig_trade_unions$ zyskają #p 1#! [concept_approval]\n- $WCR_ig_landowners$ stracą #n 1#! [concept_approval]\n- $WCR_ig_devout$ straci #n 1#! [concept_approval]\n- $WCR_ig_rural_folk$ straci #n 1#! [concept_approval]\n- $WCR_ig_petty_bourgeoisie$ straci #n 1#! [concept_approval]\n\nPo #v ukończeniu#! Westernizacji, [concept_approval] stracą/uzyskają na przestrzeni czasu całe uzyskane/utracone poparcie."
-    
-    WCR_je_westernization_reason_long: 0 "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_powerful_bonus_reason$\n\n$WCR_influential_bonus_reason$\n\n$WCR_powerful_malus_reason$[SCOPE.sCountry('this_country').GetCustom('WCR_cl_GGGG_bonus_reason')]\n\n$WCR_westernized_relations_reason$\n\n$WCR_no_backtracking_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason$\n\n$WCR_LONG_DELIMITER$"
+    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_powerful_bonus_reason$\n\n$WCR_influential_bonus_reason$\n\n$WCR_powerful_malus_reason$[SCOPE.sCountry('this_country').GetCustom('WCR_cl_GGGG_bonus_reason')]\n\n$WCR_westernized_relations_reason$\n\n$WCR_no_backtracking_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason$\n\n$WCR_LONG_DELIMITER$" 
     
     # Westernization JE status texts
     # Use of GetPlayer in customizable loc text is mandatory due to data context being changed when going through a customizable loc
-    WCR_je_westernization_status_0: 0 "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_0')]"
-    WCR_je_westernization_status_0_king: 0 "Westernizacja właśnie się rozpoczęła, z włączeniem zagranicznego ubioru przez [GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]."
-    WCR_je_westernization_status_0_heir: 0 "Westernizacja właśnie się rozpoczęła, a [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')] wziął na siebie obowiązek pokazywania przykładu [GetPlayer.GetHeir.GetHerselfHimself]."
-    WCR_je_westernization_status_0_king_heir: 0 "Westernizacja właśnie się rozpoczęła, w chwili gdy [GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] i [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')] dali przykład swojemu narodowi."
-    WCR_je_westernization_status_0_neither: 0 "W naszym kraju rozpoczęła się właśnie Westernizacja."
+    WCR_je_westernization_status_0:           "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_0')]"
+    WCR_je_westernization_status_0_king:      "Westernizacja właśnie się rozpoczęła, z włączeniem zagranicznego ubioru przez [GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]."
+    WCR_je_westernization_status_0_heir:      "Westernizacja właśnie się rozpoczęła, a [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')] wziął na siebie obowiązek pokazywania przykładu [GetPlayer.GetHeir.GetHerselfHimself]."
+    WCR_je_westernization_status_0_king_heir: "Westernizacja właśnie się rozpoczęła, w chwili gdy [GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] i [GetPlayer.GetHeir.GetCustom('GetUniversalTitle')][GetPlayer.GetHeir.GetCustom('GetUniversalFullName')] dali przykład swojemu narodowi."
+    WCR_je_westernization_status_0_neither:   "W naszym kraju rozpoczęła się właśnie Westernizacja."
     
-    WCR_je_westernization_status_5: 0 "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetLeader.GetCustom('GetUniversalFullName')], [Concept('concept_commander', 'Commanders')], [GetPopType('officers').GetName] i [GetPopType('bureaucrats').GetName] założyli zachodnie uniformy."
+    WCR_je_westernization_status_5: "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetLeader.GetCustom('GetUniversalFullName')], [Concept('concept_commander', 'Commanders')], [GetPopType('officers').GetName] i [GetPopType('bureaucrats').GetName] założyli zachodnie uniformy."
     
-    WCR_je_westernization_status_10: 0 "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_10')]"
-    WCR_je_westernization_status_10_both: 0 "[GetPopType('soldiers').GetName] i [GetPopType('clerks').GetName] założyli zachodnie uniformy, gdy [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] oraz [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] zaczeli dawać przykład ich współobywatelom."
-    WCR_je_westernization_status_10_indus: 0 "[GetPopType('soldiers').GetName] i [GetPopType('clerks').GetName] założyli zachodnie uniformy, w chwili gdy [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] zaprezentował je swoim kolegom z [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetHerHis]."
-    WCR_je_westernization_status_10_intel: 0 "[GetPopType('soldiers').GetName] i [GetPopType('clerks').GetName] założyli zachodnie uniformy, w chwili gdy [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] zaprezentował je swoim kolegom z [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetHerHis]."
-    WCR_je_westernization_status_10_neither: 0 "[GetPopType('soldiers').GetName] i [GetPopType('clerks').GetName] dostali uniformy w stylu zachodnim."
+    WCR_je_westernization_status_10:         "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_10')]" 
+    WCR_je_westernization_status_10_both:    "[GetPopType('soldiers').GetName] i [GetPopType('clerks').GetName] założyli zachodnie uniformy, gdy [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] oraz [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] zaczeli dawać przykład ich współobywatelom."
+    WCR_je_westernization_status_10_indus:   "[GetPopType('soldiers').GetName] i [GetPopType('clerks').GetName] założyli zachodnie uniformy, w chwili gdy [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] zaprezentował je swoim kolegom z [GetInterestGroupVariant('ig_industrialists', GetPlayer).GetLeader.GetHerHis]."
+    WCR_je_westernization_status_10_intel:   "[GetPopType('soldiers').GetName] i [GetPopType('clerks').GetName] założyli zachodnie uniformy, w chwili gdy [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] zaprezentował je swoim kolegom z [GetInterestGroupVariant('ig_intelligentsia', GetPlayer).GetLeader.GetHerHis]."
+    WCR_je_westernization_status_10_neither: "[GetPopType('soldiers').GetName] i [GetPopType('clerks').GetName] dostali uniformy w stylu zachodnim."
     
-    WCR_je_westernization_status_20: 0 "Pozostali [GetPopType('capitalists').GetName] przyjeli zachodnie ubrania, aby lepiej prezentować się przed swoimi partnerami biznesowymi."
+    WCR_je_westernization_status_20: "Pozostali [GetPopType('capitalists').GetName] przyjeli zachodnie ubrania, aby lepiej prezentować się przed swoimi partnerami biznesowymi."
     
-    WCR_je_westernization_status_30: 0 "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_30')]"
-    WCR_je_westernization_status_30_tu: 0 "Wszyscy [GetPopType('academics').GetName] i [GetInterestGroupVariant('ig_trade_unions', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] dołączyli do nowego trendu w modzie. Westernizacja postępuje naprawdę dobrze."
-    WCR_je_westernization_status_30_none: 0 "Wszyscy [GetPopType('academics').GetName] dołączyli do nowego trendu w modzie. Westernizacja postępuje naprawdę dobrze."
+    WCR_je_westernization_status_30:      "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_30')]" 
+    WCR_je_westernization_status_30_tu:   "Wszyscy [GetPopType('academics').GetName] i [GetInterestGroupVariant('ig_trade_unions', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] dołączyli do nowego trendu w modzie. Westernizacja postępuje naprawdę dobrze."
+    WCR_je_westernization_status_30_none: "Wszyscy [GetPopType('academics').GetName] dołączyli do nowego trendu w modzie. Westernizacja postępuje naprawdę dobrze."
     
-    WCR_je_westernization_status_40: 0 "Pod wpływem bogatszych współpracowników, [GetPopType('engineers').GetName] zaczeli wplatać zachodnie elementy w swojej garderobie."
+    WCR_je_westernization_status_40: "Pod wpływem bogatszych współpracowników, [GetPopType('engineers').GetName] zaczeli wplatać zachodnie elementy w swojej garderobie."
     
-    WCR_je_westernization_status_50: 0 "Zagraniczna moda spływa na [GetPopType('machinists').GetName] adoptujących zachodnią modę."
+    WCR_je_westernization_status_50: "Zagraniczna moda spływa na [GetPopType('machinists').GetName] adoptujących zachodnią modę."
     
-    WCR_je_westernization_status_60: 0 "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_60')]"
-    WCR_je_westernization_status_60_land: 0 "[GetInterestGroupVariant('ig_landowners', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] niechętnie dołączyli do zachodnich trendów, które rozprzestrzeniły się w miastach przez [GetPopType('shopkeepers').GetName]."
-    WCR_je_westernization_status_60_none: 0 "The western fashion trends spread through the cities to the [GetPopType('shopkeepers').GetName]."
+    WCR_je_westernization_status_60:      "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_60')]" 
+    WCR_je_westernization_status_60_land: "[GetInterestGroupVariant('ig_landowners', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] niechętnie dołączyli do zachodnich trendów, które rozprzestrzeniły się w miastach przez [GetPopType('shopkeepers').GetName]."
+    WCR_je_westernization_status_60_none: "Nowe zachodnie szyki mody pojawiają się w miastach u [GetPopType('shopkeepers').GetName]."
     
-    WCR_je_westernization_status_70: 0 "Ponieważ nowy styl staje się bardziej przystępny, [GetPopType('laborers').GetName] włączyli go do swoich strojów."
+    WCR_je_westernization_status_70: "Ponieważ nowy styl staje się bardziej przystępny, [GetPopType('laborers').GetName] włączyli go do swoich strojów."
     
-    WCR_je_westernization_status_80: 0 "[GetPopType('aristocrats').GetName] zrezygnowali z przestarzałych tradycji, włączając do swojej garderoby modę z zachodu, która pokazuje ich przynależność do klasy wyższej."
+    WCR_je_westernization_status_80: "[GetPopType('aristocrats').GetName] zrezygnowali z przestarzałych tradycji, włączając do swojej garderoby modę z zachodu, która pokazuje ich przynależność do klasy wyższej."
     
-    WCR_je_westernization_status_90: 0 "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_90')]"
-    WCR_je_westernization_status_90_pb: 0 "Nawet zawsze uparci [GetInterestGroupVariant('ig_petty_bourgeoisie', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] oraz [GetPopType('farmers').GetName] zaakcpetowali w końcu modę z zachodu, jako rzecz powszechną."
-    WCR_je_westernization_status_90_none: 0 "Nawet zawsze uparci [GetPopType('farmers').GetName] zaakcpetowali w końcu modę z zachodu, jako rzecz powszechną."
+    WCR_je_westernization_status_90:      "[SCOPE.sCountry('this_country').GetCustom('WCR_cl_westernization_je_status_90')]" 
+    WCR_je_westernization_status_90_pb:   "Nawet zawsze uparci [GetInterestGroupVariant('ig_petty_bourgeoisie', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] oraz [GetPopType('farmers').GetName] zaakcpetowali w końcu modę z zachodu, jako rzecz powszechną."
+    WCR_je_westernization_status_90_none: "Nawet zawsze uparci [GetPopType('farmers').GetName] zaakcpetowali w końcu modę z zachodu, jako rzecz powszechną."
     
-    WCR_je_westernization_status_100: 0 "Westernizacja Zakończona!"
+    WCR_je_westernization_status_100: "Westernizacja Zakończona!"
