@@ -20,8 +20,8 @@ l_korean:
     WCR_tt_overlord_westernized_ind: "[GetPlayer.GetName]의 [concept_overlord]은 #v 서구화#!되었음."
     WCR_tt_ruler_support:            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]은(는) 아무 [Concept('concept_interest_group', '이해 집단')]을 후원:"
     
-    WCR_tt_KOR_req_bypass: "The #b $dyn_c_empire_of_korea$#! has been proclaimed."
-    WCR_tt_JAP_req_bypass: "The #b $je_meiji_restoration$#! [concept_journal_entry] has been completed."
+    WCR_tt_KOR_req_bypass: "#b $dyn_c_empire_of_korea$#!이 선포되었음."
+    WCR_tt_JAP_req_bypass: "#b $je_meiji_restoration$#! [concept_journal_entry]를 완료하였음."
     
     # Modifiers
     WCR_westernized_modifier:         "최근 서구화됨"
