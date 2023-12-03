@@ -2,11 +2,11 @@
     type = country
     random_valid = no
     
-    text = {
+    text = { # Temporarily ("temporarily") disable GGGG interop
         trigger = {
             GGGG_is_active_trigger = yes
         }
-        localization_key = WCR_GGGG_bonus_reason
+        localization_key = WCR_GGGG_bonus_reason_blank # WCR_GGGG_bonus_reason
     }
     text = {
         trigger = {
