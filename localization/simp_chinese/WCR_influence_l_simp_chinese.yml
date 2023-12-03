@@ -11,7 +11,7 @@ l_simp_chinese:
     WCR_ev_domestic_option: "We shall design a uniquely [GetPlayer.GetAdjectiveNoFormatting] style!"
     
     # Tooltips
-    WCR_tt_when_in_cmd:    "当授予[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]部队指挥权的时候，"
+    WCR_tt_when_in_cmd:    "当授予部队指挥权的时候，"
     WCR_tt_when_in_cmd_df: "[AddLocalizationIf(Not(EqualTo_string(GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetLawType.GetName, GetLawType('law_monarchy').GetName)), 'WCR_tt_when_in_cmd')]"
     WCR_tt_domestic_ruler: "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] will wear the #v [GetPlayer.GetAdjectiveNoFormatting] uniform#!$WCR_tt_when_in_cmd_df$."
     WCR_tt_american_ruler: "$WCR_tt_when_in_cmd_df$[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]将会穿上#v 美式制服#!。"
