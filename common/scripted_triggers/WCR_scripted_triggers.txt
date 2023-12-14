@@ -167,7 +167,6 @@ WCR_army_clothes_trigger = {
 WCR_navy_clothes_trigger = {
     OR = {
         scope:pop ?= {
-            always = yes
             workplace ?= {
                 is_building_type = building_naval_base
             }
