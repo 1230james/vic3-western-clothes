@@ -19,7 +19,7 @@ WCR_st_westernize_traditionalists = {
                 has_role = admiral
                 AND = {
                     has_role = politician
-                    interest_group = { is_interest_group_type = ig_armed_forces }
+                    interest_group ?= { is_interest_group_type = ig_armed_forces }
                 }
                 NOT = {
                     has_ideology = ideology:ideology_traditionalist
@@ -37,7 +37,7 @@ WCR_st_westernize_rural_folk = {
                 has_role = general
                 has_role = admiral
                 NOT = {
-                    interest_group = { is_interest_group_type = ig_rural_folk }
+                    interest_group ?= { is_interest_group_type = ig_rural_folk }
                 }
             }
         }
@@ -52,7 +52,7 @@ WCR_st_westernize_devout = {
                 has_role = general
                 has_role = admiral
                 NOT = {
-                    interest_group = { is_interest_group_type = ig_devout }
+                    interest_group ?= { is_interest_group_type = ig_devout }
                 }
             }
         }

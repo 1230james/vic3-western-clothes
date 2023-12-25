@@ -121,6 +121,16 @@
                     WCR_navy_clothes_trigger = yes
                     middle_clothes_pop_trigger = yes
                     upper_clothes_pop_trigger = yes
+                    
+                    scope:character ?= {
+                        OR = {
+                            is_ruler = yes
+                            is_heir  = yes
+                        }
+                        owner ?= {
+                            has_variable = KOR_korean_empire_declared
+                        }
+                    }
                 }
             }
             modifier = { # Japanese pops & characters

@@ -62,6 +62,9 @@
                     }
                 }
                 OR = {
+                    scope:character ?= { # Heir wears hanbok in vanilla
+                        is_heir = yes
+                    }
                     WCR_army_clothes_trigger = yes
                     WCR_navy_clothes_trigger = yes
                 }
@@ -146,6 +149,32 @@
                 WCR_has_completed_westernization_trigger = no
                 PCT_is_active_trigger = no
                 upper_clothes_pop_trigger = yes
+            }
+        }
+    }
+    
+    WCR_korean_imperial_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = korean_imperial_outfits
+                range = { 0 1 }
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                scope:character ?= {
+                    owner ?= {
+                        c:KOR ?= THIS
+                        has_variable = KOR_korean_empire_declared
+                    }
+                    is_ruler = yes
+                    WCR_has_completed_westernization_trigger = no
+                }
             }
         }
     }
@@ -1288,7 +1317,13 @@
                 soldier_clothes_pop_trigger = no
                 OR = {
                     AND = {
-                        monarchy_clothes_trigger = yes
+                        OR = {
+                            monarchy_clothes_trigger = yes
+                            AND = {
+                                ruler_clothes_trigger    = yes
+                                military_clothes_trigger = yes
+                            }
+                        }
                         WCR_ruler_has_russian_influence_trigger = yes
                     }
                     AND = {
@@ -1384,8 +1419,13 @@
                         }
                         OR = {
                             AND = {
-                                monarchy_clothes_trigger = yes
-                                # military_clothes_trigger = yes
+                                OR = {
+                                    monarchy_clothes_trigger = yes
+                                    AND = {
+                                        ruler_clothes_trigger    = yes
+                                        military_clothes_trigger = yes
+                                    }
+                                }
                                 WCR_ruler_has_domestic_influence_trigger = yes
                             }
                             AND = {
@@ -1428,7 +1468,7 @@
                 mode = add
                 gene = coats
                 template = korean_empire_coats
-                range = { 0 1 } # For the randomness to work correctly
+                range = { 0 0.5 } # 0 - 50% to block hanbok; the military coat is the same in either half
             }
             accessory = {
                 mode = add
@@ -1534,8 +1574,13 @@
                         }
                         OR = {
                             AND = {
-                                monarchy_clothes_trigger = yes
-                                # military_clothes_trigger = yes
+                                OR = {
+                                    monarchy_clothes_trigger = yes
+                                    AND = {
+                                        ruler_clothes_trigger    = yes
+                                        military_clothes_trigger = yes
+                                    }
+                                }
                                 WCR_ruler_has_domestic_influence_trigger = yes
                             }
                             AND = {
@@ -1634,6 +1679,159 @@
                             soldier_clothes_pop_trigger = yes
                             officers_clothes_pop_trigger = yes
                         }
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_ottoman_sultan_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = ottoman_sultan_coats
+                accessory = male_coat_european_08_blue
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_white
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = all_belts
+                accessory = male_belt_generic_02 # HE'S GOT A SWORD
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_04
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 11000 # Vanilla: 10000
+                WCR_has_completed_westernization_trigger = yes
+                WCR_ruler_has_domestic_influence_trigger = yes
+                monarchy_clothes_trigger = yes
+                military_clothes_trigger = no # Vanilla behavior has him wearing the army coat when taking command
+                scope:character ?= {
+                    exists = owner
+                    c:TUR ?= owner
+                    is_female = no
+                }
+            }
+        }
+    }
+
+    WCR_ottoman_military_clothes = {
+        dna_modifiers = {
+             accessory = {
+                mode = add
+                gene = coats
+                template = french_coats
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_white
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = all_belts
+                accessory = male_belt_generic_01
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 11000 # Vanilla: 10000
+                WCR_has_completed_westernization_trigger = yes
+                OR = {
+                    scope:character ?= {
+                        exists = owner
+                        c:TUR ?= owner
+                    }
+                    scope:pop ?= {
+                        exists = owner
+                        c:TUR ?= owner
+                    }
+                }
+                soldier_clothes_pop_trigger = no
+                OR = {
+                    AND = {
+                        ruler_clothes_trigger    = yes
+                        military_clothes_trigger = yes
+                        WCR_ruler_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_ottoman_soldier_clothes = {
+        dna_modifiers = {
+             accessory = {
+                mode = add
+                gene = coats
+                template = french_coats
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_white
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = all_belts
+                accessory = male_belt_generic_01
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 11000 # Vanilla: 10000
+                WCR_has_completed_westernization_trigger = yes
+                scope:pop ?= {
+                    exists = owner
+                    c:TUR ?= owner
+                }
+                soldier_clothes_pop_trigger = yes
+                OR = {
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
                     }
                 }
             }

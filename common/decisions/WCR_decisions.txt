@@ -125,9 +125,15 @@
         }
         modifier = {
             trigger = {
-                has_variable = meiji_var
+                has_variable = meiji_restoration_complete
             }
-            add = 100
+            add = 1000
+        }
+        modifier = {
+            trigger = {
+                has_variable = KOR_korean_empire_declared
+            }
+            add = 1000
         }
         modifier = {
             trigger = {
@@ -272,9 +278,15 @@ WCR_de_start_westernization = {
         }
         modifier = {
             trigger = {
-                has_variable = meiji_var
+                has_variable = meiji_restoration_complete
             }
-            add = 100
+            add = 1000
+        }
+        modifier = {
+            trigger = {
+                has_variable = KOR_korean_empire_declared
+            }
+            add = 1000
         }
         modifier = {
             trigger = {

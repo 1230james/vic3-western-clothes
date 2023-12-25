@@ -15,7 +15,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 1000
+                add = 10000
                 OR = {
                     scope:pop ?= {
                         culture = cu:japanese
@@ -67,13 +67,43 @@
         weight = {
             base = 0
             modifier = {
-                add = 900
-                AND = {
-                    exists = scope:pop
-                    scope:pop = {
+                add = 1
+                OR = {
+                    AND = {
+                        scope:pop ?= {
+                            culture = cu:japanese
+                        }
+                        poor_clothes_pop_trigger = no
+                    }
+                    scope:character ?= {
                         culture = cu:japanese
                     }
-                    poor_clothes_pop_trigger = no
+                }
+                NOR = { # Copypasted from WCR_westernized_japanese_hair_styles and made it NOR
+                    AND = {
+                        OR = {
+                            has_game_rule = WCR_modded_JAP_westernization
+                            has_game_rule = WCR_mixed_JAP_westernization
+                        }
+                        WCR_has_completed_westernization_trigger = yes
+                    }
+                    AND = {
+                        has_game_rule = WCR_vanilla_JAP_westernization
+                        OR = {
+                            scope:pop ?= {
+                                owner ?= {
+                                    c:JAP ?= this
+                                    has_variable = meiji_restoration_complete
+                                }
+                            }
+                            scope:character ?= {
+                                owner ?= {
+                                    c:JAP ?= this
+                                    has_variable = meiji_restoration_complete
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

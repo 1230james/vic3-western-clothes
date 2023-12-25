@@ -82,6 +82,12 @@ WCR_ev.2 = {
                 }
                 c:JAP ?= this
             }
+            trigger_else_if = {
+                limit = {
+                    c:TUR ?= this
+                }
+                c:TUR ?= this
+            }
             trigger_else = {
                 always = no
             }
@@ -371,6 +377,12 @@ WCR_ev.3 = {
                     c:JAP ?= this
                 }
                 c:JAP ?= this
+            }
+            trigger_else_if = {
+                limit = {
+                    c:TUR ?= this
+                }
+                c:TUR ?= this
             }
             trigger_else = {
                 always = no
@@ -683,6 +695,12 @@ WCR_ev.4 = {
                     c:JAP ?= this
                 }
                 c:JAP ?= this
+            }
+            trigger_else_if = {
+                limit = {
+                    c:TUR ?= this
+                }
+                c:TUR ?= this
             }
             trigger_else = {
                 always = no

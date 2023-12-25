@@ -299,10 +299,7 @@
                 monarchy_clothes_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_no_influence_trigger = yes
-                scope:character ?= {
-                    is_ruler = yes
-                    has_role = general
-                }
+                military_clothes_trigger = yes
             }
         }
     }
@@ -331,10 +328,7 @@
                 republic_clothes_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 # WCR_ruler_has_no_influence_trigger = yes # Hat is same for all flavors
-                scope:character ?= {
-                    is_ruler = yes
-                    has_role = general
-                }
+                military_clothes_trigger = yes
             }
         }
     }
@@ -363,10 +357,7 @@
                 monarchy_clothes_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_american_influence_trigger = yes
-                scope:character ?= {
-                    is_ruler = yes
-                    has_role = general
-                }
+                military_clothes_trigger = yes
             }
         }
     }
@@ -395,10 +386,7 @@
                 monarchy_clothes_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_british_influence_trigger = yes
-                scope:character ?= {
-                    is_ruler = yes
-                    has_role = general
-                }
+                military_clothes_trigger = yes
             }
         }
     }
@@ -427,10 +415,7 @@
                 monarchy_clothes_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_french_influence_trigger = yes
-                scope:character ?= {
-                    is_ruler = yes
-                    has_role = general
-                }
+                military_clothes_trigger = yes
             }
         }
     }
@@ -459,10 +444,7 @@
                 monarchy_clothes_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_german_influence_trigger = yes
-                scope:character ?= {
-                    is_ruler = yes
-                    has_role = general
-                }
+                military_clothes_trigger = yes
             }
         }
     }
@@ -491,10 +473,7 @@
                 monarchy_clothes_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_russian_influence_trigger = yes
-                scope:character ?= {
-                    is_ruler = yes
-                    has_role = general
-                }
+                military_clothes_trigger = yes
             }
         }
     }
@@ -532,8 +511,8 @@
                 scope:character ?= {
                     exists = owner
                     c:KOR ?= owner
-                    is_ruler = yes
-                    has_role = general
+                    monarchy_clothes_trigger = yes
+                    military_clothes_trigger = yes
                 }
             }
         }
@@ -551,7 +530,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2200 # Vanilla: 1200
+                add = 2100 # Vanilla: 1200
                 OR = {
                     AND = {
                         OR = {
@@ -615,7 +594,7 @@
         }
     }
     
-    japanese_meiji_military_headgear = {
+    WCR_japanese_meiji_military_headgear = {
         dna_modifiers = {
             accessory = {
                 mode = add
@@ -627,7 +606,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2200 # Vanilla: 1200
+                add = 2100 # Vanilla: 1200
                 OR = {
                     AND = {
                         OR = {
@@ -685,6 +664,61 @@
                             soldier_clothes_pop_trigger = yes
                             officers_clothes_pop_trigger = yes
                         }
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_arabic_military_fez = { # Excludes the fancy female headgear meant for high class pops
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = WCR_headgear
+                template = arabic_fez_westernized
+                accessory = male_headgear_arabic_common_01
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 2100 # Vanilla: 200
+                WCR_has_completed_westernization_trigger = yes
+                OR = {
+                    scope:character ?= {
+                        exists = owner
+                        c:TUR ?= owner
+                    }
+                    scope:pop ?= {
+                        exists = owner
+                        c:TUR ?= owner
+                    }
+                }
+                OR = {
+                    AND = {
+                        OR = {
+                            monarchy_clothes_trigger = yes
+                            AND = {
+                                ruler_clothes_trigger    = yes
+                                military_clothes_trigger = yes
+                            }
+                        }
+                        WCR_ruler_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
                     }
                 }
             }
