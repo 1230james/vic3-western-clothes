@@ -94,11 +94,18 @@
 
         weight = {
             base = 0
-            modifier = { # Slave & clergy exclusions
+            modifier = { # Exclusions
                 add = -100
                 OR = {
+                    # Slaves & clergy
                     slaves_clothes_pop_trigger = yes
                     clergy_clothes_pop_trigger = yes
+                    
+                    # Poor pops w/ game rule to not westernize poor pops
+                    AND = {
+                        poor_clothes_pop_trigger = yes
+                        has_game_rule = WCR_westernize_poor_pop_clothing_no
+                    }
                 }
             }
             modifier = { # Catch-all for most of WCR
@@ -145,6 +152,9 @@
                     }
                     scope:character ?= {
                         culture = cu:japanese
+                        NOT     = { # also not agitators (they have their own clothing definitions that otherwise arent messed with)
+                            has_role = agitator
+                        }
                     }
                 }
             }
