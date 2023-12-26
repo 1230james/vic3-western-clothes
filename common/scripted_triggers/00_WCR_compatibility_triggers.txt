@@ -9,3 +9,8 @@ GGGG_is_active_trigger = {
 PCT_is_active_trigger = {
     always = no
 }
+
+# East Asian Clothes Patch
+EACP_is_active_trigger = {
+    always = no
+}

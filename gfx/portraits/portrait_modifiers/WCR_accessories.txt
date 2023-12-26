@@ -199,6 +199,7 @@
                 republic_clothes_trigger = no
                 soldier_clothes_pop_trigger = no
                 scope:character ?= {
+                    age > 12
                     owner ?= {
                         WCR_is_using_vanilla_rules = no
                     }

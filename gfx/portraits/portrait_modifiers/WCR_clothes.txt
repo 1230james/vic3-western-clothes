@@ -15,44 +15,6 @@
                 template = korean_low_outfits
                 range = { 0 1 } # For the randomness to work correctly
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = coats
-                template = no_coat
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = aiguillettes
-                template = no_aiguillettes
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = no_legwear
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = no_epaulette
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = headgear
-                template = no_headgear
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = shirt
-                template = no_shirts
-                range = { 0 1 }
-            }
         } 
 
         weight = {
@@ -80,38 +42,6 @@
                 template = korean_common_outfits
                 range = { 0 1 } # For the randomness to work correctly
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = coats
-                template = no_coat
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = aiguillettes
-                template = no_aiguillettes
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = no_legwear
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = no_epaulette
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = headgear
-                template = no_headgear
-                range = { 0 1 }
-            }
         }
 
         weight = {
@@ -132,6 +62,9 @@
                     }
                 }
                 OR = {
+                    scope:character ?= { # Heir wears hanbok in vanilla
+                        is_heir = yes
+                    }
                     WCR_army_clothes_trigger = yes
                     WCR_navy_clothes_trigger = yes
                 }
@@ -147,38 +80,6 @@
                 gene = outfits
                 template = chinese_common_outfits
                 range = { 0 1 } # For the randomness to work correctly
-            }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = coats
-                template = no_coat
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = aiguillettes
-                template = no_aiguillettes
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template = no_legwear
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = no_epaulette
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = headgear
-                template = no_headgear
-                range = { 0 1 }
             }
         }
         weight = {
@@ -205,14 +106,6 @@
                 template = chinese_common_outfits
                 range = { 0 1 } # For the randomness to work correctly
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = shirt
-                template = no_shirts
-                range = { 0 1 }
-            }
         } 
         weight = {
             base = 0
@@ -224,11 +117,65 @@
                     }
                 }
                 OR = {
-                    middle_clothes_pop_trigger = yes
+                    AND = {
+                        middle_clothes_pop_trigger = yes
+                        WCR_has_completed_westernization_trigger = no
+                    }
                     clergy_clothes_pop_trigger = yes
+                }
+                PCT_is_active_trigger = no
+            }
+        }
+    }
+    
+    WCR_chinese_upper_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = chinese_common_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }  
+        } 
+        weight = {
+            base = 0
+            modifier = {
+                add = 500
+                scope:pop ?= {
+                    owner ?= {
+                        c:KOR ?= THIS
+                    }
                 }
                 WCR_has_completed_westernization_trigger = no
                 PCT_is_active_trigger = no
+                upper_clothes_pop_trigger = yes
+            }
+        }
+    }
+    
+    WCR_korean_imperial_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = korean_imperial_outfits
+                range = { 0 1 }
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                scope:character ?= {
+                    owner ?= {
+                        c:KOR ?= THIS
+                        has_variable = KOR_korean_empire_declared
+                    }
+                    is_ruler = yes
+                    WCR_has_completed_westernization_trigger = no
+                }
+                EACP_is_active_trigger = no
             }
         }
     }
@@ -252,32 +199,6 @@
                 gene = belts
                 template = japanese_belts
                 range = { 0 1 } # For the randomness to work correctly
-            }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = coats
-                template = no_coat
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = aiguillettes
-                template = no_aiguillettes
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = no_epaulette
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = headgear
-                template = no_headgear
-                range = { 0 1 }
             }
         }
 
@@ -346,45 +267,13 @@
                 template = japanese_top_layer
                 range = { 0 1 } # For the randomness to work correctly
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = coats
-                template = no_coat
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = aiguillettes
-                template = no_aiguillettes
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = no_epaulette
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = headgear
-                template = no_headgear
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = sashes
-                template = no_sash
-                range = { 0 1 }
-            }
         }
 
         weight = {
             base = 0
             modifier = {
                 add  = 1200
-                 AND = {
+                AND = {
                     japanese_clothes_trigger = yes
                     OR = {
                         AND = {
@@ -409,25 +298,6 @@
                 range = { 0 1 } # For the randomness to work correctly
             }
             
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = coats
-                template = no_coat
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = aiguillettes
-                template = no_aiguillettes
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = no_epaulette
-                range = { 0 1 }
-            }
             accessory = {
                 mode = add
                 gene = headgear
@@ -444,7 +314,7 @@
                     owner ?= {
                         c:JAP ?= this
                     }
-                    is_ruler = yes
+                    japanese_imperial_clothes_trigger = yes
                 }
             }
         }
@@ -472,20 +342,6 @@
                 gene = top_layer
                 template = japanese_top_layer
                 range = { 0 1 } # For the randomness to work correctly
-            }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = coats
-                template = no_coat
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = shirt
-                template = no_shirts
-                range = { 0 1 }
             }
         } 
 
@@ -529,38 +385,6 @@
                 template = japanese_top_layer
                 range = { 0 1 } # For the randomness to work correctly
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = coats
-                template = no_coat
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = headgear
-                template = no_headgear
-                range = { 0 1 }
-            }
-            accessory = {
-               mode = add
-               gene = waistcoats
-               template = no_waistcoat
-               range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = civilian_coats
-                template = no_civilian_coat
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = props
-                template = no_prop
-                range = { 0 1 } # For the randomness to work correctly
-            }
         }
 
         weight = {
@@ -592,20 +416,6 @@
                 gene = outfits
                 template = children_outfit_royal
                 range = { 0 1 } # For the randomness to work correctly
-            }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = no_top_layer
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = necklaces
-                template = no_necklace
-                range = { 0 1 }
             }
         }
         weight = {
@@ -668,14 +478,6 @@
                 template = european_working_class_outfits
                 range = { 0 0.5 } # For the randomness to work correctly
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = no_top_layer
-                range = { 0 1 } # For the randomness to work correctly
-            }
         }
         weight = {
             base = 0
@@ -715,26 +517,6 @@
                 gene = props
                 template = gene_lences
                 range = { 0 1 } # For the randomness to work correctly
-            }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = no_top_layer
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = necklaces
-                template = no_necklace
-                range = { 0 1 }
             }
         }
 
@@ -776,14 +558,6 @@
                 template = european_working_class_outfits
                 range = { 0 1 } # For the randomness to work correctly
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = necklaces
-                template = no_necklace
-                range = { 0 1 }
-            }
         }
         weight = {
             base = 0
@@ -823,20 +597,6 @@
                 template = european_working_class_outfits
                 range = { 0 1 } # For the randomness to work correctly
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = no_top_layer
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = necklaces
-                template = no_necklace
-                range = { 0 1 }
-            }
         }
 
         weight = {
@@ -870,32 +630,6 @@
                 template = european_civilian_coats
                 range = { 0 1 } # For the randomness to work correctly
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = no_top_layer
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = necklaces
-                template = no_necklace
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = shirt
-                template = no_shirts
-                range = { 0 1 }
-            }
         }
         weight = {
             base = 0
@@ -926,14 +660,6 @@
                 # gene = legwear
                 # template = european_legwear
                 # range = { 0 1 } # For the randomness to work correctly
-            # }
-            
-            # # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            # accessory = {
-                # mode = add
-                # gene = outfits
-                # template = no_outfit
-                # range = { 0 1 }
             # }
         # }
         # weight = {
@@ -980,14 +706,6 @@
                 gene = outfits
                 template = european_royal_outfits
                 range = { 0 1 } # For the randomness to work correctly
-            }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = coats
-                template = no_coat
-                range = { 0 1 }
             }
         }
         weight = {
@@ -1036,20 +754,6 @@
                 template = european_legwear
                 range = { 0 1 } # For the randomness to work correctly
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = necklaces
-                template = no_necklace
-                range = { 0 1 }
-            }
         }
         weight = {
             base = 0
@@ -1088,20 +792,6 @@
                 gene = top_layer
                 template = european_top_layer
                 range = { 0 1 } # For the randomness to work correctly
-            }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = necklaces
-                template = no_necklace
-                range = { 0 1 }
             }
         }
         weight = {
@@ -1148,20 +838,6 @@
                 template = european_top_layer
                 range = { 0 1 } # For the randomness to work correctly
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = necklaces
-                template = no_necklace
-                range = { 0 1 }
-            }
         }
         weight = {
             base = 0
@@ -1207,20 +883,6 @@
                 template = european_top_layer
                 range = { 0 1 } # For the randomness to work correctly
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = necklaces
-                template = no_necklace
-                range = { 0 1 }
-            }
         }
         weight = {
             base = 0
@@ -1254,20 +916,6 @@
                 template = european_top_layer
                 range = { 0 1 } # For the randomness to work correctly
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = necklaces
-                template = no_necklace
-                range = { 0 1 }
-            }
         }
         weight = {
             base = 0
@@ -1300,32 +948,6 @@
                 gene = legwear
                 template = european_legwear
                 range = { 0 1 } # For the randomness to work correctly
-            }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = belts
-                template = no_belt
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = no_top_layer
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = necklaces
-                template = no_necklace
-                range = { 0 1 }
             }
         }
         weight = {
@@ -1371,32 +993,6 @@
                 gene = legwear
                 template = european_legwear_colors
                 range = { 0.4 0.6 } # The gene has three color sets in it, the one in the middle being dark blue and sky blue.
-            }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = belts
-                template = no_belt
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = no_top_layer
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = necklaces
-                template = no_necklace
-                range = { 0 1 }
             }
         }
         weight = {
@@ -1449,32 +1045,6 @@
                 template = european_legwear_colors
                 range = { 0 0.1 } # there's three colors in the gene, the first of which is black
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = belts
-                template = no_belt
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = no_top_layer
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = necklaces
-                template = no_necklace
-                range = { 0 1 }
-            }
         }
         weight = {
             base = 0
@@ -1515,26 +1085,6 @@
                 gene = legwear
                 template = european_legwear_colors
                 range = { 0 0.1 } # there's three colors in the gene, the first of which is black
-            }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = belts
-                template = no_belt
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = no_top_layer
-                range = { 0 1 }
             }
         }
         weight = {
@@ -1582,32 +1132,6 @@
                 template = all_epaulettes
                 range = { 0 1 } # For the randomness to work correctly
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = belts
-                template = no_belt
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = no_top_layer
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = necklaces
-                template = no_necklace
-                range = { 0 1 }
-            }
         }
         weight = {
             base = 0
@@ -1649,26 +1173,6 @@
                 template = european_legwear_colors
                 range = { 0.7 1 } # There's three colors in the gene, the last one of the three being red.
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = belts
-                template = no_belt
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = no_top_layer
-                range = { 0 1 }
-            }
         }
         weight = {
             base = 0
@@ -1706,32 +1210,6 @@
                 gene = legwear
                 template = european_legwear
                 range = { 0 1 } # For the randomness to work correctly
-            }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = belts
-                template = no_belt
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = no_top_layer
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = necklaces
-                template = no_necklace
-                range = { 0 1 }
             }
         }
 
@@ -1784,26 +1262,6 @@
                 template = all_epaulettes
                 range = { 0.1 0.2 } # For the randomness to work correctly
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = belts
-                template = no_belt
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = no_top_layer
-                range = { 0 1 }
-            }
         } 
 
         weight = {
@@ -1851,32 +1309,6 @@
                 template = all_epaulettes
                 range = { 0 1 } # For the randomness to work correctly
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = belts
-                template = no_belt
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = no_top_layer
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = necklaces
-                template = no_necklace
-                range = { 0 1 }
-            }
         }
         weight = {
             base = 0
@@ -1886,7 +1318,13 @@
                 soldier_clothes_pop_trigger = no
                 OR = {
                     AND = {
-                        monarchy_clothes_trigger = yes
+                        OR = {
+                            monarchy_clothes_trigger = yes
+                            AND = {
+                                ruler_clothes_trigger    = yes
+                                military_clothes_trigger = yes
+                            }
+                        }
                         WCR_ruler_has_russian_influence_trigger = yes
                     }
                     AND = {
@@ -1916,32 +1354,6 @@
                 gene = legwear
                 template = slavic_legwear
                 range = { 0 1 } 
-            }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = belts
-                template = no_belt
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = no_top_layer
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = necklaces
-                template = no_necklace
-                range = { 0 1 }
             }
         }
         weight = {
@@ -1990,14 +1402,6 @@
                 template = all_epaulettes
                 range = { 0 1 } # For the randomness to work correctly
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
         }
         weight = {
             base = 0
@@ -2016,8 +1420,13 @@
                         }
                         OR = {
                             AND = {
-                                monarchy_clothes_trigger = yes
-                                # military_clothes_trigger = yes
+                                OR = {
+                                    monarchy_clothes_trigger = yes
+                                    AND = {
+                                        ruler_clothes_trigger    = yes
+                                        military_clothes_trigger = yes
+                                    }
+                                }
                                 WCR_ruler_has_domestic_influence_trigger = yes
                             }
                             AND = {
@@ -2060,7 +1469,7 @@
                 mode = add
                 gene = coats
                 template = korean_empire_coats
-                range = { 0 1 } # For the randomness to work correctly
+                range = { 0 0.5 } # 0 - 50% to block hanbok; the military coat is the same in either half
             }
             accessory = {
                 mode = add
@@ -2075,14 +1484,6 @@
             #    template = all_epaulettes
             #    range = { 0.5 0.8 } # For the randomness to work correctly
             #}
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
         } 
 
         weight = {
@@ -2156,26 +1557,6 @@
                 template = all_epaulettes
                 range = { 0 1 } # For the randomness to work correctly
             }
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = no_top_layer
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = belts
-                template = no_belt
-                range = { 0 1 }
-            }
         }
         weight = {
             base = 0
@@ -2194,8 +1575,13 @@
                         }
                         OR = {
                             AND = {
-                                monarchy_clothes_trigger = yes
-                                # military_clothes_trigger = yes
+                                OR = {
+                                    monarchy_clothes_trigger = yes
+                                    AND = {
+                                        ruler_clothes_trigger    = yes
+                                        military_clothes_trigger = yes
+                                    }
+                                }
                                 WCR_ruler_has_domestic_influence_trigger = yes
                             }
                             AND = {
@@ -2253,26 +1639,6 @@
             #    template = all_epaulettes
             #    range = { 0.5 0.8 } # For the randomness to work correctly
             #}
-            
-            # Outfit overrides (for deconflicting with other sources, e.g. vanilla)
-            accessory = {
-                mode = add
-                gene = outfits
-                template = no_outfit
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = top_layer
-                template = no_top_layer
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
-                gene = belts
-                template = no_belt
-                range = { 0 1 }
-            }
         } 
 
         weight = {
@@ -2314,6 +1680,159 @@
                             soldier_clothes_pop_trigger = yes
                             officers_clothes_pop_trigger = yes
                         }
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_ottoman_sultan_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = ottoman_sultan_coats
+                accessory = male_coat_european_08_blue
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_white
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = all_belts
+                accessory = male_belt_generic_02 # HE'S GOT A SWORD
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_04
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 11000 # Vanilla: 10000
+                WCR_has_completed_westernization_trigger = yes
+                WCR_ruler_has_domestic_influence_trigger = yes
+                monarchy_clothes_trigger = yes
+                military_clothes_trigger = no # Vanilla behavior has him wearing the army coat when taking command
+                scope:character ?= {
+                    exists = owner
+                    c:TUR ?= owner
+                    is_female = no
+                }
+            }
+        }
+    }
+
+    WCR_ottoman_military_clothes = {
+        dna_modifiers = {
+             accessory = {
+                mode = add
+                gene = coats
+                template = french_coats
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_white
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = all_belts
+                accessory = male_belt_generic_01
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 11000 # Vanilla: 10000
+                WCR_has_completed_westernization_trigger = yes
+                OR = {
+                    scope:character ?= {
+                        exists = owner
+                        c:TUR ?= owner
+                    }
+                    scope:pop ?= {
+                        exists = owner
+                        c:TUR ?= owner
+                    }
+                }
+                soldier_clothes_pop_trigger = no
+                OR = {
+                    AND = {
+                        ruler_clothes_trigger    = yes
+                        military_clothes_trigger = yes
+                        WCR_ruler_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_ottoman_soldier_clothes = {
+        dna_modifiers = {
+             accessory = {
+                mode = add
+                gene = coats
+                template = french_coats
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_white
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = all_belts
+                accessory = male_belt_generic_01
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 11000 # Vanilla: 10000
+                WCR_has_completed_westernization_trigger = yes
+                scope:pop ?= {
+                    exists = owner
+                    c:TUR ?= owner
+                }
+                soldier_clothes_pop_trigger = yes
+                OR = {
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
                     }
                 }
             }
