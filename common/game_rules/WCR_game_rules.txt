@@ -83,13 +83,19 @@ WCR_JAP_uniforms = {
     WCR_vanilla_JAP_uniforms = {}
 }
 
-# Westernize pops from an unwesternized home country that are currently living in a westernized country
+# Determines how to handle unwesternized pops living in westernized nations.
+#   - No: Never westernize
+#   - Migrants: Non-primary culture pops from an unwesternized home country get westernized automatically
+#   - Wealth: Non-western pops will westernize with sufficient SoL
+#   - Yes: Always westernize
 # AWC behavior: no
-WCR_westernize_immigrants = {
-    default = WCR_westernize_immigrants_yes
+WCR_unwesternizeds_type = {
+    default = WCR_unwesternizeds_type_wealth
     
-    WCR_westernize_immigrants_yes = {}
-    WCR_westernize_immigrants_no  = {}
+    WCR_unwesternizeds_type_never    = {}
+    WCR_unwesternizeds_type_migrants = {}
+    WCR_unwesternizeds_type_wealth   = {}
+    WCR_unwesternizeds_type_always   = {}
 }
 
 # Allows traditionalist characters to avoid westernizing if set to no

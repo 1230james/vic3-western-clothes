@@ -1,111 +1,189 @@
 ﻿# Check if country, character, or pop is considered westernized
 WCR_is_westernized_trigger = {
-    WCR_westernization_allowed_by_rules_trigger = yes
-    OR = {
-        WCR_st_is_part_west_pop_westernized_trigger       = yes
-        WCR_st_is_part_west_character_westernized_trigger = yes
-        scope:pop ?= {
+    trigger_if = {
+        limit = {
             OR = {
-                owner ?= {
-                    WCR_st_is_country_westernized = yes
-                }
-                home_country ?= {
-                    WCR_st_is_country_westernized = yes
-                }
+                exists = scope:pop
+                exists = scope:character
             }
         }
-        scope:character ?= {
-            OR = {
-                owner ?= {
-                    WCR_st_is_country_westernized = yes
-                }
-                home_country ?= {
-                    WCR_st_is_country_westernized = yes
-                }
-            }
+        WCR_westernization_allowed_by_rules_trigger = yes
+        OR = {
+            WCR_st_is_part_west_pop_westernized_trigger       = yes
+            WCR_st_is_part_west_character_westernized_trigger = yes
         }
-        scope:country ?= {
-            WCR_st_is_country_westernized = yes
-        }
+    }
+    trigger_else = {
+        WCR_st_is_country_westernized = yes
     }
 }
 
 # Check if country, character, or pop is considered westernized, but EXCLUDING those that begin westernized at game start
-# Exception: pops from unwesternized countries living in countries that are westernized at game start will westernize
 WCR_has_completed_westernization_trigger = {
+    # Game rules check (for most game rules, anyway)
     WCR_westernization_allowed_by_rules_trigger = yes
+    
+    # Westernization progress check
+    # Checks if pop/character/country is considered westernized solely based on whether the country is considered
+    # wholly westernized or if westernization progress has reached a point where the pop/character has westernized.
+    #
+    # This is irrespective of any other checks, so this should return true for pre-westernized nations.
+    # Pre-westernized nations will be excluded in a different block below.
     OR = {
         WCR_st_is_part_west_pop_westernized_trigger       = yes
         WCR_st_is_part_west_character_westernized_trigger = yes
-        scope:pop ?= {
+        trigger_if = {
+            limit = {
+                NOR = {
+                    exists = scope:pop
+                    exists = scope:character
+                }
+            }
+            WCR_st_is_country_westernized = yes
+        }
+    }
+    
+    # Unwesternized pop living in westernized country game rules
+    # Culturally western people (e.g. Europeans) will be excluded in a later block
+    # Non-migrant pops and characters
+    trigger_if = {
+        limit = {
             OR = {
-                # Current country completed westernization
-                owner ?= {
+                scope:pop ?= {
+                    WCR_st_is_migrant_pop = no
+                }
+                scope:character ?= {
+                    WCR_st_is_migrant_character = no
+                }
+            }
+        }
+        trigger_if = {
+            limit = {
+                OR = {
+                    has_game_rule = WCR_unwesternizeds_type_never
+                    has_game_rule = WCR_unwesternizeds_type_migrants
+                }
+            }
+            # Block unwesternizeds in pre-westernized countries (e.g. Africans in South Africa)
+            # Allow unwesternizeds in countries that have undergone westernization
+            OR = {
+                scope:pop ?= {
+                    owner ?= {
+                        WCR_st_is_country_pre_westernized = no
+                    }
+                }
+                scope:character ?= {
                     OR = {
-                        WCR_st_is_country_westernized_by_vanilla = yes
-                        AND = {
-                            has_variable = WCR_westernized_nation
-                            THIS.var:WCR_westernized_nation = yes
+                        owner ?= {
+                            WCR_st_is_country_pre_westernized = no
+                        }
+                        home_country ?= {
+                            WCR_st_is_country_pre_westernized = no
                         }
                     }
                 }
-                
-                # Home country is westernized (possibly doesnt do anything?)
-                home_country ?= {
+                OR = { # Always westernize military & government pops
+                    WCR_army_clothes_trigger = yes
+                    WCR_navy_clothes_trigger = yes
+                    WCR_st_is_government_pop = yes
+                }
+            }
+        }
+        trigger_else_if = {
+            limit = {
+                has_game_rule = WCR_unwesternizeds_type_wealth
+            }
+            OR = {
+                scope:pop ?= {
                     OR = {
-                        WCR_st_is_country_westernized_by_vanilla = yes
-                        AND = {
-                            has_variable = WCR_westernized_nation
-                            THIS.var:WCR_westernized_nation = yes
+                        WCR_st_is_pop_westernized_by_wealth = yes
+                        owner ?= {
+                            WCR_st_is_country_pre_westernized = no
                         }
                     }
                 }
-                
-                # Unwesternized immigrant inside a westernized country
-                AND = {
-                    has_game_rule = WCR_westernize_immigrants_yes # Controllable by game rule
-                    pop_has_primary_culture = no # If they dont have a primary culture, consider them a migrant
-                    culture = { # We do the migrant check so we can avoid messing with native clothes for countries like Hawaii
-                        NOT = { # Ignore Europeans because they're westernized already anyway
-                            has_discrimination_trait = european_heritage
-                        }
-                    }
-                    owner ?= { # Westernized country check
-                        WCR_st_is_country_westernized = yes
-                    }
+                scope:character ?= {
+                    always = yes
                 }
+            }
+        }
+        trigger_else_if = {
+            limit = {
+                has_game_rule = WCR_unwesternizeds_type_always
+            }
+            always = yes
+        }
+    }
+    
+    # Migrant pops and characters
+    trigger_else_if = {
+        limit = {
+            OR = {
+                scope:pop ?= {
+                    WCR_st_is_migrant_pop = yes
+                }
+                scope:character ?= {
+                    WCR_st_is_migrant_character = yes
+                }
+            }
+        }
+        trigger_if = {
+            limit = {
+                has_game_rule = WCR_unwesternizeds_type_never
+            }
+            OR = { # Westernize migrants in the military and government, but otherwise no
+                WCR_army_clothes_trigger = yes
+                WCR_navy_clothes_trigger = yes
+                WCR_st_is_government_pop = yes
+            }
+        }
+        trigger_else_if = {
+            limit = {
+                has_game_rule = WCR_unwesternizeds_type_migrants
+            }
+            always = yes
+        }
+        trigger_else_if = {
+            limit = {
+                has_game_rule = WCR_unwesternizeds_type_wealth
+            }
+            OR = {
+                scope:pop ?= {
+                    WCR_st_is_pop_westernized_by_wealth = yes
+                }
+                scope:character ?= {
+                    always = yes
+                }
+            }
+        }
+        trigger_else_if = {
+            limit = {
+                has_game_rule = WCR_unwesternizeds_type_always
+            }
+            always = yes
+        }
+    }
+    
+    # Exclude westerners
+    NOR = {
+        scope:pop ?= {
+            culture = {
+                WCR_st_is_western_culture = yes
             }
         }
         scope:character ?= {
-            OR = {
-                owner ?= {
-                    OR = {
-                        WCR_st_is_country_westernized_by_vanilla = yes
-                        AND = {
-                            has_variable = WCR_westernized_nation
-                            THIS.var:WCR_westernized_nation = yes
-                        }
-                    }
-                }
-                home_country ?= {
-                    OR = {
-                        WCR_st_is_country_westernized_by_vanilla = yes
-                        AND = {
-                            has_variable = WCR_westernized_nation
-                            THIS.var:WCR_westernized_nation = yes
-                        }
-                    }
-                }
+            culture = {
+                WCR_st_is_western_culture = yes
             }
         }
-        scope:country ?= {
-            OR = {
-                WCR_st_is_country_westernized_by_vanilla = yes
-                AND = {
-                    has_variable = WCR_westernized_nation
-                    THIS.var:WCR_westernized_nation = yes
+        trigger_if = {
+            limit = {
+                NOR = {
+                    exists = scope:pop
+                    exists = scope:character
                 }
             }
+            WCR_st_is_country_pre_westernized = yes
         }
     }
 }
