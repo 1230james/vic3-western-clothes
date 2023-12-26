@@ -313,7 +313,7 @@
                     owner ?= {
                         c:JAP ?= this
                     }
-                    is_ruler = yes
+                    japanese_imperial_clothes_trigger = yes
                 }
             }
         }
