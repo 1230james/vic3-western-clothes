@@ -478,46 +478,6 @@
         }
     }
     
-    WCR_korean_empire_monarch_headgear = { # emperor_gojong_pickelhaube.png
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = headgear
-                template = german_military_headgear
-                accessory = male_headgear_european_military_10 # pickelhaube
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 2200
-                monarchy_clothes_trigger = yes
-                OR = {
-                    AND = {
-                        OR = {
-                            has_game_rule = WCR_modded_KOR_westernization
-                            has_game_rule = WCR_mixed_KOR_westernization
-                        }
-                        WCR_has_completed_westernization_trigger = yes
-                        WCR_army_has_domestic_influence_trigger = yes
-                    }
-                    AND = {
-                        has_game_rule = WCR_vanilla_KOR_westernization
-                        c:KOR ?= {
-                            has_variable = KOR_korean_empire_declared
-                        }
-                    }
-                }
-                scope:character ?= {
-                    exists = owner
-                    c:KOR ?= owner
-                    monarchy_clothes_trigger = yes
-                    military_clothes_trigger = yes
-                }
-            }
-        }
-    }
-    
     WCR_korean_empire_military_headgear = {
         dna_modifiers = {
             accessory = {

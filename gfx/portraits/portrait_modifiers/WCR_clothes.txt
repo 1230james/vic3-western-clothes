@@ -175,6 +175,7 @@
                     is_ruler = yes
                     WCR_has_completed_westernization_trigger = no
                 }
+                EACP_is_active_trigger = no
             }
         }
     }
