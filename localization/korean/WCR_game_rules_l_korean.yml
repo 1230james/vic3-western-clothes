@@ -1,7 +1,7 @@
 ﻿# Game rules
 
 l_korean:
-    WCR_AWC_behavior_text:     "#bold Adopt Western Clothes#!의 기본 작동 방식입니다."
+    WCR_AWC_behavior_text:     "#bold 서양식 복식 도입#!의 기본 작동 방식입니다."
     WCR_vanilla_behavior_text: "#bold Victoria 3#!의 바닐라 작동 방식입니다."
     
     WCR_gov_employee_text: "[Concept('concept_government_building', '$concept_government$')]와 [Concept('concept_military_building', '$military$')] 종사자들은 항상 서구화될 것입니다."
