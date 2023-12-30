@@ -188,6 +188,22 @@ WCR_has_completed_westernization_trigger = {
     }
 }
 
+# Check if owner is pre-westernized
+WCR_is_in_prewesternized_country_trigger = {
+    OR = {
+        scope:pop ?= {
+            owner ?= {
+                WCR_st_is_country_pre_westernized = yes
+            }
+        }
+        scope:character ?= {
+            owner ?= {
+                WCR_st_is_country_pre_westernized = yes
+            }
+        }
+    }
+}
+
 # Check if member of the army
 # This trigger excludes rulers (including them in it revealed to be more of a pain than a convenience)
 WCR_army_clothes_trigger = {
