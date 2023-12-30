@@ -13,7 +13,7 @@ l_korean:
     setting_WCR_complex_westernization:      "#b 점진적#!"
     setting_WCR_complex_westernization_desc: "#v 서구화#!는 [concept_journal_entry]을 통해 점진적으로 일어날 것입니다."
     setting_WCR_simple_westernization:       "#b 즉각적#!"
-    setting_WCR_simple_westernization_desc:  "#v Westernization#!는 결단을 통해 즉시 일어날 것입니다. $WCR_AWC_behavior_text$"
+    setting_WCR_simple_westernization_desc:  "#v 서구화#!는 결단을 통해 즉시 일어날 것입니다. $WCR_AWC_behavior_text$"
     
     rule_WCR_decision_requirements_type: "#yellow WCR#! | 서구화 요구사항"
     setting_WCR_WCF_requirements:        "#b 기본#!"
