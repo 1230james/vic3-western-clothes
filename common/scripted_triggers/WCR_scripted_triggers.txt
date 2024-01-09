@@ -209,26 +209,44 @@ WCR_is_in_prewesternized_country_trigger = {
 WCR_army_clothes_trigger = {
     OR = {
         scope:pop ?= {
+            # New definition - improves compatibility with mods that add their own buildings with soldier/officer pops
+            # by making the army clothes the fallback
             OR = {
-                # Pop works in army building
-                workplace ?= {
-                    OR = {
-                        is_building_type = building_barracks
-                        is_building_type = building_conscription_center
-                    }
+                NOT = {
+                    exists = workplace
                 }
-                
-                # Military pop that got fired (fallback)
-                AND = {
+                workplace ?= {
                     NOT = {
-                        exists = workplace
-                    }
-                    OR = {
-                        is_pop_type = soldiers
-                        is_pop_type = officers
+                        is_building_type = building_naval_base
                     }
                 }
             }
+            OR = {
+                is_pop_type = soldiers
+                is_pop_type = officers
+            }
+            
+            # Old definition
+            # OR = {
+                # # Pop works in army building
+                # workplace ?= {
+                    # OR = {
+                        # is_building_type = building_barracks
+                        # is_building_type = building_conscription_center
+                    # }
+                # }
+                
+                # # Military pop that got fired (fallback)
+                # AND = {
+                    # NOT = {
+                        # exists = workplace
+                    # }
+                    # OR = {
+                        # is_pop_type = soldiers
+                        # is_pop_type = officers
+                    # }
+                # }
+            # }
         }
         AND = {
             OR = {
