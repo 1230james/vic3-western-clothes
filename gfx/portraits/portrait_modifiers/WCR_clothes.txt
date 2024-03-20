@@ -1634,7 +1634,7 @@
     
     WCR_japanese_meiji_military_clothes = {
         dna_modifiers = {
-             accessory = {
+            accessory = {
                 mode = add
                 gene = coats
                 template = french_coats
@@ -1833,7 +1833,7 @@
 
     WCR_ottoman_military_clothes = {
         dna_modifiers = {
-             accessory = {
+            accessory = {
                 mode = add
                 gene = coats
                 template = french_coats
@@ -1896,7 +1896,7 @@
     
     WCR_ottoman_soldier_clothes = {
         dna_modifiers = {
-             accessory = {
+            accessory = {
                 mode = add
                 gene = coats
                 template = french_coats
@@ -1924,6 +1924,212 @@
                 scope:pop ?= {
                     exists = owner
                     c:TUR ?= owner
+                }
+                soldier_clothes_pop_trigger = yes
+                OR = {
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_chinese_modern_ruler_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                range = { 0.25 0.8 }
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template  = all_aiguillettes
+                accessory = male_aiguillettes_01
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_coats
+                template  = qing_new_army_coat
+                accessory = xinjun_jiangjun
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_belts
+                template  = yaodai_belt
+                accessory = gemingjun_yaodai_sword
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_legwear
+                template  = qing_new_army_legwear
+                accessory = junku_xinjun
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                WCR_has_completed_westernization_trigger = yes
+                WCR_ruler_has_domestic_influence_trigger = yes
+                monarchy_clothes_trigger = yes
+                scope:character ?= {
+                    exists = owner
+                    c:CHI ?= owner
+                    is_female = no
+                }
+            }
+        }
+    }
+    
+    WCR_chinese_modern_commander_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template  = all_epaulettes
+                accessory = male_epaulettes_02
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = all_aiguillettes
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_coats
+                template  = qing_new_army_coat
+                accessory = xinjun_jiangjun
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_belts
+                template  = yaodai_belt
+                accessory = gemingjun_yaodai_sword
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_legwear
+                template  = qing_new_army_legwear
+                accessory = junku_xinjun
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                WCR_has_completed_westernization_trigger = yes
+                scope:character ?= {
+                    exists = owner
+                    c:CHI ?= owner
+                }
+                OR = {
+                    AND = {
+                        ruler_clothes_trigger    = yes
+                        military_clothes_trigger = yes
+                        WCR_ruler_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_chinese_modern_officer_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template  = all_epaulettes
+                accessory = male_epaulettes_02
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_coats
+                template = qing_new_army_coat
+                range = { 0.34 0.66 }
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_belts
+                template  = yaodai_belt
+                accessory = gemingjun_yaodai
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_legwear
+                template  = qing_new_army_legwear
+                accessory = junku_xinjun
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                WCR_has_completed_westernization_trigger = yes
+                soldier_clothes_pop_trigger = no
+                scope:pop ?= {
+                    exists = owner
+                    c:CHI ?= owner
+                }
+                OR = {
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_chinese_modern_soldier_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = WCR_china_coats
+                template = qing_new_army_coat
+                range = { 0 0.33 }
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_belts
+                template  = yaodai_belt
+                accessory = gemingjun_yaodai
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_legwear
+                template  = qing_new_army_legwear
+                accessory = junku_xinjun
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                WCR_has_completed_westernization_trigger = yes
+                scope:pop ?= {
+                    exists = owner
+                    c:CHI ?= owner
                 }
                 soldier_clothes_pop_trigger = yes
                 OR = {

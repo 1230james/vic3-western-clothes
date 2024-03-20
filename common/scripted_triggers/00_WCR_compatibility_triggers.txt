@@ -14,3 +14,8 @@ PCT_is_active_trigger = {
 EACP_is_active_trigger = {
     always = no
 }
+
+# Community Outfit Mod
+com_is_active = {
+    always = no
+}

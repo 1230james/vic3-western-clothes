@@ -1,0 +1,53 @@
+﻿# Headgear
+xinjunmao_shibing = {	
+    set_tags = "cap1,ming_mao"
+    entity = { required_tags = ""			shared_pose_entity = head		entity = xinjunmao_shibing_entity  }		
+}
+
+xinjunmao_junguan = {	
+    set_tags = "cap1,ming_mao"
+    entity = { required_tags = ""			shared_pose_entity = head		entity = xinjunmao_junguan_entity  }		
+}
+
+xinjunmao_jiangjun = {	
+    set_tags = "cap1,ming_mao"
+    entity = { required_tags = ""			shared_pose_entity = head		entity = xinjunmao_jiangjun_entity  }		
+}
+
+qing_guanmao = {	
+    set_tags = "cap1,ming_mao"
+    entity = { required_tags = ""			shared_pose_entity = head		entity = qingguanmao_entity  }		
+}
+
+# Coats
+xinjun_shibing = {
+    set_tags = "ming_yi"
+    entity = { required_tags = ""		shared_pose_entity = torso		entity = xinjun_shibing_entity }
+}
+
+xinjun_junguan = {
+    set_tags = "ming_yi"
+    entity = { required_tags = ""		shared_pose_entity = torso		entity = xinjun_junguan_entity }
+}
+
+xinjun_jiangjun = {
+    set_tags = "ming_yi"
+    entity = { required_tags = ""		shared_pose_entity = torso		entity = xinjun_jiangjun_entity }
+}
+
+# Belts
+gemingjun_yaodai = {	
+    set_tags = "ming_yaodai"
+    entity = { required_tags = ""			shared_pose_entity = torso		entity = gemingjun_yaodai_entity  }		
+}
+
+gemingjun_yaodai_sword = {	
+    set_tags = "ming_yaodai"
+    entity = { required_tags = ""			shared_pose_entity = torso		entity = gemingjun_yaodai_sword_entity  }		
+}
+
+# Legwear
+junku_xinjun = {
+    set_tags = "ming_xie"
+    entity = { required_tags = ""		shared_pose_entity = torso		entity = junku_xinjun_entity }
+}
