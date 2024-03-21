@@ -206,6 +206,7 @@
             base = 0
             modifier = {
                 add  = 1100
+                WCR_has_completed_westernization_trigger = no
                 OR = {
                     scope:pop ?= {
                         owner ?= {
@@ -273,6 +274,7 @@
             base = 0
             modifier = {
                 add  = 1200
+                WCR_has_completed_westernization_trigger = no
                 AND = {
                     japanese_clothes_trigger = yes
                     OR = {
@@ -310,6 +312,7 @@
             base = 0
             modifier = {
                 add = 1900 # 2000
+                WCR_has_completed_westernization_trigger = no
                 scope:character ?= {
                     owner ?= {
                         c:JAP ?= this
@@ -527,8 +530,8 @@
                 WCR_has_completed_westernization_trigger = yes
                 politician_clothes_trigger = yes
                 armed_forces_clothes_trigger = no
+                COM_WCR_enable_outfit = no # Block conflicts with westernized heirs using an outfit from COM
             }
-
             modifier = { #If we want rulers to dress like politicians later.
                 add = 2000
                 WCR_has_completed_westernization_trigger = yes
@@ -1561,6 +1564,10 @@
                     }
                 }
             }
+            modifier = { # COM compatibility
+                add = -11000
+                COM_WCR_enable_outfit = yes
+            }
         }
     }
 
@@ -1715,6 +1722,10 @@
                         }   
                     }
                 }
+            }
+            modifier = { # COM compatibility
+                add = -11000
+                COM_WCR_enable_outfit = yes
             }
         }
     }

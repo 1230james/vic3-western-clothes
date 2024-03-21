@@ -250,13 +250,6 @@ WCR_ev.2 = {
                     }
                 }
             }
-            
-            modifier = { # Historical Asian majors
-                add = 10000
-                OR = {
-                    ROOT = c:CHI
-                }
-            }
         }
     }
     option = {
