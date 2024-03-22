@@ -1,13 +1,13 @@
 pdxmesh = {
 	name = "junku_xinjun_mesh"
-	file = "junku.mesh"
+	file = "../european/01/male_legwear_european_01.mesh"
 
-	blend_shape = { id = "junku_bs_fat"			type = "junku_bs_fat.mesh" }
-	blend_shape = { id = "junku_bs_gaunt"		type = "junku_bs_gaunt.mesh" }
-	blend_shape = { id = "junku_bs_old"			type = "junku_bs_old.mesh" }
-	blend_shape = { id = "junku_bs_infant"		type = "junku_bs_infant.mesh" }
-	blend_shape = { id = "junku_bs_thick"		type = "junku_bs_thick.mesh" }
-	blend_shape = { id = "junku_bs_thin"		type = "junku_bs_thin.mesh" }
+	blend_shape = { id = "male_legwear_european_01_bs_fat"			type = "male_legwear_european_01_bs_fat.mesh" }
+	blend_shape = { id = "male_legwear_european_01_bs_gaunt"		type = "male_legwear_european_01_bs_gaunt.mesh" }
+	blend_shape = { id = "male_legwear_european_01_bs_old"			type = "male_legwear_european_01_bs_old.mesh" }
+	blend_shape = { id = "male_legwear_european_01_bs_infant"		type = "male_legwear_european_01_bs_infant.mesh" }
+	blend_shape = { id = "male_legwear_european_01_bs_thick"		type = "male_legwear_european_01_bs_thick.mesh" }
+	blend_shape = { id = "male_legwear_european_01_bs_thin"		type = "male_legwear_european_01_bs_thin.mesh" }
 	
 	meshsettings = {
 		name = "male_legwear_european_01Shape"
@@ -24,11 +24,11 @@ entity = {
 	name = "junku_xinjun_entity"
 	pdxmesh = "junku_xinjun_mesh"
 
-		attribute = { name = "body_bs_fat"					blend_shape = "junku_bs_fat" }
-		attribute = { name = "body_bs_gaunt"				blend_shape = "junku_bs_gaunt" }
-		attribute = { name = "body_bs_old"					blend_shape = "junku_bs_old" }
-		attribute = { name = "body_bs_infant"				blend_shape = "junku_bs_infant" }
-		attribute = { name = "body_bs_thick"				blend_shape = "junku_bs_thick" }
-		attribute = { name = "body_bs_thin"					blend_shape = "junku_bs_thin" }
+		attribute = { name = "body_bs_fat"					blend_shape = "male_legwear_european_01_bs_fat" }
+		attribute = { name = "body_bs_gaunt"				blend_shape = "male_legwear_european_01_bs_gaunt" }
+		attribute = { name = "body_bs_old"					blend_shape = "male_legwear_european_01_bs_old" }
+		attribute = { name = "body_bs_infant"				blend_shape = "male_legwear_european_01_bs_infant" }
+		attribute = { name = "body_bs_thick"				blend_shape = "male_legwear_european_01_bs_thick" }
+		attribute = { name = "body_bs_thin"					blend_shape = "male_legwear_european_01_bs_thin" }
 		
 }
