@@ -32,15 +32,96 @@
         }
         weight = {
             base = 0
+            # modifier = {
+                # add = 2000
+                # WCR_has_completed_westernization_trigger = yes
+                # WCR_ruler_has_domestic_influence_trigger = no
+                # scope:character ?= {
+                    # OR = {
+                        # military_clothes_trigger = yes
+                        # monarchy_clothes_trigger = yes
+                    # }
+                    # age > 12
+                    # owner ?= {
+                        # WCR_is_using_vanilla_rules = no
+                    # }
+                # }
+            # }
             modifier = {
                 add = 2000
+                agitator_character_trigger = no
                 WCR_has_completed_westernization_trigger = yes
-                WCR_ruler_has_domestic_influence_trigger = no
                 scope:character ?= {
-                    monarchy_clothes_trigger = yes
                     age > 12
                     owner ?= {
                         WCR_is_using_vanilla_rules = no
+                        NOT = {
+                            c:CHI ?= THIS # China has special logic to account for clipping problems
+                        }
+                    }
+                }
+                OR = {
+                    AND = { # Generals
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = { # Admirals
+                        WCR_navy_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = { # Rulers
+                        ruler_clothes_trigger = yes
+                        OR = {
+                            military_clothes_trigger = yes
+                            monarchy_clothes_trigger = yes
+                        }
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_medals_accessories = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = medals
+                template = generic_medals
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                agitator_character_trigger = no
+                WCR_has_completed_westernization_trigger = yes
+                scope:character ?= {
+                    age > 12
+                    owner ?= {
+                        WCR_is_using_vanilla_rules = no
+                        NOT = {
+                            c:CHI ?= THIS # Exclude China because of clipping problems
+                        }
+                    }
+                }
+                OR = {
+                    AND = { # Generals
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = { # Admirals
+                        WCR_navy_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = { # Rulers
+                        ruler_clothes_trigger = yes
+                        OR = {
+                            military_clothes_trigger = yes
+                            monarchy_clothes_trigger = yes
+                        }
+                        WCR_army_has_domestic_influence_trigger = yes
                     }
                 }
             }
@@ -94,7 +175,11 @@
                         WCR_navy_has_german_influence_trigger = yes
                     }
                     AND = {
-                        monarchy_clothes_trigger = yes
+                        ruler_clothes_trigger = yes
+                        OR = {
+                            military_clothes_trigger = yes
+                            monarchy_clothes_trigger = yes
+                        }
                         WCR_ruler_has_german_influence_trigger = yes
                     }
                 }
@@ -146,7 +231,11 @@
                         WCR_navy_has_american_influence_trigger = yes
                     }
                     AND = {
-                        monarchy_clothes_trigger = yes
+                        ruler_clothes_trigger = yes
+                        OR = {
+                            military_clothes_trigger = yes
+                            monarchy_clothes_trigger = yes
+                        }
                         WCR_ruler_has_american_influence_trigger = yes
                     }
                 }
@@ -219,6 +308,10 @@
                     }
                     AND = { # Rulers
                         ruler_clothes_trigger = yes
+                        OR = {
+                            military_clothes_trigger = yes
+                            monarchy_clothes_trigger = yes
+                        }
                         WCR_ruler_has_american_influence_trigger = no
                         WCR_ruler_has_german_influence_trigger   = no
                         WCR_ruler_has_domestic_influence_trigger = no
