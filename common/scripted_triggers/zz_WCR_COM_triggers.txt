@@ -1,0 +1,166 @@
+﻿# Triggers dedicated to driving seamless compatibility with Community Outfit Mod
+#
+# Provides two scripted triggers COM should expect to have defined when WCR is active that WCR will use to signal intent
+# to enable or disable an outfit.
+#
+# ==================================================================================================================== #
+#
+# COM_WCR_enable_outfit
+#     When true, signals intent to have an outfit be enabled; i.e., WCR is not trying to apply an outfit and is
+#     expecting COM to provide one. 
+#
+# COM_WCR_disable_outfit
+#     When true, signals intent to have an outfit be disabled; i.e., WCR is trying to apply its own outfit and wants
+#     COM to not apply a potentially conflicting outfit.
+#
+# Both triggers should be implemented directly in the modifier block of an outfit. No other checks with regards to
+# country, character/pop, etc. are needed by COM and WCR will handle that on its end. Best usage for both triggers would
+# be to use them in separate modifier blocks away from the normal logic (unless if otherwise acceptable). Either trigger
+# returning false should be interpreted as WCR not wishing to interrupt the functionality of COM, and trigger logic
+# should be set up such that either trigger returning false has zero impact on any outfits the triggers are used in.
+#
+# ==================================================================================================================== #
+#
+# List of WCR-controlled COM outfits:
+#   Monarchs
+#     Korea
+#     Japan
+#
+#   Militaries
+#     None
+#
+# ==================================================================================================================== #
+
+COM_WCR_enable_outfit = {
+    com_is_active = yes
+    
+    # Korean monarch
+    trigger_if = {
+        limit = {
+            monarchy_clothes_trigger = yes
+            scope:character ?= {
+                exists = owner
+                c:KOR ?= owner
+            }
+        }
+        
+        OR = {
+            scope:character.owner = {
+                WCR_is_using_vanilla_rules = yes
+                WCR_westernization_allowed_by_rules_trigger = yes
+            }
+            AND = {
+                scope:character ?= {
+                    age > 12
+                }
+                OR = {
+                    has_game_rule = WCR_modded_KOR_westernization
+                    has_game_rule = WCR_mixed_KOR_westernization
+                }
+                WCR_has_completed_westernization_trigger = yes
+                WCR_ruler_has_domestic_influence_trigger = yes
+            }
+        }
+    }
+    
+    # Japanese monarch
+    trigger_else_if = {
+        limit = {
+            monarchy_clothes_trigger = yes
+            scope:character ?= {
+                exists = owner
+                c:JAP ?= owner
+            }
+        }
+        
+        OR = {
+            scope:character.owner = {
+                WCR_is_using_vanilla_rules = yes
+                WCR_westernization_allowed_by_rules_trigger = yes
+            }
+            AND = {
+                scope:character ?= {
+                    age > 12
+                }
+                OR = {
+                    has_game_rule = WCR_modded_JAP_westernization
+                    has_game_rule = WCR_mixed_JAP_westernization
+                }
+                WCR_has_completed_westernization_trigger = yes
+                WCR_ruler_has_domestic_influence_trigger = yes
+            }
+        }
+    }
+    
+    trigger_else = {
+        always = no
+    }
+}
+
+COM_WCR_disable_outfit = {
+    com_is_active = yes
+    
+    # Korean monarch
+    trigger_if = {
+        limit = {
+            monarchy_clothes_trigger = yes
+            scope:character ?= {
+                exists = owner
+                c:KOR ?= owner
+            }
+        }
+        
+        scope:character = {
+            OR = {
+                AND = {
+                    owner = {
+                        WCR_is_using_vanilla_rules = no
+                    }
+                    OR = {
+                        WCR_has_completed_westernization_trigger = no
+                        WCR_ruler_has_domestic_influence_trigger = no
+                    }
+                }
+                owner = {
+                    WCR_is_using_vanilla_rules = yes
+                    WCR_st_is_country_westernized = no
+                }
+                WCR_westernization_allowed_by_rules_trigger = no
+            }
+        }
+    }
+    
+    # Japanese monarch
+    trigger_else_if = {
+        limit = {
+            monarchy_clothes_trigger = yes
+            scope:character ?= {
+                exists = owner
+                c:JAP ?= owner
+            }
+        }
+        
+        scope:character = {
+            OR = {
+                AND = {
+                    owner = {
+                        WCR_is_using_vanilla_rules = no
+                    }
+                    OR = {
+                        WCR_has_completed_westernization_trigger = no
+                        WCR_ruler_has_domestic_influence_trigger = no
+                    }
+                }
+                owner = {
+                    WCR_is_using_vanilla_rules = yes
+                    WCR_st_is_country_westernized = no
+                }
+                WCR_westernization_allowed_by_rules_trigger = no
+            }
+        }
+    }
+    
+    trigger_else = {
+        always = no
+    }
+}

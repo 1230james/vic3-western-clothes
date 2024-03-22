@@ -1,0 +1,71 @@
+﻿# Headgear
+xinjunmao_shibing = {	
+    set_tags = "cap1"
+    entity = { required_tags = ""			shared_pose_entity = head		entity = xinjunmao_shibing_entity  }		
+}
+
+xinjunmao_junguan = {	
+    set_tags = "cap1"
+    entity = { required_tags = ""			shared_pose_entity = head		entity = xinjunmao_junguan_entity  }		
+}
+
+xinjunmao_jiangjun = {	
+    set_tags = "cap1"
+    entity = { required_tags = ""			shared_pose_entity = head		entity = xinjunmao_jiangjun_entity  }		
+}
+
+qing_guanmao = {	
+    set_tags = "cap1"
+    entity = { required_tags = ""			shared_pose_entity = head		entity = qingguanmao_entity  }		
+}
+
+xinjunmao_haijun = {	
+    set_tags = "cap1"
+    entity = { required_tags = ""			shared_pose_entity = head		entity = xinjunmao_haijun_entity  }		
+}
+
+# Coats
+xinjun_shibing = {
+    set_tags = "shrink_arms,shrink_chest,shrink_belly"
+    entity = { required_tags = ""		shared_pose_entity = torso		entity = xinjun_shibing_entity }
+}
+
+xinjun_junguan = {
+    set_tags = "shrink_arms,shrink_chest,shrink_belly"
+    entity = { required_tags = ""		shared_pose_entity = torso		entity = xinjun_junguan_entity }
+}
+
+xinjun_jiangjun = {
+    set_tags = "shrink_arms,shrink_chest,shrink_belly"
+    entity = { required_tags = ""		shared_pose_entity = torso		entity = xinjun_jiangjun_entity }
+}
+
+xinjun_haijun = {
+    set_tags = "shrink_arms,shrink_chest,shrink_belly"
+    entity = { required_tags = ""		shared_pose_entity = torso		entity = xinjun_haijun_entity }
+}
+
+beiyang_haijun = {
+    set_tags = "shrink_arms,shrink_chest,shrink_belly"
+    entity = { required_tags = ""		shared_pose_entity = torso		entity = beiyang_haijun_entity }
+}
+
+# Belts
+gemingjun_yaodai = {
+    entity = { required_tags = ""			shared_pose_entity = torso		entity = gemingjun_yaodai_entity  }		
+}
+
+gemingjun_yaodai_sword = {
+    entity = { required_tags = ""			shared_pose_entity = torso		entity = gemingjun_yaodai_sword_entity  }		
+}
+
+# Legwear
+junku_xinjun = {
+    set_tags = "shrink_legs"
+    entity = { required_tags = ""		shared_pose_entity = torso		entity = junku_xinjun_entity }
+}
+
+junku_haijun = {
+    set_tags = "shrink_legs"
+    entity = { required_tags = ""		shared_pose_entity = torso		entity = junku_haijun_entity }
+}

@@ -1,0 +1,74 @@
+pdxmesh = {
+	name = "qing_guanmao_mesh"
+	file = "qing_guanmao.mesh"
+	meshsettings = {
+		name = "zhanmao"
+		index = 0
+		texture_diffuse = "qing_guanmao.dds"
+		texture_normal = "qing_guanmao_n.dds"
+		texture_specular = "qing_guanmao_p.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+	meshsettings = {
+		name = "ddhl"
+		index = 0
+		texture_diffuse = "ddhl.dds"
+		texture_normal = "ddhl_n.dds"
+		texture_specular = "ddhl_p.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "qingguanmao_entity"
+	pdxmesh = "qing_guanmao_mesh"
+}
+
+
+pdxmesh = {
+	name = "qing_guanmao_789pin"
+	file = "qing_guanmao.mesh"
+	meshsettings = {
+		name = "zhanmao"
+		index = 0
+		texture_diffuse = "qing_guanmao.dds"
+		texture_normal = "qing_guanmao_n.dds"
+		texture_specular = "qing_guanmao_p.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+	meshsettings = {
+		name = "ddhl"
+		index = 0
+		texture_diffuse = "ddhl0789.dds"
+		texture_normal = "ddhl_n.dds"
+		texture_specular = "ddhl_p.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "qingguanmao_789pin_entity"
+	pdxmesh = "qing_guanmao_789pin"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

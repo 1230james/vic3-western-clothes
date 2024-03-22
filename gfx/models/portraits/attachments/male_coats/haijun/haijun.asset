@@ -1,0 +1,63 @@
+pdxmesh = {
+	name = "xinjun_haijun_mesh"
+	file = "../european/11/male_coat_european_11.mesh"
+
+	blend_shape = { id = "male_coat_european_11_bs_fat"                type = "../european/11/male_coat_european_11_bs_fat.mesh" }
+    blend_shape = { id = "male_coat_european_11_bs_gaunt"              type = "../european/11/male_coat_european_11_bs_gaunt.mesh" }
+    blend_shape = { id = "male_coat_european_11_bs_infant"             type = "../european/11/male_coat_european_11_bs_infant.mesh" }
+    blend_shape = { id = "male_coat_european_11_bs_old"                type = "../european/11/male_coat_european_11_bs_old.mesh" }
+    blend_shape = { id = "male_coat_european_11_bs_thick"              type = "../european/11/male_coat_european_11_bs_thick.mesh" }
+    blend_shape = { id = "male_coat_european_11_bs_thin"               type = "../european/11/male_coat_european_11_bs_thin.mesh" }
+	
+	meshsettings = {
+		name = "male_coat_european_11Shape"
+		index = 0
+		texture_diffuse = "xinjun_haijun.dds"
+		texture_normal = "xinjun_haijun_n.dds"
+		texture_specular = "xinjun_haijun_p.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "xinjun_haijun_entity"
+	pdxmesh = "xinjun_haijun_mesh"
+
+	attribute = { name = "body_bs_fat"                                 blend_shape = "male_coat_european_11_bs_fat" }
+    attribute = { name = "body_bs_gaunt"                               blend_shape = "male_coat_european_11_bs_gaunt" }
+    attribute = { name = "body_bs_infant"                              blend_shape = "male_coat_european_11_bs_infant" }
+    attribute = { name = "body_bs_old"                                 blend_shape = "male_coat_european_11_bs_old" }
+    attribute = { name = "body_bs_thick"                               blend_shape = "male_coat_european_11_bs_thick" }
+    attribute = { name = "body_bs_thin"                                blend_shape = "male_coat_european_11_bs_thin" }
+}
+
+pdxmesh = {
+	name = "beiyang_haijun_mesh"
+	file = "../european/08/male_coat_european_08.mesh"
+
+	blend_shape = { id = "male_coat_european_08_bs_infant"		type = "../european/08/male_coat_european_08_bs_infant.mesh" }
+	blend_shape = { id = "male_coat_european_08_bs_fat"		type = "../european/08/male_coat_european_08_bs_fat.mesh" }
+	blend_shape = { id = "male_coat_european_08_bs_gaunt"		type = "../european/08/male_coat_european_08_bs_gaunt.mesh" }
+	blend_shape = { id = "male_coat_european_08_bs_old"		type = "../european/08/male_coat_european_08_bs_old.mesh" }
+	
+	meshsettings = {
+		name = "male_coat_european_08Shape"
+		index = 0
+		texture_diffuse = "beiyang_haijun.dds"
+		texture_normal = "beiyang_haijun_n.dds"
+		texture_specular = "beiyang_haijun_p.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "beiyang_haijun_entity"
+	pdxmesh = "beiyang_haijun_mesh"
+
+	attribute = { name = "body_bs_infant"					blend_shape = "male_coat_european_08_bs_infant" }
+	attribute = { name = "body_bs_fat"					blend_shape = "male_coat_european_08_bs_fat" }
+	attribute = { name = "body_bs_gaunt"					blend_shape = "male_coat_european_08_bs_gaunt" }
+	attribute = { name = "body_bs_old"					blend_shape = "male_coat_european_08_bs_old" }
+}

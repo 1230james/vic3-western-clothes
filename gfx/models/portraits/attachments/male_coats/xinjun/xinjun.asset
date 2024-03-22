@@ -1,0 +1,95 @@
+﻿# TODO: Re-create meshes; this is based on male_coat_european_09 but needs the detailing removed from it
+# Need updated meshes to have full set of blend_shapes and to fix the neck collar bug
+
+pdxmesh = {
+    name = "xinjun_jiangjun_mesh"
+    file = "beiyangjun.mesh"
+        
+    blend_shape = { id = "beiyang_bs_fat"			type = "beiyangjun_fat.mesh" }
+    blend_shape = { id = "beiyang_bs_old"			type = "beiyangjun_old.mesh" }
+    blend_shape = { id = "beiyang_bs_infant"		type = "beiyangjun_infant.mesh" }
+    blend_shape = { id = "beiyang_bs_thick"		type = "beiyangjun_thick.mesh" }
+
+    meshsettings = {
+        name = "beiyangjunfu"
+        index = 0
+        texture_diffuse = "xinjun_jiangjun.dds"
+        texture_normal = "beiyang_n.dds"
+        texture_specular = "beiyang_p.dds"
+        shader = "portrait_attachment"
+        shader_file = "gfx/FX/jomini/portrait.shader"
+    }
+}
+
+entity = {
+    name = "xinjun_jiangjun_entity"
+    pdxmesh = "xinjun_jiangjun_mesh"
+            
+    attribute = { name = "body_bs_fat"		blend_shape = "beiyang_bs_fat" }
+    attribute = { name = "body_bs_old"		blend_shape = "beiyang_bs_old" }
+    attribute = { name = "body_bs_infant"		blend_shape = "beiyang_bs_infant" }
+    attribute = { name = "body_bs_thick"		blend_shape = "beiyang_bs_thick" }
+
+}
+
+pdxmesh = {
+    name = "xinjun_junguan_mesh"
+    file = "beiyangjun.mesh"
+        
+    blend_shape = { id = "beiyang_bs_fat"			type = "beiyangjun_fat.mesh" }
+    blend_shape = { id = "beiyang_bs_old"			type = "beiyangjun_old.mesh" }
+    blend_shape = { id = "beiyang_bs_infant"		type = "beiyangjun_infant.mesh" }
+    blend_shape = { id = "beiyang_bs_thick"		type = "beiyangjun_thick.mesh" }
+
+    meshsettings = {
+        name = "beiyangjunfu"
+        index = 0
+        texture_diffuse = "xinjun_junguan.dds"
+        texture_normal = "beiyang_n.dds"
+        texture_specular = "beiyang_p.dds"
+        shader = "portrait_attachment"
+        shader_file = "gfx/FX/jomini/portrait.shader"
+    }
+}
+
+entity = {
+    name = "xinjun_junguan_entity"
+    pdxmesh = "xinjun_junguan_mesh"
+            
+    attribute = { name = "body_bs_fat"		blend_shape = "beiyang_bs_fat" }
+    attribute = { name = "body_bs_old"		blend_shape = "beiyang_bs_old" }
+    attribute = { name = "body_bs_infant"		blend_shape = "beiyang_bs_infant" }
+    attribute = { name = "body_bs_thick"		blend_shape = "beiyang_bs_thick" }
+
+}
+
+pdxmesh = {
+    name = "xinjun_shibing_mesh"
+    file = "beiyangjun.mesh"
+        
+    blend_shape = { id = "beiyang_bs_fat"			type = "beiyangjun_fat.mesh" }
+    blend_shape = { id = "beiyang_bs_old"			type = "beiyangjun_old.mesh" }
+    blend_shape = { id = "beiyang_bs_infant"		type = "beiyangjun_infant.mesh" }
+    blend_shape = { id = "beiyang_bs_thick"		type = "beiyangjun_thick.mesh" }
+
+    meshsettings = {
+        name = "beiyangjunfu"
+        index = 0
+        texture_diffuse = "xinjun_shibing.dds"
+        texture_normal = "beiyang_n.dds"
+        texture_specular = "beiyang_p.dds"
+        shader = "portrait_attachment"
+        shader_file = "gfx/FX/jomini/portrait.shader"
+    }
+}
+
+entity = {
+    name = "xinjun_shibing_entity"
+    pdxmesh = "xinjun_shibing_mesh"
+            
+    attribute = { name = "body_bs_fat"		blend_shape = "beiyang_bs_fat" }
+    attribute = { name = "body_bs_old"		blend_shape = "beiyang_bs_old" }
+    attribute = { name = "body_bs_infant"		blend_shape = "beiyang_bs_infant" }
+    attribute = { name = "body_bs_thick"		blend_shape = "beiyang_bs_thick" }
+
+}

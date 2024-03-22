@@ -1,0 +1,63 @@
+pdxmesh = {
+	name = "gemingjun_yaodai_mesh"
+	file = "../generic/01/male_belt_generic_01.mesh"
+
+	blend_shape = { id = "male_belt_generic_01_bs_fat"              type = "../generic/01/male_belt_generic_01_bs_fat.mesh" }
+    blend_shape = { id = "male_belt_generic_01_bs_gaunt"            type = "../generic/01/male_belt_generic_01_bs_gaunt.mesh" }
+    blend_shape = { id = "male_belt_generic_01_bs_infant"           type = "../generic/01/male_belt_generic_01_bs_infant.mesh" }
+    blend_shape = { id = "male_belt_generic_01_bs_old"              type = "../generic/01/male_belt_generic_01_bs_old.mesh" }
+    blend_shape = { id = "male_belt_generic_01_bs_thick"            type = "../generic/01/male_belt_generic_01_bs_thick.mesh" }
+
+	meshsettings = {
+		name = "male_belt_generic_01Shape"
+		index = 0
+		texture_diffuse = "gemingjun_yaodai.dds"
+		texture_normal = "gemingjun_yaodai_n.dds"
+		texture_specular = "gemingjun_yaodai_p.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "gemingjun_yaodai_entity"
+	pdxmesh = "gemingjun_yaodai_mesh"
+
+	attribute = { name = "body_bs_fat"                              blend_shape = "male_belt_generic_01_bs_fat" }
+    attribute = { name = "body_bs_gaunt"                            blend_shape = "male_belt_generic_01_bs_gaunt" }
+    attribute = { name = "body_bs_infant"                           blend_shape = "male_belt_generic_01_bs_infant" }
+    attribute = { name = "body_bs_old"                              blend_shape = "male_belt_generic_01_bs_old" }
+    attribute = { name = "body_bs_thick"                            blend_shape = "male_belt_generic_01_bs_thick" }
+}
+
+pdxmesh = {
+	name = "gemingjun_yaodai_sword_mesh"
+	file = "../generic/02/male_belt_generic_02.mesh"
+
+	blend_shape = { id = "male_belt_generic_02_bs_fat"              type = "../generic/02/male_belt_generic_02_bs_fat.mesh" }
+	blend_shape = { id = "male_belt_generic_02_bs_gaunt"            type = "../generic/02/male_belt_generic_02_bs_gaunt.mesh" }
+	blend_shape = { id = "male_belt_generic_02_bs_infant"           type = "../generic/02/male_belt_generic_02_bs_infant.mesh" }
+	blend_shape = { id = "male_belt_generic_02_bs_old"              type = "../generic/02/male_belt_generic_02_bs_old.mesh" }
+	blend_shape = { id = "male_belt_generic_02_bs_thick"            type = "../generic/02/male_belt_generic_02_bs_thick.mesh" }
+
+	meshsettings = {
+		name = "male_belt_generic_02Shape"
+		index = 0
+		texture_diffuse = "gemingjun_yaodai.dds"
+		texture_normal = "gemingjun_yaodai_n.dds"
+		texture_specular = "gemingjun_yaodai_p.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "gemingjun_yaodai_sword_entity"
+	pdxmesh = "gemingjun_yaodai_sword_mesh"
+
+	attribute = { name = "body_bs_fat"                              blend_shape = "male_belt_generic_02_bs_fat" }
+	attribute = { name = "body_bs_gaunt"                            blend_shape = "male_belt_generic_02_bs_gaunt" }
+	attribute = { name = "body_bs_infant"                           blend_shape = "male_belt_generic_02_bs_infant" }
+	attribute = { name = "body_bs_old"                              blend_shape = "male_belt_generic_02_bs_old" }
+	attribute = { name = "body_bs_thick"                            blend_shape = "male_belt_generic_02_bs_thick" }
+}

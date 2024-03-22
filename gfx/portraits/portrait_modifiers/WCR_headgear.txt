@@ -685,4 +685,187 @@
         }
     }
     
+    WCR_chinese_modern_ruler_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_headgear
+                template  = qing_new_army_headgear
+                accessory = qing_guanmao
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 2100
+                WCR_has_completed_westernization_trigger = yes
+                WCR_ruler_has_domestic_influence_trigger = yes
+                monarchy_clothes_trigger = yes
+                scope:character ?= {
+                    exists = owner
+                    c:CHI ?= owner
+                    is_female = no
+                }
+            }
+        }
+    }
+    
+    WCR_chinese_modern_general_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_headgear
+                template = qing_new_army_headgear
+                range = { 0.5 1 }
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 2100
+                WCR_has_completed_westernization_trigger = yes
+                scope:character ?= {
+                    exists = owner
+                    c:CHI ?= owner
+                }
+                OR = {
+                    AND = {
+                        ruler_clothes_trigger    = yes
+                        military_clothes_trigger = yes
+                        WCR_ruler_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_chinese_modern_admiral_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_headgear
+                template = qing_modern_navy_headgear
+                range = { 0 1 }
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 2100
+                WCR_has_completed_westernization_trigger = yes
+                scope:character ?= {
+                    exists = owner
+                    c:CHI ?= owner
+                }
+                WCR_navy_clothes_trigger = yes
+                WCR_navy_has_domestic_influence_trigger = yes
+            }
+        }
+    }
+    
+    WCR_chinese_modern_officer_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_headgear
+                template  = qing_new_army_headgear
+                accessory = xinjunmao_junguan
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 2100
+                WCR_has_completed_westernization_trigger = yes
+                scope:pop ?= {
+                    exists = owner
+                    c:CHI ?= owner
+                }
+                soldier_clothes_pop_trigger = no
+                OR = {
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_chinese_modern_soldier_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_headgear
+                template  = qing_new_army_headgear
+                accessory = xinjunmao_shibing
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 2100
+                WCR_has_completed_westernization_trigger = yes
+                scope:pop ?= {
+                    exists = owner
+                    c:CHI ?= owner
+                }
+                soldier_clothes_pop_trigger = yes
+                OR = {
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+    
 }

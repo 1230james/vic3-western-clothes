@@ -1,8 +1,8 @@
 {
     "name" : "Western Clothes: Redux",
     "id" : "",
-    "version" : "2.4.4",
-    "supported_game_version" : "1.5.*",
+    "version" : "2.5.0",
+    "supported_game_version" : "1.6.*",
     "short_description" : "",
     "tags" : [
         "Alternative History",

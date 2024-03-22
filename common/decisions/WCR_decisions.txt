@@ -225,7 +225,20 @@ WCR_de_start_westernization = {
                     value = -1
                 }
             }
-            
+            else = {
+                set_variable = {
+                    name  = WCR_ruler_influence
+                    value = 0
+                }
+                set_variable = {
+                    name  = WCR_army_influence
+                    value = 0
+                }
+                set_variable = {
+                    name  = WCR_navy_influence
+                    value = 0
+                }
+            }
             add_journal_entry = {
                 type = WCR_je_westernization
             }

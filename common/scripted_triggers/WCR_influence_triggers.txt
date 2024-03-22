@@ -1,5 +1,35 @@
 ﻿# Westernization influence triggers
 
+WCR_has_domestic_influence_available_trigger = {
+    OR = {
+        # Using trigger_if blocks for nicer tooltipping
+        trigger_if = {
+            limit = {
+                c:KOR ?= this
+            }
+            c:KOR ?= this
+        }
+        trigger_else_if = {
+            limit = {
+                c:JAP ?= this
+            }
+            c:JAP ?= this
+        }
+        trigger_else_if = {
+            limit = {
+                c:TUR ?= this
+            }
+            c:TUR ?= this
+        }
+        trigger_else_if = {
+            limit = {
+                c:CHI ?= this
+            }
+            c:CHI ?= this
+        }
+    }
+}
+
 WCR_ruler_has_american_influence_trigger = {
     scope:character ?= {
         owner ?= {

@@ -1,0 +1,21 @@
+pdxmesh = {
+	name = "xinjunmao_haijun_mesh"
+	file = "daiyanmao_wuhui.mesh"
+
+	meshsettings = {
+		name = "daiyanmao_wuhui"
+		index = 0
+		texture_diffuse = "xinjunmao_haijun.dds"
+		texture_normal = "gemingjunmao_n.dds"
+		texture_specular = "gemingjunmao_p.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "xinjunmao_haijun_entity"
+	pdxmesh = "xinjunmao_haijun_mesh"
+
+
+}
