@@ -766,6 +766,7 @@
                 WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
                 military_clothes_trigger = no # Prevent use when king is commanding an army
+                COM_WCR_enable_outfit = no # COM compatibility
             }
         }
     }
@@ -1511,6 +1512,7 @@
             base = 0
             modifier = {
                 add = 11000 # Vanilla: 10000
+                COM_WCR_enable_outfit = no # COM compatibility
                 OR = {
                     AND = {
                         OR = {
@@ -1552,6 +1554,7 @@
                                 c:KOR ?= this
                                 has_variable = KOR_korean_empire_declared
                             }
+                            WCR_westernization_allowed_by_rules_trigger = yes
                         }
                         OR = {
                             military_clothes_trigger = yes
@@ -1563,10 +1566,6 @@
                         }
                     }
                 }
-            }
-            modifier = { # COM compatibility
-                add = -11000
-                COM_WCR_enable_outfit = yes
             }
         }
     }
@@ -1670,6 +1669,7 @@
             base = 0
             modifier = {
                 add = 11000 # Vanilla: 10000
+                COM_WCR_enable_outfit = no # COM compatibility
                 OR = {
                     AND = {
                         OR = {
@@ -1711,6 +1711,7 @@
                                 c:JAP ?= this
                                 has_variable = meiji_restoration_complete
                             }
+                            WCR_westernization_allowed_by_rules_trigger = yes
                         }
                         OR = {
                             military_clothes_trigger = yes
@@ -1722,10 +1723,6 @@
                         }   
                     }
                 }
-            }
-            modifier = { # COM compatibility
-                add = -11000
-                COM_WCR_enable_outfit = yes
             }
         }
     }
