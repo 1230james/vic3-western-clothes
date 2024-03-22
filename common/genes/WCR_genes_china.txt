@@ -28,6 +28,21 @@
                 boy = male
                 girl = female
             }
+            
+            qing_modern_navy_headgear = {
+                index = 2
+                male = {
+                    1 = xinjunmao_haijun
+                    1 = male_headgear_european_military_05 # bicorne
+                    1 = qing_guanmao
+                }
+
+                female = {
+                    1 = empty
+                }
+                boy = male
+                girl = female
+            }
         }
         
         WCR_china_coats = {
@@ -49,6 +64,21 @@
                     1 = xinjun_shibing
                     1 = xinjun_junguan
                     1 = xinjun_jiangjun
+                }
+
+                female = {
+                    1 = female_outfit_chinese_01_mid
+                    1 = female_outfit_european_common_01
+                }
+                boy = male
+                girl = female
+            }
+            
+            qing_modern_navy_coat = {
+                index = 2
+                male = {
+                    1 = xinjun_haijun
+                    1 = beiyang_haijun
                 }
 
                 female = {
@@ -105,6 +135,19 @@
                 index = 1
                 male = {
                     1 = junku_xinjun
+                }
+
+                female = {
+                    1 = empty
+                }
+                boy = male
+                girl = female
+            }
+            
+            qing_modern_navy_legwear = {
+                index = 2
+                male = {
+                    1 = junku_haijun
                 }
 
                 female = {

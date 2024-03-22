@@ -717,7 +717,7 @@
         }
     }
     
-    WCR_chinese_modern_commander_headgear = {
+    WCR_chinese_modern_general_headgear = {
         dna_modifiers = {
             accessory = {
                 mode = add
@@ -752,11 +752,38 @@
                         WCR_army_clothes_trigger = yes
                         WCR_army_has_domestic_influence_trigger = yes
                     }
-                    AND = {
-                        WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_domestic_influence_trigger = yes
-                    }
                 }
+            }
+        }
+    }
+    
+    WCR_chinese_modern_admiral_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_headgear
+                template = qing_modern_navy_headgear
+                range = { 0 1 }
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 2100
+                WCR_has_completed_westernization_trigger = yes
+                scope:character ?= {
+                    exists = owner
+                    c:CHI ?= owner
+                }
+                WCR_navy_clothes_trigger = yes
+                WCR_navy_has_domestic_influence_trigger = yes
             }
         }
     }

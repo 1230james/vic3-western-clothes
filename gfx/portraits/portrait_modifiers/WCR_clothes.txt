@@ -1997,7 +1997,7 @@
         }
     }
     
-    WCR_chinese_modern_commander_clothes = {
+    WCR_chinese_modern_general_clothes = {
         dna_modifiers = {
             accessory = {
                 mode = add
@@ -2049,11 +2049,98 @@
                         WCR_army_clothes_trigger = yes
                         WCR_army_has_domestic_influence_trigger = yes
                     }
-                    AND = {
-                        WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_domestic_influence_trigger = yes
-                    }
                 }
+            }
+        }
+    }
+    
+    # 2 definitions for Chinese admirals; second one has sashes. This one does not due to visible clipping issues.
+    WCR_chinese_modern_admiral_clothes_01 = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template  = all_epaulettes
+                accessory = male_epaulettes_02
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_coats
+                template  = qing_modern_navy_coat
+                accessory = xinjun_haijun
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_belts
+                template = yaodai_belt
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_legwear
+                template  = qing_modern_navy_legwear
+                accessory = junku_haijun
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                WCR_has_completed_westernization_trigger = yes
+                scope:character ?= {
+                    exists = owner
+                    c:CHI ?= owner
+                }
+                WCR_navy_clothes_trigger = yes
+                WCR_navy_has_domestic_influence_trigger = yes
+            }
+        }
+    }
+    
+    WCR_chinese_modern_admiral_clothes_02 = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template  = all_epaulettes
+                accessory = male_epaulettes_02
+            }
+            accessory = {
+                mode = add
+                gene = sashes
+                template = all_sashes
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_coats
+                template  = qing_modern_navy_coat
+                accessory = beiyang_haijun
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_belts
+                template = yaodai_belt
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_legwear
+                template  = qing_modern_navy_legwear
+                accessory = junku_haijun
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                WCR_has_completed_westernization_trigger = yes
+                scope:character ?= {
+                    exists = owner
+                    c:CHI ?= owner
+                }
+                WCR_navy_clothes_trigger = yes
+                WCR_navy_has_domestic_influence_trigger = yes
             }
         }
     }
