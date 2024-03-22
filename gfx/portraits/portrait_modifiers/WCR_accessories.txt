@@ -55,9 +55,6 @@
                     age > 12
                     owner ?= {
                         WCR_is_using_vanilla_rules = no
-                        NOT = {
-                            c:CHI ?= THIS # China has special logic to account for clipping problems
-                        }
                     }
                 }
                 OR = {
@@ -67,7 +64,15 @@
                     }
                     AND = { # Admirals
                         WCR_navy_clothes_trigger = yes
-                        WCR_army_has_domestic_influence_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
+                        
+                        scope:character ?= {
+                            owner ?= {
+                                NOT = {
+                                    c:CHI ?= THIS # China has special logic to account for clipping problems
+                                }
+                            }
+                        }
                     }
                     AND = { # Rulers
                         ruler_clothes_trigger = yes
@@ -113,7 +118,7 @@
                     }
                     AND = { # Admirals
                         WCR_navy_clothes_trigger = yes
-                        WCR_army_has_domestic_influence_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
                     }
                     AND = { # Rulers
                         ruler_clothes_trigger = yes
