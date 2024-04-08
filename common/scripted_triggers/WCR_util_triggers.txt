@@ -46,7 +46,7 @@ WCR_st_is_country_pre_westernized = {
         }
         
         # Inclusions
-        c:HAW ?= THIS # Hawaii
+        # Used to only include Hawaii but not anymore; leaving this comment here to mark explicit intent
     }
     
     # Exclusions
