@@ -685,7 +685,7 @@
         }
     }
     
-    WCR_chinese_modern_ruler_headgear = {
+    WCR_chinese_modern_ruler_headgear_qing = {
         dna_modifiers = {
             accessory = {
                 mode = add
@@ -712,12 +712,46 @@
                     exists = owner
                     c:CHI ?= owner
                     is_female = no
+                    WCR_is_scope_owner_qing_dynasty_trigger = yes
                 }
             }
         }
     }
     
-    WCR_chinese_modern_general_headgear = {
+    # WCR_chinese_modern_ruler_headgear_han = {
+        # dna_modifiers = {
+            # accessory = {
+                # mode = add
+                # gene = headgear
+                # template = no_headgear
+                # range = { 0 1 }
+            # }
+            # accessory = {
+                # mode = add
+                # gene = WCR_china_headgear
+                # template  = qing_new_army_headgear
+                # accessory = xinjunmao_jiangjun
+            # }
+        # }
+        
+        # weight = {
+            # base = 0
+            # modifier = {
+                # add = 2100
+                # WCR_has_completed_westernization_trigger = yes
+                # WCR_ruler_has_domestic_influence_trigger = yes
+                # monarchy_clothes_trigger = yes
+                # scope:character ?= {
+                    # exists = owner
+                    # c:CHI ?= owner
+                    # is_female = no
+                    # WCR_is_scope_owner_qing_dynasty_trigger = no
+                # }
+            # }
+        # }
+    # }
+    
+    WCR_chinese_modern_general_headgear_qing = {
         dna_modifiers = {
             accessory = {
                 mode = add
@@ -741,6 +775,7 @@
                 scope:character ?= {
                     exists = owner
                     c:CHI ?= owner
+                    WCR_is_scope_owner_qing_dynasty_trigger = yes
                 }
                 OR = {
                     AND = {
@@ -757,7 +792,48 @@
         }
     }
     
-    WCR_chinese_modern_admiral_headgear = {
+    WCR_chinese_modern_general_headgear_han = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_headgear
+                template = qing_new_army_headgear
+                range = { 0.5 0.74 }
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 2100
+                WCR_has_completed_westernization_trigger = yes
+                scope:character ?= {
+                    exists = owner
+                    c:CHI ?= owner
+                    WCR_is_scope_owner_qing_dynasty_trigger = no
+                }
+                OR = {
+                    AND = {
+                        ruler_clothes_trigger    = yes
+                        military_clothes_trigger = yes
+                        WCR_ruler_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_chinese_modern_admiral_headgear_qing = {
         dna_modifiers = {
             accessory = {
                 mode = add
@@ -781,6 +857,39 @@
                 scope:character ?= {
                     exists = owner
                     c:CHI ?= owner
+                    WCR_is_scope_owner_qing_dynasty_trigger = yes
+                }
+                WCR_navy_clothes_trigger = yes
+                WCR_navy_has_domestic_influence_trigger = yes
+            }
+        }
+    }
+    
+    WCR_chinese_modern_admiral_headgear_han = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = no_headgear
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = WCR_china_headgear
+                template = qing_modern_navy_headgear
+                range = { 0 0.66 }
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 2100
+                WCR_has_completed_westernization_trigger = yes
+                scope:character ?= {
+                    exists = owner
+                    c:CHI ?= owner
+                    WCR_is_scope_owner_qing_dynasty_trigger = no
                 }
                 WCR_navy_clothes_trigger = yes
                 WCR_navy_has_domestic_influence_trigger = yes

@@ -530,6 +530,7 @@
                 WCR_has_completed_westernization_trigger = yes
                 politician_clothes_trigger = yes
                 armed_forces_clothes_trigger = no
+                military_clothes_trigger = no
                 COM_WCR_enable_outfit = no # Block conflicts with westernized heirs using an outfit from COM
             }
             modifier = { #If we want rulers to dress like politicians later.
@@ -537,6 +538,120 @@
                 WCR_has_completed_westernization_trigger = yes
                 ruler_clothes_trigger = yes
                 monarchy_clothes_trigger = no
+            }
+        }
+    }
+    
+    # Alternate outfits for politicans & upper class pops
+    # "Polynesian" because that's the name of the clothing asset
+    WCR_polynesian_politician_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = polynesian_outfits
+                range = { 0.5 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = polynesian_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+
+        weight = {
+            base = 0
+            # Match with WCR_european_upper_clothes
+            modifier = {
+                add = 2000
+                WCR_has_completed_westernization_trigger = yes
+                upper_clothes_pop_trigger = yes
+            }
+            
+            # Match with WCR_european_politician_clothes
+            modifier = {
+                add = 2000
+                WCR_has_completed_westernization_trigger = yes
+                politician_clothes_trigger = yes
+                armed_forces_clothes_trigger = no
+                military_clothes_trigger = no
+                COM_WCR_enable_outfit = no # Block conflicts with westernized heirs using an outfit from COM
+            }
+            modifier = { #If we want rulers to dress like politicians later.
+                add = 2000
+                WCR_has_completed_westernization_trigger = yes
+                ruler_clothes_trigger = yes
+                monarchy_clothes_trigger = no
+            }
+        }
+    }
+    
+    # Special rule for Hawaii to make WCR not step on their unique(ish) ruler clothing
+    WCR_polynesian_politician_clothes_HAW = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = polynesian_outfits
+                range = { 0.5 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = polynesian_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            
+            # Overrides - doing it here instead of in an override file because this is a very specific use case &
+            # file loading order behavior demands it
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = no_epaulette
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = no_aiguillettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = medals
+                template = no_medals
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = sashes
+                template = no_sash
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = no_belt
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 20000
+                WCR_has_completed_westernization_trigger = yes
+                military_clothes_trigger = no # Prevent use when ruler is commanding an army
+                scope:character ?= {
+                    OR = {
+                        is_ruler = yes
+                        is_heir  = yes
+                    }
+                    owner ?= {
+                        c:HAW ?= THIS
+                    }
+                }
             }
         }
     }
@@ -1584,13 +1699,6 @@
                 template = european_legwear_colors
                 range = { 0.34 1 } # There's three colors in the gene, the second being blue and the third being red.
             }
-
-            #accessory = {
-            #    mode = add
-            #    gene = epaulettes
-            #    template = all_epaulettes
-            #    range = { 0.5 0.8 } # For the randomness to work correctly
-            #}
         } 
 
         weight = {
@@ -1741,13 +1849,6 @@
                 template = european_legwear_colors
                 range = { 0.34 1 } # There's three colors in the gene, the second being blue and the third being red.
             }
-
-            #accessory = {
-            #    mode = add
-            #    gene = epaulettes
-            #    template = all_epaulettes
-            #    range = { 0.5 0.8 } # For the randomness to work correctly
-            #}
         } 
 
         weight = {

@@ -2,12 +2,12 @@ pdxmesh = {
 	name = "junku_xinjun_mesh"
 	file = "../european/01/male_legwear_european_01.mesh"
 
-	blend_shape = { id = "male_legwear_european_01_bs_fat"			type = "male_legwear_european_01_bs_fat.mesh" }
-	blend_shape = { id = "male_legwear_european_01_bs_gaunt"		type = "male_legwear_european_01_bs_gaunt.mesh" }
-	blend_shape = { id = "male_legwear_european_01_bs_old"			type = "male_legwear_european_01_bs_old.mesh" }
-	blend_shape = { id = "male_legwear_european_01_bs_infant"		type = "male_legwear_european_01_bs_infant.mesh" }
-	blend_shape = { id = "male_legwear_european_01_bs_thick"		type = "male_legwear_european_01_bs_thick.mesh" }
-	blend_shape = { id = "male_legwear_european_01_bs_thin"		type = "male_legwear_european_01_bs_thin.mesh" }
+	blend_shape = { id = "male_legwear_european_01_bs_fat"			type = "../european/01/male_legwear_european_01_bs_fat.mesh" }
+	blend_shape = { id = "male_legwear_european_01_bs_gaunt"		type = "../european/01/male_legwear_european_01_bs_gaunt.mesh" }
+	blend_shape = { id = "male_legwear_european_01_bs_old"			type = "../european/01/male_legwear_european_01_bs_old.mesh" }
+	blend_shape = { id = "male_legwear_european_01_bs_infant"		type = "../european/01/male_legwear_european_01_bs_infant.mesh" }
+	blend_shape = { id = "male_legwear_european_01_bs_thick"		type = "../european/01/male_legwear_european_01_bs_thick.mesh" }
+	blend_shape = { id = "male_legwear_european_01_bs_thin"		type = "../european/01/male_legwear_european_01_bs_thin.mesh" }
 	
 	meshsettings = {
 		name = "male_legwear_european_01Shape"
@@ -37,12 +37,12 @@ pdxmesh = {
 	name = "junku_haijun_mesh"
 	file = "../european/01/male_legwear_european_01.mesh"
 
-	blend_shape = { id = "male_legwear_european_01_bs_fat"			type = "male_legwear_european_01_bs_fat.mesh" }
-	blend_shape = { id = "male_legwear_european_01_bs_gaunt"		type = "male_legwear_european_01_bs_gaunt.mesh" }
-	blend_shape = { id = "male_legwear_european_01_bs_old"			type = "male_legwear_european_01_bs_old.mesh" }
-	blend_shape = { id = "male_legwear_european_01_bs_infant"		type = "male_legwear_european_01_bs_infant.mesh" }
-	blend_shape = { id = "male_legwear_european_01_bs_thick"		type = "male_legwear_european_01_bs_thick.mesh" }
-	blend_shape = { id = "male_legwear_european_01_bs_thin"		type = "male_legwear_european_01_bs_thin.mesh" }
+	blend_shape = { id = "male_legwear_european_01_bs_fat"			type = "../european/01/male_legwear_european_01_bs_fat.mesh" }
+	blend_shape = { id = "male_legwear_european_01_bs_gaunt"		type = "../european/01/male_legwear_european_01_bs_gaunt.mesh" }
+	blend_shape = { id = "male_legwear_european_01_bs_old"			type = "../european/01/male_legwear_european_01_bs_old.mesh" }
+	blend_shape = { id = "male_legwear_european_01_bs_infant"		type = "../european/01/male_legwear_european_01_bs_infant.mesh" }
+	blend_shape = { id = "male_legwear_european_01_bs_thick"		type = "../european/01/male_legwear_european_01_bs_thick.mesh" }
+	blend_shape = { id = "male_legwear_european_01_bs_thin"		type = "../european/01/male_legwear_european_01_bs_thin.mesh" }
 	
 	meshsettings = {
 		name = "male_legwear_european_01Shape"
