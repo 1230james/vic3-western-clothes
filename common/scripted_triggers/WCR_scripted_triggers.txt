@@ -462,3 +462,17 @@ WCR_has_vanilla_uniform_rule = {
         }
     }
 }
+
+# Qing dynasty trigger
+# Character/pop scope
+WCR_is_scope_owner_qing_dynasty_trigger = {
+    owner ?= {
+        coa_monarchy_trigger = yes # Avoid checking law directly for compatibility with monarchy mods (e.g., RRK)
+        ruler ?= {
+            culture = {
+                has_discrimination_trait = north_asian_heritage
+                has_discrimination_trait = sinosphere
+            }
+        }
+    }
+}
