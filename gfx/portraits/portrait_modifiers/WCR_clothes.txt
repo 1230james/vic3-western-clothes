@@ -548,8 +548,14 @@
         dna_modifiers = {
             accessory = {
                 mode = add
+                gene = shirt
+                template  = european_shirt
+                accessory = male_outfit_polynesian_01_high
+            }
+            accessory = {
+                mode = add
                 gene = outfits
-                template = polynesian_outfits
+                template = european_common_outfits
                 range = { 0.5 1 } # For the randomness to work correctly
             }
             accessory = {
