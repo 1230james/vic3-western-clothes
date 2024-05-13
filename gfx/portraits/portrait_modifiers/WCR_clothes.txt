@@ -548,8 +548,14 @@
         dna_modifiers = {
             accessory = {
                 mode = add
+                gene = shirt
+                template  = european_shirt
+                accessory = male_outfit_polynesian_01_high
+            }
+            accessory = {
+                mode = add
                 gene = outfits
-                template = polynesian_outfits
+                template = european_common_outfits
                 range = { 0.5 1 } # For the randomness to work correctly
             }
             accessory = {
@@ -1627,7 +1633,8 @@
             base = 0
             modifier = {
                 add = 11000 # Vanilla: 10000
-                COM_WCR_enable_outfit = no # COM compatibility
+                COM_WCR_enable_outfit  = no # COM compatibility
+                JKUP_is_active_trigger = no # JKUP compatibility/deconflict
                 OR = {
                     AND = {
                         OR = {
@@ -1705,6 +1712,7 @@
             base = 0
             modifier = {
                 add = 11000 # Vanilla: 10000
+                JKUP_is_active_trigger = no # JKUP compatibility/deconflict
                 OR = {
                     AND = {
                         OR = {

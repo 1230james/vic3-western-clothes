@@ -491,6 +491,7 @@
             base = 0
             modifier = {
                 add = 2100 # Vanilla: 1200
+                JKUP_is_active_trigger = no # JKUP compatibility/deconflict
                 OR = {
                     AND = {
                         OR = {
