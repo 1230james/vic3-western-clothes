@@ -1633,7 +1633,8 @@
             base = 0
             modifier = {
                 add = 11000 # Vanilla: 10000
-                COM_WCR_enable_outfit = no # COM compatibility
+                COM_WCR_enable_outfit  = no # COM compatibility
+                JKUP_is_active_trigger = no # JKUP compatibility/deconflict
                 OR = {
                     AND = {
                         OR = {
@@ -1711,6 +1712,7 @@
             base = 0
             modifier = {
                 add = 11000 # Vanilla: 10000
+                JKUP_is_active_trigger = no # JKUP compatibility/deconflict
                 OR = {
                     AND = {
                         OR = {
