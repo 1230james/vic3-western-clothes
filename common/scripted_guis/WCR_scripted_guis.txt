@@ -1,0 +1,6 @@
+﻿WCR_sg_is_active_IG = {
+    scope = interest_group
+    is_shown = {
+        bpm_ig_enabled = yes
+    }
+}

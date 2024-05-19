@@ -130,6 +130,24 @@ WCR_st_is_pop_westernized_by_wealth = {
     }
 }
 
+# Returns true if the interest group is considered conservative
+# Scope: interest group
+WCR_st_is_interest_group_conservative = {
+    custom_tooltip = {
+        text = WCR_tt_is_conservative_IG
+        WCR_sv_calculate_IG_progressive_score <= 0
+    }
+}
+
+# Returns true if the interest group is considered progressive
+# Scope: interest group
+WCR_st_is_interest_group_progressive = {
+    custom_tooltip = {
+        text = WCR_tt_is_progressive_IG
+        WCR_sv_calculate_IG_progressive_score > 0
+    }
+}
+
 # Will return true if the owner of this pop's westernization progress is high enough to westernize this pop
 WCR_st_is_part_west_pop_westernized_trigger = {
     scope:pop ?= {

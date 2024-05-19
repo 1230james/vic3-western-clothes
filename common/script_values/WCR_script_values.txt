@@ -108,13 +108,13 @@
     }
     
     # GGGG interop - add 0-1% for adopting Full Dress, Helmets & Drab, and/or Caps & Coats, scaling with adoption rate
-    if = {
-        limit = {
-            GGGG_is_active_trigger = yes
-        }
-        add = GGGG_sv_pm_usage_full_dress # Direct pass through because this returns [0, 1]
-        add = GGGG_sv_pm_usage_helmets_drab_caps_coats
-    }
+    # if = {
+        # limit = {
+            # GGGG_is_active_trigger = yes
+        # }
+        # add = GGGG_sv_pm_usage_full_dress # Direct pass through because this returns [0, 1]
+        # add = GGGG_sv_pm_usage_helmets_drab_caps_coats
+    # }
     
     # Disallow backtracking
     min = 0
@@ -128,5 +128,258 @@
             }
         }
         multiply = 1.10
+    }
+}
+
+# Calculates a "progressiveness" score based on some law stances (does not check all law groups)
+# Negative = conservative, positive = progressive
+# Scope: Interest Group
+WCR_sv_calculate_IG_progressive_score = {
+    # Adding a special case for Traditionalist ideology
+    if = {
+        limit = { leader ?= { has_ideology = ideology:ideology_traditionalist } }
+        add = -20
+    }
+    
+    # Gov Principles
+    if = {
+        limit = { law_stance = { law = law_type:law_monarchy                value > neutral } }
+        add = -5
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_presidential_republic   value > neutral } }
+        add = 2
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_parliamentary_republic  value > neutral } }
+        add = 2
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_theocracy               value > neutral } }
+        add = -5
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_council_republic        value > neutral } }
+        add = 5
+    }
+    
+    # Distribution of Power
+    if = {
+        limit = { law_stance = { law = law_type:law_autocracy           value > neutral } }
+        add = -1
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_technocracy         value > neutral } }
+        add = 2
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_oligarchy           value > neutral } }
+        add = -1
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_landed_voting       value > neutral } }
+        add = -2
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_wealth_voting       value > neutral } }
+        add = 1
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_census_voting       value > neutral } }
+        add = 2
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_universal_suffrage  value > neutral } }
+        add = 3
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_anarchy             value > neutral } }
+        add = 5
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_single_party_state  value > neutral } }
+        add = 1
+    }
+    
+    # Citizenship
+    if = {
+        limit = { law_stance = { law = law_type:law_ethnostate          value > neutral } }
+        add = -2
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_national_supremacy  value > neutral } }
+        add = -1
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_racial_segregation  value > neutral } }
+        add = 0
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_cultural_exclusion  value > neutral } }
+        add = 1
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_multicultural       value > neutral } }
+        add = 5
+    }
+    
+    # Church & State
+    if = {
+        limit = { law_stance = { law = law_type:law_state_religion         value > neutral } }
+        add = -5
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_freedom_of_conscience  value > neutral } }
+        add = 1
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_total_separation       value > neutral } }
+        add = 3
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_state_atheism          value > neutral } }
+        add = 3
+    }
+    
+    # Bureaucracy
+    if = {
+        limit = { law_stance = { law = law_type:law_hereditary_bureaucrats  value > neutral } }
+        add = -3
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_appointed_bureaucrats   value > neutral } }
+        add = 0 # Don't really care about bureaucracy stances other than hereditary
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_elected_bureaucrats     value > neutral } }
+        add = 0
+    }
+    
+    # Army Model
+    if = {
+        limit = { law_stance = { law = law_type:law_peasant_levies     value > neutral } }
+        add = -5
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_professional_army  value > neutral } }
+        add = 1
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_national_militia   value > neutral } }
+        add = 1
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_mass_conscription  value > neutral } }
+        add = 1
+    }
+    
+    # Economic System
+    if = {
+        limit = { law_stance = { law = law_type:law_traditionalism         value > neutral } }
+        add = -5
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_interventionism        value > neutral } }
+        add = 2
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_agrarianism            value > neutral } }
+        add = -3
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_industry_banned        value > neutral } }
+        add = -5
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_laissez_faire          value > neutral } }
+        add = 5
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_cooperative_ownership  value > neutral } }
+        add = 5
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_command_economy        value > neutral } }
+        add = 2
+    }
+    
+    # Taxation
+    if = {
+        limit = { law_stance = { law = law_type:law_consumption_based_taxation  value > neutral } }
+        add = -5
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_land_based_taxation         value > neutral } }
+        add = -5
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_per_capita_based_taxation   value > neutral } }
+        add = 1
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_proportional_taxation       value > neutral } }
+        add = 3
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_graduated_taxation          value > neutral } }
+        add = 5
+    }
+    
+    # Land Reform
+    if = {
+        limit = { law_stance = { law = law_type:law_serfdom                     value > neutral } }
+        add = -5
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_tenant_farmers              value > neutral } }
+        add = -3
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_commercialized_agriculture  value > neutral } }
+        add = 1
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_homesteading                value > neutral } }
+        add = 1
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_collectivized_agriculture   value > neutral } }
+        add = 1
+    }
+    
+    # Women's Rights
+    if = {
+        limit = { law_stance = { law = law_type:law_no_womens_rights        value > neutral } }
+        add = -5
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_women_own_property      value > neutral } }
+        add = 0
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_women_in_the_workplace  value > neutral } }
+        add = 2
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_womens_suffrage         value > neutral } }
+        add = 5
+    }
+    
+    # Slavery
+    if = {
+        limit = { law_stance = { law = law_type:law_slavery_banned  value > neutral } }
+        add = 1
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_debt_slavery    value > neutral } }
+        add = -3
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_slave_trade     value > neutral } }
+        add = -5
+    }
+    if = {
+        limit = { law_stance = { law = law_type:law_legacy_slavery  value > neutral } }
+        add = -1
     }
 }

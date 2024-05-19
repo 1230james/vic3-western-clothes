@@ -16,12 +16,20 @@ l_english:
     WCR_de_simple_westernization_tooltip: "$WCR_de_simple_westernization$"
     
     # Tooltips
-    WCR_tt_overlord_westernized_sub: "[GetPlayer.GetOverlord.GetName] is #v westernized#!."
-    WCR_tt_overlord_westernized_ind: "The [concept_overlord] of [GetPlayer.GetName] is #v westernized#!."
-    WCR_tt_ruler_support:            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] supports any of the [Concept('concept_interest_group', '$concept_interest_groups$')] below:"
+    WCR_tt_overlord_westernized_sub: "[GetPlayer.GetOverlord.GetName] is #bold westernized#!"
+    WCR_tt_overlord_westernized_ind: "The [concept_overlord] of [GetPlayer.GetName] is #bold westernized#!"
+    WCR_tt_ruler_support:            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] belongs to a $WCR_tt_progressives_tt$ [concept_interest_group]"
     
-    WCR_tt_KOR_req_bypass: "The #b $dyn_c_empire_of_korea$#! has been proclaimed."
-    WCR_tt_JAP_req_bypass: "The #b $je_meiji_restoration$#! [concept_journal_entry] has been completed."
+    WCR_tt_KOR_req_bypass: "The #b $dyn_c_empire_of_korea$#! has been proclaimed"
+    WCR_tt_JAP_req_bypass: "The #b $je_meiji_restoration$#! [concept_journal_entry] has been completed"
+    
+    WCR_tt_conservatives_tt:   "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],,WCR_conservative_IGs_tooltip $WCR_txt_conservative$#!#!"
+    WCR_tt_progressives_tt:    "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],,WCR_progressive_IGs_tooltip $WCR_txt_progressive$#!#!"
+    WCR_txt_conservative:      "conservative"
+    WCR_txt_progressive:       "progressive"
+    WCR_tt_IG_cooltip_header:  "Is one of the following [Concept('concept_interest_group', '$concept_interest_groups$')]:"
+    WCR_tt_is_conservative_IG: "Is a $WCR_tt_conservatives_tt$ [concept_interest_group]"
+    WCR_tt_is_progressive_IG:  "Is a $WCR_tt_progressives_tt$ [concept_interest_group]"
     
     # Modifiers
     WCR_westernized_modifier:         "Recently Westernized"
