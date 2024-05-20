@@ -75,11 +75,7 @@
             trigger_event = {
                 id = WCR_ev.1
             }
-            add_modifier = {
-                name  = WCR_ig_westernized_modifier
-                years = 10
-                is_decaying = yes
-            }
+            WCR_se_set_IG_westernized_modifier = yes
         }
     }
     
@@ -88,11 +84,9 @@
         modifier = {
             trigger = {
                 any_interest_group = {
-                    count  >= 2
-                    filter  = {
-                        WCR_st_is_interest_group_progressive = yes
-                    }
+                    count >= 2
                     is_powerful = yes
+                    WCR_st_is_interest_group_progressive = yes
                 }
             }
             add = 100
@@ -130,10 +124,10 @@
         modifier = {
             trigger = {
                 any_interest_group = {
-                    percent >= 0.75
-                    filter   = {
+                    filter = {
                         WCR_st_is_interest_group_conservative = yes
                     }
+                    percent >= 0.75
                     is_marginal = no
                     ig_approval < define:NPolitics|APPROVAL_THRESHOLD_UNHAPPY
                 }
@@ -223,10 +217,7 @@ WCR_de_start_westernization = {
             add_journal_entry = {
                 type = WCR_je_westernization
             }
-            add_modifier = {
-                name  = WCR_ig_westernization_1_modifier
-                years = -1
-            }
+            WCR_se_refresh_IG_westernization_modifiers = yes
         }
     }
     
@@ -235,11 +226,9 @@ WCR_de_start_westernization = {
         modifier = {
             trigger = {
                 any_interest_group = {
-                    count  >= 2
-                    filter  = {
-                        WCR_st_is_interest_group_progressive = yes
-                    }
+                    count >= 2
                     is_powerful = yes
+                    WCR_st_is_interest_group_progressive = yes
                 }
             }
             add = 100
@@ -277,10 +266,10 @@ WCR_de_start_westernization = {
         modifier = {
             trigger = {
                 any_interest_group = {
-                    percent >= 0.75
-                    filter   = {
+                    filter = {
                         WCR_st_is_interest_group_conservative = yes
                     }
+                    percent >= 0.75
                     is_marginal = no
                     ig_approval < define:NPolitics|APPROVAL_THRESHOLD_UNHAPPY
                 }

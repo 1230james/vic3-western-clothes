@@ -1,17 +1,15 @@
 ﻿WCR_je_westernization = {
-    icon = "gfx/interface/icons/event_icons/event_default.dds"
+    icon = "gfx/interface/icons/invention_icons/corporate_management.dds"
     
     group = je_group_internal_affairs
     should_be_pinned_by_default = yes
     
     immediate = {
-        ROOT = {
-            set_variable = {
-                name  = WCR_westernization_progress
-                value = 0
-            }
-            save_scope_as = this_country
+        set_variable = {
+            name  = WCR_westernization_progress
+            value = 0
         }
+        save_scope_as = this_country
     }
     
     complete = {
@@ -26,48 +24,19 @@
         trigger_event = {
             id = WCR_ev.1
         }
-        ROOT = {
-            hidden_effect = {
-                if = {
-                    limit = {
-                        has_modifier = WCR_ig_westernization_1_modifier
-                    }
-                    remove_modifier = WCR_ig_westernization_1_modifier
-                }
-                if = {
-                    limit = {
-                        has_modifier = WCR_ig_westernization_2_modifier
-                    }
-                    remove_modifier = WCR_ig_westernization_2_modifier
-                }
-                if = {
-                    limit = {
-                        has_modifier = WCR_ig_westernization_3_modifier
-                    }
-                    remove_modifier = WCR_ig_westernization_3_modifier
-                }
-                if = {
-                    limit = {
-                        has_modifier = WCR_ig_westernization_4_modifier
-                    }
-                    remove_modifier = WCR_ig_westernization_4_modifier
-                }
-            }
-            set_variable = {
-                name  = WCR_westernized_nation
-                value = yes
-            }
-            add_modifier = {
-                name  = WCR_ig_westernized_modifier
-                years = 10
-                is_decaying = yes
-            }
+        set_variable = {
+            name  = WCR_westernized_nation
+            value = yes
+        }
+        hidden_effect = {
+            WCR_se_set_IG_westernized_modifier = yes
         }
     }
     
     invalid = {
         hidden_trigger = {
-            ROOT = {
+            custom_tooltip = {
+                text = EMPTY_KEY # Silence error log flood regarding `culture_cu_equal` being scope-dependent
                 WCR_is_westernized_trigger = yes
             }
         }
@@ -75,31 +44,11 @@
     
     on_invalid = {
         hidden_effect = {
-            ROOT = {
-                if = {
-                    limit = {
-                        has_modifier = WCR_ig_westernization_1_modifier
-                    }
-                    remove_modifier = WCR_ig_westernization_1_modifier
-                }
-                if = {
-                    limit = {
-                        has_modifier = WCR_ig_westernization_2_modifier
-                    }
-                    remove_modifier = WCR_ig_westernization_2_modifier
-                }
-                if = {
-                    limit = {
-                        has_modifier = WCR_ig_westernization_3_modifier
-                    }
-                    remove_modifier = WCR_ig_westernization_3_modifier
-                }
-                if = {
-                    limit = {
-                        has_modifier = WCR_ig_westernization_4_modifier
-                    }
-                    remove_modifier = WCR_ig_westernization_4_modifier
-                }
+            every_interest_group = {
+                remove_modifier = WCR_ig_westernization_1_modifier
+                remove_modifier = WCR_ig_westernization_2_modifier
+                remove_modifier = WCR_ig_westernization_3_modifier
+                remove_modifier = WCR_ig_westernization_4_modifier
             }
         }
     }
@@ -183,140 +132,22 @@
     
     on_monthly_pulse = {
         effect = {
-            ROOT = {
-                # Update westernization progress
-                change_variable = {
-                    name = WCR_westernization_progress
-                    add  = WCR_sv_calculate_westernization_progress_delta
-                }
-                
-                # Update IG approval
-                if = {
-                    limit = {
-                        ROOT.var:WCR_westernization_progress < 25
-                        NOT = {
-                            has_modifier = WCR_ig_westernization_1_modifier
-                        }
-                    }
-                    if = {
-                        limit = {
-                            has_modifier = WCR_ig_westernization_2_modifier
-                        }
-                        remove_modifier = WCR_ig_westernization_2_modifier
-                    }
-                    if = {
-                        limit = {
-                            has_modifier = WCR_ig_westernization_3_modifier
-                        }
-                        remove_modifier = WCR_ig_westernization_3_modifier
-                    }
-                    if = {
-                        limit = {
-                            has_modifier = WCR_ig_westernization_4_modifier
-                        }
-                        remove_modifier = WCR_ig_westernization_4_modifier
-                    }
-                    add_modifier = {
-                        name  = WCR_ig_westernization_1_modifier
-                        years = -1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        ROOT.var:WCR_westernization_progress < 50
-                        NOT = {
-                            has_modifier = WCR_ig_westernization_2_modifier
-                        }
-                    }
-                    if = {
-                        limit = {
-                            has_modifier = WCR_ig_westernization_1_modifier
-                        }
-                        remove_modifier = WCR_ig_westernization_1_modifier
-                    }
-                    if = {
-                        limit = {
-                            has_modifier = WCR_ig_westernization_3_modifier
-                        }
-                        remove_modifier = WCR_ig_westernization_3_modifier
-                    }
-                    if = {
-                        limit = {
-                            has_modifier = WCR_ig_westernization_4_modifier
-                        }
-                        remove_modifier = WCR_ig_westernization_4_modifier
-                    }
-                    add_modifier = {
-                        name  = WCR_ig_westernization_2_modifier
-                        years = -1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        ROOT.var:WCR_westernization_progress < 75
-                        NOT = {
-                            has_modifier = WCR_ig_westernization_3_modifier
-                        }
-                    }
-                    if = {
-                        limit = {
-                            has_modifier = WCR_ig_westernization_1_modifier
-                        }
-                        remove_modifier = WCR_ig_westernization_1_modifier
-                    }
-                    if = {
-                        limit = {
-                            has_modifier = WCR_ig_westernization_2_modifier
-                        }
-                        remove_modifier = WCR_ig_westernization_2_modifier
-                    }
-                    if = {
-                        limit = {
-                            has_modifier = WCR_ig_westernization_4_modifier
-                        }
-                        remove_modifier = WCR_ig_westernization_4_modifier
-                    }
-                    add_modifier = {
-                        name  = WCR_ig_westernization_3_modifier
-                        years = -1
-                    }
-                }
-                else_if = {
-                    limit = {
-                        ROOT.var:WCR_westernization_progress <= 100
-                        NOT = {
-                            has_modifier = WCR_ig_westernization_4_modifier
-                        }
-                    }
-                    if = {
-                        limit = {
-                            has_modifier = WCR_ig_westernization_1_modifier
-                        }
-                        remove_modifier = WCR_ig_westernization_1_modifier
-                    }
-                    if = {
-                        limit = {
-                            has_modifier = WCR_ig_westernization_2_modifier
-                        }
-                        remove_modifier = WCR_ig_westernization_2_modifier
-                    }
-                    if = {
-                        limit = {
-                            has_modifier = WCR_ig_westernization_3_modifier
-                        }
-                        remove_modifier = WCR_ig_westernization_3_modifier
-                    }
-                    add_modifier = {
-                        name  = WCR_ig_westernization_4_modifier
-                        years = -1
-                    }
+            # Update westernization progress
+            change_variable = {
+                name = WCR_westernization_progress
+                add  = {
+                    add = WCR_sv_calculate_westernization_progress_delta
+                    multiply = 100
                 }
             }
+            
+            # Update IG approval
+            WCR_se_refresh_IG_westernization_modifiers = yes
         }
     }
     
     current_value = {
-        value = ROOT.var:WCR_westernization_progress
+        value = var:WCR_westernization_progress
     }
     
     goal_add_value = {

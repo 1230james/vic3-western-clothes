@@ -135,6 +135,7 @@ WCR_st_is_pop_westernized_by_wealth = {
 WCR_st_is_interest_group_conservative = {
     custom_tooltip = {
         text = WCR_tt_is_conservative_IG
+        bpm_ig_enabled = yes
         WCR_sv_calculate_IG_progressive_score <= 0
     }
 }
@@ -144,6 +145,7 @@ WCR_st_is_interest_group_conservative = {
 WCR_st_is_interest_group_progressive = {
     custom_tooltip = {
         text = WCR_tt_is_progressive_IG
+        bpm_ig_enabled = yes
         WCR_sv_calculate_IG_progressive_score > 0
     }
 }
