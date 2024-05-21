@@ -1,14 +1,16 @@
-﻿# TODO: Re-create meshes; this is based on male_coat_european_09 but needs the detailing removed from it
-# Need updated meshes to have full set of blend_shapes and to fix the neck collar bug
+﻿# TODO: thick and thin blendshapes; I don't think it has any impact on RNG characters; they come into play if extreme
+# values for gene_height are used, I think
 
 pdxmesh = {
     name = "xinjun_jiangjun_mesh"
     file = "beiyangjun.mesh"
-        
-    blend_shape = { id = "beiyang_bs_fat"			type = "beiyangjun_fat.mesh" }
-    blend_shape = { id = "beiyang_bs_old"			type = "beiyangjun_old.mesh" }
-    blend_shape = { id = "beiyang_bs_infant"		type = "beiyangjun_infant.mesh" }
-    blend_shape = { id = "beiyang_bs_thick"		type = "beiyangjun_thick.mesh" }
+    
+    blend_shape = { id = "beiyang_bs_fat"     type = "beiyangjun_fat.mesh" }
+    blend_shape = { id = "beiyang_bs_gaunt"   type = "beiyangjun_gaunt.mesh" }
+    blend_shape = { id = "beiyang_bs_infant"  type = "beiyangjun_infant.mesh" }
+    blend_shape = { id = "beiyang_bs_old"     type = "beiyangjun_old.mesh" }
+    # blend_shape = { id = "beiyang_bs_thick"   type = "beiyangjun_thick.mesh" }
+    # blend_shape = { id = "beiyang_bs_thin"    type = "beiyangjun_thin.mesh" }
 
     meshsettings = {
         name = "beiyangjunfu"
@@ -25,10 +27,12 @@ entity = {
     name = "xinjun_jiangjun_entity"
     pdxmesh = "xinjun_jiangjun_mesh"
             
-    attribute = { name = "body_bs_fat"		blend_shape = "beiyang_bs_fat" }
-    attribute = { name = "body_bs_old"		blend_shape = "beiyang_bs_old" }
-    attribute = { name = "body_bs_infant"		blend_shape = "beiyang_bs_infant" }
-    attribute = { name = "body_bs_thick"		blend_shape = "beiyang_bs_thick" }
+    attribute = { name = "body_bs_fat"     blend_shape = "beiyang_bs_fat" }
+    attribute = { name = "body_bs_gaunt"   blend_shape = "beiyang_bs_gaunt" }
+    attribute = { name = "body_bs_infant"  blend_shape = "beiyang_bs_infant" }
+    attribute = { name = "body_bs_old"     blend_shape = "beiyang_bs_old" }
+    # attribute = { name = "body_bs_thick"   blend_shape = "beiyang_bs_thick" }
+    # attribute = { name = "body_bs_thin"    blend_shape = "beiyang_bs_thin" }
 
 }
 
@@ -36,10 +40,12 @@ pdxmesh = {
     name = "xinjun_junguan_mesh"
     file = "beiyangjun.mesh"
         
-    blend_shape = { id = "beiyang_bs_fat"			type = "beiyangjun_fat.mesh" }
-    blend_shape = { id = "beiyang_bs_old"			type = "beiyangjun_old.mesh" }
-    blend_shape = { id = "beiyang_bs_infant"		type = "beiyangjun_infant.mesh" }
-    blend_shape = { id = "beiyang_bs_thick"		type = "beiyangjun_thick.mesh" }
+    blend_shape = { id = "beiyang_bs_fat"     type = "beiyangjun_fat.mesh" }
+    blend_shape = { id = "beiyang_bs_gaunt"   type = "beiyangjun_gaunt.mesh" }
+    blend_shape = { id = "beiyang_bs_infant"  type = "beiyangjun_infant.mesh" }
+    blend_shape = { id = "beiyang_bs_old"     type = "beiyangjun_old.mesh" }
+    # blend_shape = { id = "beiyang_bs_thick"   type = "beiyangjun_thick.mesh" }
+    # blend_shape = { id = "beiyang_bs_thin"    type = "beiyangjun_thin.mesh" }
 
     meshsettings = {
         name = "beiyangjunfu"
@@ -56,10 +62,12 @@ entity = {
     name = "xinjun_junguan_entity"
     pdxmesh = "xinjun_junguan_mesh"
             
-    attribute = { name = "body_bs_fat"		blend_shape = "beiyang_bs_fat" }
-    attribute = { name = "body_bs_old"		blend_shape = "beiyang_bs_old" }
-    attribute = { name = "body_bs_infant"		blend_shape = "beiyang_bs_infant" }
-    attribute = { name = "body_bs_thick"		blend_shape = "beiyang_bs_thick" }
+    attribute = { name = "body_bs_fat"     blend_shape = "beiyang_bs_fat" }
+    attribute = { name = "body_bs_gaunt"   blend_shape = "beiyang_bs_gaunt" }
+    attribute = { name = "body_bs_infant"  blend_shape = "beiyang_bs_infant" }
+    attribute = { name = "body_bs_old"     blend_shape = "beiyang_bs_old" }
+    # attribute = { name = "body_bs_thick"   blend_shape = "beiyang_bs_thick" }
+    # attribute = { name = "body_bs_thin"    blend_shape = "beiyang_bs_thin" }
 
 }
 
@@ -67,10 +75,12 @@ pdxmesh = {
     name = "xinjun_shibing_mesh"
     file = "beiyangjun.mesh"
         
-    blend_shape = { id = "beiyang_bs_fat"			type = "beiyangjun_fat.mesh" }
-    blend_shape = { id = "beiyang_bs_old"			type = "beiyangjun_old.mesh" }
-    blend_shape = { id = "beiyang_bs_infant"		type = "beiyangjun_infant.mesh" }
-    blend_shape = { id = "beiyang_bs_thick"		type = "beiyangjun_thick.mesh" }
+    blend_shape = { id = "beiyang_bs_fat"     type = "beiyangjun_fat.mesh" }
+    blend_shape = { id = "beiyang_bs_gaunt"   type = "beiyangjun_gaunt.mesh" }
+    blend_shape = { id = "beiyang_bs_infant"  type = "beiyangjun_infant.mesh" }
+    blend_shape = { id = "beiyang_bs_old"     type = "beiyangjun_old.mesh" }
+    # blend_shape = { id = "beiyang_bs_thick"   type = "beiyangjun_thick.mesh" }
+    # blend_shape = { id = "beiyang_bs_thin"    type = "beiyangjun_thin.mesh" }
 
     meshsettings = {
         name = "beiyangjunfu"
@@ -87,9 +97,11 @@ entity = {
     name = "xinjun_shibing_entity"
     pdxmesh = "xinjun_shibing_mesh"
             
-    attribute = { name = "body_bs_fat"		blend_shape = "beiyang_bs_fat" }
-    attribute = { name = "body_bs_old"		blend_shape = "beiyang_bs_old" }
-    attribute = { name = "body_bs_infant"		blend_shape = "beiyang_bs_infant" }
-    attribute = { name = "body_bs_thick"		blend_shape = "beiyang_bs_thick" }
+    attribute = { name = "body_bs_fat"     blend_shape = "beiyang_bs_fat" }
+    attribute = { name = "body_bs_gaunt"   blend_shape = "beiyang_bs_gaunt" }
+    attribute = { name = "body_bs_infant"  blend_shape = "beiyang_bs_infant" }
+    attribute = { name = "body_bs_old"     blend_shape = "beiyang_bs_old" }
+    # attribute = { name = "body_bs_thick"   blend_shape = "beiyang_bs_thick" }
+    # attribute = { name = "body_bs_thin"    blend_shape = "beiyang_bs_thin" }
 
 }
