@@ -301,6 +301,21 @@
                 WCR_ruler_has_no_influence_trigger = yes
                 military_clothes_trigger = yes
             }
+            modifier = { # Exclude countries being handled by vanilla logic
+                add = -5000
+                OR = {
+                    scope:character ?= {
+                        owner ?= {
+                            WCR_is_using_vanilla_rules = yes
+                        }
+                    }
+                    scope:pop ?= {
+                        owner ?= {
+                            WCR_is_using_vanilla_rules = yes
+                        }
+                    }
+                }
+            }
         }
     }
     

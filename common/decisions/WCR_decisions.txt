@@ -75,11 +75,7 @@
             trigger_event = {
                 id = WCR_ev.1
             }
-            add_modifier = {
-                name  = WCR_ig_westernized_modifier
-                years = 10
-                is_decaying = yes
-            }
+            WCR_se_set_IG_westernized_modifier = yes
         }
     }
     
@@ -87,20 +83,10 @@
         base = 0
         modifier = {
             trigger = {
-                calc_true_if = {
-                    amount >= 2
-                    ig:ig_intelligentsia = {
-                        is_powerful = yes
-                    }
-                    ig:ig_industrialists = {
-                        is_powerful = yes
-                    }
-                    ig:ig_armed_forces = {
-                        is_powerful = yes
-                    }
-                    ig:ig_trade_unions = {
-                        is_powerful = yes
-                    }
+                any_interest_group = {
+                    count >= 2
+                    is_powerful = yes
+                    WCR_st_is_interest_group_progressive = yes
                 }
             }
             add = 100
@@ -137,24 +123,13 @@
         }
         modifier = {
             trigger = {
-                calc_true_if = {
-                    amount >= 3
-                    ig:ig_landowners = {
-                        is_marginal = no
-                        ig_approval < -5
+                any_interest_group = {
+                    filter = {
+                        WCR_st_is_interest_group_conservative = yes
                     }
-                    ig:ig_devout = {
-                        is_marginal = no
-                        ig_approval < -5
-                    }
-                    ig:ig_rural_folk = {
-                        is_marginal = no
-                        ig_approval < -5
-                    }
-                    ig:ig_petty_bourgeoisie = {
-                        is_marginal = no
-                        ig_approval < -5
-                    }
+                    percent >= 0.75
+                    is_marginal = no
+                    ig_approval < define:NPolitics|APPROVAL_THRESHOLD_UNHAPPY
                 }
             }
             add = -500
@@ -242,10 +217,7 @@ WCR_de_start_westernization = {
             add_journal_entry = {
                 type = WCR_je_westernization
             }
-            add_modifier = {
-                name  = WCR_ig_westernization_1_modifier
-                years = -1
-            }
+            WCR_se_refresh_IG_westernization_modifiers = yes
         }
     }
     
@@ -253,20 +225,10 @@ WCR_de_start_westernization = {
         base = 0
         modifier = {
             trigger = {
-                calc_true_if = {
-                    amount >= 2
-                    ig:ig_intelligentsia = {
-                        is_powerful = yes
-                    }
-                    ig:ig_industrialists = {
-                        is_powerful = yes
-                    }
-                    ig:ig_armed_forces = {
-                        is_powerful = yes
-                    }
-                    ig:ig_trade_unions = {
-                        is_powerful = yes
-                    }
+                any_interest_group = {
+                    count >= 2
+                    is_powerful = yes
+                    WCR_st_is_interest_group_progressive = yes
                 }
             }
             add = 100
@@ -303,24 +265,13 @@ WCR_de_start_westernization = {
         }
         modifier = {
             trigger = {
-                calc_true_if = {
-                    amount >= 3
-                    ig:ig_landowners = {
-                        is_marginal = no
-                        ig_approval < -5
+                any_interest_group = {
+                    filter = {
+                        WCR_st_is_interest_group_conservative = yes
                     }
-                    ig:ig_devout = {
-                        is_marginal = no
-                        ig_approval < -5
-                    }
-                    ig:ig_rural_folk = {
-                        is_marginal = no
-                        ig_approval < -5
-                    }
-                    ig:ig_petty_bourgeoisie = {
-                        is_marginal = no
-                        ig_approval < -5
-                    }
+                    percent >= 0.75
+                    is_marginal = no
+                    ig_approval < define:NPolitics|APPROVAL_THRESHOLD_UNHAPPY
                 }
             }
             add = -500

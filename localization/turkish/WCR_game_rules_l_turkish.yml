@@ -1,28 +1,30 @@
 ﻿# Game rules
 
 l_turkish:
-    WCR_AWC_behavior_text:     "This is the original behavior from #bold Adopt Western Clothes#!."
-    WCR_vanilla_behavior_text: "This is the original behavior from #bold the base game#!."
+    WCR_AWC_behavior_text:     "#bold Adopt Western Clothes#! yamasının orijinal davranışı budur."
+    WCR_vanilla_behavior_text: "#bold Temel oyunun #! orijinal davranışı."
     
-    WCR_rule_yes: "#b Yes#!"
-    WCR_rule_no:  "#b No#!"
+    WCR_gov_employee_text: "[Concept('concept_government_building', '$concept_government$')] and [Concept('concept_military_building', '$military$')] employees #p will always#! westernize."
     
-    rule_WCR_westernization_type:            "#yellow WCR#! | Westernization Type"
-    setting_WCR_complex_westernization:      "#b Gradual#!"
-    setting_WCR_complex_westernization_desc: "#v Westernization#! will occur gradually through a [concept_journal_entry]."
-    setting_WCR_simple_westernization:       "#b Instantaneous#!"
+    WCR_rule_yes: "#b Evet#!"
+    WCR_rule_no:  "#b Hayır#!"
+    
+    rule_WCR_westernization_type:            "#yellow WCR#! | Batılılaşma Tipi"
+    setting_WCR_complex_westernization:      "#b Kademeli#!"
+    setting_WCR_complex_westernization_desc: "Bir [concept_journal_entry] göre #v Batılılaşma#! kademeli şekilde gerçekleşecek."
+    setting_WCR_simple_westernization:       "#b Anlık#!"
     setting_WCR_simple_westernization_desc:  "#v Westernization#! will occur instantaneously through a decision. $WCR_AWC_behavior_text$"
     
     rule_WCR_decision_requirements_type: "#yellow WCR#! | Westernization Requirements"
     setting_WCR_WCF_requirements:        "#b Normal#!"
     setting_WCR_WCF_requirements_desc:   "#v Westernization#! will require meeting more #v complex but flexible requirements#! to unlock."
-    setting_WCR_AWC_requirements:        "#b Legacy#!"
+    setting_WCR_AWC_requirements:        "#b Eski sistem#!"
     setting_WCR_AWC_requirements_desc:   "#v Westernization#! will use the #v simpler requirements#! from #bold Adopt Western Clothes#! to unlock."
     
-    rule_WCR_westernization_influences:  "#yellow WCR#! | Uniform Styles"
+    rule_WCR_westernization_influences:  "#yellow WCR#! | Üniforma Stilleri"
     setting_WCR_enable_influences:       "#b User-Selected#!"
     setting_WCR_enable_influences_desc:  "The style of uniforms for [Concept('concept_head_of_state', 'monarchs')] and the military will be selected by the user during westernization."
-    setting_WCR_disable_influences:      "#b Always Generic#!"
+    setting_WCR_disable_influences:      "#b Daima Genel#!"
     setting_WCR_disable_influences_desc: "The style of uniforms for [Concept('concept_head_of_state', 'monarchs')] and the military will always be a generic European uniform. $WCR_AWC_behavior_text$"
     
     rule_WCR_AI_westernization:               "#yellow WCR#! | Allow AI Westernization"

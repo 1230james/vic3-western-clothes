@@ -4,6 +4,8 @@ l_japanese:
     WCR_AWC_behavior_text:     "#bold Adopt Western Clothes#!と同じ設定です。"
     WCR_vanilla_behavior_text: "#bold Modなし#! と同じ設定です。"
     
+    WCR_gov_employee_text: "[Concept('concept_government_building', '$concept_government$')] and [Concept('concept_military_building', '$military$')] employees #p will always#! westernize."
+    
     WCR_rule_yes: "#b 許可#!"
     WCR_rule_no:  "#b 不許可#!"
     

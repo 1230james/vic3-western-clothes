@@ -654,21 +654,14 @@ WCR_ev.4 = {
             add_journal_entry = {
                 type = WCR_je_westernization
             }
-            add_modifier = {
-                name  = WCR_ig_westernization_1_modifier
-                years = -1
-            }
+            WCR_se_refresh_IG_westernization_modifiers = yes
         }
         else = {
             trigger_event = {
                 id = WCR_ev.1
                 popup = yes
             }
-            add_modifier = {
-                name  = WCR_ig_westernized_modifier
-                years = 10
-                is_decaying = yes
-            }
+            WCR_se_set_IG_westernized_modifier = yes
         }
         
         ai_chance = {
@@ -692,21 +685,14 @@ WCR_ev.4 = {
             add_journal_entry = {
                 type = WCR_je_westernization
             }
-            add_modifier = {
-                name  = WCR_ig_westernization_1_modifier
-                years = -1
-            }
+            WCR_se_refresh_IG_westernization_modifiers = yes
         }
         else = {
             trigger_event = {
                 id = WCR_ev.1
                 popup = yes
             }
-            add_modifier = {
-                name  = WCR_ig_westernized_modifier
-                years = 10
-                is_decaying = yes
-            }
+            WCR_se_set_IG_westernized_modifier = yes
         }
         
         ai_chance = {
@@ -753,21 +739,14 @@ WCR_ev.4 = {
             add_journal_entry = {
                 type = WCR_je_westernization
             }
-            add_modifier = {
-                name  = WCR_ig_westernization_1_modifier
-                years = -1
-            }
+            WCR_se_refresh_IG_westernization_modifiers = yes
         }
         else = {
             trigger_event = {
                 id = WCR_ev.1
                 popup = yes
             }
-            add_modifier = {
-                name  = WCR_ig_westernized_modifier
-                years = 10
-                is_decaying = yes
-            }
+            WCR_se_set_IG_westernized_modifier = yes
         }
         
         ai_chance = {
@@ -814,21 +793,14 @@ WCR_ev.4 = {
             add_journal_entry = {
                 type = WCR_je_westernization
             }
-            add_modifier = {
-                name  = WCR_ig_westernization_1_modifier
-                years = -1
-            }
+            WCR_se_refresh_IG_westernization_modifiers = yes
         }
         else = {
             trigger_event = {
                 id = WCR_ev.1
                 popup = yes
             }
-            add_modifier = {
-                name  = WCR_ig_westernized_modifier
-                years = 10
-                is_decaying = yes
-            }
+            WCR_se_set_IG_westernized_modifier = yes
         }
         
         ai_chance = {
@@ -875,21 +847,14 @@ WCR_ev.4 = {
             add_journal_entry = {
                 type = WCR_je_westernization
             }
-            add_modifier = {
-                name  = WCR_ig_westernization_1_modifier
-                years = -1
-            }
+            WCR_se_refresh_IG_westernization_modifiers = yes
         }
         else = {
             trigger_event = {
                 id = WCR_ev.1
                 popup = yes
             }
-            add_modifier = {
-                name  = WCR_ig_westernized_modifier
-                years = 10
-                is_decaying = yes
-            }
+            WCR_se_set_IG_westernized_modifier = yes
         }
         
         ai_chance = {
@@ -951,21 +916,14 @@ WCR_ev.4 = {
             add_journal_entry = {
                 type = WCR_je_westernization
             }
-            add_modifier = {
-                name  = WCR_ig_westernization_1_modifier
-                years = -1
-            }
+            WCR_se_refresh_IG_westernization_modifiers = yes
         }
         else = {
             trigger_event = {
                 id = WCR_ev.1
                 popup = yes
             }
-            add_modifier = {
-                name  = WCR_ig_westernized_modifier
-                years = 10
-                is_decaying = yes
-            }
+            WCR_se_set_IG_westernized_modifier = yes
         }
         
         ai_chance = {
@@ -1013,21 +971,14 @@ WCR_ev.4 = {
             add_journal_entry = {
                 type = WCR_je_westernization
             }
-            add_modifier = {
-                name  = WCR_ig_westernization_1_modifier
-                years = -1
-            }
+            WCR_se_refresh_IG_westernization_modifiers = yes
         }
         else = {
             trigger_event = {
                 id = WCR_ev.1
                 popup = yes
             }
-            add_modifier = {
-                name  = WCR_ig_westernized_modifier
-                years = 10
-                is_decaying = yes
-            }
+            WCR_se_set_IG_westernized_modifier = yes
         }
         
         ai_chance = {

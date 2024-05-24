@@ -16,12 +16,20 @@ l_korean:
     WCR_de_simple_westernization_tooltip: "$WCR_de_simple_westernization$"
     
     # Tooltips
-    WCR_tt_overlord_westernized_sub: "[GetPlayer.GetOverlord.GetName]는 #v 서구화#!되었음."
-    WCR_tt_overlord_westernized_ind: "[GetPlayer.GetName]의 [concept_overlord]은 #v 서구화#!되었음."
-    WCR_tt_ruler_support:            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]은(는) 아무 [Concept('concept_interest_group', '이해 집단')]을 후원:"
+    WCR_tt_overlord_westernized_sub: "[GetPlayer.GetOverlord.GetName]는 #bold 서구화#!되었음"
+    WCR_tt_overlord_westernized_ind: "[GetPlayer.GetName]의 [concept_overlord]은 #bold 서구화#!되었음"
+    WCR_tt_ruler_support:            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] belongs to a $WCR_tt_progressives_tt$ [concept_interest_group]"
     
     WCR_tt_KOR_req_bypass: "#b $dyn_c_empire_of_korea$#!이 선포되었음."
     WCR_tt_JAP_req_bypass: "#b $je_meiji_restoration$#! [concept_journal_entry]를 완료하였음."
+    
+    WCR_tt_conservatives_tt:   "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],,WCR_conservative_IGs_tooltip $WCR_txt_conservative$#!"
+    WCR_tt_progressives_tt:    "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],,WCR_progressive_IGs_tooltip $WCR_txt_progressive$#!"
+    WCR_txt_conservative:      "conservative"
+    WCR_txt_progressive:       "progressive"
+    WCR_tt_IG_cooltip_header:  "Is one of the following [Concept('concept_interest_group', '$concept_interest_groups$')]:"
+    WCR_tt_is_conservative_IG: "Is a $WCR_tt_conservatives_tt$ [concept_interest_group]"
+    WCR_tt_is_progressive_IG:  "Is a $WCR_tt_progressives_tt$ [concept_interest_group]"
     
     # Modifiers
     WCR_westernized_modifier:         "최근 서구화됨"
@@ -40,33 +48,35 @@ l_korean:
     # Westernization JE long text & helpers
     WCR_LONG_DELIMITER: "     @divider_start!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_end!"
     
-    WCR_ig_armed_forces:      "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_devout:            "[GetInterestGroupVariant('ig_devout', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_industrialists:    "[GetInterestGroupVariant('ig_industrialists', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_intelligentsia:    "[GetInterestGroupVariant('ig_intelligentsia', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_landowners:        "[GetInterestGroupVariant('ig_landowners', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_petty_bourgeoisie: "[GetInterestGroupVariant('ig_petty_bourgeoisie', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_rural_folk:        "[GetInterestGroupVariant('ig_rural_folk', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_trade_unions:      "[GetInterestGroupVariant('ig_trade_unions', SCOPE.sCountry('this_country')).GetName]"
+    WCR_tt_format_base:     "• #indent_newline:3 $VALUE|+=%2$ $KEY$#!"
+    WCR_tt_format_mult:     "• #indent_newline:3 #p x$VALUE|$#! $KEY$#!"
+    WCR_tt_delta_breakdown: "[Country.MakeScope.GetScriptValueDesc('WCR_sv_calculate_westernization_progress_delta')]"
     
-    WCR_overview_reason: "서구화 진행률은 #v 매달 증가#!하며, 그 속도는 아래 나열된 여러 요인에 따라 달라집니다.\n\n서구화는 현재 다음 달에 #v [SCOPE.ScriptValue('WCR_sv_calculate_westernization_progress_delta')|2]%#! 정도 진행될 것으로 예상됩니다."
+    WCR_tt_delta_from_prog_clout: "from [concept_clout] of $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] (#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_prog_clout')|%]#!)"
+    WCR_tt_delta_from_trad_clout: "from [concept_clout] of [concept_powerful] $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] (#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_powerful_trad_clout')|%]#!)"
+    WCR_tt_delta_from_relations:  "from having $relations_amicable$ [concept_relations] with a westernized nation"
     
-    WCR_powerful_bonus_reason: "서구화는 다음 각 항목에 의해 #p 1%#!씩 #v 증가#!합니다:\n- $WCR_ig_intelligentsia$(이)가 [concept_powerful] 상태임\n- $WCR_ig_industrialists$(이)가 [concept_powerful] 상태임\n- $WCR_ig_armed_forces$(이)가 [concept_powerful] 상태임\n- $WCR_ig_trade_unions$(이)가 [concept_powerful] 상태임"
+    WCR_overview_reason: "서구화 진행률은 #v 매달 증가#!하며, 그 속도는 아래 나열된 여러 요인에 따라 달라집니다."
     
-    WCR_influential_bonus_reason: "서구화는 다음 각 항목에 의해 #p 0.5%#!씩 #v 증가#!합니다:\n- $WCR_ig_intelligentsia$(이)가 [concept_influential] 상태임\n- $WCR_ig_industrialists$(이)가 [concept_influential] 상태임\n- $WCR_ig_armed_forces$(이)가 [concept_influential] 상태임\n- $WCR_ig_trade_unions$(이)가 [concept_influential] 상태임"
+    WCR_breakdown_reason: "서구화는 현재 다음 달에 #tooltippable;tooltip:[Country.GetTooltipTag],WCR_tt_delta_breakdown [SCOPE.ScriptValue('WCR_sv_calculate_westernization_progress_delta')|+=2%]#! 정도 진행될 것으로 예상됩니다."
     
-    WCR_powerful_malus_reason: "서구화는 다음 각 항목에 의해 #n 1%#!씩 #v 감소#!합니다:\n- $WCR_ig_landowners$(이)가 [concept_powerful] 상태임\n- $WCR_ig_devout$(이)가 [concept_powerful] 상태임\n- $WCR_ig_rural_folk$(이)가 [concept_powerful] 상태임\n- $WCR_ig_petty_bourgeoisie$(이)가 [concept_powerful] 상태임"
+    WCR_positive_delta_reason: "Westernization progress will #v increase#! by up to #p [SCOPE.ScriptValue('WCR_TOTAL_PROGRESS_FROM_PROG_CLOUT')|0%]#! each month, scaling with the total [concept_clout] of the $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')]."
     
-    WCR_GGGG_bonus_reason_blank: ""
-    WCR_GGGG_bonus_reason: "\n\n서구화는 현재 #bold 모든 군사 부문#!에서 #v $pm_GGGG_full_dress$#!, #v $pm_GGGG_modern_uniform$#! 및/혹은 #v $pm_GGGG_modern_uniform_navy$#! (을)를 채택하고 있기 때문에 #p [Add_CFixedPoint(SCOPE.ScriptValue('GGGG_sv_pm_usage_full_dress'), SCOPE.ScriptValue('GGGG_sv_pm_usage_helmets_drab_caps_coats'))|2]%#! #v 증가#!할 것입니다."
+    WCR_negative_delta_reason: "Westernization progress will #v decrease#! by up to #n [SCOPE.ScriptValue('WCR_TOTAL_STONEWALL_FROM_TRAD_CLOUT')|0%]#! each month, scaling with the total [concept_clout] of any [concept_powerful] $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')]."
     
-    WCR_westernized_relations_reason: "서구화는 서구화된 국가와 #p 우호적인#! [concept_relations](#v 50#! 이상)를 맺으면 #v 현재 월간 비율#!의 #p 10%#!를 추가로 #v 증가#!시킬 것입니다."
+    WCR_westernized_relations_reason: "서구화는 서구화된 국가와 #p 우호적인#! [concept_relations]([GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v] 이상)를 맺으면 #v 현재 월간 비율#!의 #p 10%#!를 추가로 #v 증가#!시킬 것입니다."
     
     WCR_no_backtracking_reason: "월별 서구화 진행률이 #n 적자#!로 결정될 경우, 해당 달 동안 서구화 진행률은 중단됩니다. 절대 진행률이 뒤로 후퇴하지 않을 것입니다."
     
-    WCR_ig_opinion_reason: "서구화 진행률이 #v 25%#! 증가할 때마다:\n- #p +1#! $WCR_ig_intelligentsia$ [concept_approval]\n- #p +1#! $WCR_ig_industrialists$ [concept_approval]\n- #p +1#! $WCR_ig_armed_forces$ [concept_approval]\n- #p +1#! $WCR_ig_trade_unions$ [concept_approval] \n- #n -1#! $WCR_ig_landowners$ [concept_approval]\n- #n -1#! $WCR_ig_devout$ [concept_approval]\n- #n -1#! $WCR_ig_rural_folk$ [concept_approval]\n- #n -1#! $WCR_ig_petty_bourgeoisie$ [concept_approval]\n\n서구화가 #v 완료#!되면 획득하거나 손실한 [concept_approval]은 장기간에 걸쳐 소멸합니다."
+    WCR_ig_opinion_reason_header: "서구화 진행률이 #v 25%#! 증가할 때마다:"
     
-    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_powerful_bonus_reason$\n\n$WCR_influential_bonus_reason$\n\n$WCR_powerful_malus_reason$[SCOPE.sCountry('this_country').GetCustom('WCR_cl_GGGG_bonus_reason')]\n\n$WCR_westernized_relations_reason$\n\n$WCR_no_backtracking_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason$\n\n$WCR_LONG_DELIMITER$" 
+    WCR_ig_opinion_prog_reason: "• All $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] will gain #p 1#! [concept_approval]"
+    
+    WCR_ig_opinion_trad_reason: "• All $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] will lose #n 1#! [concept_approval]"
+    
+    WCR_ig_opinion_done_reason: "서구화가 #v 완료#!되면 획득하거나 손실한 [concept_approval]은 장기간에 걸쳐 소멸합니다."
+    
+    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_breakdown_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_positive_delta_reason$\n\n$WCR_negative_delta_reason$\n\n$WCR_westernized_relations_reason$\n\n$WCR_no_backtracking_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason_header$#indent_newline:1 \n$WCR_ig_opinion_prog_reason$\n$WCR_ig_opinion_trad_reason$#!\n\n$WCR_ig_opinion_done_reason$\n\n$WCR_LONG_DELIMITER$" 
     
     # Westernization JE status texts
     # Use of GetPlayer in customizable loc text is mandatory due to data context being changed when going through a customizable loc

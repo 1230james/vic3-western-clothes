@@ -4,6 +4,8 @@ l_russian:
     WCR_AWC_behavior_text:     "Это оригинальное поведение из #bold Adopt Western Clothes#!."
     WCR_vanilla_behavior_text: "Это обычное поведение групп населения #bold unmodded games#!."
     
+    WCR_gov_employee_text: "[Concept('concept_government_building', '$concept_government$')] and [Concept('concept_military_building', '$military$')] employees #p will always#! westernize."
+    
     WCR_rule_yes: "#b Да#!"
     WCR_rule_no:  "#b Нет#!"
     

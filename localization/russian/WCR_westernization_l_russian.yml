@@ -16,12 +16,20 @@ l_russian:
     WCR_de_simple_westernization_tooltip: "$WCR_de_simple_westernization$"
     
     # Tooltips
-    WCR_tt_overlord_westernized_sub: "[GetPlayer.GetOverlord.GetName] является #v вестернизированна#!"
-    WCR_tt_overlord_westernized_ind: "[concept_overlord] из [GetPlayer.GetName] является #v вестернизированной#!"
-    WCR_tt_ruler_support:            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] поддерживает любой из [Concept('concept_interest_group', '$concept_interest_groups$')] ниже:"
+    WCR_tt_overlord_westernized_sub: "[GetPlayer.GetOverlord.GetName] является #bold вестернизированна#!"
+    WCR_tt_overlord_westernized_ind: "[concept_overlord] из [GetPlayer.GetName] является #bold вестернизированной#!"
+    WCR_tt_ruler_support:            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] belongs to a $WCR_tt_progressives_tt$ [concept_interest_group]"
     
-    WCR_tt_KOR_req_bypass: "The #b $dyn_c_empire_of_korea$#! has been proclaimed."
-    WCR_tt_JAP_req_bypass: "The #b $je_meiji_restoration$#! [concept_journal_entry] has been completed."
+    WCR_tt_KOR_req_bypass: "Тот #b $dyn_c_empire_of_korea$#! был провозглашен"
+    WCR_tt_JAP_req_bypass: "Тот #b $je_meiji_restoration$#! [concept_journal_entry] завершено"
+    
+    WCR_tt_conservatives_tt:   "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],,WCR_conservative_IGs_tooltip $WCR_txt_conservative$#!"
+    WCR_tt_progressives_tt:    "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],,WCR_progressive_IGs_tooltip $WCR_txt_progressive$#!"
+    WCR_txt_conservative:      "conservative"
+    WCR_txt_progressive:       "progressive"
+    WCR_tt_IG_cooltip_header:  "Is one of the following [Concept('concept_interest_group', '$concept_interest_groups$')]:"
+    WCR_tt_is_conservative_IG: "Is a $WCR_tt_conservatives_tt$ [concept_interest_group]"
+    WCR_tt_is_progressive_IG:  "Is a $WCR_tt_progressives_tt$ [concept_interest_group]"
     
     # Modifiers
     WCR_westernized_modifier:         "Недавно вестернизированный"
@@ -40,33 +48,35 @@ l_russian:
     # Westernization JE long text & helpers
     WCR_LONG_DELIMITER: "     @divider_start!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_end!"
     
-    WCR_ig_armed_forces:      "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_devout:            "[GetInterestGroupVariant('ig_devout', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_industrialists:    "[GetInterestGroupVariant('ig_industrialists', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_intelligentsia:    "[GetInterestGroupVariant('ig_intelligentsia', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_landowners:        "[GetInterestGroupVariant('ig_landowners', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_petty_bourgeoisie: "[GetInterestGroupVariant('ig_petty_bourgeoisie', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_rural_folk:        "[GetInterestGroupVariant('ig_rural_folk', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_trade_unions:      "[GetInterestGroupVariant('ig_trade_unions', SCOPE.sCountry('this_country')).GetName]"
+    WCR_tt_format_base:     "• #indent_newline:3 $VALUE|+=%2$ $KEY$#!"
+    WCR_tt_format_mult:     "• #indent_newline:3 #p x$VALUE|$#! $KEY$#!"
+    WCR_tt_delta_breakdown: "[Country.MakeScope.GetScriptValueDesc('WCR_sv_calculate_westernization_progress_delta')]"
     
-    WCR_overview_reason: "Прогресс вестернизации будет #v увеличиваться ежемесячно#!, а скорость его изменения зависит от множества факторов, перечисленных ниже.\n\nВ настоящее время ожидается, что в следующем месяце прогресс вестернизации составит #v [SCOPE.ScriptValue('WCR_sv_calculate_westernization_progress_delta')|2]%#!"
+    WCR_tt_delta_from_prog_clout: "from [concept_clout] of $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] (#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_prog_clout')|%]#!)"
+    WCR_tt_delta_from_trad_clout: "from [concept_clout] of [concept_powerful] $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] (#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_powerful_trad_clout')|%]#!)"
+    WCR_tt_delta_from_relations:  "from having $relations_amicable$ [concept_relations] with a westernized nation"
     
-    WCR_powerful_bonus_reason: "Вестернизация #v увеличится#! на #p 1%#! для каждого из следующих случаев, которые верны:\n- $WCR_ig_intelligentsia$ и [concept_powerful]\n- $WCR_ig_industrialists$ и [concept_powerful]\n- $WCR_ig_armed_forces$ и [concept_powerful]\n- $WCR_ig_trade_unions$ и [concept_powerful]"
+    WCR_overview_reason: "Прогресс вестернизации будет #v увеличиваться ежемесячно#!, а скорость его изменения зависит от множества факторов, перечисленных ниже."
     
-    WCR_influential_bonus_reason: "Вестернизация #v увеличится#! на #p 0.5%#! для каждого из следующих случаев, которые верны:\n- $WCR_ig_intelligentsia$ и [concept_influential]\n- $WCR_ig_industrialists$ и [concept_influential]\n- $WCR_ig_armed_forces$ и [concept_influential]\n- $WCR_ig_trade_unions$ и[concept_influential]"
+    WCR_breakdown_reason: "В настоящее время ожидается, что в следующем месяце прогресс вестернизации составит #tooltippable;tooltip:[Country.GetTooltipTag],WCR_tt_delta_breakdown [SCOPE.ScriptValue('WCR_sv_calculate_westernization_progress_delta')|+=2%]#!."
     
-    WCR_powerful_malus_reason: "Вестернизация #v уменьшится#! на #n 1%#! для каждого из следующих случаев, которые верны:\n- $WCR_ig_landowners$ и [concept_powerful]\n- $WCR_ig_devout$ и [concept_powerful]\n- $WCR_ig_rural_folk$ и [concept_powerful]\n- $WCR_ig_petty_bourgeoisie$ и [concept_powerful]\n"
+    WCR_positive_delta_reason: "Westernization progress will #v increase#! by up to #p [SCOPE.ScriptValue('WCR_TOTAL_PROGRESS_FROM_PROG_CLOUT')|0%]#! each month, scaling with the total [concept_clout] of the $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')]."
     
-    WCR_GGGG_bonus_reason_blank: ""
-    WCR_GGGG_bonus_reason: "\n\nВестернизация будет #v увеличиваться#! на #p [Add_CFixedPoint(SCOPE.ScriptValue('GGGG_sv_pm_usage_full_dress'), SCOPE.ScriptValue('GGGG_sv_pm_usage_helmets_drab_caps_coats'))|2]%#! из-за вашего текущего принятия #v $pm_GGGG_full_dress$#!, #v $pm_GGGG_modern_uniform$#!, и/или #v $pm_GGGG_modern_uniform_navy$#! во всех #жирным выделены все воинские части#!."
+    WCR_negative_delta_reason: "Westernization progress will #v decrease#! by up to #n [SCOPE.ScriptValue('WCR_TOTAL_STONEWALL_FROM_TRAD_CLOUT')|0%]#! each month, scaling with the total [concept_clout] of any [concept_powerful] $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')]."
     
-    WCR_westernized_relations_reason: "Вестернизация #v увеличится#! на дополнительные #p 10%#! от #v текущей месячной нормы#! если у нас есть $relations_amicable$ [concept_relations] (#v 50#! или выше) с любой вестернизированной нацией."
+    WCR_westernized_relations_reason: "Вестернизация #v увеличится#! на дополнительные #p 10%#! от #v текущей месячной нормы#! если у нас есть $relations_amicable$ [concept_relations] ([GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v] или выше) с любой вестернизированной нацией."
     
     WCR_no_backtracking_reason: "В случае, если месячный прогресс вестернизации окажется #n отрицательным#!, прогресс вестернизации будет остановлен на этот месяц. Он никогда не пойдет вспять."
     
-    WCR_ig_opinion_reason: "За каждые #v 25%#! продвижения вестернизации:\n- $WCR_ig_intelligentsia$ получит #p 1#! [concept_approval]\n- $WCR_ig_industrialists$ получит #p 1#! [concept_approval]\n- $WCR_ig_armed_forces$ получат #p 1#! [concept_approval]\n- $WCR_ig_trade_unions$ получит #p 1#! [concept_approval]\n- $WCR_ig_landowners$ потеряют #n 1#! [concept_approval]\n- $WCR_ig_devout$ потеряет #n 1#! [concept_approval]\n- $WCR_ig_rural_folk$ потеряет #n 1#! [concept_approval]\n- $WCR_ig_petty_bourgeoisie$ потеряет #n 1#! [concept_approval]\n\nПосле #v завершения#! вестернизации общее [concept_approval], полученное или потерянное, будет уменьшаться в течение длительного периода времени."
+    WCR_ig_opinion_reason_header: "За каждые #v 25%#! продвижения вестернизации:"
     
-    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_powerful_bonus_reason$\n\n$WCR_influential_bonus_reason$\n\n$WCR_powerful_malus_reason$[SCOPE.sCountry('this_country').GetCustom('WCR_cl_GGGG_bonus_reason')]\n\n$WCR_westernized_relations_reason$\n\n$WCR_no_backtracking_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason$\n\n$WCR_LONG_DELIMITER$" 
+    WCR_ig_opinion_prog_reason: "• All $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] will gain #p 1#! [concept_approval]"
+    
+    WCR_ig_opinion_trad_reason: "• All $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] will lose #n 1#! [concept_approval]"
+    
+    WCR_ig_opinion_done_reason: "После #v завершения#! вестернизации общее [concept_approval], полученное или потерянное, будет уменьшаться в течение длительного периода времени."
+    
+    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_breakdown_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_positive_delta_reason$\n\n$WCR_negative_delta_reason$\n\n$WCR_westernized_relations_reason$\n\n$WCR_no_backtracking_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason_header$#indent_newline:1 \n$WCR_ig_opinion_prog_reason$\n$WCR_ig_opinion_trad_reason$#!\n\n$WCR_ig_opinion_done_reason$\n\n$WCR_LONG_DELIMITER$" 
     
     # Westernization JE status texts
     # Use of GetPlayer in customizable loc text is mandatory due to data context being changed when going through a customizable loc

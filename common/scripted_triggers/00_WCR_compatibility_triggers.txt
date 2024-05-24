@@ -24,3 +24,8 @@ com_is_active = {
 JKUP_is_active_trigger = {
     always = no
 }
+
+# Better Politics Mod
+bpm_ig_enabled = {
+    always = yes
+}

@@ -1,0 +1,105 @@
+﻿# Root: country
+WCR_se_refresh_IG_westernization_modifiers = {
+    every_interest_group = {
+        hidden_effect = {
+            remove_modifier = WCR_ig_westernization_1_modifier
+            remove_modifier = WCR_ig_westernization_2_modifier
+            remove_modifier = WCR_ig_westernization_3_modifier
+            remove_modifier = WCR_ig_westernization_4_modifier
+        }
+        
+        if = {
+            limit = {
+                bpm_ig_enabled = yes
+            }
+            if = {
+                limit = {
+                    WCR_st_is_interest_group_progressive = yes
+                }
+                WCR_se_util_set_IG_westernization_modifier = {
+                    MULT = 1
+                }
+            }
+            else = {
+                WCR_se_util_set_IG_westernization_modifier = {
+                    MULT = -1
+                }
+            }
+        }
+    }
+}
+
+# Scope: country
+WCR_se_set_IG_westernized_modifier = {
+    every_interest_group = {
+        hidden_effect = {
+            remove_modifier = WCR_ig_westernization_1_modifier
+            remove_modifier = WCR_ig_westernization_2_modifier
+            remove_modifier = WCR_ig_westernization_3_modifier
+            remove_modifier = WCR_ig_westernization_4_modifier
+        }
+        if = {
+            limit = {
+                bpm_ig_enabled = yes
+            }
+            if = { # Doing it this way for nicer tooltip
+                limit = {
+                    WCR_sv_calculate_IG_progressive_score > 0
+                }
+                add_modifier = {
+                    name  = WCR_ig_westernized_modifier
+                    years = 10
+                    is_decaying = yes
+                }
+            }
+            else = {
+                add_modifier = {
+                    name  = WCR_ig_westernized_modifier
+                    years = 10
+                    multiplier  = -1
+                    is_decaying = yes
+                }
+            }
+        }
+    }
+}
+
+# ==================================================================================================================== #
+
+WCR_se_util_set_IG_westernization_modifier = {
+    if = {
+        limit = {
+            OR = {
+                NOT = {
+                    ROOT = { has_variable = WCR_westernization_progress } 
+                }
+                ROOT.var:WCR_westernization_progress < 25
+            }
+        }
+        add_modifier = {
+            name = WCR_ig_westernization_1_modifier
+            multiplier = $MULT$
+        }
+    }
+    else_if = {
+        limit = { ROOT.var:WCR_westernization_progress < 50 }
+        add_modifier = {
+            name = WCR_ig_westernization_2_modifier
+            multiplier = $MULT$
+        }
+    }
+    else_if = {
+        limit = { ROOT.var:WCR_westernization_progress < 75 }
+        add_modifier = {
+            name = WCR_ig_westernization_3_modifier
+            multiplier = $MULT$
+        }
+    }
+    else_if = {
+        limit = { ROOT.var:WCR_westernization_progress <= 100 }
+        add_modifier = {
+            name = WCR_ig_westernization_4_modifier
+            multiplier = $MULT$
+        }
+    }
+}

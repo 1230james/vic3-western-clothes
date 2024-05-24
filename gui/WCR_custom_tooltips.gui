@@ -1,0 +1,63 @@
+types TooltipTypes {
+    
+    type WCR_conservative_IG_list_tooltip = TooltipWidgetType {
+        blockoverride "tooltip_content" {
+            flowcontainer = {
+                direction = vertical
+                
+                DefaultTooltipTextBox = {
+                    text = "WCR_tt_IG_cooltip_header"
+                }
+                
+                flowcontainer = {
+                    direction = vertical
+                    datamodel = "[AccessPlayer.AccessAllInterestGroups]"
+                    item = {
+                        DefaultTooltipTextBox = {
+                            autoresize = yes
+                            raw_text   = " • [InterestGroup.GetName]" # ([InterestGroup.MakeScope.ScriptValue('WCR_sv_calculate_IG_progressive_score')])"
+                            visible    = "[And(
+                                LessThanOrEqualTo_CFixedPoint(
+                                    InterestGroup.MakeScope.ScriptValue('WCR_sv_calculate_IG_progressive_score'),
+                                    '(CFixedPoint)0'
+                                ),
+                                GetScriptedGui('WCR_sg_is_active_IG').IsShown(GuiScope.SetRoot(InterestGroup.MakeScope).End)
+                            )]"
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    type WCR_progressive_IG_list_tooltip = TooltipWidgetType {
+        blockoverride "tooltip_content" {
+            flowcontainer = {
+                direction = vertical
+                
+                DefaultTooltipTextBox = {
+                    text = "WCR_tt_IG_cooltip_header"
+                }
+                
+                flowcontainer = {
+                    direction = vertical
+                    datamodel = "[AccessPlayer.AccessAllInterestGroups]"
+                    item = {
+                        DefaultTooltipTextBox = {
+                            autoresize = yes
+                            raw_text   = " • [InterestGroup.GetName]" # ([InterestGroup.MakeScope.ScriptValue('WCR_sv_calculate_IG_progressive_score')])"
+                            visible    = "[And(
+                                GreaterThan_CFixedPoint(
+                                    InterestGroup.MakeScope.ScriptValue('WCR_sv_calculate_IG_progressive_score'),
+                                    '(CFixedPoint)0'
+                                ),
+                                GetScriptedGui('WCR_sg_is_active_IG').IsShown(GuiScope.SetRoot(InterestGroup.MakeScope).End)
+                            )]"
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}

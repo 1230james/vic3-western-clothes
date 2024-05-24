@@ -4,6 +4,8 @@ l_spanish:
     WCR_AWC_behavior_text:     "Este es el comportamiento original de #bold Adopt Western Clothes#!."
     WCR_vanilla_behavior_text: "Este es el comportamiento original para las #bold partidas sin mods#!."
     
+    WCR_gov_employee_text: "[Concept('concept_government_building', '$concept_government$')] and [Concept('concept_military_building', '$military$')] employees #p will always#! westernize."
+    
     WCR_rule_yes: "#b Sí#!"
     WCR_rule_no:  "#b No#!"
     
