@@ -18,10 +18,18 @@ l_simp_chinese:
     # Tooltips
     WCR_tt_overlord_westernized_sub: "[GetPlayer.GetOverlord.GetName]已经#v 西洋化#!。"
     WCR_tt_overlord_westernized_ind: "[GetPlayer.GetName]的[concept_overlord]已经#v 西洋化#!。"
-    WCR_tt_ruler_support:            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]支持以下任一[Concept('concept_interest_group', '$concept_interest_groups$')]："
+    WCR_tt_ruler_support:            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] belongs to a $WCR_tt_progressives_tt$ [concept_interest_group]"
     
-    WCR_tt_KOR_req_bypass: "The #b $dyn_c_empire_of_korea$#! has been proclaimed."
-    WCR_tt_JAP_req_bypass: "The #b $je_meiji_restoration$#! [concept_journal_entry] has been completed."
+    WCR_tt_KOR_req_bypass: "#b $dyn_c_empire_of_korea$#!已宣告成立。"
+    WCR_tt_JAP_req_bypass: "#b $je_meiji_restoration$#![concept_journal_entry]已经完成。"
+    
+    WCR_tt_conservatives_tt:   "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],,WCR_conservative_IGs_tooltip $WCR_txt_conservative$#!"
+    WCR_tt_progressives_tt:    "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],,WCR_progressive_IGs_tooltip $WCR_txt_progressive$#!"
+    WCR_txt_conservative:      "conservative"
+    WCR_txt_progressive:       "progressive"
+    WCR_tt_IG_cooltip_header:  "Is one of the following [Concept('concept_interest_group', '$concept_interest_groups$')]:"
+    WCR_tt_is_conservative_IG: "Is a $WCR_tt_conservatives_tt$ [concept_interest_group]"
+    WCR_tt_is_progressive_IG:  "Is a $WCR_tt_progressives_tt$ [concept_interest_group]"
     
     # Modifiers
     WCR_westernized_modifier:         "近期已西洋化"
@@ -40,33 +48,35 @@ l_simp_chinese:
     # Westernization JE long text & helpers
     WCR_LONG_DELIMITER: "     @divider_start!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_end!"
     
-    WCR_ig_armed_forces:      "[GetInterestGroupVariant('ig_armed_forces', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_devout:            "[GetInterestGroupVariant('ig_devout', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_industrialists:    "[GetInterestGroupVariant('ig_industrialists', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_intelligentsia:    "[GetInterestGroupVariant('ig_intelligentsia', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_landowners:        "[GetInterestGroupVariant('ig_landowners', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_petty_bourgeoisie: "[GetInterestGroupVariant('ig_petty_bourgeoisie', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_rural_folk:        "[GetInterestGroupVariant('ig_rural_folk', SCOPE.sCountry('this_country')).GetName]"
-    WCR_ig_trade_unions:      "[GetInterestGroupVariant('ig_trade_unions', SCOPE.sCountry('this_country')).GetName]"
+    WCR_tt_format_base:     "• #indent_newline:3 $VALUE|+=%2$ $KEY$#!"
+    WCR_tt_format_mult:     "• #indent_newline:3 #p x$VALUE|$#! $KEY$#!"
+    WCR_tt_delta_breakdown: "[Country.MakeScope.GetScriptValueDesc('WCR_sv_calculate_westernization_progress_delta')]"
     
-    WCR_overview_reason: "西化进程将#v 每月递增#!，其速率取决于下面列出的多个因素。\n\n西化目前预计下个月将增加#v [SCOPE.ScriptValue('WCR_sv_calculate_westernization_progress_delta')|2]%#!。"
+    WCR_tt_delta_from_prog_clout: "from [concept_clout] of $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] (#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_prog_clout')|%]#!)"
+    WCR_tt_delta_from_trad_clout: "from [concept_clout] of [concept_powerful] $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] (#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_powerful_trad_clout')|%]#!)"
+    WCR_tt_delta_from_relations:  "from having $relations_amicable$ [concept_relations] with a westernized nation"
     
-    WCR_powerful_bonus_reason: "以下每一条因素将让西洋化#v 增加#!#p 1%#!：\n-$WCR_ig_intelligentsia$是[concept_powerful]\n-$WCR_ig_industrialists$是[concept_powerful]\n-$WCR_ig_armed_forces$是[concept_powerful]\n-$WCR_ig_trade_unions$是[concept_powerful]"
+    WCR_overview_reason: "西化进程将#v 每月递增#!，其速率取决于下面列出的多个因素。"
     
-    WCR_influential_bonus_reason: "以下每一条因素将让西洋化#v 增加#!#p 0.5%#!：\n-$WCR_ig_intelligentsia$是[concept_influential]\n-$WCR_ig_industrialists$是[concept_influential]\n-$WCR_ig_armed_forces$是[concept_influential]\n-$WCR_ig_trade_unions$是[concept_influential]"
+    WCR_breakdown_reason: "西化目前预计下个月将增加#v [SCOPE.ScriptValue('WCR_sv_calculate_westernization_progress_delta')|+=2%]#!。"
     
-    WCR_powerful_malus_reason: "以下每一条因素将让西洋化#v 减少#!#n 1%#!：\n-$WCR_ig_landowners$是[concept_powerful]\n-$WCR_ig_devout$是[concept_powerful]\n-$WCR_ig_rural_folk$是[concept_powerful]\n-$WCR_ig_petty_bourgeoisie$是[concept_powerful]"
+    WCR_positive_delta_reason: "Westernization progress will #v increase#! by up to #p [SCOPE.ScriptValue('WCR_TOTAL_PROGRESS_FROM_PROG_CLOUT')|0%]#! each month, scaling with the total [concept_clout] of the $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')]."
     
-    WCR_GGGG_bonus_reason_blank: ""
-    WCR_GGGG_bonus_reason: "\n\n由于你在#bold 所有的军事单位#!中采用了#v $pm_GGGG_full_dress$#!、#v $pm_GGGG_modern_uniform$#!和/或者#v $pm_GGGG_modern_uniform_navy$#!，西洋化将会#v 增加#!#p [Add_CFixedPoint(SCOPE.ScriptValue('GGGG_sv_pm_usage_full_dress'), SCOPE.ScriptValue('GGGG_sv_pm_usage_helmets_drab_caps_coats'))|2]%#!。"
+    WCR_negative_delta_reason: "Westernization progress will #v decrease#! by up to #n [SCOPE.ScriptValue('WCR_TOTAL_STONEWALL_FROM_TRAD_CLOUT')|0%]#! each month, scaling with the total [concept_clout] of any [concept_powerful] $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')]."
     
-    WCR_westernized_relations_reason: "如果我们与任何西方化国家有着$relations_amicable$[concept_relations]（#v 50#!或更高），西洋化的#v 当前每月速率#!将会额外#v 增加#!#p 10%#!。"
+    WCR_westernized_relations_reason: "如果我们与任何西方化国家有着$relations_amicable$[concept_relations]（[GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v]或更高），西洋化的#v 当前每月速率#!将会额外#v 增加#!#p 10%#!。"
     
     WCR_no_backtracking_reason: "假如每月西化的进程确定为#n 负值#!，西化进程将会在当月停止，它将永远不会倒退。"
     
-    WCR_ig_opinion_reason: "每#v 25%#!的西化进程：\n-$WCR_ig_intelligentsia$将获得#p 1#![concept_approval]\n-$WCR_ig_industrialists$将获得#p 1#![concept_approval]\n-$WCR_ig_armed_forces$将获得#p 1#![concept_approval]\n-$WCR_ig_trade_unions$将获得#p 1#![concept_approval]\n-$WCR_ig_landowners$将失去#n 1#![concept_approval]\n-$WCR_ig_devout$将失去#n 1#![concept_approval]\n-$WCR_ig_rural_folk$将失去#n 1#![concept_approval]\n-$WCR_ig_petty_bourgeoisie$将失去#n 1#![concept_approval]\n\n在西洋化#v 完成#!之后，全部获得或失去的[concept_approval]将会在很长一段时间内衰减。"
+    WCR_ig_opinion_reason_header: "每#v 25%#!的西化进程："
     
-    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_powerful_bonus_reason$\n\n$WCR_influential_bonus_reason$\n\n$WCR_powerful_malus_reason$[SCOPE.sCountry('this_country').GetCustom('WCR_cl_GGGG_bonus_reason')]\n\n$WCR_westernized_relations_reason$\n\n$WCR_no_backtracking_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason$\n\n$WCR_LONG_DELIMITER$" 
+    WCR_ig_opinion_prog_reason: "• All $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] will gain #p 1#! [concept_approval]"
+    
+    WCR_ig_opinion_trad_reason: "• All $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] will lose #n 1#! [concept_approval]"
+    
+    WCR_ig_opinion_done_reason: "在西洋化#v 完成#!之后，全部获得或失去的[concept_approval]将会在很长一段时间内衰减。"
+    
+    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_breakdown_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_positive_delta_reason$\n\n$WCR_negative_delta_reason$\n\n$WCR_westernized_relations_reason$\n\n$WCR_no_backtracking_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason_header$#indent_newline:1 \n$WCR_ig_opinion_prog_reason$\n$WCR_ig_opinion_trad_reason$#!\n\n$WCR_ig_opinion_done_reason$\n\n$WCR_LONG_DELIMITER$" 
     
     # Westernization JE status texts
     # Use of GetPlayer in customizable loc text is mandatory due to data context being changed when going through a customizable loc

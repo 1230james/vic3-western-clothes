@@ -4,13 +4,15 @@ l_french:
     WCR_AWC_behavior_text:     "C'est le comportement initial de #bold Adopt Western Clothes#!."
     WCR_vanilla_behavior_text: "C'est le comportement initial de #adopte des habits occidentaux#!."
     
+    WCR_gov_employee_text: "[Concept('concept_government_building', '$concept_government$')] and [Concept('concept_military_building', '$military$')] employees #p will always#! westernize."
+    
     WCR_rule_yes: "#b Oui#!"
     WCR_rule_no:  "#b Non#!"
     
     rule_WCR_westernization_type:            "#yellow WCR#! | Type d'occidentalisation"
     setting_WCR_complex_westernization:      "#b Progressif#!"
     setting_WCR_complex_westernization_desc: "L'occidentalisation se fera de façon progressive par une [concept_journal_entry]."
-    setting_WCR_simple_westernization:       "Instantanée!"
+    setting_WCR_simple_westernization:       "#b Instantanée#!"
     setting_WCR_simple_westernization_desc:  "#v L'occidentalisation#! se fera instantanément via une décision.\n$WCR_AWC_behavior_text$"
     
     rule_WCR_decision_requirements_type: "#yellow WCR#! | Conditions d'occidentalisation"
@@ -29,7 +31,7 @@ l_french:
     setting_WCR_allow_AI_westernization:      "$WCR_rule_yes$"
     setting_WCR_allow_AI_westernization_desc: "Les pays contrôlés par l'IA #p pourront#! s'occidentaliser."
     setting_WCR_block_AI_westernization:      "$WCR_rule_no$"
-    setting_WCR_block_AI_westernization_desc: "Les pays contrôlés par l'IA #n ne pourront pas#! s'occidentaliser. $WCR_AWC_behavior_text$$"
+    setting_WCR_block_AI_westernization_desc: "Les pays contrôlés par l'IA #n ne pourront pas#! s'occidentaliser. $WCR_AWC_behavior_text$"
     
     rule_WCR_KOR_westernization:                 "#yellow WCR#! | $KOR_ADJ$ Westernization Behavior"
     setting_WCR_modded_KOR_westernization:       "#b WCR#!"

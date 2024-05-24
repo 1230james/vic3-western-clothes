@@ -1,8 +1,10 @@
 ﻿# Game rules
 
 l_german:
-    WCR_AWC_behavior_text:     "Spielregelbeschreibung; anfügend zu allen Spielregelbeschreibungen welches das Verhalten des originalen "Adopt Western Clothes" Mods gleich ist!."
-    WCR_vanilla_behavior_text: "Spielregelbeschreibung; anfügend zu dem Ende der Spielregelbeschreibung von dem das Verhalten gleich zu dem von Victoria 3 ist."
+    WCR_AWC_behavior_text:     "This is the original behavior from #bold Adopt Western Clothes#!."
+    WCR_vanilla_behavior_text: "This is the original behavior from #bold the base game#!."
+    
+    WCR_gov_employee_text: "[Concept('concept_government_building', '$concept_government$')] and [Concept('concept_military_building', '$military$')] employees #p will always#! westernize."
     
     WCR_rule_yes: "#b Ja#!"
     WCR_rule_no:  "#b Nein#!"
@@ -17,7 +19,7 @@ l_german:
     setting_WCR_WCF_requirements:        "#b Normal#!"
     setting_WCR_WCF_requirements_desc:   "#v Westernisierung#! erfordert #v komplexere aber auch flexiblere Bedingungen#!."
     setting_WCR_AWC_requirements:        "#b Legacy#!"
-    setting_WCR_AWC_requirements_desc:   "#v Westernisierung#! nutzt die #v simpleren Bedingungen#! von #bold Adopt Western Clothes#!."
+    setting_WCR_AWC_requirements_desc:   "#v Westernisierung#! nutzt die #v simpleren Bedingungen#! von#bold Adopt Western Clothes#!."
     
     rule_WCR_westernization_influences:  "#yellow WCR#! | Stil der Uniformen"
     setting_WCR_enable_influences:       "#b Benutzerdefiniert#!"
