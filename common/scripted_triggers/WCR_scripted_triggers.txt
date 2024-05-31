@@ -295,7 +295,7 @@ WCR_can_start_westernizing_trigger = {
         # Option A: Mixed WCR+Vanilla requirements for qualifying nations if game rule is set
         trigger_if = {
             limit = {
-                c:KOR ?= THIS
+                WCR_is_korea_trigger = yes
                 has_game_rule = WCR_mixed_KOR_westernization
             }
             custom_tooltip = {
@@ -305,7 +305,7 @@ WCR_can_start_westernizing_trigger = {
         }
         trigger_if = {
             limit = {
-                c:JAP ?= THIS
+                WCR_is_japan_trigger = yes
                 has_game_rule = WCR_mixed_JAP_westernization
             }
             custom_tooltip = {
@@ -400,11 +400,11 @@ WCR_snori_can_westernize_trigger = {
 WCR_is_using_vanilla_rules = {
     OR = {
         AND = {
-            c:KOR ?= THIS
+            WCR_is_korea_trigger = yes
             has_game_rule = WCR_vanilla_KOR_westernization
         }
         AND = {
-            c:JAP ?= THIS
+            WCR_is_japan_trigger = yes
             has_game_rule = WCR_vanilla_JAP_westernization
         }
     }
@@ -414,11 +414,11 @@ WCR_is_using_vanilla_rules = {
 WCR_has_vanilla_uniform_rule = {
     OR = {
         AND = {
-            c:KOR ?= THIS
+            WCR_is_korea_trigger = yes
             has_game_rule = WCR_vanilla_KOR_uniforms
         }
         AND = {
-            c:JAP ?= THIS
+            WCR_is_japan_trigger = yes
             has_game_rule = WCR_vanilla_JAP_uniforms
         }
     }
@@ -433,6 +433,80 @@ WCR_is_scope_owner_qing_dynasty_trigger = {
             culture = {
                 has_discrimination_trait = north_asian_heritage
                 has_discrimination_trait = sinosphere
+            }
+        }
+    }
+}
+
+# Country triggers
+WCR_is_korea_trigger = {
+    # Arranged in trigger_if blocks for nicer tooltipping
+    trigger_if = { # They are Korea
+        limit  = {
+            c:KOR ?= THIS
+        }
+        c:KOR ?= THIS # Repeating logic for nicer tooltipping
+    }
+    trigger_else_if = { # They were Korea
+        limit = {
+            was_formed_from = KOR
+        }
+        was_formed_from = KOR
+    }
+    trigger_else = { # If it walks like a duck and it quacks like a duck... (꽥꽥)
+        OR = {
+            AND = { # Only has Korean as primary culture
+                country_has_primary_culture = cu:korean
+                any_primary_culture = {
+                    count <= 1
+                    always = yes
+                }
+            }
+            calc_true_if = { # Decent signs that they're probably Korea
+                amount >= 2
+                country_has_primary_culture = cu:korean
+                WCR_st_state_religion_matches_cd_religion = {
+                    CD_TAG = KOR
+                }
+                capital.state_region = {
+                    is_homeland = cu:korean
+                }
+            }
+        }
+    }
+}
+
+WCR_is_japan_trigger = {
+    trigger_if = {
+        limit  = {
+            c:JAP ?= THIS
+        }
+        c:JAP ?= THIS
+    }
+    trigger_else_if = {
+        limit = {
+            was_formed_from = JAP
+        }
+        was_formed_from = JAP
+    }
+    trigger_else = {
+        OR = {
+            AND = {
+                country_has_primary_culture = cu:japanese
+                any_primary_culture = {
+                    count <= 1
+                    always = yes
+                }
+            }
+            calc_true_if = {
+                amount >= 2
+                country_has_primary_culture = cu:japanese
+                WCR_st_state_religion_matches_cd_religion = {
+                    CD_TAG = JAP
+                }
+                capital.state_region = {
+                    is_homeland = cu:japanese
+                }
             }
         }
     }

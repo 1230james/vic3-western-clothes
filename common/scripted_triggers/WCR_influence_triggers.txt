@@ -5,15 +5,15 @@ WCR_has_domestic_influence_available_trigger = {
         # Using trigger_if blocks for nicer tooltipping
         trigger_if = {
             limit = {
-                c:KOR ?= this
+                WCR_is_korea_trigger = yes
             }
-            c:KOR ?= this
+            WCR_is_korea_trigger = yes
         }
         trigger_else_if = {
             limit = {
-                c:JAP ?= this
+                WCR_is_japan_trigger = yes
             }
-            c:JAP ?= this
+            WCR_is_japan_trigger = yes
         }
         trigger_else_if = {
             limit = {

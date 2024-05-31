@@ -40,7 +40,9 @@ COM_WCR_enable_outfit = {
             monarchy_clothes_trigger = yes
             scope:character ?= {
                 exists = owner
-                c:KOR ?= owner
+                owner  = {
+                    WCR_is_korea_trigger = yes
+                }
             }
         }
         
@@ -69,7 +71,9 @@ COM_WCR_enable_outfit = {
             monarchy_clothes_trigger = yes
             scope:character ?= {
                 exists = owner
-                c:JAP ?= owner
+                owner  = {
+                    WCR_is_japan_trigger = yes
+                }
             }
         }
         
@@ -106,7 +110,9 @@ COM_WCR_disable_outfit = {
             monarchy_clothes_trigger = yes
             scope:character ?= {
                 exists = owner
-                c:KOR ?= owner
+                owner  = {
+                    WCR_is_korea_trigger = yes
+                }
             }
         }
         
@@ -136,7 +142,9 @@ COM_WCR_disable_outfit = {
             monarchy_clothes_trigger = yes
             scope:character ?= {
                 exists = owner
-                c:JAP ?= owner
+                owner  = {
+                    WCR_is_japan_trigger = yes
+                }
             }
         }
         

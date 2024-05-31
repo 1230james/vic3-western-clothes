@@ -37,13 +37,13 @@
                         OR = {
                             scope:pop ?= {
                                 owner ?= {
-                                    c:JAP ?= this
+                                    WCR_is_japan_trigger = yes
                                     has_variable = meiji_restoration_complete
                                 }
                             }
                             scope:character ?= {
                                 owner ?= {
-                                    c:JAP ?= this
+                                    WCR_is_japan_trigger = yes
                                     has_variable = meiji_restoration_complete
                                 }
                             }
@@ -92,13 +92,13 @@
                         OR = {
                             scope:pop ?= {
                                 owner ?= {
-                                    c:JAP ?= this
+                                    WCR_is_japan_trigger = yes
                                     has_variable = meiji_restoration_complete
                                 }
                             }
                             scope:character ?= {
                                 owner ?= {
-                                    c:JAP ?= this
+                                    WCR_is_japan_trigger = yes
                                     has_variable = meiji_restoration_complete
                                 }
                             }

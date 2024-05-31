@@ -87,9 +87,7 @@
             modifier = {
                 add = 1000
                 scope:pop ?= {
-                    owner ?= {
-                        c:KOR ?= THIS
-                    }
+                    culture = cu:korean
                 }
                 soldier_clothes_pop_trigger = yes
                 WCR_has_completed_westernization_trigger = no
@@ -112,9 +110,7 @@
             modifier = {
                 add = 500
                 scope:pop ?= {
-                    owner ?= {
-                        c:KOR ?= THIS
-                    }
+                    culture = cu:korean
                 }
                 OR = {
                     AND = {
@@ -142,9 +138,7 @@
             modifier = {
                 add = 500
                 scope:pop ?= {
-                    owner ?= {
-                        c:KOR ?= THIS
-                    }
+                    culture = cu:korean
                 }
                 WCR_has_completed_westernization_trigger = no
                 PCT_is_active_trigger = no
@@ -168,8 +162,9 @@
             modifier = {
                 add = 100
                 scope:character ?= {
+                    has_culture = cu:korean
                     owner ?= {
-                        c:KOR ?= THIS
+                        WCR_is_korea_trigger = yes
                         has_variable = KOR_korean_empire_declared
                     }
                     is_ruler = yes
@@ -210,12 +205,12 @@
                 OR = {
                     scope:pop ?= {
                         owner ?= {
-                            c:JAP ?= this
+                            WCR_is_japan_trigger = yes
                         }
                     }
                     scope:character ?= {
                         owner ?= {
-                            c:JAP ?= this
+                            WCR_is_japan_trigger = yes
                         }
                     }
                 }
@@ -315,7 +310,7 @@
                 WCR_has_completed_westernization_trigger = no
                 scope:character ?= {
                     owner ?= {
-                        c:JAP ?= this
+                        WCR_is_japan_trigger = yes
                     }
                     japanese_imperial_clothes_trigger = yes
                 }
@@ -1644,7 +1639,9 @@
                         WCR_has_completed_westernization_trigger = yes
                         scope:character ?= {
                             exists = owner
-                            c:KOR ?= owner
+                            owner  = {
+                                WCR_is_korea_trigger = yes
+                            }
                         }
                         OR = {
                             AND = {
@@ -1673,7 +1670,7 @@
                             # age > 10
                             # culture = cu:korean
                             owner ?= {
-                                c:KOR ?= this
+                                WCR_is_korea_trigger = yes
                                 has_variable = KOR_korean_empire_declared
                             }
                             WCR_westernization_allowed_by_rules_trigger = yes
@@ -1722,7 +1719,9 @@
                         WCR_has_completed_westernization_trigger = yes
                         scope:pop ?= {
                             exists = owner
-                            c:KOR ?= owner
+                            owner  = {
+                                WCR_is_korea_trigger = yes
+                            }
                         }
                         OR = {
                             AND = {
@@ -1740,7 +1739,7 @@
                         scope:pop ?= {
                             # culture = cu:korean
                             owner ?= {
-                                c:KOR ?= this
+                                WCR_is_korea_trigger = yes
                                 has_variable = KOR_korean_empire_declared
                             }
                         }
@@ -1795,7 +1794,9 @@
                         WCR_has_completed_westernization_trigger = yes
                         scope:character ?= {
                             exists = owner
-                            c:JAP ?= owner
+                            owner  = {
+                                WCR_is_japan_trigger = yes
+                            }
                         }
                         OR = {
                             AND = {
@@ -1824,7 +1825,7 @@
                             age > 10
                             # culture = cu:japanese
                             owner ?= {
-                                c:JAP ?= this
+                                WCR_is_japan_trigger = yes
                                 has_variable = meiji_restoration_complete
                             }
                             WCR_westernization_allowed_by_rules_trigger = yes
@@ -1872,7 +1873,9 @@
                         WCR_has_completed_westernization_trigger = yes
                         scope:pop ?= {
                             exists = owner
-                            c:JAP ?= owner
+                            owner  = {
+                                WCR_is_japan_trigger = yes
+                            }
                         }
                         OR = {
                             AND = {
@@ -1890,7 +1893,7 @@
                         scope:pop ?= {
                             # culture = cu:japanese
                             owner ?= {
-                                c:JAP ?= this
+                                WCR_is_japan_trigger = yes
                                 has_variable = meiji_restoration_complete
                             }
                         }
