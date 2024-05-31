@@ -1110,6 +1110,21 @@
                     russian_empire_clothes_pop_trigger = yes
                 }
             }
+            modifier = {
+                add = -10000
+                OR = {
+                    scope:pop ?= {
+                        owner ?= {
+                            WCR_is_using_vanilla_rules = yes
+                        }
+                    }
+                    scope:character ?= {
+                        owner ?= {
+                            WCR_is_using_vanilla_rules = yes
+                        }
+                    }
+                }
+            }
         }
     }
     
