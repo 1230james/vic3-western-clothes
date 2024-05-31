@@ -40,7 +40,9 @@ COM_WCR_enable_outfit = {
             monarchy_clothes_trigger = yes
             scope:character ?= {
                 exists = owner
-                c:KOR ?= owner
+                owner  = {
+                    WCR_is_korea_trigger = yes
+                }
             }
         }
         
@@ -69,7 +71,9 @@ COM_WCR_enable_outfit = {
             monarchy_clothes_trigger = yes
             scope:character ?= {
                 exists = owner
-                c:JAP ?= owner
+                owner  = {
+                    WCR_is_japan_trigger = yes
+                }
             }
         }
         
@@ -106,7 +110,9 @@ COM_WCR_disable_outfit = {
             monarchy_clothes_trigger = yes
             scope:character ?= {
                 exists = owner
-                c:KOR ?= owner
+                owner  = {
+                    WCR_is_korea_trigger = yes
+                }
             }
         }
         
@@ -119,11 +125,22 @@ COM_WCR_disable_outfit = {
                     OR = {
                         WCR_has_completed_westernization_trigger = no
                         WCR_ruler_has_domestic_influence_trigger = no
+                        AND = {
+                            WCR_has_completed_westernization_trigger = yes
+                            age <= 12
+                        }
                     }
                 }
                 owner = {
-                    WCR_is_using_vanilla_rules = yes
+                    WCR_is_using_vanilla_rules    = yes
                     WCR_st_is_country_westernized = no
+                }
+                AND = {
+                    age  <= 12
+                    owner = {
+                        WCR_is_using_vanilla_rules    = yes
+                        WCR_st_is_country_westernized = yes
+                    }
                 }
                 WCR_westernization_allowed_by_rules_trigger = no
             }
@@ -136,7 +153,9 @@ COM_WCR_disable_outfit = {
             monarchy_clothes_trigger = yes
             scope:character ?= {
                 exists = owner
-                c:JAP ?= owner
+                owner  = {
+                    WCR_is_japan_trigger = yes
+                }
             }
         }
         
@@ -149,11 +168,22 @@ COM_WCR_disable_outfit = {
                     OR = {
                         WCR_has_completed_westernization_trigger = no
                         WCR_ruler_has_domestic_influence_trigger = no
+                        AND = {
+                            WCR_has_completed_westernization_trigger = yes
+                            age <= 12
+                        }
                     }
                 }
                 owner = {
                     WCR_is_using_vanilla_rules = yes
                     WCR_st_is_country_westernized = no
+                }
+                AND = {
+                    age  <= 12
+                    owner = {
+                        WCR_is_using_vanilla_rules    = yes
+                        WCR_st_is_country_westernized = yes
+                    }
                 }
                 WCR_westernization_allowed_by_rules_trigger = no
             }

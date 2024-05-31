@@ -516,11 +516,15 @@
                         OR = {
                             scope:pop ?= {
                                 exists = owner
-                                c:KOR ?= owner
+                                owner  = {
+                                    WCR_is_korea_trigger = yes
+                                }
                             }
                             scope:character ?= {
                                 exists = owner
-                                c:KOR ?= owner
+                                owner  = {
+                                    WCR_is_korea_trigger = yes
+                                }
                             }
                         }
                         agitator_character_trigger = no
@@ -533,7 +537,7 @@
                         scope:character ?= {
                             # culture = cu:korean
                             owner ?= {
-                                c:KOR ?= this
+                                WCR_is_korea_trigger = yes
                                 has_variable = KOR_korean_empire_declared
                             }
                         }
@@ -556,7 +560,7 @@
                         scope:pop ?= {
                             # culture = cu:korean
                             owner ?= {
-                                c:KOR ?= this
+                                WCR_is_korea_trigger = yes
                                 has_variable = KOR_korean_empire_declared
                             }
                         }
@@ -592,11 +596,15 @@
                         OR = {
                             scope:pop ?= {
                                 exists = owner
-                                c:JAP ?= owner
+                                owner  = {
+                                    WCR_is_japan_trigger = yes
+                                }
                             }
                             scope:character ?= {
                                 exists = owner
-                                c:JAP ?= owner
+                                owner  = {
+                                    WCR_is_japan_trigger = yes
+                                }
                             }
                         }
                         agitator_character_trigger = no
@@ -608,8 +616,8 @@
                         has_game_rule = WCR_vanilla_JAP_westernization
                         scope:character ?= {
                             # culture = cu:japanese
-                            owner = {
-                                c:JAP ?= this
+                            owner ?= {
+                                WCR_is_japan_trigger = yes
                                 has_variable = meiji_restoration_complete
                             }
                         }
@@ -631,8 +639,8 @@
                         has_game_rule = WCR_vanilla_JAP_westernization
                         scope:pop ?= {
                             # culture = cu:japanese
-                            owner = {
-                                c:JAP ?= this
+                            owner ?= {
+                                WCR_is_japan_trigger = yes
                                 has_variable = meiji_restoration_complete
                             }
                         }

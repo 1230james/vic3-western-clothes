@@ -8,12 +8,12 @@
 WCR_st_is_country_westernized_by_vanilla = {
     OR = {
         AND = { # Korea - Vanilla westernization when declaring the Empire of Korea
-            c:KOR ?= THIS
+            WCR_is_korea_trigger = yes
             has_game_rule = WCR_vanilla_KOR_westernization
             has_variable  = KOR_korean_empire_declared
         }
         AND = { # Japan - Vanilla westernization upon completing the Restoration
-            c:JAP ?= THIS
+            WCR_is_japan_trigger = yes
             has_game_rule = WCR_vanilla_JAP_westernization
             has_variable  = meiji_restoration_complete
         }
@@ -147,6 +147,19 @@ WCR_st_is_interest_group_progressive = {
         text = WCR_tt_is_progressive_IG
         bpm_ig_enabled = yes
         WCR_sv_calculate_IG_progressive_score > 0
+    }
+}
+
+# Returns true is the currently-scoped country's state religion matches that of the given country defition
+# Scope: country
+WCR_st_state_religion_matches_cd_religion = {
+    cd:$CD_TAG$ ?= {
+        religion = {
+            save_temporary_scope_as = cd_religion
+        }
+    }
+    scope:cd_religion ?= {
+        is_state_religion = PREV
     }
 }
 
