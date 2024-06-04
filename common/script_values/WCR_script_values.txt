@@ -34,8 +34,8 @@ WCR_sv_calculate_westernization_progress_delta = {
             }
         }
         multiply = {
-            add = 1
-            add = {
+            add  = 0
+            add  = {
                 desc   = WCR_tt_delta_from_relations
                 format = WCR_tt_format_mult
                 value  = 1.10
