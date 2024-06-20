@@ -4,26 +4,60 @@ WCR_TOTAL_STONEWALL_FROM_TRAD_CLOUT = 0.08
 WCR_sv_calculate_westernization_progress_delta = {
     value = 0
     
+    # IG clout
     add = {
-        desc   = WCR_tt_delta_from_prog_clout
+        desc   = WCR_tt_delta_from_clout
         format = WCR_tt_format_base
         value  = {
-            value    = WCR_sv_calculate_total_prog_clout
-            multiply = WCR_TOTAL_PROGRESS_FROM_PROG_CLOUT
+            add = WCR_sv_calculate_net_delta_from_clout
+            min = 0 # Disallow backtracking
         }
     }
     
-    subtract = {
-        desc   = WCR_tt_delta_from_trad_clout
-        format = WCR_tt_format_base
-        value  = {
-            value    = WCR_sv_calculate_total_powerful_trad_clout
-            multiply = WCR_TOTAL_STONEWALL_FROM_TRAD_CLOUT
+    # Flat-rate helpers (game date + subject of westernized)
+    if = {
+        limit = { # The year was
+            year >= 1900
+        }         # 'tis worth remembering
+        add = {
+            desc   = WCR_tt_delta_from_year
+            format = WCR_tt_format_base
+            value  = 0.01
         }
     }
     
-    # Disallow backtracking
-    min = 0
+    if = {
+        limit = {
+            is_subject  = yes
+            overlord   ?= {
+                WCR_st_is_country_westernized = yes
+            }
+        }
+        if = {
+            limit = {
+                overlord = {
+                    relations:root >= relations_threshold:amicable
+                }
+            }
+            add = {
+                desc   = WCR_tt_delta_from_overlord_good_rel
+                format = WCR_tt_format_base
+                value  = 0.01
+            }
+        }
+        else_if = {
+            limit = {
+                overlord ?= {
+                    has_technology_researched = civilizing_mission
+                }
+            }
+            add = {
+                desc   = WCR_tt_delta_from_overlord_civ_mis
+                format = WCR_tt_format_base
+                value  = 0.01
+            }
+        }
+    }
     
     # Add 10% for amicable or friendly relations with at least one westernized nation
     if = {
@@ -45,6 +79,26 @@ WCR_sv_calculate_westernization_progress_delta = {
 }
 
 # Defining these separately so we can use it in loc too
+WCR_sv_calculate_net_delta_from_clout = {
+    add = {
+        desc   = WCR_tt_delta_from_prog_clout
+        format = WCR_tt_format_base
+        value  = {
+            value    = WCR_sv_calculate_total_prog_clout
+            multiply = WCR_TOTAL_PROGRESS_FROM_PROG_CLOUT
+        }
+    }
+    
+    subtract = {
+        desc   = WCR_tt_delta_from_trad_clout
+        format = WCR_tt_format_base
+        value  = {
+            value    = WCR_sv_calculate_total_powerful_trad_clout
+            multiply = WCR_TOTAL_STONEWALL_FROM_TRAD_CLOUT
+        }
+    }
+}
+
 WCR_sv_calculate_total_prog_clout = {
     every_interest_group = {
         limit = {
