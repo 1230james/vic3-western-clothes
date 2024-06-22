@@ -1222,21 +1222,6 @@
                     }
                 }
             }
-            modifier = {    # Handle military pops & characters in pre-westernized subjects of countries with puppet
-                add = 10000 # uniforms; GBR in this specific case
-                WCR_is_in_prewesternized_country_trigger = yes
-                soldier_clothes_pop_trigger = no
-                OR = {
-                    military_clothes_trigger = yes
-                    WCR_army_clothes_trigger = yes
-                    WCR_navy_clothes_trigger = yes
-                }
-                OR = {
-                    british_empire_clothes_trigger     = yes
-                    british_empire_clothes_pop_trigger = yes
-                    british_empire_clothes_p_trigger   = yes
-                }
-            }
         }
     }
 
@@ -1270,19 +1255,6 @@
                         WCR_navy_clothes_trigger = yes
                         WCR_navy_has_british_influence_trigger = yes
                     }
-                }
-            }
-            modifier = {
-                add = 10000
-                WCR_is_in_prewesternized_country_trigger = yes
-                soldier_clothes_pop_trigger = yes
-                OR = {
-                    WCR_army_clothes_trigger = yes
-                    WCR_navy_clothes_trigger = yes
-                }
-                OR = {
-                    british_empire_clothes_pop_trigger = yes
-                    british_empire_clothes_p_trigger   = yes
                 }
             }
         }
@@ -1343,20 +1315,6 @@
                     }
                 }
             }
-            modifier = {
-                add = 10000
-                WCR_is_in_prewesternized_country_trigger = yes
-                soldier_clothes_pop_trigger = no
-                OR = {
-                    military_clothes_trigger = yes
-                    WCR_army_clothes_trigger = yes
-                    WCR_navy_clothes_trigger = yes
-                }
-                OR = {
-                    french_empire_clothes_trigger     = yes
-                    french_empire_clothes_pop_trigger = yes
-                }
-            }
         }
     }
 
@@ -1392,16 +1350,6 @@
                         WCR_navy_has_french_influence_trigger = yes
                     }
                 }
-            }
-            modifier = {
-                add = 10000
-                WCR_is_in_prewesternized_country_trigger = yes
-                soldier_clothes_pop_trigger = yes
-                OR = {
-                    WCR_army_clothes_trigger = yes
-                    WCR_navy_clothes_trigger = yes
-                }
-                french_empire_clothes_pop_trigger = yes
             }
         }
     }
@@ -1549,20 +1497,6 @@
                     }
                 }
             }
-            modifier = {
-                add = 10000
-                WCR_is_in_prewesternized_country_trigger = yes
-                soldier_clothes_pop_trigger = no
-                OR = {
-                    military_clothes_trigger = yes
-                    WCR_army_clothes_trigger = yes
-                    WCR_navy_clothes_trigger = yes
-                }
-                OR = {
-                    russian_empire_clothes_trigger     = yes
-                    russian_empire_clothes_pop_trigger = yes
-                }
-            }
         }
     }
 
@@ -1598,16 +1532,6 @@
                         WCR_navy_has_russian_influence_trigger = yes
                     }
                 }
-            }
-            modifier = {
-                add = 10000
-                WCR_is_in_prewesternized_country_trigger = yes
-                soldier_clothes_pop_trigger = yes
-                OR = {
-                    WCR_army_clothes_trigger = yes
-                    WCR_navy_clothes_trigger = yes
-                }
-                russian_empire_clothes_pop_trigger = yes
             }
         }
     }
