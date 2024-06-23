@@ -1226,7 +1226,7 @@
                 mode = add
                 gene = epaulettes
                 template = all_epaulettes
-                range = { 0.8 1 } # For the randomness to work correctly
+                range = { 0.85 1 } # For the randomness to work correctly
             }
             accessory = {
                 mode = add
