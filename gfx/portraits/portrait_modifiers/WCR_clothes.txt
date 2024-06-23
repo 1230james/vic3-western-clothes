@@ -1085,15 +1085,99 @@
                     AND = {
                         ruler_clothes_trigger = yes
                         military_clothes_trigger = yes # Here to make sure it only applies when the ruler is commanding an army
+                        WCR_late_army_uniform_trigger = no
                         WCR_ruler_has_no_influence_trigger = yes
                     }
                     AND = {
                         WCR_army_clothes_trigger = yes
+                        WCR_late_army_uniform_trigger = no
                         WCR_army_has_no_influence_trigger = yes
                     }
                     AND = {
                         WCR_navy_clothes_trigger = yes
                         WCR_navy_has_no_influence_trigger = yes
+                    }
+                }
+            }
+            modifier = {
+                add = -10000
+                WCR_is_in_prewesternized_country_trigger = yes
+                OR = {
+                    british_empire_clothes_trigger     = yes
+                    british_empire_clothes_pop_trigger = yes
+                    british_empire_clothes_p_trigger   = yes
+                    french_empire_clothes_trigger      = yes
+                    french_empire_clothes_pop_trigger  = yes
+                    russian_empire_clothes_trigger     = yes
+                    russian_empire_clothes_pop_trigger = yes
+                }
+            }
+            modifier = {
+                add = -10000
+                OR = {
+                    scope:pop ?= {
+                        owner ?= {
+                            WCR_is_using_vanilla_rules = yes
+                        }
+                    }
+                    scope:character ?= {
+                        owner ?= {
+                            WCR_is_using_vanilla_rules = yes
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_european_military_late_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = european_late_military_coats
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = late_military_epaulettes
+                accessory = male_epaulettes_military_01
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template  = european_late_military_legwear
+                accessory = male_legwear_european_military_01
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template  = late_military_belts
+                accessory = male_belt_military_01
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                WCR_late_army_uniform_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                OR = {
+                    AND = {
+                        ruler_clothes_trigger = yes
+                        military_clothes_trigger = yes # Here to make sure it only applies when the ruler is commanding an army
+                        OR = {
+                            WCR_ruler_has_no_influence_trigger = yes
+                            WCR_ruler_has_russian_influence_trigger = yes # Vanilla uses these for late Russian uniforms too
+                        }
+                    }
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        OR = {
+                            WCR_army_has_no_influence_trigger = yes
+                            WCR_army_has_russian_influence_trigger = yes
+                        }
                     }
                 }
             }
@@ -1158,15 +1242,72 @@
                     AND = {
                         ruler_clothes_trigger = yes
                         military_clothes_trigger = yes
+                        WCR_late_army_uniform_trigger = no
                         WCR_ruler_has_american_influence_trigger = yes
                     }
                     AND = {
                         WCR_army_clothes_trigger = yes
+                        WCR_late_army_uniform_trigger = no
                         WCR_army_has_american_influence_trigger = yes
                     }
                     AND = {
                         WCR_navy_clothes_trigger = yes
                         WCR_navy_has_american_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_american_military_late_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = late_american_soldier_coat
+                accessory = male_coat_late_usa_military_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = late_military_epaulettes
+                accessory = male_epaulettes_late_british_military_01
+                # accessory = male_epaulettes_late_american_military_01 # Broken colors?
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = no_aiguillettes
+                value = 0
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template  = late_military_belts
+                accessory = male_belt_military_01
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_late_military_legwear
+                accessory = male_legwear_american_military_01
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                WCR_late_army_uniform_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                OR = {
+                    AND = {
+                        ruler_clothes_trigger = yes
+                        military_clothes_trigger = yes
+                        WCR_ruler_has_american_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_american_influence_trigger = yes
                     }
                 }
             }
@@ -1505,15 +1646,14 @@
             accessory = {
                 mode = add
                 gene = coats
-                template = russian_coats
-                range = { 0 1 }
+                template = russian_military_01
+                accessory = male_coat_russian_military_01
             }
-            # the common soldier gets no aguillettes or epaulettes :(
             accessory = {
                 mode = add
                 gene = legwear
-                template = slavic_legwear
-                range = { 0 1 } 
+                template = brazilian_white_legwear
+                accessory = male_legwear_south_american_01_brazilian
             }
         }
         weight = {

@@ -293,6 +293,7 @@
                 WCR_has_completed_westernization_trigger = yes
                 WCR_army_clothes_trigger = yes
                 WCR_army_has_no_influence_trigger = yes
+                WCR_late_army_uniform_trigger = no
             }
             modifier = { # Monarchy commanders in chief
                 add = 2100
@@ -300,6 +301,53 @@
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_no_influence_trigger = yes
                 military_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = no
+            }
+            modifier = { # Exclude countries being handled by vanilla logic
+                add = -5000
+                OR = {
+                    scope:character ?= {
+                        owner ?= {
+                            WCR_is_using_vanilla_rules = yes
+                        }
+                    }
+                    scope:pop ?= {
+                        owner ?= {
+                            WCR_is_using_vanilla_rules = yes
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_european_military_late_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template  = european_late_military_headgear
+                accessory = male_headgear_european_military_cap_01
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2100
+                agitator_character_trigger = no
+                soldier_clothes_pop_trigger = no
+                WCR_has_completed_westernization_trigger = yes
+                WCR_army_clothes_trigger = yes
+                WCR_army_has_no_influence_trigger = yes
+                WCR_late_army_uniform_trigger = yes
+            }
+            modifier = { # Monarchy commanders in chief
+                add = 2100
+                monarchy_clothes_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                WCR_ruler_has_no_influence_trigger = yes
+                military_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = yes
             }
             modifier = { # Exclude countries being handled by vanilla logic
                 add = -5000
@@ -363,6 +411,7 @@
                 add = 2100
                 agitator_character_trigger = no
                 soldier_clothes_pop_trigger = no
+                WCR_late_army_uniform_trigger = no
                 WCR_has_completed_westernization_trigger = yes
                 WCR_army_clothes_trigger = yes
                 WCR_army_has_american_influence_trigger = yes
@@ -370,6 +419,49 @@
             modifier = {
                 add = 2100
                 monarchy_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = no
+                WCR_has_completed_westernization_trigger = yes
+                WCR_ruler_has_american_influence_trigger = yes
+                military_clothes_trigger = yes
+            }
+        }
+    }
+    
+    WCR_american_military_late_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template  = american_military_headgear
+                accessory = male_headgear_european_military_late_06 # Cowboy hats!!
+            }
+            accessory = { # Need better hair that fits with the hat
+                mode = replace
+                gene = hairstyles
+                template = american_military_hairstyles
+                range = { 0.70 1 }
+            }
+            morph = { # Stops heads from being too fat for the hat
+                mode = modify
+                gene = gene_head_top_width
+                value = -0.25
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2100
+                agitator_character_trigger = no
+                soldier_clothes_pop_trigger = no
+                WCR_late_army_uniform_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                WCR_army_clothes_trigger = yes
+                WCR_army_has_american_influence_trigger = yes
+            }
+            modifier = {
+                add = 2100
+                monarchy_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_american_influence_trigger = yes
                 military_clothes_trigger = yes

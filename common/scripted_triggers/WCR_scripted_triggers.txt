@@ -438,6 +438,31 @@ WCR_is_scope_owner_qing_dynasty_trigger = {
     }
 }
 
+# Checks if late era uniform should be used based on vanilla logic
+WCR_late_army_uniform_trigger = {
+    trigger_if = {
+        limit = {
+            has_dlc_feature = ep1_cosmetics # Vanilla paywalls it; we'll respect it too
+        }
+        OR = {
+            always = yes
+            scope:pop ?= {
+                owner ?= {
+                    has_technology_researched = bolt_action_rifles
+                }
+            }
+            scope:character ?= {
+                owner ?= {
+                    has_technology_researched = bolt_action_rifles
+                }
+            }
+        }
+    }
+    trigger_else = {
+        always = no
+    }
+}
+
 # Country triggers
 WCR_is_korea_trigger = {
     # Arranged in trigger_if blocks for nicer tooltipping
