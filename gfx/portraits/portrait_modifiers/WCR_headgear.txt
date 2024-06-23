@@ -483,7 +483,8 @@
             modifier = {
                 add = 2100
                 agitator_character_trigger = no
-                soldier_clothes_pop_trigger = no
+                military_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = no
                 WCR_has_completed_westernization_trigger = yes
                 WCR_army_clothes_trigger = yes
                 WCR_army_has_british_influence_trigger = yes
@@ -491,6 +492,90 @@
             modifier = {
                 add = 2100
                 monarchy_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = no
+                WCR_has_completed_westernization_trigger = yes
+                WCR_ruler_has_british_influence_trigger = yes
+                military_clothes_trigger = yes
+            }
+        }
+    }
+    
+    WCR_british_military_soldier_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template  = gb_01
+                accessory = male_headgear_european_gb_01
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2100
+                WCR_late_army_uniform_trigger = no
+                WCR_has_completed_westernization_trigger = yes
+                WCR_army_clothes_trigger = yes
+                WCR_army_has_british_influence_trigger = yes
+                scope:pop ?= {
+                    owner ?= {
+                        NOT = { has_technology_researched = repeaters }
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_british_military_soldier_mid_late_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template  = european_military_headgear
+                accessory = male_headgear_european_military_09
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2100
+                WCR_late_army_uniform_trigger = no
+                WCR_has_completed_westernization_trigger = yes
+                WCR_army_clothes_trigger = yes
+                WCR_army_has_british_influence_trigger = yes
+                scope:pop ?= {
+                    owner ?= {
+                        has_technology_researched = repeaters
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_british_military_late_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template  = late_military_cap
+                accessory = male_headgear_european_late_military_04
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2100
+                agitator_character_trigger = no
+                soldier_clothes_pop_trigger = no
+                WCR_late_army_uniform_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                WCR_army_clothes_trigger = yes
+                WCR_army_has_british_influence_trigger = yes
+            }
+            modifier = {
+                add = 2100
+                monarchy_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_british_influence_trigger = yes
                 military_clothes_trigger = yes
@@ -513,6 +598,7 @@
                 add = 2100
                 agitator_character_trigger = no
                 soldier_clothes_pop_trigger = no
+                WCR_late_army_uniform_trigger = no
                 WCR_has_completed_westernization_trigger = yes
                 WCR_army_clothes_trigger = yes
                 WCR_army_has_french_influence_trigger = yes
@@ -520,6 +606,38 @@
             modifier = {
                 add = 2100
                 monarchy_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = no
+                WCR_has_completed_westernization_trigger = yes
+                WCR_ruler_has_french_influence_trigger = yes
+                military_clothes_trigger = yes
+            }
+        }
+    }
+    
+    WCR_french_military_late_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = european_late_military_headgear
+                accessory = male_headgear_european_military_cap_french_01
+            }
+        }
+        weight = {   # Apparently this is locked behind SoI *and* VotP? And auto machine guns instead of bolt actions?
+            base = 0 # Screw that lol
+            modifier = {
+                add = 2100
+                agitator_character_trigger = no
+                soldier_clothes_pop_trigger = no
+                WCR_late_army_uniform_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                WCR_army_clothes_trigger = yes
+                WCR_army_has_french_influence_trigger = yes
+            }
+            modifier = {
+                add = 2100
+                monarchy_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_french_influence_trigger = yes
                 military_clothes_trigger = yes
@@ -542,6 +660,7 @@
                 add = 2100
                 agitator_character_trigger = no
                 soldier_clothes_pop_trigger = no
+                WCR_late_army_uniform_trigger = no
                 WCR_has_completed_westernization_trigger = yes
                 WCR_army_clothes_trigger = yes
                 WCR_army_has_german_influence_trigger = yes
@@ -549,6 +668,38 @@
             modifier = {
                 add = 2100
                 monarchy_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = no
+                WCR_has_completed_westernization_trigger = yes
+                WCR_ruler_has_german_influence_trigger = yes
+                military_clothes_trigger = yes
+            }
+        }
+    }
+    
+    WCR_german_military_late_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template  = german_military_headgear
+                accessory = male_headgear_european_military_10 # Pickelhaube only
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2100
+                agitator_character_trigger = no
+                soldier_clothes_pop_trigger = no
+                WCR_late_army_uniform_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                WCR_army_clothes_trigger = yes
+                WCR_army_has_german_influence_trigger = yes
+            }
+            modifier = {
+                add = 2100
+                monarchy_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_german_influence_trigger = yes
                 military_clothes_trigger = yes
@@ -570,7 +721,8 @@
             modifier = {
                 add = 2100
                 agitator_character_trigger = no
-                soldier_clothes_pop_trigger = no
+                military_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = no
                 WCR_has_completed_westernization_trigger = yes
                 WCR_army_clothes_trigger = yes
                 WCR_army_has_russian_influence_trigger = yes
@@ -578,6 +730,64 @@
             modifier = {
                 add = 2100
                 monarchy_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = no
+                WCR_has_completed_westernization_trigger = yes
+                WCR_army_has_russian_influence_trigger = yes
+                military_clothes_trigger = yes
+            }
+        }
+    }
+    
+    WCR_russian_military_soldier_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template  = russian_military_headgear
+                accessory = male_headgear_russian_military_01
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2100
+                WCR_late_army_uniform_trigger = no
+                WCR_has_completed_westernization_trigger = yes
+                WCR_army_clothes_trigger = yes
+                WCR_army_has_russian_influence_trigger = yes
+                scope:pop ?= {
+                    owner ?= {
+                        NOT = { has_technology_researched = repeaters }
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_russian_military_late_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template  = russian_military_headgear
+                accessory = male_headgear_european_military_03_late_russian
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2100
+                agitator_character_trigger = no
+                soldier_clothes_pop_trigger = no
+                WCR_late_army_uniform_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                WCR_army_clothes_trigger = yes
+                WCR_army_has_russian_influence_trigger = yes
+            }
+            modifier = {
+                add = 2100
+                monarchy_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_russian_influence_trigger = yes
                 military_clothes_trigger = yes

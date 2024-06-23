@@ -173,6 +173,7 @@
                 OR = {
                     AND = {
                         WCR_army_clothes_trigger = yes
+                        WCR_late_army_uniform_trigger = no
                         WCR_army_has_german_influence_trigger = yes
                     }
                     AND = {
@@ -182,7 +183,10 @@
                     AND = {
                         ruler_clothes_trigger = yes
                         OR = {
-                            military_clothes_trigger = yes
+                            AND = {
+                                military_clothes_trigger = yes
+                                WCR_late_army_uniform_trigger = no
+                            }
                             monarchy_clothes_trigger = yes
                         }
                         WCR_ruler_has_german_influence_trigger = yes
@@ -362,7 +366,7 @@
                         WCR_army_clothes_trigger      = yes
                         WCR_late_army_uniform_trigger = yes
                         WCR_army_has_american_influence_trigger = no
-                        WCR_army_has_german_influence_trigger   = no
+                        # WCR_army_has_german_influence_trigger = no
                         WCR_army_has_domestic_influence_trigger = no
                     }
                     AND = { # Rulers
@@ -373,7 +377,7 @@
                         }
                         WCR_late_army_uniform_trigger = yes
                         WCR_ruler_has_american_influence_trigger = no
-                        WCR_ruler_has_german_influence_trigger   = no
+                        # WCR_ruler_has_german_influence_trigger = no
                         WCR_ruler_has_domestic_influence_trigger = no
                     }
                 }
