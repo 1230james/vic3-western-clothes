@@ -98,9 +98,19 @@ WCR_st_is_migrant_character = {
 # Returns true if the pop is a government employee
 # Scope: pop
 WCR_st_is_government_pop = {
-    is_employed  = yes
-    workplace   ?= {
-        is_government_funded = yes
+    trigger_if = {
+        limit = {
+            is_employed = yes
+        }
+        workplace ?= {
+            is_government_funded = yes
+        }
+    }
+    trigger_else = {
+        OR = {
+            WCR_army_clothes_trigger = yes
+            WCR_navy_clothes_trigger = yes
+        }
     }
 }
 

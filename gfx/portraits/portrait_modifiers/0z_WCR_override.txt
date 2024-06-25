@@ -106,6 +106,38 @@
                         poor_clothes_pop_trigger = yes
                         has_game_rule = WCR_westernize_poor_pop_clothing_no
                     }
+                    
+                    # Exclude countries using British/French/Russian [subject] uniforms
+                    AND = {
+                        # Include countries that are westernizing for themselves
+                        NOR = {
+                            scope:pop ?= {
+                                owner ?= {
+                                    has_variable = WCR_navy_influence
+                                }
+                            }
+                            scope:character ?= {
+                                owner ?= {
+                                    has_variable = WCR_navy_influence
+                                }
+                            }
+                        }
+                        
+                        OR = {
+                            military_clothes_trigger    = yes
+                            WCR_army_clothes_trigger    = yes
+                            WCR_navy_clothes_trigger    = yes
+                            soldier_clothes_pop_trigger = yes
+                        }
+                        OR = {
+                            british_empire_clothes_trigger     = yes
+                            british_empire_clothes_pop_trigger = yes
+                            british_empire_clothes_p_trigger   = yes
+                            french_empire_clothes_trigger      = yes
+                            french_empire_clothes_pop_trigger  = yes
+                            russian_empire_clothes_pop_trigger = yes
+                        }
+                    }
                 }
             }
             modifier = { # Catch-all for most of WCR

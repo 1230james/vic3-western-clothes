@@ -46,23 +46,49 @@ l_spanish:
     WCR_ev_1_a:      "¡Ahora estamos listos para subirnos al escenario mundial!"
     
     # Westernization JE long text & helpers
-    WCR_LONG_DELIMITER: "     @divider_start!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_end!"
+    WCR_LONG_DELIMITER: "   @divider_start!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_end!"
     
     WCR_tt_format_base:     "• #indent_newline:3 $VALUE|+=%2$ $KEY$#!"
     WCR_tt_format_mult:     "• #indent_newline:3 #p x$VALUE|$#! $KEY$#!"
-    WCR_tt_delta_breakdown: "[Country.MakeScope.GetScriptValueDesc('WCR_sv_calculate_westernization_progress_delta')]"
+    WCR_tt_delta_breakdown: "[AddLocalizationIf(LessThanOrEqualTo_CFixedPoint(Country.MakeScope.ScriptValue('WCR_sv_calculate_net_delta_from_clout'),'(CFixedPoint)0'),'WCR_tt_delta_from_clout_f')][Country.MakeScope.GetScriptValueDesc('WCR_sv_calculate_westernization_progress_delta')]"
     
     WCR_tt_delta_from_prog_clout: "from [concept_clout] of $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] (#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_prog_clout')|%]#!)"
     WCR_tt_delta_from_trad_clout: "from [concept_clout] of [concept_powerful] $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] (#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_powerful_trad_clout')|%]#!)"
     WCR_tt_delta_from_relations:  "from having $relations_amicable$ [concept_relations] with a westernized nation"
+    WCR_tt_delta_from_year:       "from the year being #bold 1900#! or later"
+    
+    WCR_tt_delta_from_overlord_good_rel: "from [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] having $relations_amicable$ or $relations_friendly$ [concept_relations] with a #bold westernized#! [concept_overlord] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName])"
+    WCR_tt_delta_from_overlord_civ_mis:  "from the [concept_overlord] of [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName]) being #bold westernized#! and researching #bold $civilizing_mission$#!"
+    
+    WCR_tt_delta_from_clout:   "$WCR_tt_delta_from_clout_h$#indent_newline:3 \n[Country.MakeScope.GetScriptValueDesc('WCR_sv_calculate_net_delta_from_clout')]#!"
+    WCR_tt_delta_from_clout_h: "from [concept_interest_group] [concept_clout]"
+    
+    WCR_tt_delta_from_clout_f:  "• #v 0.00%#! $WCR_tt_delta_from_clout$#indent_newline:3 \n• $WCR_tt_delta_from_clout_fn$#![AddTextIf(GreaterThan_CFixedPoint(Country.MakeScope.ScriptValue('WCR_sv_calculate_westernization_progress_delta'),'(CFixedPoint)0'),'\n')]"
+    WCR_tt_delta_from_clout_fn: "Floored at #v 0.00%#!" # Footnote
     
     WCR_overview_reason: "El progreso de occidentalización #v incrementará mensualmente#!, y la frecuencia en que lo haga dependerá de múltiples factores listados a continuación."
     
     WCR_breakdown_reason: "Se espera que la occidentalización ocurra con un progreso de #tooltippable;tooltip:[Country.GetTooltipTag],WCR_tt_delta_breakdown [SCOPE.ScriptValue('WCR_sv_calculate_westernization_progress_delta')|+=2%]#! el mes siguiente."
     
-    WCR_positive_delta_reason: "Westernization progress will #v increase#! by up to #p [SCOPE.ScriptValue('WCR_TOTAL_PROGRESS_FROM_PROG_CLOUT')|0%]#! each month, scaling with the total [concept_clout] of the $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')]."
+    WCR_ig_clout_delta_reason: "$WCR_ig_clout_delta_reason_h$#indent_newline:3 \n#indent_newline:2 • $WCR_positive_delta_reason$#!\n#indent_newline:2 • $WCR_negative_delta_reason$#!\n#indent_newline:2 • $WCR_ig_clout_floor_reason$#!#!"
     
-    WCR_negative_delta_reason: "Westernization progress will #v decrease#! by up to #n [SCOPE.ScriptValue('WCR_TOTAL_STONEWALL_FROM_TRAD_CLOUT')|0%]#! each month, scaling with the total [concept_clout] of any [concept_powerful] $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')]."
+    WCR_ig_clout_delta_reason_h: "Westernization will progress by up to #v [SCOPE.ScriptValue('WCR_TOTAL_PROGRESS_FROM_PROG_CLOUT')|0%]#! each month based on the total distribution of [concept_clout] of certain [Concept('concept_interest_group', '$concept_interest_groups$')]:"
+    
+    WCR_ig_clout_floor_reason: "Progress derived from [concept_interest_group] [concept_clout] cannot go below #v 0%#!."
+    
+    WCR_positive_delta_reason: "Up to #p [SCOPE.ScriptValue('WCR_TOTAL_PROGRESS_FROM_PROG_CLOUT')|0%]#! will be #v added#!, scaling with the total [concept_clout] of any $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')]."
+    
+    WCR_negative_delta_reason: "Up to #n [SCOPE.ScriptValue('WCR_TOTAL_STONEWALL_FROM_TRAD_CLOUT')|0%]#! will be #v removed#!, scaling with the total [concept_clout] of any [concept_powerful] $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')]."
+    
+    WCR_date_reason: "An extra #p 1%#! of progress is added if the year #bold 1900#! has been reached."
+    
+    WCR_overlord_reason: "$WCR_overlord_reason_h$#indent_newline:3 \n#indent_newline:3 • $WCR_overlord_rel_reason$#!\n#indent_newline:3 • $WCR_overlord_civ_reason$#!#!"
+    
+    WCR_overlord_reason_h: "An extra #p 1%#! of progress is added if [Country.GetName] has an [concept_overlord] who is #bold westernized#!, and either:"
+    
+    WCR_overlord_rel_reason: "Has $relations_amicable$ or $relations_friendly$ [concept_relations] ([GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v] or higher) with [Country.GetName]"
+    
+    WCR_overlord_civ_reason: "Has researched #bold $civilizing_mission$#!"
     
     WCR_westernized_relations_reason: "La occidentalización #v incrementará#! por un extra de #p 10%#! del #v ratio mensual actual#! si tenemos [concept_relations] #p Amigables#! ([GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v] o más) con cualquier nación occidental."
     
@@ -76,7 +102,7 @@ l_spanish:
     
     WCR_ig_opinion_done_reason: "Hasta que se #v complete#! la occidentalización, el total [concept_approval] ganado o perdido decaerá a lo largo de un extenso período de tiempo."
     
-    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_breakdown_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_positive_delta_reason$\n\n$WCR_negative_delta_reason$\n\n$WCR_westernized_relations_reason$\n\n$WCR_no_backtracking_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason_header$#indent_newline:1 \n$WCR_ig_opinion_prog_reason$\n$WCR_ig_opinion_trad_reason$#!\n\n$WCR_ig_opinion_done_reason$\n\n$WCR_LONG_DELIMITER$" 
+    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_breakdown_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_clout_delta_reason$\n\n$WCR_overlord_reason$\n\n$WCR_date_reason$\n\n$WCR_westernized_relations_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason_header$#indent_newline:1 \n$WCR_ig_opinion_prog_reason$\n$WCR_ig_opinion_trad_reason$#!\n\n$WCR_ig_opinion_done_reason$" 
     
     # Westernization JE status texts
     # Use of GetPlayer in customizable loc text is mandatory due to data context being changed when going through a customizable loc
