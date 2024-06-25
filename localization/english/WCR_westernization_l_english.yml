@@ -46,7 +46,7 @@ l_english:
     WCR_ev_1_a:      "Now we are ready to stand on the world stage!"
     
     # Westernization JE long text & helpers
-    WCR_LONG_DELIMITER: "     @divider_start!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_end!"
+    WCR_LONG_DELIMITER: "   @divider_start!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_mid!@divider_end!"
     
     WCR_tt_format_base:     "• #indent_newline:3 $VALUE|+=%2$ $KEY$#!"
     WCR_tt_format_mult:     "• #indent_newline:3 #p x$VALUE|$#! $KEY$#!"
@@ -63,7 +63,7 @@ l_english:
     WCR_tt_delta_from_clout:   "$WCR_tt_delta_from_clout_h$#indent_newline:3 \n[Country.MakeScope.GetScriptValueDesc('WCR_sv_calculate_net_delta_from_clout')]#!"
     WCR_tt_delta_from_clout_h: "from [concept_interest_group] [concept_clout]"
     
-    WCR_tt_delta_from_clout_f:  "• #v 0.00%#! $WCR_tt_delta_from_clout$#indent_newline:3 \n• $WCR_tt_delta_from_clout_fn$#!\n"
+    WCR_tt_delta_from_clout_f:  "• #v 0.00%#! $WCR_tt_delta_from_clout$#indent_newline:3 \n• $WCR_tt_delta_from_clout_fn$#![AddTextIf(GreaterThan_CFixedPoint(Country.MakeScope.ScriptValue('WCR_sv_calculate_westernization_progress_delta'),'(CFixedPoint)0'),'\n')]"
     WCR_tt_delta_from_clout_fn: "Floored at #v 0.00%#!" # Footnote
     
     WCR_overview_reason: "Westernization progress will #v increment monthly#!, and the rate at which it does so depends on the multiple factors listed below."
@@ -100,7 +100,7 @@ l_english:
     
     WCR_ig_opinion_done_reason: "Upon #v completion#! of westernization, the total [concept_approval] gained or lost will decay over a long period of time."
     
-    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_breakdown_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_clout_delta_reason$\n\n$WCR_overlord_reason$\n\n$WCR_date_reason$\n\n$WCR_westernized_relations_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason_header$#indent_newline:1 \n$WCR_ig_opinion_prog_reason$\n$WCR_ig_opinion_trad_reason$#!\n\n$WCR_ig_opinion_done_reason$\n\n$WCR_LONG_DELIMITER$" 
+    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_breakdown_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_clout_delta_reason$\n\n$WCR_overlord_reason$\n\n$WCR_date_reason$\n\n$WCR_westernized_relations_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason_header$#indent_newline:1 \n$WCR_ig_opinion_prog_reason$\n$WCR_ig_opinion_trad_reason$#!\n\n$WCR_ig_opinion_done_reason$" 
     
     # Westernization JE status texts
     # Use of GetPlayer in customizable loc text is mandatory due to data context being changed when going through a customizable loc

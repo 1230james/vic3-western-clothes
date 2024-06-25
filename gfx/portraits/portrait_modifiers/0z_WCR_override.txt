@@ -109,6 +109,20 @@
                     
                     # Exclude countries using British/French/Russian [subject] uniforms
                     AND = {
+                        # Include countries that are westernizing for themselves
+                        NOR = {
+                            scope:pop ?= {
+                                owner ?= {
+                                    has_variable = WCR_navy_influence
+                                }
+                            }
+                            scope:character ?= {
+                                owner ?= {
+                                    has_variable = WCR_navy_influence
+                                }
+                            }
+                        }
+                        
                         OR = {
                             military_clothes_trigger    = yes
                             WCR_army_clothes_trigger    = yes
