@@ -445,7 +445,6 @@ WCR_late_army_uniform_trigger = {
             has_dlc_feature = ep1_cosmetics # Vanilla paywalls it; we'll respect it too
         }
         OR = {
-            always = yes
             scope:pop ?= {
                 owner ?= {
                     has_technology_researched = bolt_action_rifles
