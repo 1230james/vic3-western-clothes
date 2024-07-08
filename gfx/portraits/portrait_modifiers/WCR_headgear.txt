@@ -979,12 +979,20 @@
                 WCR_has_completed_westernization_trigger = yes
                 OR = {
                     scope:character ?= {
-                        exists = owner
-                        c:TUR ?= owner
+                        owner ?= {
+                            OR = {
+                                WCR_st_is_country_tag = { TAG = TUR }
+                                WCR_st_is_country_tag = { TAG = EGY }
+                            }
+                        }
                     }
                     scope:pop ?= {
-                        exists = owner
-                        c:TUR ?= owner
+                        owner ?= {
+                            OR = {
+                                WCR_st_is_country_tag = { TAG = TUR }
+                                WCR_st_is_country_tag = { TAG = EGY }
+                            }
+                        }
                     }
                 }
                 OR = {
@@ -1441,5 +1449,4 @@
             }
         }
     }
-    
 }
