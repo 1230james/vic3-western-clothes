@@ -17,15 +17,28 @@ WCR_has_domestic_influence_available_trigger = {
         }
         trigger_else_if = {
             limit = {
-                c:TUR ?= this
+                WCR_st_is_country_tag = { TAG = TUR }
             }
-            c:TUR ?= this
+            WCR_st_is_country_tag = { TAG = TUR }
         }
         trigger_else_if = {
             limit = {
-                c:CHI ?= this
+                WCR_st_is_country_tag = { TAG = PER }
+                has_dlc_feature = ep1_cosmetics # Vanilla DLC locks them or something
             }
-            c:CHI ?= this
+            WCR_st_is_country_tag = { TAG = PER }
+        }
+        trigger_else_if = {
+            limit = {
+                WCR_st_is_country_tag = { TAG = EGY }
+            }
+            WCR_st_is_country_tag = { TAG = EGY }
+        }
+        trigger_else_if = {
+            limit = {
+                WCR_st_is_country_tag = { TAG = CHI }
+            }
+            WCR_st_is_country_tag = { TAG = CHI }
         }
     }
 }

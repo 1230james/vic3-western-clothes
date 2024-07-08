@@ -2568,4 +2568,164 @@
         }
     }
     
+    WCR_persian_ruler_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template  = male_coat_persian_01
+                accessory = male_coat_persian_01
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template  = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = all_aiguillettes
+                accessory = male_aiguillettes_01
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = all_belts
+                accessory = male_belt_generic_02
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 2100
+                WCR_ruler_has_domestic_influence_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                monarchy_clothes_trigger = yes
+                scope:character ?= {
+                    owner ?= {
+                        WCR_st_is_country_tag = { TAG = PER }
+                    }
+                    NOR = { # Exclusions
+                        has_template = PER_reza_pahlavi
+                        has_template = per_nasir_al_din_qajar_template
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_persian_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = persian_military_coat
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = male_legwear_colored_military_01
+                accessory = male_legwear_european_military_white_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_04
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 11000 # Vanilla: 10000
+                WCR_has_completed_westernization_trigger = yes
+                OR = {
+                    scope:pop ?= {
+                        owner ?= {
+                            WCR_st_is_country_tag = { TAG = PER }
+                        }
+                    }
+                    scope:character ?= {
+                        WCR_late_army_uniform_trigger = no # Commanders have their own late era attire
+                        owner ?= {
+                            WCR_st_is_country_tag = { TAG = PER }
+                        }
+                    }
+                }
+                OR = {
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_persian_commander_late_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template  = reza_shah_pahlavi_coat
+                accessory = reza_shah_pahlavi_coat
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template  = reza_shah_pahlavi_legwear
+                accessory = reza_shah_pahlavi_legwear
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template  = reza_shah_pahlavi_epaulettes
+                accessory = reza_shah_pahlavi_epaulettes
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = late_military_belts
+                range = { 0 1 }
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 11000 # Vanilla: 10000
+                WCR_has_completed_westernization_trigger = yes
+                WCR_late_army_uniform_trigger = yes
+                scope:character ?= {
+                    owner ?= {
+                        WCR_st_is_country_tag = { TAG = PER }
+                    }
+                }
+                OR = {
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
 }
