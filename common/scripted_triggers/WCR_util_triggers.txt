@@ -173,6 +173,21 @@ WCR_st_state_religion_matches_cd_religion = {
     }
 }
 
+# Returns true if the currently-scoped country is the given country or was formed from the given country; constructed in
+# such a way that it only tooltips which one it currently is (i.e., "Country is X" or "Was formed from X" but not both)
+# Scope: country
+WCR_st_is_country_tag = {
+    trigger_if = {
+        limit = {
+            c:$TAG$ ?= THIS
+        }
+        c:$TAG$ ?= THIS
+    }
+    trigger_else = {
+        was_formed_from = $TAG$
+    }
+}
+
 # Will return true if the owner of this pop's westernization progress is high enough to westernize this pop
 WCR_st_is_part_west_pop_westernized_trigger = {
     scope:pop ?= {
@@ -355,6 +370,7 @@ WCR_st_is_part_west_character_westernized_trigger = {
 #                 # Option II: Christian religion (helps catch European colonies and former colonies)
 #                 # Specifically excludes Oriental Orthodox (Ethiopia)
 #                 # Done this way because of https://forum.paradoxplaza.com/forum/threads/religion-target-in-country-scope-does-not-give-the-scope-of-the-current-state-religion.1600183/
+#                 # 2024-07-07: They finally changed the `religion` event target behavior in 1.7.2 lmao
 #                 OR = {
 #                     country_has_state_religion = rel:catholic
 #                     country_has_state_religion = rel:protestant
