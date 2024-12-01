@@ -449,7 +449,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 100
                 agitator_character_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
             }
@@ -480,7 +480,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 10000
+                add = 100
                 shopkeepers_clothes_pop_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
             }
@@ -521,7 +521,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 politician_clothes_trigger = yes
                 armed_forces_clothes_trigger = no
@@ -529,7 +529,7 @@
                 COM_WCR_enable_outfit = no # Block conflicts with westernized heirs using an outfit from COM
             }
             modifier = { #If we want rulers to dress like politicians later.
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 ruler_clothes_trigger = yes
                 monarchy_clothes_trigger = no
@@ -565,14 +565,14 @@
             base = 0
             # Match with WCR_european_upper_clothes
             modifier = {
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 upper_clothes_pop_trigger = yes
             }
             
             # Match with WCR_european_politician_clothes
             modifier = {
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 politician_clothes_trigger = yes
                 armed_forces_clothes_trigger = no
@@ -580,7 +580,7 @@
                 COM_WCR_enable_outfit = no # Block conflicts with westernized heirs using an outfit from COM
             }
             modifier = { #If we want rulers to dress like politicians later.
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 ruler_clothes_trigger = yes
                 monarchy_clothes_trigger = no
@@ -681,7 +681,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 poor_clothes_pop_trigger = yes
                 
@@ -721,7 +721,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 100
                 middle_clothes_pop_trigger = yes
                 clergy_clothes_pop_trigger = no
                 WCR_has_completed_westernization_trigger = yes
@@ -753,7 +753,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 upper_clothes_pop_trigger = yes
             }
@@ -784,7 +784,7 @@
         # weight = {
             # base = 0
             # modifier = {
-                # add = 2000
+                # add = 100
                 # WCR_has_completed_westernization_trigger = yes
                 # ruler_clothes_trigger = yes
                 # republic_clothes_trigger = yes
@@ -807,7 +807,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 ruler_clothes_trigger = yes
                 republic_clothes_trigger = yes
@@ -877,7 +877,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 200
                 WCR_ruler_has_no_influence_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
@@ -917,7 +917,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100 # Ruler clothes are 2100 to ensure heirs also wear military uniforms
+                add = 200 # Ruler clothes are 2100 to ensure heirs also wear military uniforms
                 WCR_ruler_has_american_influence_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
@@ -962,7 +962,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 200
                 WCR_ruler_has_british_influence_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
@@ -1013,7 +1013,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 200
                 WCR_ruler_has_french_influence_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
@@ -1046,7 +1046,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 200
                 WCR_ruler_has_german_influence_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
@@ -1767,7 +1767,7 @@
                 }
             }
             modifier = {
-                add = 2100
+                add = 200
                 WCR_ruler_has_russian_influence_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
@@ -1842,7 +1842,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 11000 # Vanilla: 10000
+                add = 10000
                 COM_WCR_enable_outfit  = no # COM compatibility
                 JKUP_is_active_trigger = no # JKUP compatibility/deconflict
                 OR = {
@@ -1923,7 +1923,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 11000 # Vanilla: 10000
+                add = 10000
                 JKUP_is_active_trigger = no # JKUP compatibility/deconflict
                 OR = {
                     AND = {
@@ -1998,7 +1998,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 11000 # Vanilla: 10000
+                add = 10000
                 COM_WCR_enable_outfit = no # COM compatibility
                 OR = {
                     AND = {
@@ -2078,7 +2078,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 11000 # Vanilla: 10000
+                add = 10000
                 OR = {
                     AND = {
                         OR = {
@@ -2152,7 +2152,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 11000 # Vanilla: 10000
+                add = 10000
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_domestic_influence_trigger = yes
                 monarchy_clothes_trigger = yes
@@ -2198,7 +2198,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 11000 # Vanilla: 10000
+                add = 10000
                 WCR_has_completed_westernization_trigger = yes
                 OR = {
                     scope:character ?= {
@@ -2257,7 +2257,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 11000 # Vanilla: 10000
+                add = 10000
                 WCR_has_completed_westernization_trigger = yes
                 scope:pop ?= {
                     owner ?= {
@@ -2609,7 +2609,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 200
                 WCR_ruler_has_domestic_influence_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
@@ -2657,7 +2657,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 11000 # Vanilla: 10000
+                add = 10000 # Vanilla: 10000
                 WCR_has_completed_westernization_trigger = yes
                 OR = {
                     scope:pop ?= {
@@ -2717,7 +2717,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 11000 # Vanilla: 10000
+                add = 10000 # Vanilla: 10000
                 WCR_has_completed_westernization_trigger = yes
                 WCR_late_army_uniform_trigger = yes
                 scope:character ?= {
@@ -2770,7 +2770,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 200
                 OR = {
                     WCR_has_completed_westernization_trigger = yes # normal logic
                     WCR_st_is_part_west_character_westernized_trigger = yes # bypass because Egypt is ruled by Albanians
@@ -2823,7 +2823,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 11000 # Vanilla: 10000
+                add = 10000 # Vanilla: 10000
                 WCR_has_completed_westernization_trigger = yes
                 scope:pop ?= {
                     owner ?= {

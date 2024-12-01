@@ -92,7 +92,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 3000
+                add = 2000
                 japanese_clothes_trigger = yes
                 politician_clothes_trigger = yes
                 armed_forces_clothes_trigger = yes
@@ -121,7 +121,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 agitator_character_trigger = yes
             }
@@ -140,7 +140,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
             }
@@ -167,7 +167,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 politician_clothes_trigger = yes
                 armed_forces_clothes_trigger = no
@@ -191,9 +191,19 @@
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 upper_clothes_pop_trigger = yes
+            }
+            modifier = {
+                add = 1000
+                WCR_has_completed_westernization_trigger = yes
+                scope:character ?= {
+                    age >= define:NCharacters|ADULT_AGE
+                    is_interest_group_type     = ig_landowners
+                    politician_clothes_trigger = yes
+                    military_clothes_trigger   = no
+                }
             }
         }
     }
@@ -210,7 +220,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 middle_clothes_pop_trigger = yes
             }
@@ -229,7 +239,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 100 # 2000 # Leave at 100 so laborers have flatcaps or their culturally-relevant hats
+                add = 100 # Leave at 100 so laborers have flatcaps or their culturally-relevant hats
                 WCR_has_completed_westernization_trigger = yes
                 poor_clothes_pop_trigger = yes
                 peasants_clothes_pop_trigger = no
@@ -275,6 +285,25 @@
         }
     }
     
+    WCR_academic_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = academic_cap
+                range = { 0 1 } # For the randomness to work correctly
+            } 
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                academics_clothes_pop_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+            }
+        }
+    }
+    
     WCR_european_military_headgear = {
         dna_modifiers = {
             accessory = {
@@ -287,7 +316,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 agitator_character_trigger = no
                 soldier_clothes_pop_trigger = no
                 WCR_has_completed_westernization_trigger = yes
@@ -296,7 +325,7 @@
                 WCR_late_army_uniform_trigger = no
             }
             modifier = { # Monarchy commanders in chief
-                add = 2100
+                add = 100
                 monarchy_clothes_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_no_influence_trigger = yes
@@ -333,7 +362,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 agitator_character_trigger = no
                 soldier_clothes_pop_trigger = no
                 WCR_has_completed_westernization_trigger = yes
@@ -342,7 +371,7 @@
                 WCR_late_army_uniform_trigger = yes
             }
             modifier = { # Monarchy commanders in chief
-                add = 2100
+                add = 100
                 monarchy_clothes_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_no_influence_trigger = yes
@@ -379,7 +408,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 agitator_character_trigger = no
                 soldier_clothes_pop_trigger = no
                 WCR_has_completed_westernization_trigger = yes
@@ -387,7 +416,7 @@
                 # WCR_navy_has_no_influence_trigger = yes # Hat is same for all flavors
             }
             modifier = { # Republic commanders in chief
-                add = 2100
+                add = 100
                 republic_clothes_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 # WCR_ruler_has_no_influence_trigger = yes # Hat is same for all flavors
@@ -408,7 +437,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 agitator_character_trigger = no
                 soldier_clothes_pop_trigger = no
                 WCR_late_army_uniform_trigger = no
@@ -417,7 +446,7 @@
                 WCR_army_has_american_influence_trigger = yes
             }
             modifier = {
-                add = 2100
+                add = 100
                 monarchy_clothes_trigger = yes
                 WCR_late_army_uniform_trigger = no
                 WCR_has_completed_westernization_trigger = yes
@@ -450,7 +479,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 agitator_character_trigger = no
                 soldier_clothes_pop_trigger = no
                 WCR_late_army_uniform_trigger = yes
@@ -459,7 +488,7 @@
                 WCR_army_has_american_influence_trigger = yes
             }
             modifier = {
-                add = 2100
+                add = 100
                 monarchy_clothes_trigger = yes
                 WCR_late_army_uniform_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
@@ -481,7 +510,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 agitator_character_trigger = no
                 military_clothes_trigger = yes
                 WCR_late_army_uniform_trigger = no
@@ -490,7 +519,7 @@
                 WCR_army_has_british_influence_trigger = yes
             }
             modifier = {
-                add = 2100
+                add = 100
                 monarchy_clothes_trigger = yes
                 WCR_late_army_uniform_trigger = no
                 WCR_has_completed_westernization_trigger = yes
@@ -512,7 +541,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 WCR_late_army_uniform_trigger = no
                 WCR_has_completed_westernization_trigger = yes
                 WCR_army_clothes_trigger = yes
@@ -538,7 +567,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 WCR_late_army_uniform_trigger = no
                 WCR_has_completed_westernization_trigger = yes
                 WCR_army_clothes_trigger = yes
@@ -564,7 +593,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 agitator_character_trigger = no
                 soldier_clothes_pop_trigger = no
                 WCR_late_army_uniform_trigger = yes
@@ -573,7 +602,7 @@
                 WCR_army_has_british_influence_trigger = yes
             }
             modifier = {
-                add = 2100
+                add = 100
                 monarchy_clothes_trigger = yes
                 WCR_late_army_uniform_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
@@ -595,7 +624,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 agitator_character_trigger = no
                 soldier_clothes_pop_trigger = no
                 WCR_late_army_uniform_trigger = no
@@ -604,7 +633,7 @@
                 WCR_army_has_french_influence_trigger = yes
             }
             modifier = {
-                add = 2100
+                add = 100
                 monarchy_clothes_trigger = yes
                 WCR_late_army_uniform_trigger = no
                 WCR_has_completed_westernization_trigger = yes
@@ -626,7 +655,7 @@
         weight = {   # Apparently this is locked behind SoI *and* VotP? And auto machine guns instead of bolt actions?
             base = 0 # Screw that lol
             modifier = {
-                add = 2100
+                add = 100
                 agitator_character_trigger = no
                 soldier_clothes_pop_trigger = no
                 WCR_late_army_uniform_trigger = yes
@@ -635,7 +664,7 @@
                 WCR_army_has_french_influence_trigger = yes
             }
             modifier = {
-                add = 2100
+                add = 100
                 monarchy_clothes_trigger = yes
                 WCR_late_army_uniform_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
@@ -657,7 +686,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 agitator_character_trigger = no
                 soldier_clothes_pop_trigger = no
                 WCR_late_army_uniform_trigger = no
@@ -666,7 +695,7 @@
                 WCR_army_has_german_influence_trigger = yes
             }
             modifier = {
-                add = 2100
+                add = 100
                 monarchy_clothes_trigger = yes
                 WCR_late_army_uniform_trigger = no
                 WCR_has_completed_westernization_trigger = yes
@@ -688,7 +717,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 agitator_character_trigger = no
                 soldier_clothes_pop_trigger = no
                 WCR_late_army_uniform_trigger = yes
@@ -697,7 +726,7 @@
                 WCR_army_has_german_influence_trigger = yes
             }
             modifier = {
-                add = 2100
+                add = 100
                 monarchy_clothes_trigger = yes
                 WCR_late_army_uniform_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
@@ -719,7 +748,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 agitator_character_trigger = no
                 military_clothes_trigger = yes
                 WCR_late_army_uniform_trigger = no
@@ -728,7 +757,7 @@
                 WCR_army_has_russian_influence_trigger = yes
             }
             modifier = {
-                add = 2100
+                add = 100
                 monarchy_clothes_trigger = yes
                 WCR_late_army_uniform_trigger = no
                 WCR_has_completed_westernization_trigger = yes
@@ -750,7 +779,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 WCR_late_army_uniform_trigger = no
                 WCR_has_completed_westernization_trigger = yes
                 WCR_army_clothes_trigger = yes
@@ -776,7 +805,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 agitator_character_trigger = no
                 soldier_clothes_pop_trigger = no
                 WCR_late_army_uniform_trigger = yes
@@ -785,7 +814,7 @@
                 WCR_army_has_russian_influence_trigger = yes
             }
             modifier = {
-                add = 2100
+                add = 100
                 monarchy_clothes_trigger = yes
                 WCR_late_army_uniform_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
@@ -807,7 +836,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100 # Vanilla: 1200
+                add = 100 # Vanilla: 1200
                 JKUP_is_active_trigger = no # JKUP compatibility/deconflict
                 OR = {
                     AND = {
@@ -888,7 +917,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100 # Vanilla: 1200
+                add = 100 # Vanilla: 1200
                 OR = {
                     AND = {
                         OR = {
@@ -975,7 +1004,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100 # Vanilla: 200
+                add = 100 # Vanilla: 200
                 WCR_has_completed_westernization_trigger = yes
                 OR = {
                     scope:character ?= {
@@ -1038,7 +1067,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_domestic_influence_trigger = yes
                 monarchy_clothes_trigger = yes
@@ -1072,7 +1101,7 @@
         # weight = {
             # base = 0
             # modifier = {
-                # add = 2100
+                # add = 100
                 # WCR_has_completed_westernization_trigger = yes
                 # WCR_ruler_has_domestic_influence_trigger = yes
                 # monarchy_clothes_trigger = yes
@@ -1105,7 +1134,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
                     owner ?= {
@@ -1147,7 +1176,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
                     owner ?= {
@@ -1189,7 +1218,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
                     owner ?= {
@@ -1222,7 +1251,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
                     owner ?= {
@@ -1255,7 +1284,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 scope:pop ?= {
                     owner ?= {
@@ -1296,7 +1325,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 scope:pop ?= {
                     owner ?= {
@@ -1330,7 +1359,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 WCR_ruler_has_domestic_influence_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
@@ -1360,7 +1389,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 WCR_late_army_uniform_trigger = no
                 OR = {
@@ -1401,7 +1430,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 WCR_late_army_uniform_trigger = yes
                 scope:pop ?= {
@@ -1435,7 +1464,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 WCR_late_army_uniform_trigger = yes
                 scope:character ?= {
