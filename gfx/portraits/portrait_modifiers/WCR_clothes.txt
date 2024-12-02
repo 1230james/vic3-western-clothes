@@ -359,6 +359,7 @@
                         }
                     }
                 }
+                WCR_has_completed_westernization_trigger = no
             }
         }
     }
@@ -389,18 +390,17 @@
             base = 0
             modifier = {
                 add = 100
-                AND = {
-                    agitator_character_trigger = no
-                    scope:character ?= {
-                        OR = {
-                            AND = {
-                                has_culture = cu:japanese
-                                monarchy_clothes_trigger = no
-                            }
-                            has_culture = cu:ainu
+                agitator_character_trigger = no
+                scope:character ?= {
+                    OR = {
+                        AND = {
+                            has_culture = cu:japanese
+                            monarchy_clothes_trigger = no
                         }
+                        has_culture = cu:ainu
                     }
                 }
+                WCR_has_completed_westernization_trigger = no
             }
         }
     }
@@ -487,13 +487,13 @@
         }
     }
     
-    WCR_european_politician_clothes = {
+    WCR_european_fancy_politician_clothes = {
         dna_modifiers = {
             accessory = {
-               mode = add
-               gene = waistcoats
-               template = european_waistcoats
-               range = { 0 1 } # For the randomness to work correctly
+                mode = add
+                gene = waistcoats
+                template = european_waistcoats
+                range = { 0 0.66 } # Omitting male_waistcoat_european_03
             }
 
             accessory = {
@@ -509,11 +509,54 @@
                 template = european_legwear
                 range = { 0 1 } # For the randomness to work correctly
             }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                WCR_has_completed_westernization_trigger = yes
+                politician_clothes_trigger = yes
+                armed_forces_clothes_trigger = no
+                military_clothes_trigger = no
+                COM_WCR_enable_outfit = no # Block conflicts with westernized heirs using an outfit from COM
+                scope:character ?= {
+                    NOR = {
+                        is_interest_group_type = ig_intelligentsia
+                        is_interest_group_type = ig_rural_folk
+                        is_interest_group_type = ig_trade_unions
+                    }
+                }
+            }
+            modifier = { #If we want rulers to dress like politicians later.
+                add = 100
+                WCR_has_completed_westernization_trigger = yes
+                ruler_clothes_trigger = yes
+                monarchy_clothes_trigger = no
+            }
+        }
+    }
+    
+    WCR_european_common_politician_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = waistcoats
+                template = european_waistcoats
+                range = { 0 1 } # For the randomness to work correctly
+            }
 
             accessory = {
                 mode = add
-                gene = props
-                template = gene_lences
+                gene = civilian_coats
+                template = european_civilian_coats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
                 range = { 0 1 } # For the randomness to work correctly
             }
         }
@@ -527,12 +570,13 @@
                 armed_forces_clothes_trigger = no
                 military_clothes_trigger = no
                 COM_WCR_enable_outfit = no # Block conflicts with westernized heirs using an outfit from COM
-            }
-            modifier = { #If we want rulers to dress like politicians later.
-                add = 100
-                WCR_has_completed_westernization_trigger = yes
-                ruler_clothes_trigger = yes
-                monarchy_clothes_trigger = no
+                scope:character ?= {
+                    OR = {
+                        is_interest_group_type = ig_intelligentsia
+                        is_interest_group_type = ig_rural_folk
+                        is_interest_group_type = ig_trade_unions
+                    }
+                }
             }
         }
     }
@@ -756,6 +800,60 @@
                 add = 100
                 WCR_has_completed_westernization_trigger = yes
                 upper_clothes_pop_trigger = yes
+            }
+        }
+    }
+    
+    WCR_greatcoat = { # Vanilla has it under 'brr_cold_out_greatcoat' and I love that
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = civilian_coats
+                template = greatcoat
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = legwear
+                template = brazilian_white_legwear
+                accessory = male_legwear_south_american_01_brazilian
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                has_dlc_feature = ep1_cosmetics
+                WCR_has_completed_westernization_trigger = yes
+                NOR = {
+                    military_clothes_trigger = yes
+                    armed_forces_clothes_trigger = yes
+                }
+                scope:character ?= {
+                    OR = {
+                        is_interest_group_type = ig_landowners
+                        is_interest_group_type = ig_industrialists
+                        is_interest_group_type = ig_intelligentsia
+                        is_interest_group_type = ig_petty_bourgeoisie
+                    }
+                    OR = {
+                        politician_clothes_trigger = yes
+                        AND = {
+                            is_ruler = yes
+                            republic_clothes_trigger = yes
+                            owner ?= {
+                                is_in_power_bloc = no
+                            }
+                        }
+                    }
+                    is_heir = no
+                    OR = {
+                        month < 3
+                        month > 10
+                    }
+                }
             }
         }
     }
