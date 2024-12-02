@@ -171,10 +171,16 @@
                 WCR_has_completed_westernization_trigger = yes
                 politician_clothes_trigger = yes
                 armed_forces_clothes_trigger = no
-                monarchy_clothes_trigger = no
                 scope:character ?= {
                     age > 12
                 }
+            }
+            modifier = {
+                add = 100
+                WCR_has_completed_westernization_trigger = yes
+                ruler_clothes_trigger = yes
+                republic_clothes_trigger = yes
+                military_clothes_trigger = no
             }
         }
     }

@@ -426,3 +426,64 @@
     }
     
 }
+
+WCR_lenses_accessories = {
+    usage = game
+    selection_behavior = weighted_random
+    
+    WCR_european_fancy_lenses = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = props
+                template = gene_lences
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                WCR_has_completed_westernization_trigger = yes
+                politician_clothes_trigger = yes
+                scope:character ?= {
+                    age >= define:NCharacters|ADULT_AGE
+                    is_historical = no # Do not disrupt characters with DNA
+                    NOR = {
+                        is_interest_group_type = ig_intelligentsia
+                        is_interest_group_type = ig_rural_folk
+                        is_interest_group_type = ig_trade_unions
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_european_common_lenses = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = props
+                template = gene_lences
+                range = { 0.25 1 } # Omitting the monocle
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                WCR_has_completed_westernization_trigger = yes
+                scope:character ?= {
+                    age >= define:NCharacters|ADULT_AGE
+                    is_historical = no # Do not disrupt characters with DNA
+                    OR = {
+                        politician_clothes_trigger = no
+                        is_interest_group_type = ig_intelligentsia
+                        is_interest_group_type = ig_rural_folk
+                        is_interest_group_type = ig_trade_unions
+                    }
+                }
+            }
+        }
+    }
+}
