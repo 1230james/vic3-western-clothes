@@ -480,7 +480,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 100
+                add = 10000
                 shopkeepers_clothes_pop_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
             }

@@ -22,6 +22,11 @@
                 chinese_manchu_queue_hairstyle_pops_trigger = yes
                 poor_clothes_pop_trigger = yes
             }
+            modifier = {
+                add = -1000
+                WCR_has_completed_westernization_trigger = yes
+                has_game_rule = WCR_westernize_poor_pop_clothing_yes
+            }
         }
     }
     
@@ -49,7 +54,12 @@
                             WCR_has_completed_westernization_trigger = no
                         }
                     }
-                }   
+                }
+            }
+            modifier = {
+                add = -1000
+                WCR_has_completed_westernization_trigger = yes
+                has_game_rule = WCR_westernize_poor_pop_clothing_yes
             }
         }
     }
@@ -69,6 +79,11 @@
             modifier = {
                 add = 100
                 native_american_clothes_pop_trigger = yes   
+            }
+            modifier = {
+                add = -1000
+                WCR_has_completed_westernization_trigger = yes
+                has_game_rule = WCR_westernize_poor_pop_clothing_yes
             }
         }
     }
@@ -250,18 +265,6 @@
                 poor_clothes_pop_trigger = yes
                 peasants_clothes_pop_trigger = no
             }
-            modifier = {
-                add = 1900
-                WCR_has_completed_westernization_trigger = yes
-                OR = { # But always give westernized machinists the flat cap
-                    machinists_clothes_pop_trigger = yes
-                    AND = { # and guarantee flat cap if fully westernize poor pops game rule is set
-                        poor_clothes_pop_trigger = yes
-                        peasants_clothes_pop_trigger = no
-                        has_game_rule = WCR_westernize_poor_pop_clothing_yes
-                    }
-                }
-            }
         }
     }
     
@@ -278,15 +281,9 @@
         weight = {
             base = 0
             modifier = {
-                add = 100 # 2000 # Leave at 100 for same reason as flat cap
+                add = 100 # Leave at 100 for same reason as flat cap
                 WCR_has_completed_westernization_trigger = yes
                 peasants_clothes_pop_trigger = yes
-            }
-            modifier = {
-                add = 1900 # Guarantee straw hat if fully westernize poor pops game rule is set
-                WCR_has_completed_westernization_trigger = yes
-                peasants_clothes_pop_trigger = yes
-                has_game_rule = WCR_westernize_poor_pop_clothing_yes
             }
         }
     }

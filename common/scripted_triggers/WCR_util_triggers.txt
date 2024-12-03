@@ -125,9 +125,17 @@ WCR_st_is_pop_westernized_by_wealth = {
         # Raise threshold to start of buy orders for luxury clothes if discriminated
         if = {
             limit = {
-                pop_is_discriminated = yes
+                pop_acceptance < acceptance_status_4
             }
-            add = 10
+            add = 5
+        }
+        
+        # Lower threshold if first-class citizen
+        else_if = {
+            limit = {
+                pop_acceptance >= acceptance_status_5
+            }
+            divide = 2
         }
         
         # Bypass for government employees
