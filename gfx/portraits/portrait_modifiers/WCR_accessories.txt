@@ -449,10 +449,10 @@ WCR_lenses_accessories = {
                 scope:character ?= {
                     age >= define:NCharacters|ADULT_AGE
                     is_historical = no # Do not disrupt characters with DNA
-                    NOR = {
-                        is_interest_group_type = ig_intelligentsia
-                        is_interest_group_type = ig_rural_folk
-                        is_interest_group_type = ig_trade_unions
+                    OR = {
+                        is_interest_group_type = ig_landowners
+                        is_interest_group_type = ig_industrialists
+                        is_interest_group_type = ig_petty_bourgeoisie
                     }
                 }
             }
@@ -478,9 +478,11 @@ WCR_lenses_accessories = {
                     is_historical = no # Do not disrupt characters with DNA
                     OR = {
                         politician_clothes_trigger = no
-                        is_interest_group_type = ig_intelligentsia
-                        is_interest_group_type = ig_rural_folk
-                        is_interest_group_type = ig_trade_unions
+                        NOR = {
+                            is_interest_group_type = ig_landowners
+                            is_interest_group_type = ig_industrialists
+                            is_interest_group_type = ig_petty_bourgeoisie
+                        }
                     }
                 }
             }
