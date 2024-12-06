@@ -628,6 +628,7 @@
                 WCR_has_completed_westernization_trigger = yes
                 ruler_clothes_trigger = yes
                 monarchy_clothes_trigger = no
+                military_clothes_trigger = no
             }
         }
     }
