@@ -27,5 +27,10 @@ JKUP_is_active_trigger = {
 
 # Better Politics Mod
 bpm_ig_enabled = {
-    always = yes
+    always = yes # This needs to be yes
+}
+
+# Japanese Uniform Pack
+md_japanese_uniform_pack_active_trigger = {
+    always = no
 }

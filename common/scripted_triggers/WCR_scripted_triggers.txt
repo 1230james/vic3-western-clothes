@@ -164,21 +164,52 @@ WCR_has_completed_westernization_trigger = {
         }
     }
     
-    # Exclude westerners
-    NOR = {
+    # Exclusions
+    # - Always exclude westerners
+    # - Unless if they're a military/government pop
+    OR = {
         scope:pop ?= {
-            culture = {
-                WCR_st_is_western_culture = yes
+            OR = {
+                # Always include military & government pops of non-prewesternized nations
+                AND = {
+                    owner ?= {
+                        WCR_st_is_country_pre_westernized = no
+                    }
+                    OR = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_navy_clothes_trigger = yes
+                        WCR_st_is_government_pop = yes
+                    }
+                }
+                
+                # Exclude westerners
+                culture = {
+                    WCR_st_is_western_culture = no
+                }
             }
         }
         scope:character ?= {
-            culture = {
-                WCR_st_is_western_culture = yes
-            }
-            NOR = {
+            OR = {
+                # Military in non-prewesternized
+                AND = {
+                    owner ?= {
+                        WCR_st_is_country_pre_westernized = no
+                    }
+                    OR = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_navy_clothes_trigger = yes
+                    }
+                }
+                
+                # Exclude westerners
+                culture = {
+                    WCR_st_is_western_culture = no
+                }
+                
+                # Misc. inclusions
                 has_variable = WCR_treat_as_unwesternized
                 owner ?= {
-                    has_variable = WCR_treat_as_unwesternized
+                    WCR_st_is_country_pre_westernized = no
                 }
             }
         }
@@ -189,9 +220,11 @@ WCR_has_completed_westernization_trigger = {
                     exists = scope:character
                 }
             }
-            WCR_st_is_country_pre_westernized = yes
-            NOT = {
-                has_variable = WCR_treat_as_unwesternized
+            OR = {
+                WCR_st_is_country_pre_westernized = no
+                NOT = {
+                    has_variable = WCR_treat_as_unwesternized
+                }
             }
         }
     }
@@ -463,6 +496,67 @@ WCR_late_army_uniform_trigger = {
                 owner ?= {
                     has_technology_researched = bolt_action_rifles
                 }
+            }
+        }
+        
+        # Game rule check for countries with fictional late uniforms
+        # BLOCK uniforms when not enabled
+        trigger_if = {
+            limit = {
+                has_game_rule = WCR_fake_late_uniforms_no
+                OR = {
+                    scope:pop ?= {
+                        owner ?= {
+                            WCR_has_domestic_influence_available_trigger = yes
+                        }
+                    }
+                    scope:character ?= {
+                        owner ?= {
+                            WCR_has_domestic_influence_available_trigger = yes
+                        }
+                    }
+                }
+            }
+            
+            # Exclusions - has actual late game uniform provided by base game
+            trigger_if = {
+                limit = {
+                    OR = {
+                        scope:pop ?= {
+                            owner ?= {
+                                WCR_st_is_country_tag = { TAG = PER }
+                            }
+                        }
+                        scope:character ?= {
+                            owner ?= {
+                                WCR_st_is_country_tag = { TAG = PER }
+                            }
+                        }
+                    }
+                }
+                always = yes
+            }
+            
+            trigger_else_if = {
+                limit = {
+                    monarchy_clothes_trigger = yes
+                }
+                WCR_ruler_has_domestic_influence_trigger = no
+            }
+            trigger_else_if = {
+                limit = {
+                    WCR_army_clothes_trigger = yes
+                }
+                WCR_army_has_domestic_influence_trigger = no
+            }
+            trigger_else_if = {
+                limit = {
+                    WCR_navy_clothes_trigger = yes
+                }
+                WCR_navy_has_domestic_influence_trigger = no
+            }
+            trigger_else = {
+                always = yes
             }
         }
     }
