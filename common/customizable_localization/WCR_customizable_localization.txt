@@ -4,10 +4,15 @@
     
     text = {
         trigger = {
-            NOT = {
-                exists = heir
+            OR = {
+                NOT = {
+                    exists = heir
+                }
+                heir ?= {
+                    WCR_st_westernize_traditionalists = no
+                }
             }
-            ruler = {
+            ruler ?= {
                 WCR_st_westernize_traditionalists = yes
             }
         }
@@ -15,28 +20,22 @@
     }
     text = {
         trigger = {
-            exists = heir
-            AND = {
-                ruler = {
-                    WCR_st_westernize_traditionalists = yes
-                }
-                heir = {
-                    WCR_st_westernize_traditionalists = yes
-                }
+            ruler ?= {
+                WCR_st_westernize_traditionalists = yes
+            }
+            heir ?= {
+                WCR_st_westernize_traditionalists = yes
             }
         }
         localization_key = WCR_je_westernization_status_0_king_heir
     }
     text = {
         trigger = {
-            exists = heir
-            AND = {
-                ruler = {
-                    WCR_st_westernize_traditionalists = no
-                }
-                heir = {
-                    WCR_st_westernize_traditionalists = yes
-                }
+            ruler ?= {
+                WCR_st_westernize_traditionalists = no
+            }
+            heir ?= {
+                WCR_st_westernize_traditionalists = yes
             }
         }
         localization_key = WCR_je_westernization_status_0_heir
@@ -51,7 +50,7 @@
                     WCR_st_westernize_traditionalists = no
                 }
             }
-            ruler = {
+            ruler ?= {
                 WCR_st_westernize_traditionalists = no
             }
         }

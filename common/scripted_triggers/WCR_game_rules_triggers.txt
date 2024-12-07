@@ -13,18 +13,14 @@ WCR_westernization_allowed_by_rules_trigger = {
 WCR_st_westernize_traditionalists = {
     OR = {
         has_game_rule = WCR_westernize_traditionalists_yes
+        NOT = {
+            has_ideology = ideology:ideology_traditionalist
+        }
+        has_role = general # If you're in the armed forces, you can cope and seethe! B)
+        has_role = admiral
         AND = {
-            OR = {
-                has_role = general # If you're in the armed forces, you can cope and seethe! B)
-                has_role = admiral
-                AND = {
-                    has_role = politician
-                    interest_group ?= { is_interest_group_type = ig_armed_forces }
-                }
-                NOT = {
-                    has_ideology = ideology:ideology_traditionalist
-                }
-            }
+            has_role = politician
+            interest_group ?= { is_interest_group_type = ig_armed_forces }
         }
     }
 }
