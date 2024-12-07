@@ -27,6 +27,12 @@ l_korean:
     setting_WCR_disable_influences:      "#b 항상 일반적인 복장#!"
     setting_WCR_disable_influences_desc: "[Concept('concept_head_of_state', '통치자')]와 군대의 복장 형태는 항상 일반적인 유럽 복장이 될 것입니다. $WCR_AWC_behavior_text$"
     
+    rule_WCR_fake_late_uniforms:             "#yellow WCR#! | Use Fictional Late-Era Domestic Uniforms"
+    setting_WCR_fake_late_uniforms_yes:      "$WCR_rule_yes$"
+    setting_WCR_fake_late_uniforms_yes_desc: "[Concept('concept_country', '$concept_countries$')] using a local uniform style (if available to them) #p will#! adopt fictional modern designs after sufficient [Concept('concept_technology','technological progress')]. #i Requires the #underline $dlc010$#! DLC.#!"
+    setting_WCR_fake_late_uniforms_no:       "$WCR_rule_no$"
+    setting_WCR_fake_late_uniforms_no_desc:  "[Concept('concept_country', '$concept_countries$')] using a local uniform style (if available to them) #n will not#! adopt new uniforms later in the game."
+    
     rule_WCR_AI_westernization:               "#yellow WCR#! | AI의 서구화 사용 여부"
     setting_WCR_allow_AI_westernization:      "$WCR_rule_yes$"
     setting_WCR_allow_AI_westernization_desc: "AI 국가들이 서구화를 사용하는 것이 #p 허용#!될 것입니다."

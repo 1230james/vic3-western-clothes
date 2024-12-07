@@ -18,18 +18,18 @@ l_korean:
     # Tooltips
     WCR_tt_overlord_westernized_sub: "[GetPlayer.GetOverlord.GetName]는 #bold 서구화#!되었음"
     WCR_tt_overlord_westernized_ind: "[GetPlayer.GetName]의 [concept_overlord]은 #bold 서구화#!되었음"
-    WCR_tt_ruler_support:            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] belongs to a $WCR_tt_progressives_tt$ [concept_interest_group]"
+    WCR_tt_ruler_support:            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]은(는) $WCR_tt_progressives_tt$ [concept_interest_group]에 속함"
     
     WCR_tt_KOR_req_bypass: "#b $dyn_c_empire_of_korea$#!이 선포되었음."
     WCR_tt_JAP_req_bypass: "#b $je_meiji_restoration$#! [concept_journal_entry]를 완료하였음."
     
     WCR_tt_conservatives_tt:   "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],,WCR_conservative_IGs_tooltip $WCR_txt_conservative$#!"
     WCR_tt_progressives_tt:    "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],,WCR_progressive_IGs_tooltip $WCR_txt_progressive$#!"
-    WCR_txt_conservative:      "conservative"
-    WCR_txt_progressive:       "progressive"
-    WCR_tt_IG_cooltip_header:  "Is one of the following [Concept('concept_interest_group', '$concept_interest_groups$')]:"
-    WCR_tt_is_conservative_IG: "Is a $WCR_tt_conservatives_tt$ [concept_interest_group]"
-    WCR_tt_is_progressive_IG:  "Is a $WCR_tt_progressives_tt$ [concept_interest_group]"
+    WCR_txt_conservative:      "보수적인"
+    WCR_txt_progressive:       "진보적인"
+    WCR_tt_IG_cooltip_header:  "다음 중 하나는 [Concept('concept_interest_group', '$concept_interest_groups$')]임:"
+    WCR_tt_is_conservative_IG: "$WCR_tt_conservatives_tt$ [concept_interest_group]임"
+    WCR_tt_is_progressive_IG:  "$WCR_tt_progressives_tt$ [concept_interest_group]임"
     
     # Modifiers
     WCR_westernized_modifier:         "최근 서구화됨"
@@ -54,7 +54,7 @@ l_korean:
     
     WCR_tt_delta_from_prog_clout: "from [concept_clout] of $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] (#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_prog_clout')|%]#!)"
     WCR_tt_delta_from_trad_clout: "from [concept_clout] of [concept_powerful] $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] (#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_powerful_trad_clout')|%]#!)"
-    WCR_tt_delta_from_relations:  "from having $relations_amicable$ [concept_relations] with a westernized nation"
+    WCR_tt_delta_from_relations:  "from having $relations_amicable$ or $relations_friendly$ [concept_relations] with a westernized nation"
     WCR_tt_delta_from_year:       "from the year being #bold 1900#! or later"
     
     WCR_tt_delta_from_overlord_good_rel: "from [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] having $relations_amicable$ or $relations_friendly$ [concept_relations] with a #bold westernized#! [concept_overlord] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName])"
@@ -92,13 +92,11 @@ l_korean:
     
     WCR_westernized_relations_reason: "서구화는 서구화된 국가와 #p 우호적인#! [concept_relations]([GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v] 이상)를 맺으면 #v 현재 월간 비율#!의 #p 10%#!를 추가로 #v 증가#!시킬 것입니다."
     
-    WCR_no_backtracking_reason: "월별 서구화 진행률이 #n 적자#!로 결정될 경우, 해당 달 동안 서구화 진행률은 중단됩니다. 절대 진행률이 뒤로 후퇴하지 않을 것입니다."
-    
     WCR_ig_opinion_reason_header: "서구화 진행률이 #v 25%#! 증가할 때마다:"
     
-    WCR_ig_opinion_prog_reason: "• All $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] will gain #p 1#! [concept_approval]"
+    WCR_ig_opinion_prog_reason: "• 모든 $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')]은 [concept_approval]을 #p 1#! 만큼 얻을 것임"
     
-    WCR_ig_opinion_trad_reason: "• All $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] will lose #n 1#! [concept_approval]"
+    WCR_ig_opinion_trad_reason: "• 모든 $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')]은 [concept_approval]을 #n 1#! 만큼 잃을 것임"
     
     WCR_ig_opinion_done_reason: "서구화가 #v 완료#!되면 획득하거나 손실한 [concept_approval]은 장기간에 걸쳐 소멸합니다."
     
