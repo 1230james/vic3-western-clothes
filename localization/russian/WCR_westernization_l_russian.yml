@@ -54,7 +54,7 @@ l_russian:
     
     WCR_tt_delta_from_prog_clout: "from [concept_clout] of $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] (#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_prog_clout')|%]#!)"
     WCR_tt_delta_from_trad_clout: "from [concept_clout] of [concept_powerful] $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] (#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_powerful_trad_clout')|%]#!)"
-    WCR_tt_delta_from_relations:  "from having $relations_amicable$ [concept_relations] with a westernized nation"
+    WCR_tt_delta_from_relations:  "from having $relations_amicable$ or $relations_friendly$ [concept_relations] with a westernized nation"
     WCR_tt_delta_from_year:       "from the year being #bold 1900#! or later"
     
     WCR_tt_delta_from_overlord_good_rel: "from [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] having $relations_amicable$ or $relations_friendly$ [concept_relations] with a #bold westernized#! [concept_overlord] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName])"
@@ -91,8 +91,6 @@ l_russian:
     WCR_overlord_civ_reason: "Has researched #bold $civilizing_mission$#!"
     
     WCR_westernized_relations_reason: "Вестернизация #v увеличится#! на дополнительные #p 10%#! от #v текущей месячной нормы#! если у нас есть $relations_amicable$ [concept_relations] ([GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v] или выше) с любой вестернизированной нацией."
-    
-    WCR_no_backtracking_reason: "В случае, если месячный прогресс вестернизации окажется #n отрицательным#!, прогресс вестернизации будет остановлен на этот месяц. Он никогда не пойдет вспять."
     
     WCR_ig_opinion_reason_header: "За каждые #v 25%#! продвижения вестернизации:"
     
