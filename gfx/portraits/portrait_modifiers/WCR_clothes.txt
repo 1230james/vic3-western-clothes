@@ -359,6 +359,7 @@
                         }
                     }
                 }
+                WCR_has_completed_westernization_trigger = no
             }
         }
     }
@@ -389,18 +390,17 @@
             base = 0
             modifier = {
                 add = 100
-                AND = {
-                    agitator_character_trigger = no
-                    scope:character ?= {
-                        OR = {
-                            AND = {
-                                has_culture = cu:japanese
-                                monarchy_clothes_trigger = no
-                            }
-                            has_culture = cu:ainu
+                agitator_character_trigger = no
+                scope:character ?= {
+                    OR = {
+                        AND = {
+                            has_culture = cu:japanese
+                            monarchy_clothes_trigger = no
                         }
+                        has_culture = cu:ainu
                     }
                 }
+                WCR_has_completed_westernization_trigger = no
             }
         }
     }
@@ -449,7 +449,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 100
                 agitator_character_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
             }
@@ -487,13 +487,13 @@
         }
     }
     
-    WCR_european_politician_clothes = {
+    WCR_european_fancy_politician_clothes = {
         dna_modifiers = {
             accessory = {
-               mode = add
-               gene = waistcoats
-               template = european_waistcoats
-               range = { 0 1 } # For the randomness to work correctly
+                mode = add
+                gene = waistcoats
+                template = european_waistcoats
+                range = { 0 0.66 } # Omitting male_waistcoat_european_03
             }
 
             accessory = {
@@ -509,11 +509,54 @@
                 template = european_legwear
                 range = { 0 1 } # For the randomness to work correctly
             }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                WCR_has_completed_westernization_trigger = yes
+                politician_clothes_trigger = yes
+                armed_forces_clothes_trigger = no
+                military_clothes_trigger = no
+                COM_WCR_enable_outfit = no # Block conflicts with westernized heirs using an outfit from COM
+                scope:character ?= {
+                    NOR = {
+                        is_interest_group_type = ig_intelligentsia
+                        is_interest_group_type = ig_rural_folk
+                        is_interest_group_type = ig_trade_unions
+                    }
+                }
+            }
+            modifier = { #If we want rulers to dress like politicians later.
+                add = 100
+                WCR_has_completed_westernization_trigger = yes
+                ruler_clothes_trigger = yes
+                monarchy_clothes_trigger = no
+            }
+        }
+    }
+    
+    WCR_european_common_politician_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = waistcoats
+                template = european_waistcoats
+                range = { 0 1 } # For the randomness to work correctly
+            }
 
             accessory = {
                 mode = add
-                gene = props
-                template = gene_lences
+                gene = civilian_coats
+                template = european_civilian_coats
+                range = { 0 1 } # For the randomness to work correctly
+            }
+
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
                 range = { 0 1 } # For the randomness to work correctly
             }
         }
@@ -521,18 +564,19 @@
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 politician_clothes_trigger = yes
                 armed_forces_clothes_trigger = no
                 military_clothes_trigger = no
                 COM_WCR_enable_outfit = no # Block conflicts with westernized heirs using an outfit from COM
-            }
-            modifier = { #If we want rulers to dress like politicians later.
-                add = 2000
-                WCR_has_completed_westernization_trigger = yes
-                ruler_clothes_trigger = yes
-                monarchy_clothes_trigger = no
+                scope:character ?= {
+                    OR = {
+                        is_interest_group_type = ig_intelligentsia
+                        is_interest_group_type = ig_rural_folk
+                        is_interest_group_type = ig_trade_unions
+                    }
+                }
             }
         }
     }
@@ -565,14 +609,14 @@
             base = 0
             # Match with WCR_european_upper_clothes
             modifier = {
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 upper_clothes_pop_trigger = yes
             }
             
             # Match with WCR_european_politician_clothes
             modifier = {
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 politician_clothes_trigger = yes
                 armed_forces_clothes_trigger = no
@@ -580,10 +624,11 @@
                 COM_WCR_enable_outfit = no # Block conflicts with westernized heirs using an outfit from COM
             }
             modifier = { #If we want rulers to dress like politicians later.
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 ruler_clothes_trigger = yes
                 monarchy_clothes_trigger = no
+                military_clothes_trigger = no
             }
         }
     }
@@ -681,7 +726,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 poor_clothes_pop_trigger = yes
                 
@@ -721,7 +766,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 100
                 middle_clothes_pop_trigger = yes
                 clergy_clothes_pop_trigger = no
                 WCR_has_completed_westernization_trigger = yes
@@ -753,9 +798,63 @@
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 upper_clothes_pop_trigger = yes
+            }
+        }
+    }
+    
+    WCR_greatcoat = { # Vanilla has it under 'brr_cold_out_greatcoat' and I love that
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = civilian_coats
+                template = greatcoat
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = legwear
+                template = brazilian_white_legwear
+                accessory = male_legwear_south_american_01_brazilian
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                has_dlc_feature = ep1_cosmetics
+                WCR_has_completed_westernization_trigger = yes
+                NOR = {
+                    military_clothes_trigger = yes
+                    armed_forces_clothes_trigger = yes
+                }
+                scope:character ?= {
+                    OR = {
+                        is_interest_group_type = ig_landowners
+                        is_interest_group_type = ig_industrialists
+                        is_interest_group_type = ig_intelligentsia
+                        is_interest_group_type = ig_petty_bourgeoisie
+                    }
+                    OR = {
+                        politician_clothes_trigger = yes
+                        AND = {
+                            is_ruler = yes
+                            republic_clothes_trigger = yes
+                            owner ?= {
+                                is_in_power_bloc = no
+                            }
+                        }
+                    }
+                    is_heir = no
+                    OR = {
+                        month < 3
+                        month > 10
+                    }
+                }
             }
         }
     }
@@ -784,7 +883,7 @@
         # weight = {
             # base = 0
             # modifier = {
-                # add = 2000
+                # add = 100
                 # WCR_has_completed_westernization_trigger = yes
                 # ruler_clothes_trigger = yes
                 # republic_clothes_trigger = yes
@@ -807,7 +906,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 100
                 WCR_has_completed_westernization_trigger = yes
                 ruler_clothes_trigger = yes
                 republic_clothes_trigger = yes
@@ -877,7 +976,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 200
                 WCR_ruler_has_no_influence_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
@@ -917,7 +1016,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100 # Ruler clothes are 2100 to ensure heirs also wear military uniforms
+                add = 200 # Ruler clothes are 2100 to ensure heirs also wear military uniforms
                 WCR_ruler_has_american_influence_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
@@ -962,7 +1061,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 200
                 WCR_ruler_has_british_influence_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
@@ -1013,7 +1112,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 200
                 WCR_ruler_has_french_influence_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
@@ -1046,7 +1145,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 2100
+                add = 200
                 WCR_ruler_has_german_influence_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
@@ -1169,7 +1268,6 @@
                         military_clothes_trigger = yes # Here to make sure it only applies when the ruler is commanding an army
                         OR = {
                             WCR_ruler_has_no_influence_trigger = yes
-                            WCR_ruler_has_russian_influence_trigger = yes # Vanilla uses these for late Russian uniforms too
                             WCR_ruler_has_german_influence_trigger  = yes # Using for German uniforms too (our choice, not vanilla's)
                         }
                     }
@@ -1177,7 +1275,6 @@
                         WCR_army_clothes_trigger = yes
                         OR = {
                             WCR_army_has_no_influence_trigger = yes
-                            WCR_army_has_russian_influence_trigger = yes
                             WCR_army_has_german_influence_trigger  = yes
                         }
                     }
@@ -1461,11 +1558,17 @@
                     AND = {
                         ruler_clothes_trigger = yes
                         military_clothes_trigger = yes
-                        WCR_ruler_has_british_influence_trigger = yes
+                        OR = {
+                            WCR_ruler_has_british_influence_trigger = yes
+                            WCR_ruler_has_russian_influence_trigger = yes # Not vanilla behavior - matches hat colors, though
+                        }
                     }
                     AND = {
                         WCR_army_clothes_trigger = yes
-                        WCR_army_has_british_influence_trigger = yes
+                        OR = {
+                            WCR_army_has_british_influence_trigger = yes
+                            WCR_army_has_russian_influence_trigger = yes
+                        }
                     }
                 }
             }
@@ -1767,7 +1870,7 @@
                 }
             }
             modifier = {
-                add = 2100
+                add = 200
                 WCR_ruler_has_russian_influence_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
@@ -1842,7 +1945,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 11000 # Vanilla: 10000
+                add = 10000
                 COM_WCR_enable_outfit  = no # COM compatibility
                 JKUP_is_active_trigger = no # JKUP compatibility/deconflict
                 OR = {
@@ -1867,10 +1970,15 @@
                                         military_clothes_trigger = yes
                                     }
                                 }
+                                OR = { # Needed because this is used for both the royal attire & the commander attire
+                                    WCR_late_army_uniform_trigger = no
+                                    military_clothes_trigger = no
+                                }
                                 WCR_ruler_has_domestic_influence_trigger = yes
                             }
                             AND = {
                                 WCR_army_clothes_trigger = yes
+                                WCR_late_army_uniform_trigger = no
                                 WCR_army_has_domestic_influence_trigger = yes
                             }
                             AND = {
@@ -1923,7 +2031,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 11000 # Vanilla: 10000
+                add = 10000
                 JKUP_is_active_trigger = no # JKUP compatibility/deconflict
                 OR = {
                     AND = {
@@ -1941,6 +2049,7 @@
                         OR = {
                             AND = {
                                 WCR_army_clothes_trigger = yes
+                                WCR_late_army_uniform_trigger = no
                                 WCR_army_has_domestic_influence_trigger = yes
                             }
                             AND = {
@@ -1998,7 +2107,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 11000 # Vanilla: 10000
+                add = 10000
                 COM_WCR_enable_outfit = no # COM compatibility
                 OR = {
                     AND = {
@@ -2022,10 +2131,15 @@
                                         military_clothes_trigger = yes
                                     }
                                 }
+                                OR = { # Needed because this is used for both the royal attire & the commander attire
+                                    WCR_late_army_uniform_trigger = no
+                                    military_clothes_trigger = no
+                                }
                                 WCR_ruler_has_domestic_influence_trigger = yes
                             }
                             AND = {
                                 WCR_army_clothes_trigger = yes
+                                WCR_late_army_uniform_trigger = no
                                 WCR_army_has_domestic_influence_trigger = yes
                             }
                             AND = {
@@ -2078,7 +2192,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 11000 # Vanilla: 10000
+                add = 10000
                 OR = {
                     AND = {
                         OR = {
@@ -2095,6 +2209,7 @@
                         OR = {
                             AND = {
                                 WCR_army_clothes_trigger = yes
+                                WCR_late_army_uniform_trigger = no
                                 WCR_army_has_domestic_influence_trigger = yes
                             }
                             AND = {
@@ -2152,7 +2267,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 11000 # Vanilla: 10000
+                add = 10000
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_domestic_influence_trigger = yes
                 monarchy_clothes_trigger = yes
@@ -2198,7 +2313,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 11000 # Vanilla: 10000
+                add = 10000
                 WCR_has_completed_westernization_trigger = yes
                 OR = {
                     scope:character ?= {
@@ -2217,10 +2332,12 @@
                     AND = {
                         ruler_clothes_trigger    = yes
                         military_clothes_trigger = yes
+                        WCR_late_army_uniform_trigger = no
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {
                         WCR_army_clothes_trigger = yes
+                        WCR_late_army_uniform_trigger = no
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                     AND = {
@@ -2257,7 +2374,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 11000 # Vanilla: 10000
+                add = 10000
                 WCR_has_completed_westernization_trigger = yes
                 scope:pop ?= {
                     owner ?= {
@@ -2268,6 +2385,285 @@
                 OR = {
                     AND = {
                         WCR_army_clothes_trigger = yes
+                        WCR_late_army_uniform_trigger = no
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_persian_ruler_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template  = male_coat_persian_01
+                accessory = male_coat_persian_01
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template  = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = all_aiguillettes
+                accessory = male_aiguillettes_01
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = all_belts
+                accessory = male_belt_generic_02
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 200
+                WCR_ruler_has_domestic_influence_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                monarchy_clothes_trigger = yes
+                scope:character ?= {
+                    owner ?= {
+                        WCR_st_is_country_tag = { TAG = PER }
+                    }
+                    NOR = { # Exclusions
+                        has_template = PER_reza_pahlavi
+                        has_template = per_nasir_al_din_qajar_template
+                    }
+                }
+                OR = { # Needed because this is used for both the royal attire & the commander attire
+                    WCR_late_army_uniform_trigger = no
+                    military_clothes_trigger = no
+                }
+            }
+        }
+    }
+    
+    WCR_persian_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = persian_military_coat
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = male_legwear_colored_military_01
+                accessory = male_legwear_european_military_white_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_04
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000 # Vanilla: 10000
+                WCR_has_completed_westernization_trigger = yes
+                OR = {
+                    scope:pop ?= {
+                        owner ?= {
+                            WCR_st_is_country_tag = { TAG = PER }
+                        }
+                    }
+                    scope:character ?= {
+                        WCR_late_army_uniform_trigger = no # Commanders have their own late era attire
+                        owner ?= {
+                            WCR_st_is_country_tag = { TAG = PER }
+                        }
+                    }
+                }
+                OR = {
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_persian_commander_late_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template  = reza_shah_pahlavi_coat
+                accessory = reza_shah_pahlavi_coat
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template  = reza_shah_pahlavi_legwear
+                accessory = reza_shah_pahlavi_legwear
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template  = reza_shah_pahlavi_epaulettes
+                accessory = reza_shah_pahlavi_epaulettes
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = late_military_belts
+                range = { 0 1 }
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000 # Vanilla: 10000
+                WCR_has_completed_westernization_trigger = yes
+                WCR_late_army_uniform_trigger = yes
+                scope:character ?= {
+                    owner ?= {
+                        WCR_st_is_country_tag = { TAG = PER }
+                    }
+                }
+                OR = {
+                    AND = {
+                        ruler_clothes_trigger = yes
+                        military_clothes_trigger = yes
+                        WCR_ruler_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_egyptian_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = egyptian_outfits_white
+                range = { 0.6 0.7 } # both and only male_coat_european_08_white and male_coat_european_civil_dress_uniform_01, with a slight skew towards the white uniform
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template  = european_legwear_colors
+                accessory = male_legwear_european_01_white
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_02
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 200
+                WCR_has_completed_westernization_trigger = yes # normal logic
+                scope:character ?= {
+                    owner ?= {
+                        WCR_st_is_country_tag = { TAG = EGY }
+                    }
+                }
+                OR = {
+                    AND = {
+                        OR = {
+                            monarchy_clothes_trigger = yes
+                            AND = {
+                                ruler_clothes_trigger    = yes
+                                military_clothes_trigger = yes
+                            }
+                        }
+                        OR = { # Needed because this is used for both the royal attire & the commander attire
+                            WCR_late_army_uniform_trigger = no
+                            military_clothes_trigger = no
+                        }
+                        WCR_ruler_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_late_army_uniform_trigger = no
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_egyptian_soldier_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template  = egyptian_outfits_white
+                accessory = male_civilian_coat_arabic_white_01
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template  = european_legwear_colors
+                accessory = male_legwear_european_01_white
+            }
+        }
+        
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000 # Vanilla: 10000
+                WCR_has_completed_westernization_trigger = yes
+                scope:pop ?= {
+                    owner ?= {
+                        WCR_st_is_country_tag = { TAG = EGY }
+                    }
+                }
+                OR = {
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_late_army_uniform_trigger = no
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                     AND = {
@@ -2366,6 +2762,7 @@
             base = 0
             modifier = {
                 add = 1000
+                WCR_late_army_uniform_trigger = no
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
                     owner ?= {
@@ -2521,6 +2918,7 @@
                 OR = {
                     AND = {
                         WCR_army_clothes_trigger = yes
+                        WCR_late_army_uniform_trigger = no
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                     AND = {
@@ -2567,6 +2965,7 @@
                 OR = {
                     AND = {
                         WCR_army_clothes_trigger = yes
+                        WCR_late_army_uniform_trigger = no
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                     AND = {
@@ -2578,266 +2977,228 @@
         }
     }
     
-    WCR_persian_ruler_clothes = {
+    # Fake or semi-historical late era military uniforms
+    WCR_generic_beige_late_military_clothes = { # British
         dna_modifiers = {
             accessory = {
                 mode = add
                 gene = coats
-                template  = male_coat_persian_01
-                accessory = male_coat_persian_01
+                template = male_coat_great_britain
+                accessory = male_coat_late_british_military_01
             }
             accessory = {
                 mode = add
-                gene = legwear
-                template  = european_legwear_colors
-                accessory = male_legwear_european_01_black
+                gene = epaulettes
+                template = late_military_epaulettes
+                accessory = male_epaulettes_late_british_military_01
             }
             accessory = {
                 mode = add
                 gene = aiguillettes
-                template = all_aiguillettes
-                accessory = male_aiguillettes_01
+                template = no_aiguillettes
+                value = 0
             }
             accessory = {
                 mode = add
                 gene = belts
-                template = all_belts
-                accessory = male_belt_generic_02
-            }
-        }
-        
-        weight = {
-            base = 0
-            modifier = {
-                add = 2100
-                WCR_ruler_has_domestic_influence_trigger = yes
-                WCR_has_completed_westernization_trigger = yes
-                monarchy_clothes_trigger = yes
-                scope:character ?= {
-                    owner ?= {
-                        WCR_st_is_country_tag = { TAG = PER }
-                    }
-                    NOR = { # Exclusions
-                        has_template = PER_reza_pahlavi
-                        has_template = per_nasir_al_din_qajar_template
-                    }
-                }
-            }
-        }
-    }
-    
-    WCR_persian_military_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template = persian_military_coat
-                range = { 0 1 }
+                template  = late_military_belts
+                accessory = male_belt_military_01
             }
             accessory = {
                 mode = add
                 gene = legwear
-                template = male_legwear_colored_military_01
-                accessory = male_legwear_european_military_white_01
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = all_epaulettes
-                accessory = male_epaulettes_04
-            }
-            accessory = {
-                mode = add
-                gene = belts
-                template = generic_belts
-                accessory = male_belt_generic_01
+                template = european_late_military_legwear
+                accessory = male_legwear_british_late_military_01
             }
         }
-        
         weight = {
             base = 0
             modifier = {
-                add = 11000 # Vanilla: 10000
-                WCR_has_completed_westernization_trigger = yes
-                OR = {
-                    scope:pop ?= {
-                        owner ?= {
-                            WCR_st_is_country_tag = { TAG = PER }
-                        }
-                    }
-                    scope:character ?= {
-                        WCR_late_army_uniform_trigger = no # Commanders have their own late era attire
-                        owner ?= {
-                            WCR_st_is_country_tag = { TAG = PER }
-                        }
-                    }
-                }
-                OR = {
-                    AND = {
-                        WCR_army_clothes_trigger = yes
-                        WCR_army_has_domestic_influence_trigger = yes
-                    }
-                    AND = {
-                        WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_domestic_influence_trigger = yes
-                    }
-                }
-            }
-        }
-    }
-    
-    WCR_persian_commander_late_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = coats
-                template  = reza_shah_pahlavi_coat
-                accessory = reza_shah_pahlavi_coat
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template  = reza_shah_pahlavi_legwear
-                accessory = reza_shah_pahlavi_legwear
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template  = reza_shah_pahlavi_epaulettes
-                accessory = reza_shah_pahlavi_epaulettes
-            }
-            accessory = {
-                mode = add
-                gene = belts
-                template = late_military_belts
-                range = { 0 1 }
-            }
-        }
-        
-        weight = {
-            base = 0
-            modifier = {
-                add = 11000 # Vanilla: 10000
+                add = 10000
                 WCR_has_completed_westernization_trigger = yes
                 WCR_late_army_uniform_trigger = yes
-                scope:character ?= {
-                    owner ?= {
-                        WCR_st_is_country_tag = { TAG = PER }
-                    }
-                }
                 OR = {
                     AND = {
-                        WCR_army_clothes_trigger = yes
-                        WCR_army_has_domestic_influence_trigger = yes
-                    }
-                    AND = {
-                        WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_domestic_influence_trigger = yes
-                    }
-                }
-            }
-        }
-    }
-    
-    WCR_egyptian_military_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = outfits
-                template = egyptian_outfits_white
-                range = { 0.6 0.7 } # both and only male_coat_european_08_white and male_coat_european_civil_dress_uniform_01, with a slight skew towards the white uniform
-            }
-            accessory = {
-                mode = add
-                gene = legwear
-                template  = european_legwear_colors
-                accessory = male_legwear_european_01_white
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = all_epaulettes
-                accessory = male_epaulettes_02
-            }
-            accessory = {
-                mode = add
-                gene = belts
-                template = generic_belts
-                accessory = male_belt_generic_01
-            }
-        }
-        
-        weight = {
-            base = 0
-            modifier = {
-                add = 2100
-                OR = {
-                    WCR_has_completed_westernization_trigger = yes # normal logic
-                    WCR_st_is_part_west_character_westernized_trigger = yes # bypass because Egypt is ruled by Albanians
-                }
-                scope:character ?= {
-                    owner ?= {
-                        WCR_st_is_country_tag = { TAG = EGY }
-                    }
-                }
-                OR = {
-                    AND = {
-                        OR = {
-                            monarchy_clothes_trigger = yes
-                            AND = {
-                                ruler_clothes_trigger    = yes
-                                military_clothes_trigger = yes
-                            }
-                        }
+                        ruler_clothes_trigger = yes
+                        military_clothes_trigger = yes
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {
                         WCR_army_clothes_trigger = yes
                         WCR_army_has_domestic_influence_trigger = yes
                     }
-                    AND = {
-                        WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_domestic_influence_trigger = yes
+                }
+                
+                OR = { # Hell yeah, DRY baybee (⌐■_■)
+                    scope:pop ?= {
+                        save_temporary_scope_as = person
+                    }
+                    scope:character ?= {
+                        save_temporary_scope_as = person
+                    }
+                }
+                scope:person ?= {
+                    owner ?= {
+                        OR = {
+                            AND = {
+                                WCR_is_korea_trigger = yes
+                                JKUP_is_active_trigger = no # JKUP compatibility/deconflict
+                                OR = {
+                                    has_game_rule = WCR_modded_KOR_westernization
+                                    has_game_rule = WCR_mixed_KOR_westernization
+                                }
+                            }
+                            WCR_st_is_country_tag = { TAG = TUR }
+                            WCR_st_is_country_tag = { TAG = EGY }
+                        }
                     }
                 }
             }
         }
     }
     
-    WCR_egyptian_soldier_clothes = {
+    WCR_generic_khaki_late_military_clothes = { # American
         dna_modifiers = {
             accessory = {
                 mode = add
-                gene = outfits
-                template  = egyptian_outfits_white
-                accessory = male_civilian_coat_arabic_white_01
+                gene = coats
+                template = late_american_soldier_coat
+                accessory = male_coat_late_usa_military_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = late_military_epaulettes
+                accessory = male_epaulettes_late_british_military_01 # Colors for American ones don't match
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = no_aiguillettes
+                value = 0
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template  = late_military_belts
+                accessory = male_belt_military_01
             }
             accessory = {
                 mode = add
                 gene = legwear
-                template  = european_legwear_colors
-                accessory = male_legwear_european_01_white
+                template = european_late_military_legwear
+                accessory = male_legwear_british_late_military_01 # Colors match better
             }
         }
-        
         weight = {
             base = 0
             modifier = {
-                add = 11000 # Vanilla: 10000
+                add = 10000
                 WCR_has_completed_westernization_trigger = yes
-                scope:pop ?= {
-                    owner ?= {
-                        WCR_st_is_country_tag = { TAG = EGY }
-                    }
-                }
+                WCR_late_army_uniform_trigger = yes
                 OR = {
+                    AND = {
+                        ruler_clothes_trigger = yes
+                        military_clothes_trigger = yes
+                        WCR_ruler_has_domestic_influence_trigger = yes
+                    }
                     AND = {
                         WCR_army_clothes_trigger = yes
                         WCR_army_has_domestic_influence_trigger = yes
                     }
+                }
+                
+                OR = { # Hell yeah, DRY baybee (⌐■_■)
+                    scope:pop ?= {
+                        save_temporary_scope_as = person
+                    }
+                    scope:character ?= {
+                        save_temporary_scope_as = person
+                    }
+                }
+                scope:person ?= {
+                    owner ?= {
+                        OR = {
+                            AND = {
+                                WCR_is_japan_trigger = yes
+                                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                                OR = {
+                                    has_game_rule = WCR_modded_JAP_westernization
+                                    has_game_rule = WCR_mixed_JAP_westernization
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    WCR_generic_blue_late_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = late_french_soldier_coat
+                accessory = male_coat_late_french_military_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = late_military_epaulettes
+                accessory = male_epaulettes_late_french_military_01
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = no_aiguillettes
+                value = 0
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template  = late_military_belts
+                accessory = male_belt_military_01
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_late_military_legwear
+                accessory = male_legwear_european_military_blue_01
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                WCR_has_completed_westernization_trigger = yes
+                WCR_late_army_uniform_trigger = yes
+                OR = {
                     AND = {
-                        WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_domestic_influence_trigger = yes
+                        ruler_clothes_trigger = yes
+                        military_clothes_trigger = yes
+                        WCR_ruler_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                }
+                
+                OR = { # Hell yeah, DRY baybee (⌐■_■)
+                    scope:pop ?= {
+                        save_temporary_scope_as = person
+                    }
+                    scope:character ?= {
+                        save_temporary_scope_as = person
+                    }
+                }
+                scope:person ?= {
+                    owner ?= {
+                        OR = {
+                            WCR_st_is_country_tag = { TAG = CHI }
+                        }
                     }
                 }
             }

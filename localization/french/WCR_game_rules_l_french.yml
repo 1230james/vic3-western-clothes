@@ -27,6 +27,12 @@ l_french:
     setting_WCR_disable_influences:      "#b Toujours générique#!"
     setting_WCR_disable_influences_desc: "Le style des uniformes des [Concept('concept_head_of_state', 'monarques')] et des militaires sera toujours celui des uniformes Européens génériques. $WCR_AWC_behavior_text$"
     
+    rule_WCR_fake_late_uniforms:             "#yellow WCR#! | Use Fictional Late-Era Domestic Uniforms"
+    setting_WCR_fake_late_uniforms_yes:      "$WCR_rule_yes$"
+    setting_WCR_fake_late_uniforms_yes_desc: "[Concept('concept_country', '$concept_countries$')] using a local uniform style (if available to them) #p will#! adopt fictional modern designs after sufficient [Concept('concept_technology','technological progress')]. #i Requires the #underline $dlc010$#! DLC.#!"
+    setting_WCR_fake_late_uniforms_no:       "$WCR_rule_no$"
+    setting_WCR_fake_late_uniforms_no_desc:  "[Concept('concept_country', '$concept_countries$')] using a local uniform style (if available to them) #n will not#! adopt new uniforms later in the game."
+    
     rule_WCR_AI_westernization:               "#yellow WCR#! | Permettre l'occidentalisation de l'IA"
     setting_WCR_allow_AI_westernization:      "$WCR_rule_yes$"
     setting_WCR_allow_AI_westernization_desc: "Les pays contrôlés par l'IA #p pourront#! s'occidentaliser."

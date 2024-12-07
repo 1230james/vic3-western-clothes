@@ -1,5 +1,6 @@
 ﻿# Westernization influence triggers
 
+# Country scope
 WCR_has_domestic_influence_available_trigger = {
     OR = {
         # Using trigger_if blocks for nicer tooltipping
@@ -43,6 +44,7 @@ WCR_has_domestic_influence_available_trigger = {
     }
 }
 
+# Scope-agnostic
 WCR_ruler_has_american_influence_trigger = {
     scope:character ?= {
         owner ?= {

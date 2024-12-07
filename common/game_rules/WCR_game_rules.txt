@@ -26,6 +26,14 @@ WCR_westernization_influences = {
     WCR_disable_influences = {}
 }
 
+# Allow fictional late era military uniforms for countries using domestic designs
+WCR_fake_late_uniforms = {
+    default = WCR_fake_late_uniforms_yes
+    
+    WCR_fake_late_uniforms_yes = {}
+    WCR_fake_late_uniforms_no  = {}
+}
+
 # Allows AI to take westernization decision
 # AWC behavior: blocked
 WCR_AI_westernization = {

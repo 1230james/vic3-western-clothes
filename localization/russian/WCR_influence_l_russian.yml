@@ -48,7 +48,7 @@ l_russian:
     WCR_royal_exec:  "[AddLocalizationIf(Not(EqualTo_string(GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetLawType.GetName, GetLawType('law_monarchy').GetName)), 'WCR_exec')][AddLocalizationIf(EqualTo_string(GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetLawType.GetName, GetLawType('law_monarchy').GetName), 'WCR_royal')]"
     WCR_military_df: "[AddLocalizationIf(Not(EqualTo_string(GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetLawType.GetName, GetLawType('law_monarchy').GetName)), 'WCR_military')]"
     
-    WCR_ev_2_title:  "новый наряд $WCR_royal_exec$"
+    WCR_ev_2_title:  "Новый наряд $WCR_royal_exec$"
     WCR_ev_2_desc:   "Чтобы начать процесс вестернизации, необходимо получить новую форму $WCR_military_df$для [GetPlayer.GetRuler.GetCustom('GetUniversalTitle')][GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]."
     WCR_ev_2_flavor: ""У каждой из европейских держав есть свой уникальный стиль одежды. Какой из них вы предпочитаете носить сами, $WCR_sire_madam$?""
     
