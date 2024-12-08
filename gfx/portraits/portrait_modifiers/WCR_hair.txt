@@ -16,6 +16,7 @@
             base = 0
             modifier = {
                 add = 10000
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 OR = {
                     scope:pop ?= {
                         culture = cu:japanese

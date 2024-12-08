@@ -111,6 +111,7 @@
                 japanese_clothes_trigger = yes
                 politician_clothes_trigger = yes
                 armed_forces_clothes_trigger = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 scope:character ?= {
                     owner ?= {
                         has_variable = meiji_restoration_complete
@@ -918,6 +919,7 @@
             base = 0
             modifier = {
                 add = 100 # Vanilla: 1200
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 OR = {
                     AND = {
                         OR = {

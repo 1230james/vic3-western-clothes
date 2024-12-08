@@ -201,6 +201,7 @@
             base = 0
             modifier = {
                 add  = 1100
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 WCR_has_completed_westernization_trigger = no
                 OR = {
                     scope:pop ?= {
@@ -232,6 +233,13 @@
                             monarchy_clothes_trigger = yes
                         }
                     }
+                }
+            }
+            modifier = { # [JUP] keep heir's clothes
+                add = 100
+                md_japanese_uniform_pack_active_trigger = yes
+                scope:character ?= {
+                    is_heir = yes
                 }
             }
         }
@@ -269,6 +277,7 @@
             base = 0
             modifier = {
                 add  = 1200
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 WCR_has_completed_westernization_trigger = no
                 AND = {
                     japanese_clothes_trigger = yes
@@ -360,6 +369,15 @@
                     }
                 }
                 WCR_has_completed_westernization_trigger = no
+            }
+            modifier = { # Stop top_layer conflict with JUP
+                add = -1000
+                md_japanese_uniform_pack_active_trigger = yes
+                WCR_has_completed_westernization_trigger = no
+                OR = {
+                    WCR_army_clothes_trigger = yes
+                    WCR_navy_clothes_trigger = yes
+                }
             }
         }
     }
@@ -2109,6 +2127,7 @@
             modifier = {
                 add = 10000
                 COM_WCR_enable_outfit = no # COM compatibility
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 OR = {
                     AND = {
                         OR = {
@@ -2193,6 +2212,7 @@
             base = 0
             modifier = {
                 add = 10000
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 OR = {
                     AND = {
                         OR = {
@@ -3133,7 +3153,6 @@
             }
         }
     }
-    
     
     WCR_generic_blue_late_military_clothes = {
         dna_modifiers = {
