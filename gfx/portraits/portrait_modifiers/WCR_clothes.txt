@@ -237,9 +237,13 @@
             }
             modifier = { # [JUP] keep heir's clothes
                 add = 100
-                md_japanese_uniform_pack_active_trigger = yes
+                md_japanese_uniform_pack_active_trigger  = yes
+                WCR_has_completed_westernization_trigger = no
                 scope:character ?= {
                     is_heir = yes
+                    owner ?= {
+                        WCR_is_japan_trigger = yes
+                    }
                 }
             }
         }
