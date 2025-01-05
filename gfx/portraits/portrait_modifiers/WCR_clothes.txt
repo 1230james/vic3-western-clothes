@@ -802,7 +802,7 @@
                 mode = add
                 gene = waistcoats
                 template = european_waistcoats
-                range = { 0 1 } # For the randomness to work correctly
+                range = { 0 0.66 } # Omitting male_waistcoat_european_03
             }
             accessory = {
                 mode = add
@@ -3187,8 +3187,8 @@
             accessory = {
                 mode = add
                 gene = legwear
-                template = european_late_military_legwear
-                accessory = male_legwear_european_military_blue_01
+                template = male_legwear_colored_military_01
+                accessory = male_legwear_european_military_light_blue_01
             }
         }
         weight = {
