@@ -4,3 +4,17 @@
         bpm_ig_enabled = yes
     }
 }
+
+WCR_sg_set_debug_flag = {
+    scope = country
+    effect = {
+        set_global_variable = WCR_debug_mode
+    }
+}
+
+WCR_sg_unset_debug_flag = {
+    scope = country
+    effect = {
+        remove_global_variable = WCR_debug_mode
+    }
+}
