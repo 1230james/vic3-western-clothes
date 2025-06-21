@@ -3,6 +3,8 @@
     selection_behavior = weighted_random
 
     ## WCR - Vanilla Overrides ##
+    # Needed to keep Korea & Japan unwesternized if using the game rule where becoming their respective empires doesn't
+    # automatically westernize them
     
     # Preserve vanilla Korean pops behavior
     # As of 1.5.9: soldiers -> chinese clothes, officers -> hanbok, other middle strata -> mix of both
@@ -445,7 +447,7 @@
 
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
-                    age <= 12
+                    age < define:NCharacters|ADULT_AGE
                 }
             }
         }
@@ -538,10 +540,20 @@
             modifier = {
                 add = 100
                 WCR_has_completed_westernization_trigger = yes
-                politician_clothes_trigger = yes
                 armed_forces_clothes_trigger = no
                 military_clothes_trigger = no
                 COM_WCR_enable_outfit = no # Block conflicts with westernized heirs using an outfit from COM
+                OR = {
+                    politician_clothes_trigger = yes
+                    trigger_if = {
+                        limit = {
+                            NOT = {
+                                has_dlc_feature = mp1_cosmetics
+                            }
+                        }
+                        executive_clothes_trigger = yes
+                    }
+                }
                 scope:character ?= {
                     NOR = {
                         is_interest_group_type = ig_intelligentsia
@@ -550,7 +562,7 @@
                     }
                 }
             }
-            modifier = { #If we want rulers to dress like politicians later.
+            modifier = { # If we want rulers to dress like politicians later.
                 add = 100
                 WCR_has_completed_westernization_trigger = yes
                 ruler_clothes_trigger = yes
@@ -875,6 +887,47 @@
                     OR = {
                         month < 3
                         month > 10
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_european_executive_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = executive_overcoat
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = civilian_coats
+                template = european_executive_coats
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 }
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                has_dlc_feature = mp1_cosmetics
+                WCR_has_completed_westernization_trigger = yes
+                OR = {
+                    executive_clothes_trigger = yes
+                    AND = {
+                        politician_clothes_trigger = yes
+                        scope:character ?= {
+                            is_interest_group_type = ig_industrialists
+                        }
                     }
                 }
             }
