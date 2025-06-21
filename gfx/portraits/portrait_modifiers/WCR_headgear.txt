@@ -194,6 +194,12 @@
                 republic_clothes_trigger = yes
                 military_clothes_trigger = no
             }
+            modifier = { # Don't have female characters wear the bonnet
+                add = -1000
+                scope:character ?= {
+                    is_female = yes
+                }
+            }
         }
     }
     
