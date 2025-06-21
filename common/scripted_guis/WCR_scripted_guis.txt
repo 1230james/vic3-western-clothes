@@ -5,6 +5,52 @@
     }
 }
 
+WCR_sg_conservatives_list = {
+    scope = country
+    effect = {
+        every_interest_group = {
+            limit = {
+                bpm_ig_enabled = yes
+                WCR_st_is_interest_group_conservative = yes
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        has_global_variable = WCR_debug_mode
+                    }
+                }
+                custom_tooltip = WCR_tt_IG_list_item
+            }
+            else = {
+                custom_tooltip = WCR_tt_IG_list_item_debug
+            }
+        }
+    }
+}
+
+WCR_sg_progressives_list = {
+    scope = country
+    effect = {
+        every_interest_group = {
+            limit = {
+                bpm_ig_enabled = yes
+                WCR_st_is_interest_group_progressive = yes
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        has_global_variable = WCR_debug_mode
+                    }
+                }
+                custom_tooltip = WCR_tt_IG_list_item
+            }
+            else = {
+                custom_tooltip = WCR_tt_IG_list_item_debug
+            }
+        }
+    }
+}
+
 WCR_sg_set_debug_flag = {
     scope = country
     effect = {
