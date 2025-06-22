@@ -323,7 +323,7 @@ WCR_ev.3 = {
     duration = 1
 
     event_image = {
-        video = "europenorthamerica_before_the_battle"
+        video = "WCR_transfer_of_authority"
     }
 
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
