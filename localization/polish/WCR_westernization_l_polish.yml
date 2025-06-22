@@ -23,8 +23,13 @@ l_polish:
     WCR_tt_KOR_req_bypass: "#b $dyn_c_empire_of_korea$#! zostało ustanowione."
     WCR_tt_JAP_req_bypass: "#b $je_meiji_restoration$#! [concept_journal_entry] została ukończona."
     
-    WCR_tt_conservatives_tt:   "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],,WCR_conservative_IGs_tooltip $WCR_txt_conservative$#!"
-    WCR_tt_progressives_tt:    "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],,WCR_progressive_IGs_tooltip $WCR_txt_progressive$#!"
+    WCR_tt_IG_list_item:       "[THIS.GetInterestGroup.GetName]"
+    WCR_tt_IG_list_item_debug: "[THIS.GetInterestGroup.GetName] ([THIS.GetInterestGroup.MakeScope.ScriptValue('WCR_sv_calculate_IG_progressive_score')])"
+    WCR_tt_conservatives_list: "$WCR_tt_IG_cooltip_header$\n[GetScriptedGui('WCR_sg_conservatives_list').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+    WCR_tt_progressives_list:  "$WCR_tt_IG_cooltip_header$\n[GetScriptedGui('WCR_sg_progressives_list').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+    WCR_tt_conservatives_tt:   "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],WCR_tt_conservatives_list $WCR_txt_conservative$#!"
+    WCR_tt_progressives_tt:    "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],WCR_tt_progressives_list $WCR_txt_progressive$#!"
+    
     WCR_txt_conservative:      "konserwatywne"
     WCR_txt_progressive:       "progresywne"
     WCR_tt_IG_cooltip_header:  "Jest jedną z następujących [Concept('concept_interest_group', 'grup interesu')]:"
