@@ -63,7 +63,7 @@ l_polish:
     WCR_tt_delta_from_year:       "od roku będącym #bold 1900#! lub później"
     
     WCR_tt_delta_from_overlord_good_rel: "od państwa [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] posiadającego [Concept('concept_relations', 'stosunki')] $relations_amicable$ lub $relations_friendly$ z #bold zwesternizowanym#! [Concept('concept_overlord', 'suwerenem')] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName])"
-    WCR_tt_delta_from_overlord_civ_mis:  "od [Concept('concept_overlord','$concept_overlord_possessive$')] państwa [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName]) będącym #bold zwesternizowanym#! państwem i który wybadał #bold $civilizing_mission$#!"
+    WCR_tt_delta_from_overlord_civ_mis:  "od [Concept('concept_overlord','$concept_overlord_possessive$')] państwa [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName]) będącym #bold zwesternizowanym#! państwem i który wybadał [GetTechnology('civilizing_mission').GetName]"
     
     WCR_tt_delta_from_clout:   "$WCR_tt_delta_from_clout_h$#indent_newline:3 \n[Country.MakeScope.GetScriptValueDesc('WCR_sv_calculate_net_delta_from_clout')]#!"
     WCR_tt_delta_from_clout_h: "od [Concept('concept_clout', 'siły przebicia')] [Concept('concept_interest_group', '$concept_interest_group_possessive$')]"
@@ -93,7 +93,7 @@ l_polish:
     
     WCR_overlord_rel_reason: "Ma $relations_amicable$ lub $relations_friendly$ [Concept('concept_relations', 'stosunki')] ([GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v] lub wyższe) z [Country.GetName]"
     
-    WCR_overlord_civ_reason: "Wybadano technologię #bold $civilizing_mission$#!"
+    WCR_overlord_civ_reason: "Wybadano technologię [GetTechnology('civilizing_mission').GetName]"
     
     WCR_westernized_relations_reason: "Postęp Westernizacji będzie #v rosnąć#! o dodatkowe #p 10%#! #v aktualnego miesięcznego postępu#! jeśli mamy $relations_amicable$ lub $relations_friendly$ [concept_relations] ([GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v] lub wyższe) z jakimkolwiek zwesternizowanym państwem."
     

@@ -63,7 +63,7 @@ l_korean:
     WCR_tt_delta_from_year:       "from the year being #bold 1900#! or later"
     
     WCR_tt_delta_from_overlord_good_rel: "from [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] having $relations_amicable$ or $relations_friendly$ [concept_relations] with a #bold westernized#! [concept_overlord] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName])"
-    WCR_tt_delta_from_overlord_civ_mis:  "from the [concept_overlord] of [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName]) being #bold westernized#! and researching #bold $civilizing_mission$#!"
+    WCR_tt_delta_from_overlord_civ_mis:  "from the [concept_overlord] of [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName]) being #bold westernized#! and researching [GetTechnology('civilizing_mission').GetName]"
     
     WCR_tt_delta_from_clout:   "$WCR_tt_delta_from_clout_h$#indent_newline:3 \n[Country.MakeScope.GetScriptValueDesc('WCR_sv_calculate_net_delta_from_clout')]#!"
     WCR_tt_delta_from_clout_h: "from [concept_interest_group] [concept_clout]"
@@ -93,7 +93,7 @@ l_korean:
     
     WCR_overlord_rel_reason: "Has $relations_amicable$ or $relations_friendly$ [concept_relations] ([GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v] or higher) with [Country.GetName]"
     
-    WCR_overlord_civ_reason: "Has researched #bold $civilizing_mission$#!"
+    WCR_overlord_civ_reason: "Has researched [GetTechnology('civilizing_mission').GetName]"
     
     WCR_westernized_relations_reason: "서구화는 서구화된 국가와 #p 우호적인#! [concept_relations]([GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v] 이상)를 맺으면 #v 현재 월간 비율#!의 #p 10%#!를 추가로 #v 증가#!시킬 것입니다."
     

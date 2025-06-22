@@ -184,3 +184,47 @@ WCR_de_DEBUG_toggle_KOR_empire = {
         value = 0
     }
 }
+
+WCR_de_DEBUG_inc_overlord_relations = {
+    is_shown = {
+        has_global_variable = WCR_debug_mode
+        is_subject = yes
+    }
+    
+    possible = {
+        always = yes
+    }
+    
+    when_taken = {
+        change_relations = {
+            country = overlord
+            value   = 10
+        }
+    }
+    
+    ai_chance = {
+        value = 0
+    }
+}
+
+WCR_de_DEBUG_dec_overlord_relations = {
+    is_shown = {
+        has_global_variable = WCR_debug_mode
+        is_subject = yes
+    }
+    
+    possible = {
+        always = yes
+    }
+    
+    when_taken = {
+        change_relations = {
+            country = overlord
+            value   = -10
+        }
+    }
+    
+    ai_chance = {
+        value = 0
+    }
+}

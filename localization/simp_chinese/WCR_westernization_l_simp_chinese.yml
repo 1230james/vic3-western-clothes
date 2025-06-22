@@ -63,7 +63,7 @@ l_simp_chinese:
     WCR_tt_delta_from_year:       "来自当前时间是#bold 1900#!年或以后"
     
     WCR_tt_delta_from_overlord_good_rel: "来自[SCOPE.GetRootScope.GetCountry.GetNameNoFlag]与#bold 西方#![concept_overlord]([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName])有着$relations_amicable$或$relations_friendly$的[concept_relations]"
-    WCR_tt_delta_from_overlord_civ_mis:  "来自[SCOPE.GetRootScope.GetCountry.GetNameNoFlag]的#bold 西方#![concept_overlord]([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName])已研究#bold $civilizing_mission$#!"
+    WCR_tt_delta_from_overlord_civ_mis:  "来自[SCOPE.GetRootScope.GetCountry.GetNameNoFlag]的#bold 西方#![concept_overlord]([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName])已研究[GetTechnology('civilizing_mission').GetName]"
     
     WCR_tt_delta_from_clout:   "$WCR_tt_delta_from_clout_h$#indent_newline:3 \n[Country.MakeScope.GetScriptValueDesc('WCR_sv_calculate_net_delta_from_clout')]#!"
     WCR_tt_delta_from_clout_h: "来自[concept_interest_group][concept_clout]"
@@ -93,7 +93,7 @@ l_simp_chinese:
     
     WCR_overlord_rel_reason: "与[Country.GetName]有着$relations_amicable$或$relations_friendly$的[concept_relations]（[GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v]或更高）"
     
-    WCR_overlord_civ_reason: "已研究#bold $civilizing_mission$#!"
+    WCR_overlord_civ_reason: "已研究[GetTechnology('civilizing_mission').GetName]"
     
     WCR_westernized_relations_reason: "如果我们与任何西方化国家有着$relations_amicable$或$relations_friendly$的[concept_relations]（[GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v]或更高），西洋化的#v 当前每月速率#!将会额外#v 增加#!#p 10%#!。"
     
