@@ -30,8 +30,8 @@ l_french:
     WCR_tt_conservatives_tt:   "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],WCR_tt_conservatives_list $WCR_txt_conservative$#!"
     WCR_tt_progressives_tt:    "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],WCR_tt_progressives_list $WCR_txt_progressive$#!"
     
-    WCR_txt_conservative:      "conservative"
-    WCR_txt_progressive:       "progressive"
+    WCR_txt_conservative:      "conservateur"
+    WCR_txt_progressive:       "progressif"
     WCR_tt_IG_cooltip_header:  "Is one of the following [Concept('concept_interest_group', '$concept_interest_groups$')]:"
     WCR_tt_is_conservative_IG: "Is a $WCR_tt_conservatives_tt$ [concept_interest_group]"
     WCR_tt_is_progressive_IG:  "Is a $WCR_tt_progressives_tt$ [concept_interest_group]"
@@ -93,7 +93,7 @@ l_french:
     
     WCR_overlord_rel_reason: "Has $relations_amicable$ or $relations_friendly$ [concept_relations] ([GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v] or higher) with [Country.GetName]"
     
-    WCR_overlord_civ_reason: "Has researched #bold $civilizing_mission$#!"
+    WCR_overlord_civ_reason: "A Recherché #bold $civilizing_mission$#!"
     
     WCR_westernized_relations_reason: "Westernization progress will #v increase#! by an extra #p 10%#! of the #v current monthly rate#! if we have $relations_amicable$ or $relations_friendly$ [concept_relations] ([GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v] or higher) with any westernized nation."
     
