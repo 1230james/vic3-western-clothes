@@ -84,6 +84,15 @@
                     }
                 }
             }
+            modifier = {
+                add = -2000
+                md_chinese_uniform_pack_active_trigger = yes # CUP compatibility/deconflict
+                scope:character ?= {
+                    owner ?= {
+                        WCR_st_is_country_tag = { TAG = CHI }
+                    }
+                }
+            }
         }
     }
     
