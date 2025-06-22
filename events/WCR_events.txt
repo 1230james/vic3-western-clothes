@@ -34,8 +34,8 @@ WCR_ev.1 = {
         default_option = yes
         
         add_modifier = {
-            name   = WCR_westernized_modifier
-            months = normal_modifier_time
+            name = WCR_westernized_modifier
+            days = normal_modifier_time
         }
     }
 }
@@ -323,7 +323,7 @@ WCR_ev.3 = {
     duration = 1
 
     event_image = {
-        video = "europenorthamerica_before_the_battle"
+        video = "WCR_transfer_of_authority"
     }
 
     on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"

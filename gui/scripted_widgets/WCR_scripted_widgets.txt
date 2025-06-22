@@ -1,0 +1,1 @@
+﻿gui/WCR_debug_driver_widget.gui = WCR_debug_driver_widget
