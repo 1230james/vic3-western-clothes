@@ -34,3 +34,8 @@ bpm_ig_enabled = {
 md_japanese_uniform_pack_active_trigger = {
     always = no
 }
+
+# Chinese Uniform Pack
+md_chinese_uniform_pack_active_trigger = {
+    always = no
+}

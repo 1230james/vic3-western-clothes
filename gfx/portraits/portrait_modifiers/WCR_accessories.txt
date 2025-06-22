@@ -84,6 +84,15 @@
                     }
                 }
             }
+            modifier = {
+                add = -2000
+                md_chinese_uniform_pack_active_trigger = yes # CUP compatibility/deconflict
+                scope:character ?= {
+                    owner ?= {
+                        WCR_st_is_country_tag = { TAG = CHI }
+                    }
+                }
+            }
         }
     }
     
@@ -427,16 +436,22 @@
     
 }
 
-WCR_lenses_accessories = {
+WCR_eyewear_accessories = {
     usage = game
     selection_behavior = weighted_random
     
-    WCR_european_fancy_lenses = {
+    WCR_european_fancy_eyewear = {
         dna_modifiers = {
             accessory = {
                 mode = add
                 gene = props
-                template = gene_lences
+                template = no_prop
+                value = 0
+            }
+            accessory = {
+                mode = add
+                gene = WCR_eyewear
+                template = fancy_eyewear
                 range = { 0 1 }
             }
         }
@@ -445,10 +460,18 @@ WCR_lenses_accessories = {
             modifier = {
                 add = 100
                 WCR_has_completed_westernization_trigger = yes
-                politician_clothes_trigger = yes
+                OR = {
+                    politician_clothes_trigger = yes
+                    executive_clothes_trigger  = yes
+                }
                 scope:character ?= {
                     age >= define:NCharacters|ADULT_AGE
                     is_historical = no # Do not disrupt characters with DNA
+                    trigger_if = {
+                        limit = {
+                            politician_clothes_trigger = yes
+                        }
+                    }
                     OR = {
                         is_interest_group_type = ig_landowners
                         is_interest_group_type = ig_industrialists
@@ -459,13 +482,19 @@ WCR_lenses_accessories = {
         }
     }
     
-    WCR_european_common_lenses = {
+    WCR_european_common_eyewear = {
         dna_modifiers = {
             accessory = {
                 mode = add
                 gene = props
-                template = gene_lences
-                range = { 0.25 1 } # Omitting the monocle
+                template = no_prop
+                value = 0
+            }
+            accessory = {
+                mode = add
+                gene = WCR_eyewear
+                template = common_eyewear
+                range = { 0 1 }
             }
         }
         weight = {

@@ -29,7 +29,7 @@ l_french:
     
     rule_WCR_fake_late_uniforms:             "#yellow WCR#! | Use Fictional Late-Era Domestic Uniforms"
     setting_WCR_fake_late_uniforms_yes:      "$WCR_rule_yes$"
-    setting_WCR_fake_late_uniforms_yes_desc: "[Concept('concept_country', '$concept_countries$')] using a local uniform style (if available to them) #p will#! adopt fictional modern designs after sufficient [Concept('concept_technology','technological progress')]. #i Requires the #underline $dlc010$#! DLC.#!"
+    setting_WCR_fake_late_uniforms_yes_desc: "Si [Concept('concept_country', '$concept_countries$')] utilise un uniforme local (si disponible) #p il#! adoptera des uniformes fictifs au design moderne si les [Concept('concept_technology','technological progress')] le permettent. #i Requiert le #underline $dlc010$#! DLC.#!"
     setting_WCR_fake_late_uniforms_no:       "$WCR_rule_no$"
     setting_WCR_fake_late_uniforms_no_desc:  "[Concept('concept_country', '$concept_countries$')] using a local uniform style (if available to them) #n will not#! adopt new uniforms later in the game."
     
@@ -42,7 +42,7 @@ l_french:
     rule_WCR_KOR_westernization:                 "#yellow WCR#! | $KOR_ADJ$ Westernization Behavior"
     setting_WCR_modded_KOR_westernization:       "#b WCR#!"
     setting_WCR_modded_KOR_westernization_desc:  "#v $KOR$#! will westernize using only the mechanics and conditions added by WCR."
-    setting_WCR_mixed_KOR_westernization:        "#b Mixed#!"
+    setting_WCR_mixed_KOR_westernization:        "#b Mixé#!"
     setting_WCR_mixed_KOR_westernization_desc:   "#v $KOR$#! will westernize using the mechanics added by WCR, but will be able to bypass the westernization requirements after proclaiming the #v $dyn_c_empire_of_korea$#!."
     setting_WCR_vanilla_KOR_westernization:      "#b Unmodded#!"
     setting_WCR_vanilla_KOR_westernization_desc: "#v $KOR$#! will be ignored by WCR and westernize automatically after proclaiming the #v $dyn_c_empire_of_korea$#!."
@@ -68,13 +68,13 @@ l_french:
     setting_WCR_vanilla_JAP_uniforms_desc: "The style of $JAP_ADJ$ uniforms will always be the special #v $dyn_c_empire_of_japan$ uniforms#! from the base game, except when the #v $setting_WCR_disable_influences$#! rule is active."
     
     rule_WCR_unwesternizeds_type:                  "#yellow WCR#! | Unwesternized Pops & Characters Behavior"
-    setting_WCR_unwesternizeds_type_never:         "Never Westernize"
+    setting_WCR_unwesternizeds_type_never:         "Ne Jamais s'Occidentaliser"
     setting_WCR_unwesternizeds_type_never_desc:    "Unwesternized [Concept('concept_pop', '$concept_pops$')] and [Concept('concept_character', '$concept_characters$')] living in westernized [Concept('concept_country', '$concept_countries$')] #n will never#! westernize if they do not belong to any [concept_primary_cultures]. $WCR_gov_employee_text$"
-    setting_WCR_unwesternizeds_type_migrants:      "Westernize Migrants Only"
+    setting_WCR_unwesternizeds_type_migrants:      "Occidentaliser les Migrants Seulement"
     setting_WCR_unwesternizeds_type_migrants_desc: "Unwesternized [Concept('concept_pop', '$concept_pops$')] and [Concept('concept_character', '$concept_characters$')] living in a westernized [concept_country] #p will#! westernize automatically if they do not belong to any [concept_primary_cultures]. $WCR_gov_employee_text$"
     setting_WCR_unwesternizeds_type_wealth:        "Wealth & Acceptance Westernization"
     setting_WCR_unwesternizeds_type_wealth_desc:   "In westernized [Concept('concept_country', '$concept_countries$')], unwesternized [Concept('concept_pop', '$concept_pops$')] #p will#! westernize based on their [concept_sol] and [Concept('concept_discrimination', '$ACCEPTANCE$')]. Unwesternized [Concept('concept_character', '$concept_characters$')] & $WCR_gov_employee_text$"
-    setting_WCR_unwesternizeds_type_always:        "Always Westernize"
+    setting_WCR_unwesternizeds_type_always:        "Toujours s'Occidentaliser"
     setting_WCR_unwesternizeds_type_always_desc:   "All unwesternized [Concept('concept_pop', '$concept_pops$')] and [Concept('concept_character', '$concept_characters$')] living in westernized [Concept('concept_country', '$concept_countries$')] #p will always#! westernize."
     
     rule_WCR_westernize_traditionalists:             "#yellow WCR#! | Occidentaliser les conservateurs"
@@ -85,15 +85,15 @@ l_french:
     
     rule_WCR_westernize_ig_rural_folk:             "#yellow WCR#! | Westernize the #green @rural_folk! $ig_rural_folk$#!"
     setting_WCR_westernize_ig_rural_folk_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_ig_rural_folk_yes_desc: "The [concept_leader] of the #v @rural_folk! $ig_rural_folk$#! [concept_interest_group] #p will#! westernize."
+    setting_WCR_westernize_ig_rural_folk_yes_desc: "Le [concept_leader] de #v @rural_folk! $ig_rural_folk$#! [concept_interest_group] #n va s'occidentaliser.#!"
     setting_WCR_westernize_ig_rural_folk_no:       "$WCR_rule_no$"
-    setting_WCR_westernize_ig_rural_folk_no_desc:  "The [concept_leader] of the #v @rural_folk! $ig_rural_folk$#! [concept_interest_group] #n will not#! westernize. $WCR_AWC_behavior_text$"
+    setting_WCR_westernize_ig_rural_folk_no_desc:  "Le [concept_leader] des #v @rural_folk! $ig_rural_folk$#! [concept_interest_group] #n ne s'occidentalisera pas.#! $WCR_AWC_behavior_text$"
     
-    rule_WCR_westernize_ig_devout:             "#yellow WCR#! | Westernize the #blue @devout! $ig_devout$#!"
+    rule_WCR_westernize_ig_devout:             "#yellow WCR#! | Occidentaliser les #blue @devout! $ig_devout$#!"
     setting_WCR_westernize_ig_devout_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_ig_devout_yes_desc: "The [concept_leader] of the #v @devout! $ig_devout$#! [concept_interest_group] #p will#! westernize."
+    setting_WCR_westernize_ig_devout_yes_desc: "Le [concept_leader] de #v @devout! $ig_devout$#! [concept_interest_group] #n va s'occidentaliser.#!"
     setting_WCR_westernize_ig_devout_no:       "$WCR_rule_no$"
-    setting_WCR_westernize_ig_devout_no_desc:  "The [concept_leader] of the #v @devout! $ig_devout$#! [concept_interest_group] #n will not#! westernize. $WCR_AWC_behavior_text$"
+    setting_WCR_westernize_ig_devout_no_desc:  "Le [concept_leader] de #v @devout! $ig_devout$#! [concept_interest_group] #n ne s'occidentalisera pas.#! $WCR_AWC_behavior_text$"
     
     rule_WCR_westernize_poor_pop_clothing:             "#yellow WCR#! | Occidentaliser tenues des Pop inférieures"
     setting_WCR_westernize_poor_pop_clothing_yes:      "$WCR_rule_yes$"

@@ -1,0 +1,5 @@
+﻿WCR_transfer_of_authority = {
+	video    = "gfx/event_pictures/ep1_transfer_of_authority.bk2"
+	audio    = "event:/SFX/Events/unspecific/transfer_of_authority"
+	fallback = unspecific_military_parade
+}

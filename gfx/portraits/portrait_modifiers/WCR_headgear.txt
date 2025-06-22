@@ -194,6 +194,12 @@
                 republic_clothes_trigger = yes
                 military_clothes_trigger = no
             }
+            modifier = { # Don't have female characters wear the bonnet
+                add = -1000
+                scope:character ?= {
+                    is_female = yes
+                }
+            }
         }
     }
     
@@ -218,9 +224,39 @@
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
                     age >= define:NCharacters|ADULT_AGE
-                    is_interest_group_type     = ig_landowners
                     politician_clothes_trigger = yes
                     military_clothes_trigger   = no
+                    OR = {
+                        is_interest_group_type = ig_landowners
+                        is_interest_group_type = ig_industrialists
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_european_executive_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = european_executive_hats
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                WCR_has_completed_westernization_trigger = yes
+                OR = {
+                    executive_clothes_trigger = yes
+                    # AND = { # As of 1.9.2, this is just 50% top hat & 50% no hat, so exclude politicians for now
+                        # politician_clothes_trigger = yes
+                        # scope:character ?= {
+                            # is_interest_group_type = ig_industrialists
+                        # }
+                    # }
                 }
             }
         }
@@ -742,7 +778,7 @@
                 mode = add
                 gene = headgear
                 template = russian_military_headgear
-                range = { 0 1 }
+                range = { 0 0.65 }
             }
         }
         weight = {

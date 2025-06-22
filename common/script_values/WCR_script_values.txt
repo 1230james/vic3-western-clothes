@@ -118,7 +118,7 @@ WCR_sv_calculate_total_powerful_trad_clout = {
     }
 }
 
-# Calculates a "progressiveness" score based on some law stances (does not check all law groups)
+# Calculates a "progressiveness" score based on law stances
 # Negative = conservative, positive = progressive
 # Scope: Interest Group
 WCR_sv_calculate_IG_progressive_score = {
@@ -150,6 +150,20 @@ WCR_sv_calculate_IG_progressive_score = {
         add = {
             add = type.progressiveness
             
+            # Adjustments
+            if = { # Exploiting people 5000 miles away is pretty western but its progressiveness is -25
+                limit = {
+                    type = law_type:law_colonial_exploitation
+                }
+                multiply = -2 # Make it +50
+            }
+            if = { # Prof Army is 0 but it should count for something
+                limit = {
+                    type = law_type:law_professional_army
+                }
+                add = 50
+            }
+            
             # Bonus weight if they like this law a lot
             if = {
                 limit = {
@@ -164,7 +178,7 @@ WCR_sv_calculate_IG_progressive_score = {
                 multiply = 2
             }
             
-            # Weight more heavily for certain law groups
+            # Weigh more heavily for certain law groups
             if = {
                 limit = {
                     type = {
@@ -181,12 +195,6 @@ WCR_sv_calculate_IG_progressive_score = {
                     type = {
                         is_same_law_group_as = law_type:law_professional_army # Full-time armies are pretty western
                     }
-                }
-                if = { # Prof Army and Nat Militia are 0 but they should count for something
-                    limit = {
-                        type.progressiveness >= 0
-                    }
-                    add = 50
                 }
                 multiply = 5
             }

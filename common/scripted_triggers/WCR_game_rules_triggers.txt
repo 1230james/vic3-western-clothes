@@ -28,13 +28,11 @@ WCR_st_westernize_traditionalists = {
 WCR_st_westernize_rural_folk = {
     OR = {
         has_game_rule = WCR_westernize_ig_rural_folk_yes
-        AND = {
-            OR = {
-                has_role = general
-                has_role = admiral
-                NOT = {
-                    interest_group ?= { is_interest_group_type = ig_rural_folk }
-                }
+        OR = {
+            has_role = general
+            has_role = admiral
+            NOT = {
+                interest_group ?= { is_interest_group_type = ig_rural_folk }
             }
         }
     }
@@ -43,13 +41,11 @@ WCR_st_westernize_rural_folk = {
 WCR_st_westernize_devout = {
     OR = {
         has_game_rule = WCR_westernize_ig_devout_yes
-        AND = {
-            OR = {
-                has_role = general
-                has_role = admiral
-                NOT = {
-                    interest_group ?= { is_interest_group_type = ig_devout }
-                }
+        OR = {
+            has_role = general
+            has_role = admiral
+            NOT = {
+                interest_group ?= { is_interest_group_type = ig_devout }
             }
         }
     }

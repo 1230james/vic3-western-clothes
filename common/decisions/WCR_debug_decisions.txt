@@ -1,0 +1,230 @@
+﻿WCR_de_DEBUG_toggle_westernization = {
+    is_shown = {
+        has_global_variable = WCR_debug_mode
+    }
+    
+    possible = {
+        always = yes
+    }
+    
+    when_taken = {
+        if = {
+            limit = {
+                NOT = {
+                    has_variable = WCR_westernized_nation
+                }
+            }
+            set_variable = {
+                name  = WCR_westernized_nation
+                value = yes
+            }
+        }
+        else = {
+            if = {
+                limit = {
+                    var:WCR_westernized_nation = yes
+                }
+                set_variable = {
+                    name  = WCR_westernized_nation
+                    value = no
+                }
+            }
+            else = {
+                set_variable = {
+                    name  = WCR_westernized_nation
+                    value = yes
+                }
+            }
+        }
+    }
+    
+    ai_chance = {
+        value = 0
+    }
+}
+
+WCR_de_DEBUG_cycle_style_influence = {
+    is_shown = {
+        has_global_variable = WCR_debug_mode
+    }
+    
+    possible = {
+        var:WCR_westernized_nation ?= yes
+    }
+    
+    when_taken = {
+        if = {
+            limit = {
+                NAND = {
+                    has_variable = WCR_ruler_influence
+                    has_variable = WCR_army_influence
+                    has_variable = WCR_navy_influence
+                }
+            }
+            if = {
+                limit = {
+                    WCR_has_domestic_influence_available_trigger = yes
+                }
+                set_variable = {
+                    name  = WCR_ruler_influence
+                    value = -1
+                }
+                set_variable = {
+                    name  = WCR_army_influence
+                    value = -1
+                }
+                set_variable = {
+                    name  = WCR_navy_influence
+                    value = -1
+                }
+            }
+            else = {
+                set_variable = {
+                    name  = WCR_ruler_influence
+                    value = 1
+                }
+                set_variable = {
+                    name  = WCR_army_influence
+                    value = 1
+                }
+                set_variable = {
+                    name  = WCR_navy_influence
+                    value = 1
+                }
+            }
+        }
+        else = {
+            # Loop around
+            if = {
+                limit = {
+                    var:WCR_ruler_influence = 5
+                }
+                # Has domestic
+                if = {
+                    limit = {
+                        WCR_has_domestic_influence_available_trigger = yes
+                    }
+                    set_variable = {
+                        name  = WCR_ruler_influence
+                        value = -1
+                    }
+                    set_variable = {
+                        name  = WCR_army_influence
+                        value = -1
+                    }
+                    set_variable = {
+                        name  = WCR_navy_influence
+                        value = -1
+                    }
+                }
+                # No domestic available
+                else = {
+                    set_variable = {
+                        name  = WCR_ruler_influence
+                        value = 0
+                    }
+                    set_variable = {
+                        name  = WCR_army_influence
+                        value = 0
+                    }
+                    set_variable = {
+                        name  = WCR_navy_influence
+                        value = 0
+                    }
+                }
+            }
+            # Increment
+            else = {
+                change_variable = {
+                    name = WCR_ruler_influence
+                    add  = 1
+                }
+                change_variable = {
+                    name = WCR_army_influence
+                    add  = 1
+                }
+                change_variable = {
+                    name = WCR_navy_influence
+                    add  = 1
+                }
+            }
+        }
+    }
+    
+    ai_chance = {
+        value = 0
+    }
+}
+
+WCR_de_DEBUG_toggle_KOR_empire = {
+    is_shown = {
+        has_global_variable = WCR_debug_mode
+        c:KOR ?= THIS
+    }
+    
+    possible = {
+        always = yes
+    }
+    
+    when_taken = {
+        if = {
+            limit = {
+                NOT = {
+                    has_variable = KOR_korean_empire_declared
+                }
+            }
+            set_variable = KOR_korean_empire_declared
+        }
+        else = {
+            remove_variable = KOR_korean_empire_declared
+        }
+    }
+    
+    ai_chance = {
+        value = 0
+    }
+}
+
+WCR_de_DEBUG_inc_overlord_relations = {
+    is_shown = {
+        has_global_variable = WCR_debug_mode
+        is_subject = yes
+    }
+    
+    possible = {
+        always = yes
+    }
+    
+    when_taken = {
+        change_relations = {
+            country = overlord
+            value   = 10
+        }
+    }
+    
+    ai_chance = {
+        value = 0
+    }
+}
+
+WCR_de_DEBUG_dec_overlord_relations = {
+    is_shown = {
+        has_global_variable = WCR_debug_mode
+        is_subject = yes
+    }
+    
+    possible = {
+        always = yes
+    }
+    
+    when_taken = {
+        change_relations = {
+            country = overlord
+            value   = -10
+        }
+    }
+    
+    ai_chance = {
+        value = 0
+    }
+}

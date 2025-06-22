@@ -23,8 +23,13 @@ l_english:
     WCR_tt_KOR_req_bypass: "The #b $dyn_c_empire_of_korea$#! has been proclaimed"
     WCR_tt_JAP_req_bypass: "The #b $je_meiji_restoration$#! [concept_journal_entry] has been completed"
     
-    WCR_tt_conservatives_tt:   "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],,WCR_conservative_IGs_tooltip $WCR_txt_conservative$#!"
-    WCR_tt_progressives_tt:    "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],,WCR_progressive_IGs_tooltip $WCR_txt_progressive$#!"
+    WCR_tt_IG_list_item:       "[THIS.GetInterestGroup.GetName]"
+    WCR_tt_IG_list_item_debug: "[THIS.GetInterestGroup.GetName] ([THIS.GetInterestGroup.MakeScope.ScriptValue('WCR_sv_calculate_IG_progressive_score')])"
+    WCR_tt_conservatives_list: "$WCR_tt_IG_cooltip_header$\n[GetScriptedGui('WCR_sg_conservatives_list').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+    WCR_tt_progressives_list:  "$WCR_tt_IG_cooltip_header$\n[GetScriptedGui('WCR_sg_progressives_list').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+    WCR_tt_conservatives_tt:   "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],WCR_tt_conservatives_list $WCR_txt_conservative$#!"
+    WCR_tt_progressives_tt:    "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],WCR_tt_progressives_list $WCR_txt_progressive$#!"
+    
     WCR_txt_conservative:      "conservative"
     WCR_txt_progressive:       "progressive"
     WCR_tt_IG_cooltip_header:  "Is one of the following [Concept('concept_interest_group', '$concept_interest_groups$')]:"
@@ -58,7 +63,7 @@ l_english:
     WCR_tt_delta_from_year:       "from the year being #bold 1900#! or later"
     
     WCR_tt_delta_from_overlord_good_rel: "from [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] having $relations_amicable$ or $relations_friendly$ [concept_relations] with a #bold westernized#! [concept_overlord] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName])"
-    WCR_tt_delta_from_overlord_civ_mis:  "from the [concept_overlord] of [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName]) being #bold westernized#! and researching #bold $civilizing_mission$#!"
+    WCR_tt_delta_from_overlord_civ_mis:  "from the [concept_overlord] of [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName]) being #bold westernized#! and researching [GetTechnology('civilizing_mission').GetName]"
     
     WCR_tt_delta_from_clout:   "$WCR_tt_delta_from_clout_h$#indent_newline:3 \n[Country.MakeScope.GetScriptValueDesc('WCR_sv_calculate_net_delta_from_clout')]#!"
     WCR_tt_delta_from_clout_h: "from [concept_interest_group] [concept_clout]"
@@ -88,7 +93,7 @@ l_english:
     
     WCR_overlord_rel_reason: "Has $relations_amicable$ or $relations_friendly$ [concept_relations] ([GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v] or higher) with [Country.GetName]"
     
-    WCR_overlord_civ_reason: "Has researched #bold $civilizing_mission$#!"
+    WCR_overlord_civ_reason: "Has researched [GetTechnology('civilizing_mission').GetName]"
     
     WCR_westernized_relations_reason: "Westernization progress will #v increase#! by an extra #p 10%#! of the #v current monthly rate#! if we have $relations_amicable$ or $relations_friendly$ [concept_relations] ([GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v] or higher) with any westernized nation."
     

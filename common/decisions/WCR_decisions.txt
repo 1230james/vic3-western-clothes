@@ -1,7 +1,7 @@
 ﻿WCR_de_simple_westernization = {
     is_shown = {
         has_game_rule = WCR_simple_westernization
-        WCR_is_westernized_trigger = no # WCR_is_westernized_trigger doesn't work right here for some reason?
+        WCR_is_westernized_trigger = no
         WCR_is_using_vanilla_rules = no
         NOT = {
             has_variable = WCR_decision_taken
@@ -80,9 +80,9 @@
     }
     
     ai_chance = {
-        base = 0
-        modifier = {
-            trigger = {
+        value = 0
+        if = {
+            limit = {
                 any_interest_group = {
                     count >= 2
                     is_powerful = yes
@@ -91,38 +91,38 @@
             }
             add = 100
         }
-        modifier = {
-            trigger = {
+        if = {
+            limit = {
                 game_date >= 1900.1.1
             }
             add = 100
         }
-        modifier = {
-            trigger = {
+        if = {
+            limit = {
                 game_date >= 1915.1.1
             }
             add = 200
         }
-        modifier = {
-            trigger = {
+        if = {
+            limit = {
                 game_date >= 1930.1.1
             }
             add = 300
         }
-        modifier = {
-            trigger = {
+        if = {
+            limit = {
                 has_variable = meiji_restoration_complete
             }
             add = 1000
         }
-        modifier = {
-            trigger = {
+        if = {
+            limit = {
                 has_variable = KOR_korean_empire_declared
             }
             add = 1000
         }
-        modifier = {
-            trigger = {
+        if = {
+            limit = {
                 any_interest_group = {
                     filter = {
                         WCR_st_is_interest_group_conservative = yes
@@ -222,9 +222,9 @@ WCR_de_start_westernization = {
     }
     
     ai_chance = {
-        base = 0
-        modifier = {
-            trigger = {
+        value = 0
+        if = {
+            limit = {
                 any_interest_group = {
                     count >= 2
                     is_powerful = yes
@@ -233,38 +233,38 @@ WCR_de_start_westernization = {
             }
             add = 100
         }
-        modifier = {
-            trigger = {
+        if = {
+            limit = {
                 game_date >= 1900.1.1
             }
             add = 100
         }
-        modifier = {
-            trigger = {
+        if = {
+            limit = {
                 game_date >= 1915.1.1
             }
             add = 200
         }
-        modifier = {
-            trigger = {
+        if = {
+            limit = {
                 game_date >= 1930.1.1
             }
             add = 300
         }
-        modifier = {
-            trigger = {
+        if = {
+            limit = {
                 has_variable = meiji_restoration_complete
             }
             add = 1000
         }
-        modifier = {
-            trigger = {
+        if = {
+            limit = {
                 has_variable = KOR_korean_empire_declared
             }
             add = 1000
         }
-        modifier = {
-            trigger = {
+        if = {
+            limit = {
                 any_interest_group = {
                     filter = {
                         WCR_st_is_interest_group_conservative = yes

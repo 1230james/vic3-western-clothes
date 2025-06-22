@@ -97,6 +97,6 @@ l_german:
     
     rule_WCR_westernize_poor_pop_clothing:             "#yellow WCR#! | Armutspop-Kleidung westernisieren"
     setting_WCR_westernize_poor_pop_clothing_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_poor_pop_clothing_yes_desc: "#yellow $Bauern$#!, #yellow $Bauern$#! und #yellow $Arbeiter$#! werden #v ihr gesamtes Outfit#! westernisieren. Sie werden auch #v nur westliche Hüte#! tragen."
+    setting_WCR_westernize_poor_pop_clothing_yes_desc: "#yellow $farmers$#!, #yellow $peasants$#! und #yellow $laborers$#! werden #v ihr gesamtes Outfit#! westernisieren. Sie werden auch #v nur westliche Hüte#! tragen."
     setting_WCR_westernize_poor_pop_clothing_no:       "$WCR_rule_no$"
-    setting_WCR_westernize_poor_pop_clothing_no_desc:  "#yellow $Bauern$#!, #yellow $Bauern$#! und #yellow $Arbeiter$#! werden nur ihre Hüte#! westernisieren, indem sie #v sie mit ihren ursprünglichen Hüten mischen#!. #yellow $Maschinisten$#! werden weiterhin vollständig westernisieren. $WCR_AWC_behavior_text$"
+    setting_WCR_westernize_poor_pop_clothing_no_desc:  "#yellow $farmers$#!, #yellow $peasants$#! und #yellow $laborers$#! werden nur ihre Hüte#! westernisieren, indem sie #v sie mit ihren ursprünglichen Hüten mischen#!. #yellow $machinists$#! werden weiterhin vollständig westernisieren. $WCR_AWC_behavior_text$"

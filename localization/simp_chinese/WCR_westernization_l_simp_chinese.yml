@@ -23,8 +23,13 @@ l_simp_chinese:
     WCR_tt_KOR_req_bypass: "#b $dyn_c_empire_of_korea$#!已宣告成立。"
     WCR_tt_JAP_req_bypass: "#b $je_meiji_restoration$#![concept_journal_entry]已经完成。"
     
-    WCR_tt_conservatives_tt:   "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],,WCR_conservative_IGs_tooltip $WCR_txt_conservative$#!"
-    WCR_tt_progressives_tt:    "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],,WCR_progressive_IGs_tooltip $WCR_txt_progressive$#!"
+    WCR_tt_IG_list_item:       "[THIS.GetInterestGroup.GetName]"
+    WCR_tt_IG_list_item_debug: "[THIS.GetInterestGroup.GetName] ([THIS.GetInterestGroup.MakeScope.ScriptValue('WCR_sv_calculate_IG_progressive_score')])"
+    WCR_tt_conservatives_list: "$WCR_tt_IG_cooltip_header$\n[GetScriptedGui('WCR_sg_conservatives_list').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+    WCR_tt_progressives_list:  "$WCR_tt_IG_cooltip_header$\n[GetScriptedGui('WCR_sg_progressives_list').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+    WCR_tt_conservatives_tt:   "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],WCR_tt_conservatives_list $WCR_txt_conservative$#!"
+    WCR_tt_progressives_tt:    "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],WCR_tt_progressives_list $WCR_txt_progressive$#!"
+    
     WCR_txt_conservative:      "保守"
     WCR_txt_progressive:       "进步"
     WCR_tt_IG_cooltip_header:  "是下列中的一个[Concept('concept_interest_group', '$concept_interest_groups$')]："
@@ -58,7 +63,7 @@ l_simp_chinese:
     WCR_tt_delta_from_year:       "来自当前时间是#bold 1900#!年或以后"
     
     WCR_tt_delta_from_overlord_good_rel: "来自[SCOPE.GetRootScope.GetCountry.GetNameNoFlag]与#bold 西方#![concept_overlord]([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName])有着$relations_amicable$或$relations_friendly$的[concept_relations]"
-    WCR_tt_delta_from_overlord_civ_mis:  "来自[SCOPE.GetRootScope.GetCountry.GetNameNoFlag]的#bold 西方#![concept_overlord]([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName])已研究#bold $civilizing_mission$#!"
+    WCR_tt_delta_from_overlord_civ_mis:  "来自[SCOPE.GetRootScope.GetCountry.GetNameNoFlag]的#bold 西方#![concept_overlord]([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName])已研究[GetTechnology('civilizing_mission').GetName]"
     
     WCR_tt_delta_from_clout:   "$WCR_tt_delta_from_clout_h$#indent_newline:3 \n[Country.MakeScope.GetScriptValueDesc('WCR_sv_calculate_net_delta_from_clout')]#!"
     WCR_tt_delta_from_clout_h: "来自[concept_interest_group][concept_clout]"
@@ -78,7 +83,7 @@ l_simp_chinese:
     
     WCR_positive_delta_reason: "至多会#v 增加#!#p [SCOPE.ScriptValue('WCR_TOTAL_PROGRESS_FROM_PROG_CLOUT')|0%]#!的进展，具体取决于所有$WCR_tt_progressives_tt$[Concept('concept_interest_group', '$concept_interest_groups$')]的总[concept_clout]。"
     
-    WCR_negative_delta_reason: "至多会#v 减少#!#n [SCOPE.ScriptValue('WCR_TOTAL_STONEWALL_FROM_TRAD_CLOUT')|0%]#的进展，具体取决于所有[concept_powerful]$WCR_tt_conservatives_tt$[Concept('concept_interest_group', '$concept_interest_groups$')]的总[concept_clout]。"
+    WCR_negative_delta_reason: "至多会#v 减少#!#n [SCOPE.ScriptValue('WCR_TOTAL_STONEWALL_FROM_TRAD_CLOUT')|0%]#!的进展，具体取决于所有[concept_powerful]$WCR_tt_conservatives_tt$[Concept('concept_interest_group', '$concept_interest_groups$')]的总[concept_clout]。"
     
     WCR_date_reason: "时间到#bold 1900#!后进展会额外增加#p 1%#!。"
     
@@ -88,7 +93,7 @@ l_simp_chinese:
     
     WCR_overlord_rel_reason: "与[Country.GetName]有着$relations_amicable$或$relations_friendly$的[concept_relations]（[GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v]或更高）"
     
-    WCR_overlord_civ_reason: "已研究#bold $civilizing_mission$#!"
+    WCR_overlord_civ_reason: "已研究[GetTechnology('civilizing_mission').GetName]"
     
     WCR_westernized_relations_reason: "如果我们与任何西方化国家有着$relations_amicable$或$relations_friendly$的[concept_relations]（[GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v]或更高），西洋化的#v 当前每月速率#!将会额外#v 增加#!#p 10%#!。"
     
