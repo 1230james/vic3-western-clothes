@@ -34,8 +34,8 @@ WCR_ev.1 = {
         default_option = yes
         
         add_modifier = {
-            name   = WCR_westernized_modifier
-            months = normal_modifier_time
+            name = WCR_westernized_modifier
+            days = normal_modifier_time
         }
     }
 }
