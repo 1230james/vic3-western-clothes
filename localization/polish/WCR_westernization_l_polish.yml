@@ -63,7 +63,7 @@ l_polish:
     WCR_tt_delta_from_year:       "od roku będącym #bold 1900#! lub później"
     
     WCR_tt_delta_from_overlord_good_rel: "od państwa [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] posiadającego [Concept('concept_relations', 'stosunki')] $relations_amicable$ lub $relations_friendly$ z #bold zwesternizowanym#! [Concept('concept_overlord', 'suwerenem')] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName])"
-    WCR_tt_delta_from_overlord_civ_mis:  "od [concept_overlord_possessive] państwa [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName]) będącym #bold zwesternizowanym#! państwem i który wybadał #bold $civilizing_mission$#!"
+    WCR_tt_delta_from_overlord_civ_mis:  "od [Concept('concept_overlord','$concept_overlord_possessive$')] państwa [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName]) będącym #bold zwesternizowanym#! państwem i który wybadał #bold $civilizing_mission$#!"
     
     WCR_tt_delta_from_clout:   "$WCR_tt_delta_from_clout_h$#indent_newline:3 \n[Country.MakeScope.GetScriptValueDesc('WCR_sv_calculate_net_delta_from_clout')]#!"
     WCR_tt_delta_from_clout_h: "od [Concept('concept_clout', 'siły przebicia')] [Concept('concept_interest_group', '$concept_interest_group_possessive$')]"

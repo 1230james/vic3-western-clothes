@@ -13,15 +13,15 @@ l_french:
     # Tooltips
     WCR_tt_when_in_cmd:    " quand il lui sera donné le commandement des troupes"
     WCR_tt_when_in_cmd_df: "[AddLocalizationIf(Not(EqualTo_string(GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetLawType.GetName, GetLawType('law_monarchy').GetName)), 'WCR_tt_when_in_cmd')]"
-    WCR_tt_domestic_ruler: "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] portera un  #v uniforme[GetPlayer.GetAdjectiveNoFormatting] #!$WCR_tt_when_in_cmd_df$."
+    WCR_tt_domestic_ruler: "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] portera un #v uniforme [GetPlayer.GetAdjectiveNoFormatting]#!$WCR_tt_when_in_cmd_df$."
     WCR_tt_american_ruler: "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] portera un #v uniforme Américain#!$WCR_tt_when_in_cmd_df$."
     WCR_tt_british_ruler:  "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] portera un #v uniforme Britannique#!$WCR_tt_when_in_cmd_df$."
     WCR_tt_french_ruler:   "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] portera un #v uniforme Français#!$WCR_tt_when_in_cmd_df$."
     WCR_tt_german_ruler:   "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] portera un #v uniforme Allemand#!$WCR_tt_when_in_cmd_df$."
-    WCR_tt_russian_ruler:  "GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] portera un #v uniform Russe#!$WCR_tt_when_in_cmd_df$."
+    WCR_tt_russian_ruler:  "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] portera un #v uniform Russe#!$WCR_tt_when_in_cmd_df$."
     WCR_tt_generic_ruler:  "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] portera un #v uniforme Européen générique#!$WCR_tt_when_in_cmd_df$."
     
-    WCR_tt_domestic_army: "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] qui travaillent dans les [GetBuildingType('building_barracks').GetName] et [Concept('concept_general', '$concept_generals$')] porteront #v un uniforme[GetPlayer.GetAdjectiveNoFormatting] #!."
+    WCR_tt_domestic_army: "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] qui travaillent dans les [GetBuildingType('building_barracks').GetName] et [Concept('concept_general', '$concept_generals$')] porteront #v un uniforme[GetPlayer.GetAdjectiveNoFormatting]#!."
     WCR_tt_american_army: "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] travaillant dans le [GetBuildingType('building_barracks').GetName] et [Concept('concept_general', '$concept_generals$')] porteront des #v uniformes Américains#!."
     WCR_tt_british_army:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] travaillant dans le [GetBuildingType('building_barracks').GetName] et [Concept('concept_general', '$concept_generals$')] porteront des #v uniformes Britanniques#!."
     WCR_tt_french_army:   "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] travaillant dans le [GetBuildingType('building_barracks').GetName] et [Concept('concept_general', '$concept_generals$')] porteront des #v uniformes Français#!."
@@ -29,7 +29,7 @@ l_french:
     WCR_tt_russian_army:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] qui travaillent dans les [GetBuildingType('building_barracks').GetName] et [Concept('concept_general', '$concept_generals$')] porteront #v un uniforme Russe#!."
     WCR_tt_generic_army:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] travaillant dans le [GetBuildingType('building_barracks').GetName] et [Concept('concept_general', '$concept_generals$')] porteront des #v uniformes Européens génériques#!."
     
-    WCR_tt_domestic_navy: "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] qui travaillent dans les [GetBuildingType('building_naval_base').GetName] et [Concept('concept_admiral', '$concept_admirals$')] porteront #v un uniforme [GetPlayer.GetAdjectiveNoFormatting] #!."
+    WCR_tt_domestic_navy: "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] qui travaillent dans les [GetBuildingType('building_naval_base').GetName] et [Concept('concept_admiral', '$concept_admirals$')] porteront #v un uniforme [GetPlayer.GetAdjectiveNoFormatting]#!."
     WCR_tt_american_navy: "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] travaillant dans le [GetBuildingType('building_naval_base').GetName] et [Concept('concept_general', '$concept_admirals$')] porteront des #v uniformes Américains#!."
     WCR_tt_british_navy:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] travaillant dans le [GetBuildingType('building_naval_base').GetName] et [Concept('concept_general', '$concept_admirals$')] porteront des #v uniformes Britanniques#!."
     WCR_tt_french_navy:   "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] travaillant dans le [GetBuildingType('building_naval_base').GetName] et [Concept('concept_general', '$concept_admirals$')] porteront des #v uniformes Français#!."

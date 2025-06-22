@@ -85,15 +85,15 @@ l_french:
     
     rule_WCR_westernize_ig_rural_folk:             "#yellow WCR#! | Westernize the #green @rural_folk! $ig_rural_folk$#!"
     setting_WCR_westernize_ig_rural_folk_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_ig_rural_folk_yes_desc: "Le [concept_leader] de #v @rural_folk ! $ig_rural_folk$# ! [concept_interest_group] #n va s'occidentaliser.# ! "
+    setting_WCR_westernize_ig_rural_folk_yes_desc: "Le [concept_leader] de #v @rural_folk! $ig_rural_folk$#! [concept_interest_group] #n va s'occidentaliser.#!"
     setting_WCR_westernize_ig_rural_folk_no:       "$WCR_rule_no$"
     setting_WCR_westernize_ig_rural_folk_no_desc:  "Le [concept_leader] des #v @rural_folk! $ig_rural_folk$#! [concept_interest_group] #n ne s'occidentalisera pas.#! $WCR_AWC_behavior_text$"
     
     rule_WCR_westernize_ig_devout:             "#yellow WCR#! | Occidentaliser les #blue @devout! $ig_devout$#!"
     setting_WCR_westernize_ig_devout_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_ig_devout_yes_desc: "Le [concept_leader] de #v @devout ! $ig_devout$# ! [concept_interest_group] #n va s'occidentaliser.# ! "
+    setting_WCR_westernize_ig_devout_yes_desc: "Le [concept_leader] de #v @devout! $ig_devout$#! [concept_interest_group] #n va s'occidentaliser.#!"
     setting_WCR_westernize_ig_devout_no:       "$WCR_rule_no$"
-    setting_WCR_westernize_ig_devout_no_desc:  "Le [concept_leader] de #v @devout ! $ig_devout$# ! [concept_interest_group] #n ne s'occidentalisera pas.# !\n$WCR_AWC_behavior_text$"
+    setting_WCR_westernize_ig_devout_no_desc:  "Le [concept_leader] de #v @devout! $ig_devout$#! [concept_interest_group] #n ne s'occidentalisera pas.#! $WCR_AWC_behavior_text$"
     
     rule_WCR_westernize_poor_pop_clothing:             "#yellow WCR#! | Occidentaliser tenues des Pop inférieures"
     setting_WCR_westernize_poor_pop_clothing_yes:      "$WCR_rule_yes$"

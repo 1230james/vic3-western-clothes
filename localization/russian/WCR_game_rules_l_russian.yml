@@ -17,7 +17,7 @@ l_russian:
     
     rule_WCR_decision_requirements_type: "#yellow WCR#! | Требования вестернизации"
     setting_WCR_WCF_requirements:        "#b Нормально#!"
-    setting_WCR_WCF_requirements_desc:   "#vВестернизация#! потребует выполнения более #v сложных, но гибких требований#! для разблокировки."
+    setting_WCR_WCF_requirements_desc:   "#v Вестернизация#! потребует выполнения более #v сложных, но гибких требований#! для разблокировки."
     setting_WCR_AWC_requirements:        "#b Наследие#!"
     setting_WCR_AWC_requirements_desc:   "#v Вестернизация#! будет использовать #v более простые требования#! из #bold Adopt Western Clothes#! для разблокировки."
     

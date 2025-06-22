@@ -83,7 +83,7 @@ l_simp_chinese:
     
     WCR_positive_delta_reason: "至多会#v 增加#!#p [SCOPE.ScriptValue('WCR_TOTAL_PROGRESS_FROM_PROG_CLOUT')|0%]#!的进展，具体取决于所有$WCR_tt_progressives_tt$[Concept('concept_interest_group', '$concept_interest_groups$')]的总[concept_clout]。"
     
-    WCR_negative_delta_reason: "至多会#v 减少#!#n [SCOPE.ScriptValue('WCR_TOTAL_STONEWALL_FROM_TRAD_CLOUT')|0%]#的进展，具体取决于所有[concept_powerful]$WCR_tt_conservatives_tt$[Concept('concept_interest_group', '$concept_interest_groups$')]的总[concept_clout]。"
+    WCR_negative_delta_reason: "至多会#v 减少#!#n [SCOPE.ScriptValue('WCR_TOTAL_STONEWALL_FROM_TRAD_CLOUT')|0%]#!的进展，具体取决于所有[concept_powerful]$WCR_tt_conservatives_tt$[Concept('concept_interest_group', '$concept_interest_groups$')]的总[concept_clout]。"
     
     WCR_date_reason: "时间到#bold 1900#!后进展会额外增加#p 1%#!。"
     

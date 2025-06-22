@@ -13,13 +13,13 @@ l_korean:
     # Tooltips
     WCR_tt_when_in_cmd:    " 군대의 지휘권이 부여됐을 때"
     WCR_tt_when_in_cmd_df: "[AddLocalizationIf(Not(EqualTo_string(GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetLawType.GetName, GetLawType('law_monarchy').GetName)), 'WCR_tt_when_in_cmd')]"
-    WCR_tt_domestic_ruler: "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')(은)는$WCR_tt_when_in_cmd_df$ #v [GetPlayer.GetAdjectiveNoFormatting]의 복장#!을 착용할 것입니다."
-    WCR_tt_american_ruler: "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')(은)는$WCR_tt_when_in_cmd_df$ #v 미국의 복장#!을 착용할 것입니다."
-    WCR_tt_british_ruler:  "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')(은)는$WCR_tt_when_in_cmd_df$ #v 영국의 복장#!을 착용할 것입니다."
-    WCR_tt_french_ruler:   "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')(은)는$WCR_tt_when_in_cmd_df$ #v 프랑스의 복장#!을 착용할 것입니다."
-    WCR_tt_german_ruler:   "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')(은)는$WCR_tt_when_in_cmd_df$ #v 독일의 복장#!을 착용할 것입니다."
-    WCR_tt_russian_ruler:  "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')(은)는$WCR_tt_when_in_cmd_df$ #v 러시아의 복장#!을 착용할 것입니다."
-    WCR_tt_generic_ruler:  "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')(은)는$WCR_tt_when_in_cmd_df$ #v 일반적인 유럽의 복장#!을 착용할 것입니다."
+    WCR_tt_domestic_ruler: "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')](은)는$WCR_tt_when_in_cmd_df$ #v [GetPlayer.GetAdjectiveNoFormatting]의 복장#!을 착용할 것입니다."
+    WCR_tt_american_ruler: "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')](은)는$WCR_tt_when_in_cmd_df$ #v 미국의 복장#!을 착용할 것입니다."
+    WCR_tt_british_ruler:  "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')](은)는$WCR_tt_when_in_cmd_df$ #v 영국의 복장#!을 착용할 것입니다."
+    WCR_tt_french_ruler:   "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')](은)는$WCR_tt_when_in_cmd_df$ #v 프랑스의 복장#!을 착용할 것입니다."
+    WCR_tt_german_ruler:   "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')](은)는$WCR_tt_when_in_cmd_df$ #v 독일의 복장#!을 착용할 것입니다."
+    WCR_tt_russian_ruler:  "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')](은)는$WCR_tt_when_in_cmd_df$ #v 러시아의 복장#!을 착용할 것입니다."
+    WCR_tt_generic_ruler:  "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')](은)는$WCR_tt_when_in_cmd_df$ #v 일반적인 유럽의 복장#!을 착용할 것입니다."
     
     WCR_tt_domestic_army: "[GetBuildingType('building_barracks').GetName]에서 근무하는 [GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] 그리고 [Concept('concept_general', '$concept_generals$')]은 #v [GetPlayer.GetAdjectiveNoFormatting]의 복장#!을 착용할 것입니다."
     WCR_tt_american_army: "[GetBuildingType('building_barracks').GetName]에서 근무하는 [GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] 그리고 [Concept('concept_general', '장군')]은 #v 미국의 복장#!을 착용할 것입니다."
@@ -49,7 +49,7 @@ l_korean:
     WCR_military_df: "[AddLocalizationIf(Not(EqualTo_string(GetPlayer.GetActiveLawFromGroup('lawgroup_governance_principles').GetLawType.GetName, GetLawType('law_monarchy').GetName)), 'WCR_military')]"
     
     WCR_ev_2_title:  "새로운 $WCR_royal_exec$ 복장"
-    WCR_ev_2_desc:   "서구화 개혁을 시작하기 위해, [GetPlayer.GetRuler.GetCustom('GetUniversalTitle') [GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]의 명령으로 새로운 $WCR_military_df$ 복장이 준비되어 있습니다."
+    WCR_ev_2_desc:   "서구화 개혁을 시작하기 위해, [GetPlayer.GetRuler.GetCustom('GetUniversalTitle')] [GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]의 명령으로 새로운 $WCR_military_df$ 복장이 준비되어 있습니다."
     WCR_ev_2_flavor: ""유럽의 열강들은 각각 자신들만의 독특한 스타일의 의복을 가지고 있습니다. 어느 것으로 고르시겠습니까?""
     
     WCR_ev_3_title:  "육군 장비"

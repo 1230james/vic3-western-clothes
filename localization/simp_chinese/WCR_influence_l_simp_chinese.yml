@@ -18,7 +18,7 @@ l_simp_chinese:
     WCR_tt_british_ruler:  "$WCR_tt_when_in_cmd_df$[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]将会穿上#v 英式制服#!。"
     WCR_tt_french_ruler:   "$WCR_tt_when_in_cmd_df$[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]将会穿上#v 法式制服#!。"
     WCR_tt_german_ruler:   "$WCR_tt_when_in_cmd_df$[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]将会穿上#v 德式制服#!。"
-    WCR_tt_russian_ruler:  "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]将会穿著#v俄式制服#!$WCR_tt_when_in_cmd_df$."
+    WCR_tt_russian_ruler:  "$WCR_tt_when_in_cmd_df$[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]将会穿著#v 俄式制服#!。"
     WCR_tt_generic_ruler:  "$WCR_tt_when_in_cmd_df$[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]将会穿上#v 通用的欧式制服#!。"
     
     WCR_tt_domestic_army: "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName]工作于[GetBuildingType('building_barracks').GetName]和[Concept('concept_general', '$concept_generals$')]将会穿著#v [GetPlayer.GetAdjectiveNoFormatting]制服#!。"

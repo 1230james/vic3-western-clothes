@@ -288,9 +288,7 @@
                 AND = {
                     japanese_clothes_trigger = yes
                     OR = {
-                        AND = {
-                            military_clothes_trigger = yes
-                        }
+                        military_clothes_trigger = yes
                         AND = {
                             armed_forces_clothes_trigger = yes
                             politician_clothes_trigger = yes
