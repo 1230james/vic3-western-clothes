@@ -155,3 +155,32 @@ WCR_de_DEBUG_cycle_style_influence = {
         value = 0
     }
 }
+
+WCR_de_DEBUG_toggle_KOR_empire = {
+    is_shown = {
+        has_global_variable = WCR_debug_mode
+        c:KOR ?= THIS
+    }
+    
+    possible = {
+        always = yes
+    }
+    
+    when_taken = {
+        if = {
+            limit = {
+                NOT = {
+                    has_variable = KOR_korean_empire_declared
+                }
+            }
+            set_variable = KOR_korean_empire_declared
+        }
+        else = {
+            remove_variable = KOR_korean_empire_declared
+        }
+    }
+    
+    ai_chance = {
+        value = 0
+    }
+}
