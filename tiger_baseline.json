@@ -1,0 +1,135 @@
+[
+{
+  "confidence": "weak",
+  "info": null,
+  "key": "logic",
+  "locations": [
+    {
+      "column": 10,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_util_triggers.txt",
+      "length": null,
+      "line": "    OR = {",
+      "linenr": 42,
+      "path": "common\\scripted_triggers\\WCR_util_triggers.txt",
+      "tag": null
+    }
+  ],
+  "message": "OR with only one item inside is probably not what you intended",
+  "severity": "warning"
+},
+{
+  "confidence": "weak",
+  "info": null,
+  "key": "logic",
+  "locations": [
+    {
+      "column": 30,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": null,
+      "line": "                        OR = {",
+      "linenr": 3202,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "tag": null
+    }
+  ],
+  "message": "OR with only one item inside is probably not what you intended",
+  "severity": "warning"
+},
+{
+  "confidence": "weak",
+  "info": null,
+  "key": "logic",
+  "locations": [
+    {
+      "column": 30,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": null,
+      "line": "                        OR = {",
+      "linenr": 3279,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "tag": null
+    }
+  ],
+  "message": "OR with only one item inside is probably not what you intended",
+  "severity": "warning"
+},
+{
+  "confidence": "weak",
+  "info": null,
+  "key": "logic",
+  "locations": [
+    {
+      "column": 22,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": null,
+      "line": "                OR = {",
+      "linenr": 252,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "tag": null
+    }
+  ],
+  "message": "OR with only one item inside is probably not what you intended",
+  "severity": "warning"
+},
+{
+  "confidence": "weak",
+  "info": null,
+  "key": "logic",
+  "locations": [
+    {
+      "column": 30,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": null,
+      "line": "                        OR = {",
+      "linenr": 1647,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "tag": null
+    }
+  ],
+  "message": "OR with only one item inside is probably not what you intended",
+  "severity": "warning"
+},
+{
+  "confidence": "weak",
+  "info": null,
+  "key": "logic",
+  "locations": [
+    {
+      "column": 30,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": null,
+      "line": "                        OR = {",
+      "linenr": 1701,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "tag": null
+    }
+  ],
+  "message": "OR with only one item inside is probably not what you intended",
+  "severity": "warning"
+},
+{
+  "confidence": "weak",
+  "info": null,
+  "key": "logic",
+  "locations": [
+    {
+      "column": 30,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": null,
+      "line": "                        OR = {",
+      "linenr": 1742,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "tag": null
+    }
+  ],
+  "message": "OR with only one item inside is probably not what you intended",
+  "severity": "warning"
+}
+]
