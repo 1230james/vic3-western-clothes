@@ -1260,6 +1260,7 @@
             base = 0
             modifier = {
                 add = 100
+                md_chinese_uniform_pack_active_trigger   = no # CUP compatibility/deconflict
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_domestic_influence_trigger = yes
                 monarchy_clothes_trigger = yes
@@ -1328,6 +1329,7 @@
             modifier = {
                 add = 100
                 WCR_late_army_uniform_trigger = no
+                md_chinese_uniform_pack_active_trigger   = no # CUP compatibility/deconflict
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
                     owner ?= {
@@ -1371,6 +1373,7 @@
             modifier = {
                 add = 100
                 WCR_late_army_uniform_trigger = no
+                md_chinese_uniform_pack_active_trigger   = no # CUP compatibility/deconflict
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
                     owner ?= {
@@ -1413,6 +1416,7 @@
             base = 0
             modifier = {
                 add = 100
+                md_chinese_uniform_pack_active_trigger   = no # CUP compatibility/deconflict
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
                     owner ?= {
@@ -1446,6 +1450,7 @@
             base = 0
             modifier = {
                 add = 100
+                md_chinese_uniform_pack_active_trigger   = no # CUP compatibility/deconflict
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
                     owner ?= {
@@ -1479,6 +1484,7 @@
             base = 0
             modifier = {
                 add = 100
+                md_chinese_uniform_pack_active_trigger   = no # CUP compatibility/deconflict
                 WCR_has_completed_westernization_trigger = yes
                 scope:pop ?= {
                     owner ?= {
@@ -1521,6 +1527,7 @@
             base = 0
             modifier = {
                 add = 100
+                md_chinese_uniform_pack_active_trigger   = no # CUP compatibility/deconflict
                 WCR_has_completed_westernization_trigger = yes
                 scope:pop ?= {
                     owner ?= {
@@ -1699,7 +1706,10 @@
                 scope:person ?= {
                     owner ?= {
                         OR = {
-                            WCR_st_is_country_tag = { TAG = CHI }
+                            AND = {
+                                md_chinese_uniform_pack_active_trigger = no # CUP compatibility/deconflict
+                                WCR_st_is_country_tag = { TAG = CHI }
+                            }
                         }
                     }
                 }
