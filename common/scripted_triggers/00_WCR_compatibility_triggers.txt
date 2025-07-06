@@ -39,3 +39,8 @@ md_japanese_uniform_pack_active_trigger = {
 md_chinese_uniform_pack_active_trigger = {
     always = no
 }
+
+# Siam Renaissance
+srm_is_active = {
+    always = no
+}
