@@ -41,6 +41,13 @@ WCR_has_domestic_influence_available_trigger = {
             }
             WCR_st_is_country_tag = { TAG = CHI }
         }
+        trigger_else_if = { # Siam Renaissance mod interop
+            limit = {
+                srm_is_active = yes
+                WCR_st_is_country_tag = { TAG = SIA }
+            }
+            WCR_st_is_country_tag = { TAG = SIA }
+        }
     }
 }
 

@@ -160,5 +160,6 @@
     
     progressbar = yes
     
-    timeout = 0 # Never time out
+    # As of 1.9.6, specifying 0 for the timeout causes the journal to time out immediately instead of having no timeout
+    # timeout = 0
 }
