@@ -473,8 +473,7 @@ WCR_is_scope_owner_qing_dynasty_trigger = {
         coa_monarchy_trigger = yes # Avoid checking law directly for compatibility with monarchy mods (e.g., RRK)
         ruler ?= {
             culture = {
-                has_discrimination_trait = north_asian_heritage
-                has_discrimination_trait = sinosphere
+                has_discrimination_trait = heritage_manchu
             }
         }
     }
