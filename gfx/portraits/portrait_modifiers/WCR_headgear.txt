@@ -184,6 +184,7 @@
                 armed_forces_clothes_trigger = no
                 military_clothes_trigger = no
                 scope:character ?= {
+                    is_heir = no
                     age > 12
                 }
             }
@@ -226,6 +227,8 @@
                     age >= define:NCharacters|ADULT_AGE
                     politician_clothes_trigger = yes
                     military_clothes_trigger   = no
+                    is_ruler = no
+                    is_heir  = no
                     OR = {
                         is_interest_group_type = ig_landowners
                         is_interest_group_type = ig_industrialists
