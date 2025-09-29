@@ -1023,12 +1023,6 @@
             }
             accessory = {
                 mode = add
-                gene = belts
-                template = generic_belts
-                range = { 0 0.49 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
                 gene = aiguillettes
                 template = all_aiguillettes
                 range = { 0 1 } # For the randomness to work correctly
@@ -1070,13 +1064,13 @@
             accessory = {
                 mode = add
                 gene = epaulettes
-                template = all_epaulettes
-                range = { 0.8 1 } # For the randomness to work correctly
+                template  = all_epaulettes
+                accessory = male_epaulettes_08
             }
             accessory = {
                 mode = add
                 gene = legwear
-                template = european_legwear_colors
+                template  = european_legwear_colors
                 accessory = male_legwear_european_01_blue
             }
             accessory = {
@@ -1171,12 +1165,6 @@
             }
             accessory = {
                 mode = add
-                gene = belts
-                template = all_belts
-                range = { 0 1 }
-            }
-            accessory = {
-                mode = add
                 gene = top_layer
                 template = european_top_layer
                 range = { 0 1 } # For the randomness to work correctly
@@ -1237,6 +1225,12 @@
             }
             accessory = {
                 mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
                 gene = aiguillettes
                 template = all_aiguillettes
                 range = { 0 1 } # For the randomness to work correctly
@@ -1252,6 +1246,77 @@
             base = 0
             modifier = {
                 add = 10000
+                soldier_clothes_pop_trigger = no
+                WCR_has_completed_westernization_trigger = yes
+                OR = {
+                    AND = {
+                        ruler_clothes_trigger = yes
+                        military_clothes_trigger = yes # Here to make sure it only applies when the ruler is commanding an army
+                        WCR_late_army_uniform_trigger = no
+                        WCR_ruler_has_no_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_late_army_uniform_trigger = no
+                        WCR_army_has_no_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_no_influence_trigger = yes
+                    }
+                }
+            }
+            modifier = {
+                add = -10000
+                WCR_is_in_prewesternized_country_trigger = yes
+                OR = {
+                    british_empire_clothes_trigger     = yes
+                    british_empire_clothes_pop_trigger = yes
+                    british_empire_clothes_p_trigger   = yes
+                    french_empire_clothes_trigger      = yes
+                    french_empire_clothes_pop_trigger  = yes
+                    russian_empire_clothes_trigger     = yes
+                    russian_empire_clothes_pop_trigger = yes
+                }
+            }
+            modifier = {
+                add = -10000
+                OR = {
+                    scope:pop ?= {
+                        owner ?= {
+                            WCR_is_using_vanilla_rules = yes
+                        }
+                    }
+                    scope:character ?= {
+                        owner ?= {
+                            WCR_is_using_vanilla_rules = yes
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_european_military_clothes_soldier = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = european_coats
+                range = { 0.15 0.6 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                soldier_clothes_pop_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 OR = {
                     AND = {
@@ -1395,8 +1460,8 @@
             accessory = {
                 mode = add
                 gene = epaulettes
-                template = all_epaulettes
-                range = { 0.85 1 } # For the randomness to work correctly
+                template  = all_epaulettes
+                accessory = male_epaulettes_08
             }
             accessory = {
                 mode = add
@@ -1444,13 +1509,7 @@
                 gene = epaulettes
                 template = late_military_epaulettes
                 accessory = male_epaulettes_late_british_military_01
-                # accessory = male_epaulettes_late_american_military_01 # Broken colors?
-            }
-            accessory = {
-                mode = add
-                gene = aiguillettes
-                template = no_aiguillettes
-                value = 0
+                # accessory = male_epaulettes_late_american_military_01 # Apparently historical colors but I think it looks bad
             }
             accessory = {
                 mode = add
@@ -1545,27 +1604,15 @@
             accessory = {
                 mode = add
                 gene = coats
-                template = british_coats
-                range = { 0 1 }
+                template = male_coat_great_britain
+                accessory = male_coat_european_gb_01
             }
             accessory = {
                 mode = add
                 gene = legwear
-                template = european_legwear_colors
-                accessory = male_legwear_european_01_black
+                template = brazilian_white_legwear
+                accessory = male_legwear_south_american_01_brazilian
             }
-            # accessory = { # Texture for this coat is broken; waiting for PDX to fix before removing the old ones
-                # mode = add
-                # gene = coats
-                # template = male_coat_great_britain
-                # accessory = male_coat_european_gb_01
-            # }
-            # accessory = {
-                # mode = add
-                # gene = legwear
-                # template = brazilian_white_legwear
-                # accessory = male_legwear_south_american_01_brazilian
-            # }
         }
         weight = {
             base = 0
@@ -1580,7 +1627,6 @@
                     }
                     AND = {
                         WCR_navy_clothes_trigger = yes
-                        WCR_late_army_uniform_trigger = no
                         WCR_navy_has_british_influence_trigger = yes
                     }
                 }
@@ -1674,12 +1720,6 @@
                 template = all_epaulettes
                 range = { 0 1 } # For the randomness to work correctly
             }
-            accessory = {
-                mode = add
-                gene = belts
-                template = all_belts
-                range = { 0 1 }
-            }
         }
         weight = {
             base = 0
@@ -1716,7 +1756,6 @@
                 template = french_coats
                 range = { 0 1 }
             }
-            # the common soldier gets no aguillettes or epaulettes :(
             accessory = {
                 mode = add
                 gene = legwear
@@ -1809,7 +1848,13 @@
             }
 
             # no aiguillettes because they don't work with double-breasted coats, which is all the Prussians have
-
+            
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                range = { 0.05 0.4 } # For the randomness to work correctly
+            }
             accessory = {
                 mode = add
                 gene = legwear
@@ -1854,7 +1899,7 @@
                 mode = add
                 gene = coats
                 template = prussian_coats
-                range = { 0 0.2 } # For the randomness to work correctly
+                accessory = male_coat_european_08
             }
             accessory = {
                 mode = add
@@ -1862,12 +1907,11 @@
                 template = european_legwear
                 range = { 0 1 } # For the randomness to work correctly
             }
-
             accessory = {
                 mode = add
                 gene = epaulettes
-                template = all_epaulettes
-                range = { 0.1 0.2 } # For the randomness to work correctly
+                template  = all_epaulettes
+                accessory = male_epaulettes_01 # Equivalent to { 0.1 0.2 } as of 1.10
             }
         } 
 
@@ -1897,7 +1941,7 @@
                 mode = add
                 gene = coats
                 template = russian_coats
-                range = { 0 0.5 }
+                range = { 0 1 }
             }
             # accessory = { # [1.10] russian_coats gene now only has a double-breasted coat
             #     mode = add
@@ -2006,7 +2050,7 @@
                 mode = add
                 gene = legwear
                 template = european_legwear_colors
-                range = { 0.34 1 } #
+                range = { 0.34 1 }
             }
             accessory = {
                 mode = add
@@ -2791,6 +2835,7 @@
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_domestic_influence_trigger = yes
                 monarchy_clothes_trigger = yes
+                military_clothes_trigger = no # Prevent use when king is commanding an army
                 scope:character ?= {
                     owner ?= {
                         WCR_st_is_country_tag = { TAG = CHI }

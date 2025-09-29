@@ -1267,6 +1267,7 @@
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_domestic_influence_trigger = yes
                 monarchy_clothes_trigger = yes
+                military_clothes_trigger = no # Prevent use when king is commanding an army
                 scope:character ?= {
                     owner ?= {
                         WCR_st_is_country_tag = { TAG = CHI }
