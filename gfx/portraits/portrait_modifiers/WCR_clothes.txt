@@ -6,9 +6,8 @@
     # Needed to keep Korea & Japan unwesternized if using the game rule where becoming their respective empires doesn't
     # automatically westernize them
     
-    # Preserve vanilla Korean pops behavior
-    # As of 1.5.9: soldiers -> chinese clothes, officers -> hanbok, other middle strata -> mix of both
-    # Why? idk, ask PDX
+    # As of 1.5.9:  soldiers -> chinese clothes, officers -> hanbok, other middle strata -> mix of both
+    # As of 1.10.2: EVERYBODY WEARS HANBOK!!! NO MORE COMPLICATED CHINESE S#%T TO DEAL WITH
     WCR_korean_pop_clothes = {
         dna_modifiers = {
             accessory = {
@@ -23,13 +22,11 @@
             base = 0
             modifier = {
                 add = 500
-                scope:pop ?= {
-                    culture = cu:korean
-                }
+                korean_clothes_pop_trigger = yes
                 OR = {
-                    WCR_army_clothes_trigger = yes
-                    WCR_navy_clothes_trigger = yes
+                    poor_clothes_pop_trigger = yes
                     middle_clothes_pop_trigger = yes
+                    soldier_clothes_pop_trigger = yes
                 }
                 WCR_has_completed_westernization_trigger = no
             }
@@ -51,100 +48,22 @@
             modifier = {
                 add = 100
                 OR = {
-                    scope:character ?= {
-                        has_culture = cu:korean
-                        is_ruler    = no
+                    AND = {
+                        korean_clothes_trigger = yes
+                        NAND = {
+                            ruler_clothes_trigger    = yes
+                            monarchy_clothes_trigger = yes
+                        }
                     }
-                    scope:pop ?= {
-                        culture = cu:korean
+                    AND = {
+                        korean_clothes_pop_trigger = yes
                         OR = {
+                            upper_clothes_pop_trigger = yes
                             officers_clothes_pop_trigger = yes
-                            upper_clothes_pop_trigger    = yes
                         }
                     }
                 }
-                OR = {
-                    scope:character ?= { # Heir wears hanbok in vanilla
-                        is_heir = yes
-                    }
-                    WCR_army_clothes_trigger = yes
-                    WCR_navy_clothes_trigger = yes
-                }
                 WCR_has_completed_westernization_trigger = no
-            }
-        }
-    }
-    
-    WCR_chinese_common_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = outfits
-                template = chinese_common_outfits
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 1000
-                scope:pop ?= {
-                    culture = cu:korean
-                }
-                soldier_clothes_pop_trigger = yes
-                WCR_has_completed_westernization_trigger = no
-                PCT_is_active_trigger = no
-            }
-        }
-    }
-    
-    WCR_chinese_middle_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = outfits
-                template = chinese_common_outfits
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        } 
-        weight = {
-            base = 0
-            modifier = {
-                add = 500
-                scope:pop ?= {
-                    culture = cu:korean
-                }
-                OR = {
-                    AND = {
-                        middle_clothes_pop_trigger = yes
-                        WCR_has_completed_westernization_trigger = no
-                    }
-                    clergy_clothes_pop_trigger = yes
-                }
-                PCT_is_active_trigger = no
-            }
-        }
-    }
-    
-    WCR_chinese_upper_clothes = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = outfits
-                template = chinese_common_outfits
-                range = { 0 1 } # For the randomness to work correctly
-            }  
-        } 
-        weight = {
-            base = 0
-            modifier = {
-                add = 500
-                scope:pop ?= {
-                    culture = cu:korean
-                }
-                WCR_has_completed_westernization_trigger = no
-                PCT_is_active_trigger = no
-                upper_clothes_pop_trigger = yes
             }
         }
     }
@@ -163,16 +82,19 @@
             base = 0
             modifier = {
                 add = 100
-                scope:character ?= {
-                    has_culture = cu:korean
-                    owner ?= {
-                        WCR_is_korea_trigger = yes
-                        has_variable = KOR_korean_empire_declared
-                    }
-                    is_ruler = yes
-                    WCR_has_completed_westernization_trigger = no
-                }
+                korean_clothes_trigger = yes
+                ruler_clothes_trigger    = yes
+                monarchy_clothes_trigger = yes
+                WCR_has_completed_westernization_trigger = no
                 EACP_is_active_trigger = no
+            }
+            modifier = {
+                add = 1000
+                korean_clothes_trigger = yes
+                scope:character ?= {
+                    has_template = KOR_empress_myeongseong
+                }
+                WCR_has_completed_westernization_trigger = no
             }
         }
     }
