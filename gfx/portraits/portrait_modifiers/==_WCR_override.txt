@@ -104,6 +104,7 @@
                     # Poor pops w/ game rule to not westernize poor pops
                     AND = {
                         poor_clothes_pop_trigger = yes
+                        machinists_clothes_pop_trigger = no
                         has_game_rule = WCR_westernize_poor_pop_clothing_no
                     }
                     
