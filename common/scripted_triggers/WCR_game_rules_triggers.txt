@@ -13,8 +13,9 @@ WCR_westernization_allowed_by_rules_trigger = {
 WCR_st_westernize_traditionalists = {
     OR = {
         has_game_rule = WCR_westernize_traditionalists_yes
-        NOT = {
+        NOR = {
             has_ideology = ideology:ideology_traditionalist
+            has_ideology = ideology:ideology_traditionalist_minoritarian
         }
         has_role = general # If you're in the armed forces, you can cope and seethe! B)
         has_role = admiral
