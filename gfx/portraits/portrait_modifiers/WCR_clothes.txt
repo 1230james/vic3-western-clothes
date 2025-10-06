@@ -1985,6 +1985,7 @@
             base = 0
             modifier = {
                 add = 10000
+                exists = scope:character
                 WCR_has_completed_westernization_trigger = yes
                 WCR_late_army_uniform_trigger = yes
                 OR = {
