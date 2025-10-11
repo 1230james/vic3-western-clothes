@@ -79,21 +79,21 @@ l_polish:
     
     rule_WCR_westernize_traditionalists:             "#yellow WCR#! | Westernizacja: Tradycjonaliści"
     setting_WCR_westernize_traditionalists_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_traditionalists_yes_desc: "[Concept('concept_character', 'Postacie')] z [Concept('concept_ideology', 'ideologią')] #v Tradycjonalista#! #p będą#! ulegać westernizacji, jeśli nic innego im tego zabrania. $WCR_AWC_behavior_text$"
+    setting_WCR_westernize_traditionalists_yes_desc: "[Concept('concept_character', 'Postacie')] z [Concept('concept_ideology', 'ideologią')] [GetIdeology('ideology_traditionalist').GetName] #p będą#! ulegać westernizacji, jeśli nic innego im tego zabrania. $WCR_AWC_behavior_text$"
     setting_WCR_westernize_traditionalists_no:       "$WCR_rule_no$"
-    setting_WCR_westernize_traditionalists_no_desc:  "[Concept('concept_character', 'Postacie')] z [Concept('concept_ideology', 'ideologią')] #v Tradycjonalista#! #n nie będą#! ulegać westernizacji. Jednak nie tyczy się to postaci będących [Concept('concept_leader', 'przywódcami')] [Concept('concept_interest_group', 'grupy interesu')] #v Sił zbrojnych#! albo [Concept('concept_commander', 'dowódcami')]."
+    setting_WCR_westernize_traditionalists_no_desc:  "[Concept('concept_character', 'Postacie')] z [Concept('concept_ideology', 'ideologią')] [GetIdeology('ideology_traditionalist').GetName] #n nie będą#! ulegać westernizacji. Jednak nie tyczy się to postaci będących [Concept('concept_leader', 'przywódcami')] [Concept('concept_interest_group', 'grupy interesu')] #v Sił zbrojnych#! albo [Concept('concept_commander', 'dowódcami')]."
     
     rule_WCR_westernize_ig_rural_folk:             "#yellow WCR#! | Westernizacja: #green @rural_folk! $ig_rural_folk$#!"
     setting_WCR_westernize_ig_rural_folk_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_ig_rural_folk_yes_desc: "[concept_leader] [Concept('concept_interest_group', 'grupy interesu')] #v @rural_folk! Chłopstwa#! #p ulegnie#! westernizacji."
+    setting_WCR_westernize_ig_rural_folk_yes_desc: "[concept_leader] [Concept('concept_interest_group', 'grupy interesu')] #green;bold @rural_folk! Chłopstwa#! #p ulegnie#! westernizacji."
     setting_WCR_westernize_ig_rural_folk_no:       "$WCR_rule_no$"
-    setting_WCR_westernize_ig_rural_folk_no_desc:  "[concept_leader] [Concept('concept_interest_group', 'grupy interesu')] #v @rural_folk! Chłopstwa#! #n nie ulegnie#! westernizacji. $WCR_AWC_behavior_text$"
+    setting_WCR_westernize_ig_rural_folk_no_desc:  "[concept_leader] [Concept('concept_interest_group', 'grupy interesu')] #green;bold @rural_folk! Chłopstwa#! #n nie ulegnie#! westernizacji. $WCR_AWC_behavior_text$"
     
     rule_WCR_westernize_ig_devout:             "#yellow WCR#! | Westernizacja: #blue @devout! Duchowieństwo#!"
     setting_WCR_westernize_ig_devout_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_ig_devout_yes_desc: "[concept_leader] [Concept('concept_interest_group', 'grupy interesu')] #v @devout! Duchowieństwa#! #p ulegnie#! procesowi westernizacji."
+    setting_WCR_westernize_ig_devout_yes_desc: "[concept_leader] [Concept('concept_interest_group', 'grupy interesu')] #blue;bold @devout! Duchowieństwa#! #p ulegnie#! procesowi westernizacji."
     setting_WCR_westernize_ig_devout_no:       "$WCR_rule_no$"
-    setting_WCR_westernize_ig_devout_no_desc:  "[concept_leader] #v @devout! Duchowieństwa#! [concept_interest_group] #n nie ulegnie#! procesowi westernizacji. $WCR_AWC_behavior_text$"
+    setting_WCR_westernize_ig_devout_no_desc:  "[concept_leader] #blue;bold @devout! Duchowieństwa#! [concept_interest_group] #n nie ulegnie#! procesowi westernizacji. $WCR_AWC_behavior_text$"
     
     rule_WCR_westernize_poor_pop_clothing:             "#yellow WCR#! | Westernizacja: Biedni Członkowie Zbiorowości"
     setting_WCR_westernize_poor_pop_clothing_yes:      "$WCR_rule_yes$"

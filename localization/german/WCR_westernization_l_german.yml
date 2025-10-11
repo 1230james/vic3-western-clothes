@@ -57,10 +57,12 @@ l_german:
     WCR_tt_format_mult:     "• #indent_newline:3 #p x$VALUE|$#! $KEY$#!"
     WCR_tt_delta_breakdown: "[AddLocalizationIf(LessThanOrEqualTo_CFixedPoint(Country.MakeScope.ScriptValue('WCR_sv_calculate_net_delta_from_clout'),'(CFixedPoint)0'),'WCR_tt_delta_from_clout_f')][Country.MakeScope.GetScriptValueDesc('WCR_sv_calculate_westernization_progress_delta')]"
     
-    WCR_tt_delta_from_prog_clout: "von [concept_clout] der $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] (#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_prog_clout')|%]#!)"
-    WCR_tt_delta_from_trad_clout: "von [concept_clout] der [concept_powerful] $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] (#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_powerful_trad_clout')|%]#!)"
-    WCR_tt_delta_from_relations:  "von $relations_amicable$ oder $relations_friendly$ [concept_relations] mit einer westernisierten Nation"
-    WCR_tt_delta_from_year:       "vom Jahr #bold 1900#! oder später"
+    WCR_tt_delta_from_prog_clout:    "von [concept_clout] der $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] (#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_prog_clout')|%]#!)"
+    WCR_tt_delta_from_trad_clout:    "von [concept_clout] der [concept_powerful] $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] (#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_powerful_trad_clout')|%]#!)"
+    WCR_tt_delta_from_relations:     "von $relations_amicable$ oder $relations_friendly$ [concept_relations] mit einer westernisierten Nation"
+    WCR_tt_delta_from_year:          "vom Jahr #bold 1900#! oder später"
+    WCR_tt_delta_from_early_rollout: "from initial westernization of the [Concept('concept_government_building','$concept_government$')] and [Concept('concept_military_building','$MILITARY$')]"
+    WCR_tt_delta_from_recognition:   "from [Country.GetNameNoFlag] being [Concept('concept_recognized_power','$concept_recognized_power_short$')]"
     
     WCR_tt_delta_from_overlord_good_rel: "von [SCOPE.GetRootScope.GetCountry.GetNameNoFlag], der $relations_amicable$ oder $relations_friendly$ [concept_relations] mit einem #bold westernisierten#! [concept_overlord] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName]) hat"
     WCR_tt_delta_from_overlord_civ_mis:  "von dem [concept_overlord] von [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName]), der #bold westernisiert#! ist und [GetTechnology('civilizing_mission').GetName] erforscht"
@@ -85,6 +87,8 @@ l_german:
     
     WCR_negative_delta_reason: "Bis zu #n [SCOPE.ScriptValue('WCR_TOTAL_STONEWALL_FROM_TRAD_CLOUT')|0%]#! werden #v entfernt#!, skaliert mit dem gesamten [concept_clout] von [concept_powerful] $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')]."
     
+    WCR_early_rollout_reason: "An extra #p 2%#! of progress is added for the first #v [SCOPE.ScriptValue('WCR_EARLY_ROLLOUT_BONUS_END')]%#! of westernization progress, as early westernization efforts focus on updating uniforms for the [Concept('concept_government_building','$concept_government$')] and [Concept('concept_military_building','$MILITARY$')]."
+    
     WCR_date_reason: "Ein zusätzlicher #p 1%#! Fortschritt wird hinzugefügt, wenn das Jahr #bold 1900#! erreicht wurde."
     
     WCR_overlord_reason: "$WCR_overlord_reason_h$#indent_newline:3 \n#indent_newline:3 • $WCR_overlord_rel_reason$#!\n#indent_newline:3 • $WCR_overlord_civ_reason$#!#!"
@@ -97,6 +101,8 @@ l_german:
     
     WCR_westernized_relations_reason: "Der Fortschritt der Westernisierung wird #v erhöht#! um zusätzliche #p 10%#! der #v aktuellen monatlichen Rate#!, wenn wir $relations_amicable$ oder $relations_friendly$ [concept_relations] ([GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v] oder höher) mit einer westernisierten Nation haben."
     
+    WCR_recognized_reason: "Westernization will #b increase#! by an extra #p 10%#! of the #b current monthly rate#! if [Country.GetName] is [Concept('concept_recognized_power','$concept_recognized_power_short$')]."
+    
     WCR_ig_opinion_reason_header: "Für jede #v 25%#! Westernisierung fortschreitet:"
     
     WCR_ig_opinion_prog_reason: "• Alle $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] erhalten #p 1#! [concept_approval]"
@@ -105,7 +111,7 @@ l_german:
     
     WCR_ig_opinion_done_reason: "Nach der #v Vollendung#! der Westernisierung wird die insgesamt gewonnen oder verlorene [concept_approval] über einen langen Zeitraum abgebaut."
     
-    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_breakdown_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_clout_delta_reason$\n\n$WCR_overlord_reason$\n\n$WCR_date_reason$\n\n$WCR_westernized_relations_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason_header$#indent_newline:1 \n$WCR_ig_opinion_prog_reason$\n$WCR_ig_opinion_trad_reason$#!\n\n$WCR_ig_opinion_done_reason$" 
+    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_breakdown_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_clout_delta_reason$\n\n$WCR_early_rollout_reason$\n\n$WCR_overlord_reason$\n\n$WCR_date_reason$\n\n$WCR_westernized_relations_reason$\n\n$WCR_recognized_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason_header$#indent_newline:1 \n$WCR_ig_opinion_prog_reason$\n$WCR_ig_opinion_trad_reason$#!\n\n$WCR_ig_opinion_done_reason$"
     
     # Westernization JE status texts
     # Use of GetPlayer in customizable loc text is mandatory due to data context being changed when going through a customizable loc

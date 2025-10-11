@@ -79,21 +79,21 @@ l_simp_chinese:
     
     rule_WCR_westernize_traditionalists:             "#yellow WCR#! | 西洋化传统主义者"
     setting_WCR_westernize_traditionalists_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_traditionalists_yes_desc: "如果没有其它东西不让拥有#v $ideology_traditionalist$#![concept_ideology]的[Concept('concept_character', '$concept_characters$')]进行西洋化，那么他们#p 将会#!进行西洋化。$WCR_AWC_behavior_text$"
+    setting_WCR_westernize_traditionalists_yes_desc: "如果没有其它东西不让拥有[GetIdeology('ideology_traditionalist').GetName][concept_ideology]的[Concept('concept_character', '$concept_characters$')]进行西洋化，那么他们#p 将会#!进行西洋化。$WCR_AWC_behavior_text$"
     setting_WCR_westernize_traditionalists_no:       "$WCR_rule_no$"
-    setting_WCR_westernize_traditionalists_no_desc:  "拥有#v $ideology_traditionalist$#![concept_ideology]的[Concept('concept_character', '$concept_characters$')]#n 将不会#!西洋化。如果他们是#v $ig_armed_forces$#![concept_interest_group]的[concept_leader]或者是一个[concept_commander]，他们仍然会进行西洋化。"
+    setting_WCR_westernize_traditionalists_no_desc:  "拥有[GetIdeology('ideology_traditionalist').GetName][concept_ideology]的[Concept('concept_character', '$concept_characters$')]#n 将不会#!西洋化。如果他们是#v $ig_armed_forces$#![concept_interest_group]的[concept_leader]或者是一个[concept_commander]，他们仍然会进行西洋化。"
     
     rule_WCR_westernize_ig_rural_folk:             "#yellow WCR#! | 西洋化#green @rural_folk!乡村民众#!"
     setting_WCR_westernize_ig_rural_folk_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_ig_rural_folk_yes_desc: "#v @rural_folk!$ig_rural_folk$#![concept_interest_group]的[concept_leader]#p 将会#!进行西洋化。"
+    setting_WCR_westernize_ig_rural_folk_yes_desc: "#green;bold @rural_folk!$ig_rural_folk$#![concept_interest_group]的[concept_leader]#p 将会#!进行西洋化。"
     setting_WCR_westernize_ig_rural_folk_no:       "$WCR_rule_no$"
-    setting_WCR_westernize_ig_rural_folk_no_desc:  "#v @rural_folk!$ig_rural_folk$#![concept_interest_group]的[concept_leader]#n 将不会#!进行西洋化。$WCR_AWC_behavior_text$"
+    setting_WCR_westernize_ig_rural_folk_no_desc:  "#green;bold @rural_folk!$ig_rural_folk$#![concept_interest_group]的[concept_leader]#n 将不会#!进行西洋化。$WCR_AWC_behavior_text$"
     
     rule_WCR_westernize_ig_devout:             "#yellow WCR#! | 西洋化#blue @devout!虔信者#!"
     setting_WCR_westernize_ig_devout_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_ig_devout_yes_desc: "#v @devout!$ig_devout$#![concept_interest_group]的[concept_leader]#p 将会#!进行西洋化。"
+    setting_WCR_westernize_ig_devout_yes_desc: "#blue;bold @devout!$ig_devout$#![concept_interest_group]的[concept_leader]#p 将会#!进行西洋化。"
     setting_WCR_westernize_ig_devout_no:       "$WCR_rule_no$"
-    setting_WCR_westernize_ig_devout_no_desc:  "#v @devout!$ig_devout$#![concept_interest_group]的[concept_leader]#n 将不会#!进行西洋化。$WCR_AWC_behavior_text$"
+    setting_WCR_westernize_ig_devout_no_desc:  "#blue;bold @devout!$ig_devout$#![concept_interest_group]的[concept_leader]#n 将不会#!进行西洋化。$WCR_AWC_behavior_text$"
     
     rule_WCR_westernize_poor_pop_clothing:             "#yellow WCR#! | 贫穷人群西洋化"
     setting_WCR_westernize_poor_pop_clothing_yes:      "$WCR_rule_yes$"

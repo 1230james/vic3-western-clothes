@@ -247,7 +247,9 @@
                     owner ?= {
                         WCR_is_japan_trigger = yes
                     }
-                    japanese_imperial_clothes_trigger = yes
+                    monarchy_clothes_trigger = yes
+                    # Do not use `japanese_imperial_clothes_trigger` because it starts to evaluate to false once
+                    # the restoration complete variable is set
                 }
             }
         }

@@ -185,6 +185,35 @@ WCR_de_DEBUG_toggle_KOR_empire = {
     }
 }
 
+WCR_de_DEBUG_toggle_JAP_restoration = {
+    is_shown = {
+        has_global_variable = WCR_debug_mode
+        c:JAP ?= THIS
+    }
+    
+    possible = {
+        always = yes
+    }
+    
+    when_taken = {
+        if = {
+            limit = {
+                NOT = {
+                    has_variable = meiji_restoration_complete
+                }
+            }
+            set_variable = meiji_restoration_complete
+        }
+        else = {
+            remove_variable = meiji_restoration_complete
+        }
+    }
+    
+    ai_chance = {
+        value = 0
+    }
+}
+
 WCR_de_DEBUG_inc_overlord_relations = {
     is_shown = {
         has_global_variable = WCR_debug_mode

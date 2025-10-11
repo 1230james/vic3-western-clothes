@@ -18,10 +18,10 @@ l_japanese:
     # Tooltips
     WCR_tt_overlord_westernized_sub: "[GetPlayer.GetOverlord.GetName] は #bold 西洋化した#!"
     WCR_tt_overlord_westernized_ind: "[GetPlayer.GetName] の [concept_overlord] は #bold 西洋化した#!"
-    WCR_tt_ruler_support:            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')] belongs to a $WCR_tt_progressives_tt$ [concept_interest_group]"
+    WCR_tt_ruler_support:            "[GetPlayer.GetRuler.GetCustom('GetUniversalFullName')]は$WCR_tt_progressives_tt$の[concept_interest_group]に属します。"
     
-    WCR_tt_KOR_req_bypass: "The #b $dyn_c_empire_of_korea$#! has been proclaimed"
-    WCR_tt_JAP_req_bypass: "The #b $je_meiji_restoration$#! [concept_journal_entry] has been completed"
+    WCR_tt_KOR_req_bypass: "#b $dyn_c_empire_of_korea$#! が成立している"
+    WCR_tt_JAP_req_bypass: "#b $je_meiji_restoration$#! の[concept_journal_entry]が完了している"
     
     WCR_tt_IG_list_item:       "[THIS.GetInterestGroup.GetName]"
     WCR_tt_IG_list_item_debug: "[THIS.GetInterestGroup.GetName] ([THIS.GetInterestGroup.MakeScope.ScriptValue('WCR_sv_calculate_IG_progressive_score')])"
@@ -30,11 +30,11 @@ l_japanese:
     WCR_tt_conservatives_tt:   "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],WCR_tt_conservatives_list $WCR_txt_conservative$#!"
     WCR_tt_progressives_tt:    "#tooltippable;tooltip:[GetPlayer.GetTooltipTag],WCR_tt_progressives_list $WCR_txt_progressive$#!"
     
-    WCR_txt_conservative:      "conservative"
-    WCR_txt_progressive:       "progressive"
-    WCR_tt_IG_cooltip_header:  "Is one of the following [Concept('concept_interest_group', '$concept_interest_groups$')]:"
-    WCR_tt_is_conservative_IG: "Is a $WCR_tt_conservatives_tt$ [concept_interest_group]"
-    WCR_tt_is_progressive_IG:  "Is a $WCR_tt_progressives_tt$ [concept_interest_group]"
+    WCR_txt_conservative:      "保守派"
+    WCR_txt_progressive:       "革新派"
+    WCR_tt_IG_cooltip_header:  "は以下の[Concept('concept_interest_group', '$concept_interest_groups$')]のうちの一つである："
+    WCR_tt_is_conservative_IG: "は$WCR_tt_conservatives_tt$[concept_interest_group]だ"
+    WCR_tt_is_progressive_IG:  "は$WCR_tt_progressives_tt$[concept_interest_group]だ"
     
     # Modifiers
     WCR_westernized_modifier:         "直近の西洋化"
@@ -57,19 +57,21 @@ l_japanese:
     WCR_tt_format_mult:     "• #indent_newline:3 #p x$VALUE|$#! $KEY$#!"
     WCR_tt_delta_breakdown: "[AddLocalizationIf(LessThanOrEqualTo_CFixedPoint(Country.MakeScope.ScriptValue('WCR_sv_calculate_net_delta_from_clout'),'(CFixedPoint)0'),'WCR_tt_delta_from_clout_f')][Country.MakeScope.GetScriptValueDesc('WCR_sv_calculate_westernization_progress_delta')]"
     
-    WCR_tt_delta_from_prog_clout: "from [concept_clout] of $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] (#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_prog_clout')|%]#!)"
-    WCR_tt_delta_from_trad_clout: "from [concept_clout] of [concept_powerful] $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] (#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_powerful_trad_clout')|%]#!)"
-    WCR_tt_delta_from_relations:  "from having $relations_amicable$ or $relations_friendly$ [concept_relations] with a westernized nation"
-    WCR_tt_delta_from_year:       "from the year being #bold 1900#! or later"
+    WCR_tt_delta_from_prog_clout:    "$WCR_tt_progressives_tt$[Concept('concept_interest_group', '$concept_interest_groups$')]の[concept_clout]から(#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_prog_clout')|%]#!)"
+    WCR_tt_delta_from_trad_clout:    "[concept_powerful] $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')]の[concept_clout]から (#bold [Country.MakeScope.ScriptValue('WCR_sv_calculate_total_powerful_trad_clout')|%]#!)"
+    WCR_tt_delta_from_relations:     "$relations_amicable$または$relations_friendly$な[concept_relations]を西洋化した国に持つことから"
+    WCR_tt_delta_from_year:          "#bold 1900#! 年以降であることから"
+    WCR_tt_delta_from_early_rollout: "最初の[Concept('concept_government_building','$concept_government$')]と[Concept('concept_military_building','$MILITARY$')]の西洋化から"
+    WCR_tt_delta_from_recognition:   "[Country.GetNameNoFlag]が[Concept('concept_recognized_power','$concept_recognized_power_short$')]であることから"
     
-    WCR_tt_delta_from_overlord_good_rel: "from [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] having $relations_amicable$ or $relations_friendly$ [concept_relations] with a #bold westernized#! [concept_overlord] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName])"
-    WCR_tt_delta_from_overlord_civ_mis:  "from the [concept_overlord] of [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName]) being #bold westernized#! and researching [GetTechnology('civilizing_mission').GetName]"
+    WCR_tt_delta_from_overlord_good_rel: "[SCOPE.GetRootScope.GetCountry.GetNameNoFlag]が #bold 西洋化した#! [concept_overlord] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName])と$relations_amicable$もしくは$relations_friendly$な関係を築いていることから"
+    WCR_tt_delta_from_overlord_civ_mis:  "[SCOPE.GetRootScope.GetCountry.GetNameNoFlag] ([SCOPE.GetRootScope.GetCountry.GetOverlord.GetName])の[concept_overlord]が #bold 西洋化#!中で [GetTechnology('civilizing_mission').GetName]を研究していることから"
     
     WCR_tt_delta_from_clout:   "$WCR_tt_delta_from_clout_h$#indent_newline:3 \n[Country.MakeScope.GetScriptValueDesc('WCR_sv_calculate_net_delta_from_clout')]#!"
-    WCR_tt_delta_from_clout_h: "from [concept_interest_group] [concept_clout]"
+    WCR_tt_delta_from_clout_h: "[concept_interest_group]の[concept_clout]から"
     
     WCR_tt_delta_from_clout_f:  "• #v 0.00%#! $WCR_tt_delta_from_clout$#indent_newline:3 \n• $WCR_tt_delta_from_clout_fn$#![AddTextIf(GreaterThan_CFixedPoint(Country.MakeScope.ScriptValue('WCR_sv_calculate_westernization_progress_delta'),'(CFixedPoint)0'),'\n')]"
-    WCR_tt_delta_from_clout_fn: "Floored at #v 0.00%#!" # Footnote
+    WCR_tt_delta_from_clout_fn: "下限値 #v 0.00%#!" # Footnote
     
     WCR_overview_reason: "西洋化の進捗は#v 毎月増加#!し、その速度は以下の複数の要因に依存します。"
     
@@ -77,35 +79,39 @@ l_japanese:
     
     WCR_ig_clout_delta_reason: "$WCR_ig_clout_delta_reason_h$#indent_newline:3 \n#indent_newline:2 • $WCR_positive_delta_reason$#!\n#indent_newline:2 • $WCR_negative_delta_reason$#!\n#indent_newline:2 • $WCR_ig_clout_floor_reason$#!#!"
     
-    WCR_ig_clout_delta_reason_h: "Westernization will progress by up to #v [SCOPE.ScriptValue('WCR_TOTAL_PROGRESS_FROM_PROG_CLOUT')|0%]#! each month based on the total distribution of [concept_clout] of certain [Concept('concept_interest_group', '$concept_interest_groups$')]:"
+    WCR_ig_clout_delta_reason_h: "西洋化は、特定の[Concept('concept_interest_group', '$concept_interest_groups$')]の[concept_clout]の割合に応じ、月ごとに最大 #v [SCOPE.ScriptValue('WCR_TOTAL_PROGRESS_FROM_PROG_CLOUT')|0%]#! 進捗する："
     
-    WCR_ig_clout_floor_reason: "Progress derived from [concept_interest_group] [concept_clout] cannot go below #v 0%#!."
+    WCR_ig_clout_floor_reason: "[concept_interest_group]の[concept_clout]による進捗は #v 0%#! を下回ることはない。"
     
-    WCR_positive_delta_reason: "Up to #p [SCOPE.ScriptValue('WCR_TOTAL_PROGRESS_FROM_PROG_CLOUT')|0%]#! will be #v added#!, scaling with the total [concept_clout] of any $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')]."
+    WCR_positive_delta_reason: "$WCR_tt_progressives_tt$[Concept('concept_interest_group', '$concept_interest_groups$')]の[concept_clout]次第で、最大 #p [SCOPE.ScriptValue('WCR_TOTAL_PROGRESS_FROM_PROG_CLOUT')|0%]#! の進捗が #v 加算#! される。"
     
-    WCR_negative_delta_reason: "Up to #n [SCOPE.ScriptValue('WCR_TOTAL_STONEWALL_FROM_TRAD_CLOUT')|0%]#! will be #v removed#!, scaling with the total [concept_clout] of any [concept_powerful] $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')]."
+    WCR_negative_delta_reason: "$WCR_tt_conservatives_tt$[Concept('concept_interest_group', '$concept_interest_groups$')]の[concept_clout]次第で、最大 #p [SCOPE.ScriptValue('WCR_TOTAL_STONEWALL_FROM_TRAD_CLOUT')|0%]#! の進捗が #v 減算#! される。"
     
-    WCR_date_reason: "An extra #p 1%#! of progress is added if the year #bold 1900#! has been reached."
+    WCR_early_rollout_reason: "西洋化の進捗が #v [SCOPE.ScriptValue('WCR_EARLY_ROLLOUT_BONUS_END')]%#! に達するまでは追加で #p 2%#! の進捗が得られる。西洋化の初期段階では、[Concept('concept_government_building','$concept_government$')]と[Concept('concept_military_building','$MILITARY$')]で働く人々の制服が優先して更新される。"
+    
+    WCR_date_reason: " #bold 1900#! 年に到達すると、追加で #p 1%#! の進捗が加算される"
     
     WCR_overlord_reason: "$WCR_overlord_reason_h$#indent_newline:3 \n#indent_newline:3 • $WCR_overlord_rel_reason$#!\n#indent_newline:3 • $WCR_overlord_civ_reason$#!#!"
     
-    WCR_overlord_reason_h: "An extra #p 1%#! of progress is added if [Country.GetName] has an [concept_overlord] who is #bold westernized#!, and either:"
+    WCR_overlord_reason_h: "[Country.GetName]が #bold 西洋化した#! [concept_overlord]を持つ場合、追加で #p 1%#! の進捗が加算される。ただし次の条件を満たす必要がある："
     
-    WCR_overlord_rel_reason: "Has $relations_amicable$ or $relations_friendly$ [concept_relations] ([GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v] or higher) with [Country.GetName]"
+    WCR_overlord_rel_reason: "[Country.GetName]との[concept_relations]が$relations_amicable$もしくは$relations_friendly$([GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v]以上)"
     
-    WCR_overlord_civ_reason: "Has researched [GetTechnology('civilizing_mission').GetName]"
+    WCR_overlord_civ_reason: "[GetTechnology('civilizing_mission').GetName]を研究済"
     
-    WCR_westernized_relations_reason: "いずれかの西洋国家と#p 友好的#! な [concept_relations] ([GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v] 以上) を持っていれば、毎月の進捗が #p 10%#!#v 増加#! します。"
+    WCR_westernized_relations_reason: "[Country.GetName]がいずれかの西洋化した国家と$relations_amicable$もしくは$relations_friendly$の[concept_relations] ([GetDefine('NDiplomacy','RELATIONS_THRESHOLD_AMICABLE')|v] 以上) を持っていれば、毎月の進捗が #p 10%#!#v 増加#! します。"
+    
+    WCR_recognized_reason: "[Country.GetName]が[Concept('concept_recognized_power','$concept_recognized_power_short$')]の場合、西洋化の進捗は #b 現在の月ごとの進捗#! の #p 10%#! #b ぶん増加#! する。"
     
     WCR_ig_opinion_reason_header: "西洋化の進捗#v 25%#! 毎に以下を獲得"
     
-    WCR_ig_opinion_prog_reason: "• All $WCR_tt_progressives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] will gain #p 1#! [concept_approval]"
+    WCR_ig_opinion_prog_reason: "・すべての$WCR_tt_progressives_tt$[Concept('concept_interest_group', '$concept_interest_groups$')]から #p 1#! の[concept_approval]を得る"
     
-    WCR_ig_opinion_trad_reason: "• All $WCR_tt_conservatives_tt$ [Concept('concept_interest_group', '$concept_interest_groups$')] will lose #n 1#! [concept_approval]"
+    WCR_ig_opinion_trad_reason: "すべての$WCR_tt_conservatives_tt$[Concept('concept_interest_group', '$concept_interest_groups$')]から #n 1#! の[concept_approval]を失う"
     
     WCR_ig_opinion_done_reason: "西洋化の#v 完了後#!、獲得した全ての[concept_approval] は長い時間をかけて消滅する。"
     
-    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_breakdown_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_clout_delta_reason$\n\n$WCR_overlord_reason$\n\n$WCR_date_reason$\n\n$WCR_westernized_relations_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason_header$#indent_newline:1 \n$WCR_ig_opinion_prog_reason$\n$WCR_ig_opinion_trad_reason$#!\n\n$WCR_ig_opinion_done_reason$" 
+    WCR_je_westernization_reason_long: "$WCR_LONG_DELIMITER$\n\n$WCR_overview_reason$\n\n$WCR_breakdown_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_clout_delta_reason$\n\n$WCR_early_rollout_reason$\n\n$WCR_overlord_reason$\n\n$WCR_date_reason$\n\n$WCR_westernized_relations_reason$\n\n$WCR_recognized_reason$\n\n$WCR_LONG_DELIMITER$\n\n$WCR_ig_opinion_reason_header$#indent_newline:1 \n$WCR_ig_opinion_prog_reason$\n$WCR_ig_opinion_trad_reason$#!\n\n$WCR_ig_opinion_done_reason$"
     
     # Westernization JE status texts
     # Use of GetPlayer in customizable loc text is mandatory due to data context being changed when going through a customizable loc

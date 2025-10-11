@@ -79,21 +79,21 @@ l_korean:
     
     rule_WCR_westernize_traditionalists:             "#yellow WCR#! | 전통주의자 서구화"
     setting_WCR_westernize_traditionalists_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_traditionalists_yes_desc: "#v 전통주의#! [concept_ideology]을 가진 [Concept('concept_character', '인물')]들은 다른 어떤것도 그들이 서구화하는 것을 반대하지 않는 한 서구화#p 될 것#!입니다. $WCR_AWC_behavior_text$"
+    setting_WCR_westernize_traditionalists_yes_desc: "[GetIdeology('ideology_traditionalist').GetName] [concept_ideology]을 가진 [Concept('concept_character', '인물')]들은 다른 어떤것도 그들이 서구화하는 것을 반대하지 않는 한 서구화#p 될 것#!입니다. $WCR_AWC_behavior_text$"
     setting_WCR_westernize_traditionalists_no:       "$WCR_rule_no$"
-    setting_WCR_westernize_traditionalists_no_desc:  "#v 전통주의#! [concept_ideology]을 가진 [Concept('concept_character', '인물')]들은 서구화#n 되지 않을 것#!입니다. 그들이 #v 군부#! [concept_interest_group]의 [concept_leader]이거나 [concept_commander]이라면 서구화될 것입니다."
+    setting_WCR_westernize_traditionalists_no_desc:  "[GetIdeology('ideology_traditionalist').GetName] [concept_ideology]을 가진 [Concept('concept_character', '인물')]들은 서구화#n 되지 않을 것#!입니다. 그들이 #v 군부#! [concept_interest_group]의 [concept_leader]이거나 [concept_commander]이라면 서구화될 것입니다."
     
     rule_WCR_westernize_ig_rural_folk:             "#yellow WCR#! | #green @rural_folk! $ig_rural_folk$#! 이해 집단 서구화"
     setting_WCR_westernize_ig_rural_folk_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_ig_rural_folk_yes_desc: "#v @rural_folk! $ig_rural_folk$#! [concept_interest_group]의 [concept_leader]는 서구화#p 될 것#!입니다."
+    setting_WCR_westernize_ig_rural_folk_yes_desc: "#green;bold @rural_folk! $ig_rural_folk$#! [concept_interest_group]의 [concept_leader]는 서구화#p 될 것#!입니다."
     setting_WCR_westernize_ig_rural_folk_no:       "$WCR_rule_no$"
-    setting_WCR_westernize_ig_rural_folk_no_desc:  "#v @rural_folk! $ig_rural_folk$#! [concept_interest_group]의 [concept_leader]는 서구화#n 되지 않을 것#!입니다. $WCR_AWC_behavior_text$"
+    setting_WCR_westernize_ig_rural_folk_no_desc:  "#green;bold @rural_folk! $ig_rural_folk$#! [concept_interest_group]의 [concept_leader]는 서구화#n 되지 않을 것#!입니다. $WCR_AWC_behavior_text$"
     
     rule_WCR_westernize_ig_devout:             "#yellow WCR#! | #blue @devout! $ig_devout$#! 이해 집단 서구화"
     setting_WCR_westernize_ig_devout_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_ig_devout_yes_desc: "#v @devout! $ig_devout$#! [concept_interest_group]의 [concept_leader]는 서구화#p 될 것#!입니다."
+    setting_WCR_westernize_ig_devout_yes_desc: "#blue;bold @devout! $ig_devout$#! [concept_interest_group]의 [concept_leader]는 서구화#p 될 것#!입니다."
     setting_WCR_westernize_ig_devout_no:       "$WCR_rule_no$"
-    setting_WCR_westernize_ig_devout_no_desc:  "#v @devout! $ig_devout$#! [concept_interest_group]의 [concept_leader]는 서구화#n 되지 않을 것#!입니다. $WCR_AWC_behavior_text$"
+    setting_WCR_westernize_ig_devout_no_desc:  "#blue;bold @devout! $ig_devout$#! [concept_interest_group]의 [concept_leader]는 서구화#n 되지 않을 것#!입니다. $WCR_AWC_behavior_text$"
     
     rule_WCR_westernize_poor_pop_clothing:             "#yellow WCR#! | 하류층 복장 서구화"
     setting_WCR_westernize_poor_pop_clothing_yes:      "$WCR_rule_yes$"
