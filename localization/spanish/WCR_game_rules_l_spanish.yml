@@ -79,21 +79,21 @@ l_spanish:
     
     rule_WCR_westernize_traditionalists:             "#yellow WCR#! | Occidentalizar a tradicionalistas"
     setting_WCR_westernize_traditionalists_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_traditionalists_yes_desc: "[Concept('concept_character', '$concept_characters$')] con la [concept_ideology] #v $ideology_traditionalist$#! #p serán#! occidentalizados si nada les prohíbe lo contrario. $WCR_AWC_behavior_text$"
+    setting_WCR_westernize_traditionalists_yes_desc: "[Concept('concept_character', '$concept_characters$')] con la [concept_ideology|l] [GetIdeology('ideology_traditionalist').GetName] #p serán#! occidentalizados si nada les prohíbe lo contrario. $WCR_AWC_behavior_text$"
     setting_WCR_westernize_traditionalists_no:       "$WCR_rule_no$"
-    setting_WCR_westernize_traditionalists_no_desc:  "[Concept('concept_character', '$concept_characters$')] con ideología #v $ideology_traditionalist$#! [concept_ideology] #n no se#! occidentalizarán. Lo harán si uno es el [concept_leader] del [concept_interest_group] de las #v $ig_armed_forces$#! o es un [concept_commander]."
+    setting_WCR_westernize_traditionalists_no_desc:  "[Concept('concept_character', '$concept_characters$')] con la [concept_ideology|l] [GetIdeology('ideology_traditionalist').GetName] #n no se#! occidentalizarán. Lo harán si uno es el [concept_leader] del [concept_interest_group] de las #v $ig_armed_forces$#! o es un [concept_commander]."
     
     rule_WCR_westernize_ig_rural_folk:             "#yellow WCR#! | Occidentalizar GI #green @rural_folk! $ig_rural_folk$#!"
     setting_WCR_westernize_ig_rural_folk_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_ig_rural_folk_yes_desc: "El [concept_leader] del [concept_interest_group] de la #v @rural_folk! $ig_rural_folk$#! #p se#! occidentalizará."
+    setting_WCR_westernize_ig_rural_folk_yes_desc: "El [concept_leader] del [concept_interest_group] de la #green;bold @rural_folk! $ig_rural_folk$#! #p se#! occidentalizará."
     setting_WCR_westernize_ig_rural_folk_no:       "$WCR_rule_no$"
-    setting_WCR_westernize_ig_rural_folk_no_desc:  "El [concept_leader] del [concept_interest_group] de la #v @rural_folk! $ig_rural_folk$#! #n no se#! occidentalizará. $WCR_AWC_behavior_text$"
+    setting_WCR_westernize_ig_rural_folk_no_desc:  "El [concept_leader] del [concept_interest_group] de la #green;bold @rural_folk! $ig_rural_folk$#! #n no se#! occidentalizará. $WCR_AWC_behavior_text$"
     
     rule_WCR_westernize_ig_devout:             "#yellow WCR#! | Occidentalizar GI #blue @devout! $ig_devout$#!"
     setting_WCR_westernize_ig_devout_yes:      "$WCR_rule_yes$"
-    setting_WCR_westernize_ig_devout_yes_desc: "El [concept_leader] del [concept_interest_group] de los #v @devout! $ig_devout$#! #p se#! occidentalizará."
+    setting_WCR_westernize_ig_devout_yes_desc: "El [concept_leader] del [concept_interest_group] de los #blue;bold @devout! $ig_devout$#! #p se#! occidentalizará."
     setting_WCR_westernize_ig_devout_no:       "$WCR_rule_no$"
-    setting_WCR_westernize_ig_devout_no_desc:  "El [concept_leader] del [concept_interest_group] de los #v @devout! $ig_devout$#! #n no se#! occidentalizará. $WCR_AWC_behavior_text$"
+    setting_WCR_westernize_ig_devout_no_desc:  "El [concept_leader] del [concept_interest_group] de los #blue;bold @devout! $ig_devout$#! #n no se#! occidentalizará. $WCR_AWC_behavior_text$"
     
     rule_WCR_westernize_poor_pop_clothing:             "#yellow WCR#! | Occidentalizar vestimenta de la clase baja"
     setting_WCR_westernize_poor_pop_clothing_yes:      "$WCR_rule_yes$"

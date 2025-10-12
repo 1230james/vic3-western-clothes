@@ -1,4 +1,6 @@
-﻿WCR_accessories = {
+﻿# Epaulettes, and aiguillettes are handled in the clothes/outfits instead of here
+
+WCR_accessories = {
     usage = game
     selection_behavior = weighted_random
     
@@ -20,35 +22,25 @@
             }
         }
     }
+}
 
-    WCR_sash_accessories = {
+WCR_sash_accessories = {
+    usage = game
+    selection_behavior = weighted_random
+    
+    WCR_generic_sashes = {
         dna_modifiers = {
             accessory = {
                 mode = add
                 gene = sashes
                 template = all_sashes
-                range = { 0 1 } # For the randomness to work correctly
+                range = { 0 1 }
             }
         }
         weight = {
             base = 0
-            # modifier = {
-                # add = 2000
-                # WCR_has_completed_westernization_trigger = yes
-                # WCR_ruler_has_domestic_influence_trigger = no
-                # scope:character ?= {
-                    # OR = {
-                        # military_clothes_trigger = yes
-                        # monarchy_clothes_trigger = yes
-                    # }
-                    # age > 12
-                    # owner ?= {
-                        # WCR_is_using_vanilla_rules = no
-                    # }
-                # }
-            # }
             modifier = {
-                add = 2000
+                add = 100
                 agitator_character_trigger = no
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
@@ -60,18 +52,18 @@
                 OR = {
                     AND = { # Generals
                         WCR_army_clothes_trigger = yes
-                        WCR_army_has_domestic_influence_trigger = yes
+                        OR = {
+                            WCR_army_has_domestic_influence_trigger = yes
+                            WCR_army_has_russian_influence_trigger  = yes
+                            WCR_army_has_no_influence_trigger       = yes
+                        }
                     }
                     AND = { # Admirals
                         WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_domestic_influence_trigger = yes
-                        
-                        scope:character ?= {
-                            owner ?= {
-                                NOT = {
-                                    WCR_st_is_country_tag = { TAG = CHI } # China has special logic to account for clipping problems
-                                }
-                            }
+                        OR = {
+                            WCR_navy_has_domestic_influence_trigger = yes
+                            WCR_navy_has_russian_influence_trigger  = yes
+                            WCR_navy_has_no_influence_trigger       = yes
                         }
                     }
                     AND = { # Rulers
@@ -80,13 +72,28 @@
                             military_clothes_trigger = yes
                             monarchy_clothes_trigger = yes
                         }
-                        WCR_army_has_domestic_influence_trigger = yes
+                        OR = {
+                            WCR_ruler_has_domestic_influence_trigger = yes
+                            WCR_ruler_has_russian_influence_trigger  = yes
+                            WCR_ruler_has_no_influence_trigger       = yes
+                        }
                     }
                 }
             }
-            modifier = {
+            modifier = { # Chinese navy has special logic to account for clipping problems
                 add = -2000
-                md_chinese_uniform_pack_active_trigger = yes # CUP compatibility/deconflict
+                WCR_has_completed_westernization_trigger = yes
+                WCR_navy_clothes_trigger = yes
+                WCR_navy_has_domestic_influence_trigger = yes
+                scope:character ?= {
+                    owner ?= {
+                        WCR_st_is_country_tag = { TAG = CHI }
+                    }
+                }
+            }
+            modifier = { # CUP compatibility/deconflict
+                add = -2000
+                md_chinese_uniform_pack_active_trigger = yes
                 scope:character ?= {
                     owner ?= {
                         WCR_st_is_country_tag = { TAG = CHI }
@@ -95,29 +102,52 @@
             }
         }
     }
+}
+
+WCR_medals_accessories = {
+    usage = game
+    selection_behavior = weighted_random
     
-    WCR_medals_accessories = {
+    WCR_generic_medals = {
         dna_modifiers = {
             accessory = {
                 mode = add
                 gene = medals
                 template = generic_medals
-                range = { 0 1 } # For the randomness to work correctly
+                range = { 0 1 }
             }
         }
         weight = {
             base = 0
             modifier = {
-                add = 2000
+                add = 100
                 agitator_character_trigger = no
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
                     age > 12
                     owner ?= {
                         WCR_is_using_vanilla_rules = no
-                        NOT = {
-                            WCR_st_is_country_tag = { TAG = CHI } # Exclude China because of clipping problems
+                    }
+                }
+                OR = {
+                    WCR_army_clothes_trigger = yes
+                    WCR_navy_clothes_trigger = yes
+                    AND = { # Rulers
+                        ruler_clothes_trigger = yes
+                        OR = {
+                            military_clothes_trigger = yes
+                            monarchy_clothes_trigger = yes
                         }
+                        WCR_late_army_uniform_trigger = no
+                    }
+                }
+            }
+            modifier = { # Exclude China due to clipping problems
+                add = -2000
+                WCR_has_completed_westernization_trigger = yes
+                scope:character ?= {
+                    owner ?= {
+                        WCR_st_is_country_tag = { TAG = CHI }
                     }
                 }
                 OR = {
@@ -135,216 +165,35 @@
                             military_clothes_trigger = yes
                             monarchy_clothes_trigger = yes
                         }
-                        WCR_army_has_domestic_influence_trigger = yes
+                        WCR_ruler_has_domestic_influence_trigger = yes
                     }
                 }
             }
         }
     }
+}
 
-    WCR_prussian_accessories = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = medals
-                template = generic_medals # prussian medals are too prussian
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = all_epaulettes
-                range = { 0.05 0.4 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = belts
-                template = all_belts
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = sashes
-                template = all_sashes
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 10000
-                agitator_character_trigger = no
-                WCR_has_completed_westernization_trigger = yes
-                scope:character ?= {
-                    age > 12
-                }
-                soldier_clothes_pop_trigger = no
-                OR = {
-                    AND = {
-                        WCR_army_clothes_trigger = yes
-                        WCR_late_army_uniform_trigger = no
-                        WCR_army_has_german_influence_trigger = yes
-                    }
-                    AND = {
-                        WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_german_influence_trigger = yes
-                    }
-                    AND = {
-                        OR = {
-                            AND = {
-                                military_clothes_trigger = yes
-                                WCR_late_army_uniform_trigger = no
-                            }
-                            monarchy_clothes_trigger = yes
-                        }
-                        WCR_ruler_has_german_influence_trigger = yes
-                    }
-                }
-            }
-        }
-    }
+WCR_belts_accessories = {
+    usage = game
+    selection_behavior = weighted_random
     
-    WCR_prussian_late_accessories = {
+    # Belts only for characters
+    # NOT for use with late era uniforms
+    WCR_generic_belts = {
         dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = medals
-                template = generic_medals # prussian medals are too prussian
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = all_epaulettes
-                range = { 0.05 0.4 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 10000
-                agitator_character_trigger = no
-                WCR_has_completed_westernization_trigger = yes
-                scope:character ?= {
-                    age > 12
-                }
-                soldier_clothes_pop_trigger = no
-                WCR_late_army_uniform_trigger = yes
-                OR = {
-                    AND = {
-                        WCR_army_clothes_trigger = yes
-                        WCR_army_has_german_influence_trigger = yes
-                    }
-                    AND = {
-                        ruler_clothes_trigger = yes
-                        military_clothes_trigger = yes
-                        WCR_ruler_has_german_influence_trigger = yes
-                    }
-                }
-            }
-        }
-    }
-
-    WCR_american_accessories = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = medals
-                template = generic_medals
-                range = { 0.9 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = all_epaulettes
-                range = { 0.8 1 } # For the randomness to work correctly
-            }
             accessory = {
                 mode = add
                 gene = belts
                 template = all_belts
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = sashes
-                template = all_sashes
-                range = { 0 0.4 } # For the randomness to work correctly
+                range = { 0 1 }
             }
         }
         weight = {
             base = 0
             modifier = {
-                add = 10000
+                add = 100
                 agitator_character_trigger = no
                 WCR_has_completed_westernization_trigger = yes
-                soldier_clothes_pop_trigger = no
-                OR = {
-                    AND = {
-                        WCR_army_clothes_trigger = yes
-                        WCR_army_has_american_influence_trigger = yes
-                    }
-                    AND = {
-                        WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_american_influence_trigger = yes
-                    }
-                    AND = {
-                        ruler_clothes_trigger = yes
-                        OR = {
-                            military_clothes_trigger = yes
-                            monarchy_clothes_trigger = yes
-                        }
-                        WCR_ruler_has_american_influence_trigger = yes
-                    }
-                }
-                scope:character ?= {
-                    age > 12
-                }
-            }
-        }
-    }
-
-    WCR_commander_accessories = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = medals
-                template = generic_medals
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = epaulettes
-                template = all_epaulettes
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = belts
-                template = all_belts
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = sashes
-                template = all_sashes
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = aiguillettes
-                template = all_aiguillettes
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 20000
-                agitator_character_trigger = no
-                WCR_has_completed_westernization_trigger = yes
-                republic_clothes_trigger = no
-                soldier_clothes_pop_trigger = no
                 scope:character ?= {
                     age > 12
                     owner ?= {
@@ -352,18 +201,38 @@
                     }
                 }
                 OR = {
-                    AND = { # Generals
-                        WCR_army_clothes_trigger      = yes
+                    WCR_navy_clothes_trigger = yes
+                    AND = {
                         WCR_late_army_uniform_trigger = no
-                        WCR_army_has_american_influence_trigger = no
-                        WCR_army_has_german_influence_trigger   = no
-                        WCR_army_has_domestic_influence_trigger = no
+                        OR = {
+                            WCR_army_clothes_trigger = yes
+                            AND = { # Rulers
+                                ruler_clothes_trigger = yes
+                                OR = {
+                                    military_clothes_trigger = yes
+                                    monarchy_clothes_trigger = yes
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            modifier = { # Exclude China (they have their own)
+                add = -2000
+                WCR_has_completed_westernization_trigger = yes
+                scope:character ?= {
+                    owner ?= {
+                        WCR_st_is_country_tag = { TAG = CHI }
+                    }
+                }
+                OR = {
+                    AND = { # Generals
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
                     }
                     AND = { # Admirals
                         WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_american_influence_trigger = no
-                        WCR_navy_has_german_influence_trigger   = no
-                        WCR_navy_has_domestic_influence_trigger = no
+                        WCR_navy_has_domestic_influence_trigger = yes
                     }
                     AND = { # Rulers
                         ruler_clothes_trigger = yes
@@ -371,69 +240,12 @@
                             military_clothes_trigger = yes
                             monarchy_clothes_trigger = yes
                         }
-                        WCR_late_army_uniform_trigger = no
-                        WCR_ruler_has_american_influence_trigger = no
-                        WCR_ruler_has_german_influence_trigger   = no
-                        WCR_ruler_has_domestic_influence_trigger = no
+                        WCR_ruler_has_domestic_influence_trigger = yes
                     }
                 }
             }
         }
     }
-    
-    WCR_commander_late_accessories = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = medals
-                template = generic_medals
-                range = { 0 1 } # For the randomness to work correctly
-            }
-            accessory = {
-                mode = add
-                gene = aiguillettes
-                template = all_aiguillettes
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 20000
-                agitator_character_trigger = no
-                WCR_has_completed_westernization_trigger = yes
-                republic_clothes_trigger = no
-                soldier_clothes_pop_trigger = no
-                scope:character ?= {
-                    age > 12
-                    owner ?= {
-                        WCR_is_using_vanilla_rules = no
-                    }
-                }
-                OR = {
-                    AND = { # Generals
-                        WCR_army_clothes_trigger      = yes
-                        WCR_late_army_uniform_trigger = yes
-                        WCR_army_has_american_influence_trigger = no
-                        WCR_army_has_german_influence_trigger = no
-                        WCR_army_has_domestic_influence_trigger = no
-                    }
-                    AND = { # Rulers
-                        ruler_clothes_trigger = yes
-                        OR = {
-                            military_clothes_trigger = yes
-                            monarchy_clothes_trigger = yes
-                        }
-                        WCR_late_army_uniform_trigger = yes
-                        WCR_ruler_has_american_influence_trigger = no
-                        WCR_ruler_has_german_influence_trigger = no
-                        WCR_ruler_has_domestic_influence_trigger = no
-                    }
-                }
-            }
-        }
-    }
-    
 }
 
 WCR_eyewear_accessories = {

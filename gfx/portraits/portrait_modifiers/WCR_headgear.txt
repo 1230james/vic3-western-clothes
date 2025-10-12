@@ -3,9 +3,9 @@
     selection_behavior = weighted_random
 
     ## WCR - Vanilla Overrides ##
-    
+
     # Ethnic hats to preserve poor pop westernization rule behaviors
-    # Most or all of these should just be clones of vanilla definitions
+    # Most or all of these should just be [near-]clones of vanilla definitions
     WCR_chinese_common_headgear = {
         dna_modifiers = {
             accessory = {
@@ -21,6 +21,7 @@
                 add = 100
                 chinese_manchu_queue_hairstyle_pops_trigger = yes
                 poor_clothes_pop_trigger = yes
+                machinists_clothes_pop_trigger = no
             }
             modifier = {
                 add = -1000
@@ -29,7 +30,7 @@
             }
         }
     }
-    
+
     WCR_japanese_common_headgear = {
         dna_modifiers = {
             accessory = {
@@ -63,7 +64,7 @@
             }
         }
     }
-    
+
     WCR_native_american_bandanna = {
         dna_modifiers = {
             accessory = {
@@ -78,7 +79,8 @@
             base = 0
             modifier = {
                 add = 100
-                native_american_clothes_pop_trigger = yes   
+                native_american_clothes_pop_trigger = yes
+                machinists_clothes_pop_trigger = no
             }
             modifier = {
                 add = -1000
@@ -87,7 +89,159 @@
             }
         }
     }
-    
+
+    WCR_arabic_turban = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = arabic_turban
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                arabic_clothes_pop_trigger = yes
+                machinists_clothes_pop_trigger = no
+            }
+            modifier = {
+                add = -1000
+                WCR_has_completed_westernization_trigger = yes
+                has_game_rule = WCR_westernize_poor_pop_clothing_yes
+            }
+        }
+    }
+
+    WCR_arabic_keffiyeh = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = arabic_turban
+                range = { 0.25 0.75 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                machinists_clothes_pop_trigger = no
+                scope:pop ?= {
+                    culture = {
+                        OR = {
+                            cu:bedouin = this
+                            cu:mashriqi = this
+                        }
+                    }
+                }
+            }
+            modifier = {
+                add = -1000
+                WCR_has_completed_westernization_trigger = yes
+                has_game_rule = WCR_westernize_poor_pop_clothing_yes
+            }
+        }
+    }
+
+    WCR_north_african_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = north_african_headwear
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                machinists_clothes_pop_trigger = no
+                scope:pop ?= {
+                    culture = {
+                        OR = {
+                            cu:maghrebi = this
+                            cu:berber = this
+                        }
+                    }
+                }
+            }
+            modifier = {
+                add = -1000
+                WCR_has_completed_westernization_trigger = yes
+                has_game_rule = WCR_westernize_poor_pop_clothing_yes
+            }
+        }
+    }
+
+    WCR_african_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = african_common_headgear
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                machinists_clothes_pop_trigger = no
+                scope:pop ?= {
+                    culture = {
+                        OR = {
+                            has_discrimination_trait = heritage_guinean
+                            has_discrimination_trait = heritage_east_african
+                        }
+                        NOR = {
+                            has_discrimination_trait = heritage_abyssinian
+                            has_discrimination_trait_group = language_group_bantu
+                            THIS = cu:maasai
+                        }
+                    }
+                }
+            }
+            modifier = {
+                add = -1000
+                WCR_has_completed_westernization_trigger = yes
+                has_game_rule = WCR_westernize_poor_pop_clothing_yes
+            }
+        }
+    }
+
+    WCR_arabic_low_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = arabic_low_tier
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                arabic_clothes_pop_trigger = yes
+                poor_clothes_pop_trigger = yes
+                machinists_clothes_pop_trigger = no
+                scope:pop ?= {
+                    religion = {
+                        has_discrimination_trait = heritage_islamic
+                    }
+                }
+            }
+            modifier = {
+                add = -1000
+                WCR_has_completed_westernization_trigger = yes
+                has_game_rule = WCR_westernize_poor_pop_clothing_yes
+            }
+        }
+    }
+
     # Armed Forces Traditionalists wear this
     WCR_japanese_agitator_headgear = {
         dna_modifiers = {
@@ -122,9 +276,9 @@
             }
         }
     }
-    
+
     ## WCR - Additions ##
-    
+
     WCR_european_agitator_headgear = {
         dna_modifiers = {
             accessory = {
@@ -143,7 +297,7 @@
             }
         }
     }
-    
+
     WCR_european_royal_headgear = {
         dna_modifiers = {
             accessory = {
@@ -165,7 +319,7 @@
             }
         }
     }
-    
+
     WCR_european_common_headgear = {
         dna_modifiers = {
             accessory = {
@@ -184,6 +338,7 @@
                 armed_forces_clothes_trigger = no
                 military_clothes_trigger = no
                 scope:character ?= {
+                    is_heir = no
                     age > 12
                 }
             }
@@ -202,7 +357,7 @@
             }
         }
     }
-    
+
     WCR_european_capitalist_headgear = {
         dna_modifiers = {
             accessory = {
@@ -226,6 +381,8 @@
                     age >= define:NCharacters|ADULT_AGE
                     politician_clothes_trigger = yes
                     military_clothes_trigger   = no
+                    is_ruler = no
+                    is_heir  = no
                     OR = {
                         is_interest_group_type = ig_landowners
                         is_interest_group_type = ig_industrialists
@@ -234,7 +391,7 @@
             }
         }
     }
-    
+
     WCR_european_executive_headgear = {
         dna_modifiers = {
             accessory = {
@@ -261,7 +418,7 @@
             }
         }
     }
-    
+
     WCR_european_bowler_hat = {
         dna_modifiers = {
             accessory = {
@@ -280,7 +437,7 @@
             }
         }
     }
-    
+
     WCR_european_flat_cap = {
         dna_modifiers = {
             accessory = {
@@ -300,7 +457,7 @@
             }
         }
     }
-    
+
     WCR_european_peasants_headgear = {
         dna_modifiers = {
             accessory = {
@@ -308,8 +465,8 @@
                 gene = headgear
                 template = european_strawhat
                 range = { 0 1 } # For the randomness to work correctly
-           
-            } 
+
+            }
         }
         weight = {
             base = 0
@@ -320,7 +477,7 @@
             }
         }
     }
-    
+
     WCR_academic_headgear = {
         dna_modifiers = {
             accessory = {
@@ -328,7 +485,7 @@
                 gene = headgear
                 template = academic_cap
                 range = { 0 1 } # For the randomness to work correctly
-            } 
+            }
         }
         weight = {
             base = 0
@@ -339,7 +496,7 @@
             }
         }
     }
-    
+
     WCR_european_military_headgear = {
         dna_modifiers = {
             accessory = {
@@ -385,7 +542,7 @@
             }
         }
     }
-    
+
     WCR_european_military_late_headgear = {
         dna_modifiers = {
             accessory = {
@@ -431,7 +588,7 @@
             }
         }
     }
-    
+
     WCR_european_admiral_headgear = {
         dna_modifiers = {
             accessory = {
@@ -460,7 +617,7 @@
             }
         }
     }
-    
+
     WCR_american_military_headgear = {
         dna_modifiers = {
             accessory = {
@@ -491,7 +648,7 @@
             }
         }
     }
-    
+
     WCR_american_military_late_headgear = {
         dna_modifiers = {
             accessory = {
@@ -533,7 +690,7 @@
             }
         }
     }
-    
+
     WCR_british_military_headgear = {
         dna_modifiers = {
             accessory = {
@@ -564,7 +721,7 @@
             }
         }
     }
-    
+
     WCR_british_military_soldier_headgear = {
         dna_modifiers = {
             accessory = {
@@ -590,7 +747,7 @@
             }
         }
     }
-    
+
     WCR_british_military_soldier_mid_late_headgear = {
         dna_modifiers = {
             accessory = {
@@ -616,7 +773,7 @@
             }
         }
     }
-    
+
     WCR_british_military_late_headgear = {
         dna_modifiers = {
             accessory = {
@@ -647,7 +804,7 @@
             }
         }
     }
-    
+
     WCR_french_military_headgear = {
         dna_modifiers = {
             accessory = {
@@ -678,7 +835,7 @@
             }
         }
     }
-    
+
     WCR_french_military_late_headgear = {
         dna_modifiers = {
             accessory = {
@@ -709,7 +866,7 @@
             }
         }
     }
-    
+
     WCR_german_military_headgear = {
         dna_modifiers = {
             accessory = {
@@ -740,7 +897,7 @@
             }
         }
     }
-    
+
     WCR_german_military_late_headgear = {
         dna_modifiers = {
             accessory = {
@@ -771,14 +928,14 @@
             }
         }
     }
-    
+
     WCR_russian_military_headgear = {
         dna_modifiers = {
             accessory = {
                 mode = add
                 gene = headgear
                 template = russian_military_headgear
-                range = { 0 0.65 }
+                range = { 0 0.50 }
             }
         }
         weight = {
@@ -802,7 +959,7 @@
             }
         }
     }
-    
+
     WCR_russian_military_soldier_headgear = {
         dna_modifiers = {
             accessory = {
@@ -816,34 +973,30 @@
             base = 0
             modifier = {
                 add = 100
+                exists = scope:pop
                 WCR_late_army_uniform_trigger = no
                 WCR_has_completed_westernization_trigger = yes
                 WCR_army_clothes_trigger = yes
                 WCR_army_has_russian_influence_trigger = yes
-                scope:pop ?= {
-                    owner ?= {
-                        NOT = { has_technology_researched = repeaters }
-                    }
-                }
             }
         }
     }
-    
+
     WCR_russian_military_late_headgear = {
         dna_modifiers = {
             accessory = {
                 mode = add
                 gene = headgear
                 template  = russian_military_headgear
-                accessory = male_headgear_european_military_03_late_russian
+                accessory = male_headgear_european_military_03_late_russian_officer
             }
         }
         weight = {
             base = 0
             modifier = {
                 add = 100
+                exists = scope:character
                 agitator_character_trigger = no
-                soldier_clothes_pop_trigger = no
                 WCR_late_army_uniform_trigger = yes
                 WCR_has_completed_westernization_trigger = yes
                 WCR_army_clothes_trigger = yes
@@ -860,6 +1013,29 @@
         }
     }
     
+    WCR_russian_military_late_soldier_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template  = russian_military_headgear
+                accessory = male_headgear_european_military_03_late_russian
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                exists = scope:pop
+                agitator_character_trigger = no
+                WCR_late_army_uniform_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                WCR_army_clothes_trigger = yes
+                WCR_army_has_russian_influence_trigger = yes
+            }
+        }
+    }
+
     WCR_korean_empire_military_headgear = {
         dna_modifiers = {
             accessory = {
@@ -941,7 +1117,7 @@
             }
         }
     }
-    
+
     WCR_japanese_meiji_military_headgear = {
         dna_modifiers = {
             accessory = {
@@ -1023,7 +1199,7 @@
             }
         }
     }
-    
+
     WCR_arabic_military_fez = { # Excludes the fancy female headgear meant for high class pops
         dna_modifiers = {
             accessory = {
@@ -1039,7 +1215,7 @@
                 accessory = male_headgear_arabic_common_01
             }
         }
-        
+
         weight = {
             base = 0
             modifier = {
@@ -1091,7 +1267,7 @@
             }
         }
     }
-    
+
     WCR_persian_ruler_headgear = {
         dna_modifiers = {
             accessory = {
@@ -1125,7 +1301,7 @@
             }
         }
     }
-    
+
     WCR_persian_military_headgear = {
         dna_modifiers = {
             accessory = {
@@ -1166,7 +1342,7 @@
             }
         }
     }
-    
+
     WCR_persian_soldier_late_headgear = {
         dna_modifiers = {
             accessory = {
@@ -1200,7 +1376,7 @@
             }
         }
     }
-    
+
     WCR_persian_commander_late_headgear = {
         dna_modifiers = {
             accessory = {
@@ -1239,7 +1415,7 @@
             }
         }
     }
-    
+
     WCR_chinese_modern_ruler_headgear_qing = {
         dna_modifiers = {
             accessory = {
@@ -1255,7 +1431,7 @@
                 accessory = qing_guanmao
             }
         }
-        
+
         weight = {
             base = 0
             modifier = {
@@ -1264,6 +1440,7 @@
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_domestic_influence_trigger = yes
                 monarchy_clothes_trigger = yes
+                military_clothes_trigger = no # Prevent use when king is commanding an army
                 scope:character ?= {
                     owner ?= {
                         WCR_st_is_country_tag = { TAG = CHI }
@@ -1274,7 +1451,7 @@
             }
         }
     }
-    
+
     # WCR_chinese_modern_ruler_headgear_han = {
         # dna_modifiers = {
             # accessory = {
@@ -1290,7 +1467,7 @@
                 # accessory = xinjunmao_jiangjun
             # }
         # }
-        
+
         # weight = {
             # base = 0
             # modifier = {
@@ -1307,7 +1484,7 @@
             # }
         # }
     # }
-    
+
     WCR_chinese_modern_general_headgear_qing = {
         dna_modifiers = {
             accessory = {
@@ -1323,7 +1500,7 @@
                 range = { 0.5 1 }
             }
         }
-        
+
         weight = {
             base = 0
             modifier = {
@@ -1351,7 +1528,7 @@
             }
         }
     }
-    
+
     WCR_chinese_modern_general_headgear_han = {
         dna_modifiers = {
             accessory = {
@@ -1367,7 +1544,7 @@
                 range = { 0.5 0.74 }
             }
         }
-        
+
         weight = {
             base = 0
             modifier = {
@@ -1395,7 +1572,7 @@
             }
         }
     }
-    
+
     WCR_chinese_modern_admiral_headgear_qing = {
         dna_modifiers = {
             accessory = {
@@ -1411,7 +1588,7 @@
                 range = { 0 1 }
             }
         }
-        
+
         weight = {
             base = 0
             modifier = {
@@ -1429,7 +1606,7 @@
             }
         }
     }
-    
+
     WCR_chinese_modern_admiral_headgear_han = {
         dna_modifiers = {
             accessory = {
@@ -1445,7 +1622,7 @@
                 range = { 0 0.66 }
             }
         }
-        
+
         weight = {
             base = 0
             modifier = {
@@ -1463,7 +1640,7 @@
             }
         }
     }
-    
+
     WCR_chinese_modern_officer_headgear = {
         dna_modifiers = {
             accessory = {
@@ -1479,7 +1656,7 @@
                 accessory = xinjunmao_junguan
             }
         }
-        
+
         weight = {
             base = 0
             modifier = {
@@ -1506,7 +1683,7 @@
             }
         }
     }
-    
+
     WCR_chinese_modern_soldier_headgear = {
         dna_modifiers = {
             accessory = {
@@ -1522,7 +1699,7 @@
                 accessory = xinjunmao_shibing
             }
         }
-        
+
         weight = {
             base = 0
             modifier = {
@@ -1549,7 +1726,7 @@
             }
         }
     }
-    
+
     # Fake or semi-historical late era military uniforms
     WCR_generic_beige_cap_military_late_headgear = {
         dna_modifiers = {
@@ -1578,7 +1755,7 @@
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                 }
-                
+
                 OR = { # Hell yeah, DRY baybee (⌐■_■)
                     scope:pop ?= {
                         save_temporary_scope_as = person
@@ -1612,7 +1789,7 @@
             }
         }
     }
-    
+
     WCR_generic_british_cap_military_late_headgear = {
         dna_modifiers = {
             accessory = {
@@ -1640,7 +1817,7 @@
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                 }
-                
+
                 OR = {
                     scope:pop ?= {
                         save_temporary_scope_as = person
@@ -1666,7 +1843,7 @@
             }
         }
     }
-    
+
     WCR_generic_blue_cap_military_late_headgear = {
         dna_modifiers = {
             accessory = {
@@ -1694,7 +1871,7 @@
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                 }
-                
+
                 OR = {
                     scope:pop ?= {
                         save_temporary_scope_as = person
@@ -1716,7 +1893,7 @@
             }
         }
     }
-    
+
     WCR_generic_green_cap_military_late_headgear = {
         dna_modifiers = {
             accessory = {
@@ -1740,11 +1917,11 @@
                     }
                     AND = {
                         WCR_army_clothes_trigger = yes
-                        
+
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                 }
-                
+
                 # Male characters only (we're reusing the Reza Shah hat, which has Arabic headgear for the female
                 scope:character ?= {
                     is_female = no
@@ -1757,7 +1934,7 @@
             }
         }
     }
-    
+
     WCR_arabic_military_late_headgear = {
         dna_modifiers = {
             accessory = {
@@ -1784,7 +1961,7 @@
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                 }
-                
+
                 OR = {
                     scope:pop ?= {
                         save_temporary_scope_as = person

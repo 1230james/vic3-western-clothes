@@ -52,7 +52,6 @@ WCR_st_is_country_pre_westernized = {
     # Exclusions
     NOR = {
         c:PHI ?= THIS # The Philippines
-        c:EGY ?= THIS # Egypt (They start off ruled by Albanians)
         
         has_variable = WCR_treat_as_unwesternized # For arbitrary determinations (by [third-party] mod content)
     }
@@ -63,20 +62,15 @@ WCR_st_is_country_pre_westernized = {
 WCR_st_is_western_culture = {
     OR = {
         # European
-        has_discrimination_trait = european_heritage
+        has_discrimination_trait_group = heritage_group_european
         
         # African diaspora
-        cu:afro_caribbean ?= THIS
-        cu:afro_antillean ?= THIS
-        cu:afro_caribeno  ?= THIS
-        cu:afro_american  ?= THIS
-        cu:afro_brazilian ?= THIS
+        has_discrimination_trait = heritage_african_diaspora
     }
     
     # Cultural exclusions
     NOR = {
         cu:circassian ?= THIS
-        cu:sephardic  ?= THIS # They have European and Middle Eastern Heritages; base game gives them Middle Eastern clothes
     }
 }
 

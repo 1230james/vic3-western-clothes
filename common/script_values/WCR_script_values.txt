@@ -1,9 +1,11 @@
 ﻿WCR_TOTAL_PROGRESS_FROM_PROG_CLOUT  = 0.04
 WCR_TOTAL_STONEWALL_FROM_TRAD_CLOUT = 0.08
 
+WCR_EARLY_ROLLOUT_BONUS_END = 10 # When progress is less than (but NOT equal to) this, get the early rollout bonus
+
 WCR_sv_calculate_westernization_progress_delta = {
     value = 0
-    
+
     # IG clout
     add = {
         desc   = WCR_tt_delta_from_clout
@@ -13,9 +15,20 @@ WCR_sv_calculate_westernization_progress_delta = {
             min = 0 # Disallow backtracking
         }
     }
-    
-    # Flat-rate helpers (game date + subject of westernized)
-    if = {
+
+    # Flat-rate helpers
+    if = { # First 10% boost (westernizing government)
+        limit = {
+            var:WCR_westernization_progress < WCR_EARLY_ROLLOUT_BONUS_END
+        }
+        add = {
+            desc   = WCR_tt_delta_from_early_rollout
+            format = WCR_tt_format_base
+            value  = 0.02
+        }
+    }
+
+    if = { # Game date
         limit = { # The year was
             year >= 1900
         }         # 'tis worth remembering
@@ -25,8 +38,8 @@ WCR_sv_calculate_westernization_progress_delta = {
             value  = 0.01
         }
     }
-    
-    if = {
+
+    if = { # Subject of westernized
         limit = {
             is_subject  = yes
             overlord   ?= {
@@ -58,7 +71,7 @@ WCR_sv_calculate_westernization_progress_delta = {
             }
         }
     }
-    
+
     # Add 10% for amicable or friendly relations with at least one westernized nation
     if = {
         limit = {
@@ -76,6 +89,22 @@ WCR_sv_calculate_westernization_progress_delta = {
             }
         }
     }
+
+    # Add 10% for being recognized
+    # Yes I know this is stacking on top of the previous x1.10
+    if = {
+        limit = {
+            is_country_type = recognized
+        }
+        multiply = {
+            add  = 0
+            add  = {
+                desc   = WCR_tt_delta_from_recognition
+                format = WCR_tt_format_mult
+                value  = 1.10
+            }
+        }
+    }
 }
 
 # Defining these separately so we can use it in loc too
@@ -88,7 +117,7 @@ WCR_sv_calculate_net_delta_from_clout = {
             multiply = WCR_TOTAL_PROGRESS_FROM_PROG_CLOUT
         }
     }
-    
+
     subtract = {
         desc   = WCR_tt_delta_from_trad_clout
         format = WCR_tt_format_base
@@ -124,17 +153,20 @@ WCR_sv_calculate_total_powerful_trad_clout = {
 WCR_sv_calculate_IG_progressive_score = {
     # Base amount
     add = -200
-    
+
     # Special case: led by Traditionalist
     if = {
         limit = {
             leader ?= {
-                has_ideology = ideology:ideology_traditionalist
+                OR = {
+                    has_ideology = ideology:ideology_traditionalist
+                    has_ideology = ideology:ideology_traditionalist_minoritarian
+                }
             }
         }
         add = -1000
     }
-    
+
     # Adjust w/ law stance progressiveness
     every_preferred_law = {
         limit = { # Only laws they actually like, not laws they only like more than the status quo
@@ -146,10 +178,10 @@ WCR_sv_calculate_IG_progressive_score = {
                 }
             }
         }
-        
+
         add = {
             add = type.progressiveness
-            
+
             # Adjustments
             if = { # Exploiting people 5000 miles away is pretty western but its progressiveness is -25
                 limit = {
@@ -163,7 +195,7 @@ WCR_sv_calculate_IG_progressive_score = {
                 }
                 add = 50
             }
-            
+
             # Bonus weight if they like this law a lot
             if = {
                 limit = {
@@ -177,7 +209,7 @@ WCR_sv_calculate_IG_progressive_score = {
                 }
                 multiply = 2
             }
-            
+
             # Weigh more heavily for certain law groups
             if = {
                 limit = {
@@ -208,6 +240,6 @@ WCR_sv_calculate_IG_progressive_score = {
             }
         }
     }
-    
+
     round = yes
 }
