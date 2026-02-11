@@ -81,6 +81,7 @@
                 add = 100
                 native_american_clothes_pop_trigger = yes
                 machinists_clothes_pop_trigger = no
+                poor_clothes_pop_trigger = yes
             }
             modifier = {
                 add = -1000
@@ -105,6 +106,7 @@
                 add = 100
                 arabic_clothes_pop_trigger = yes
                 machinists_clothes_pop_trigger = no
+                poor_clothes_pop_trigger = yes
             }
             modifier = {
                 add = -1000
@@ -128,6 +130,7 @@
             modifier = {
                 add = 100
                 machinists_clothes_pop_trigger = no
+                poor_clothes_pop_trigger = yes
                 scope:pop ?= {
                     culture = {
                         OR = {
@@ -159,6 +162,7 @@
             modifier = {
                 add = 100
                 machinists_clothes_pop_trigger = no
+                poor_clothes_pop_trigger = yes
                 scope:pop ?= {
                     culture = {
                         OR = {
@@ -190,6 +194,7 @@
             modifier = {
                 add = 100
                 machinists_clothes_pop_trigger = no
+                poor_clothes_pop_trigger = yes
                 scope:pop ?= {
                     culture = {
                         OR = {
