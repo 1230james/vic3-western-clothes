@@ -637,3 +637,73 @@ WCR_is_japan_trigger = {
         }
     }
 }
+
+# Westernization triggers for Korea & Japan
+# Needs special logic since Korea & Japan have base game westernization methods, controllable by game rule
+WCR_st_completed_westernization_korean_empire = {
+    OR = {
+        scope:pop ?= {
+            save_temporary_scope_as = person
+        }
+        scope:character ?= {
+            save_temporary_scope_as = person
+        }
+    }
+    OR = {
+        AND = {
+            OR = {
+                has_game_rule = WCR_modded_KOR_westernization
+                has_game_rule = WCR_mixed_KOR_westernization
+            }
+            scope:person ?= {
+                owner ?= {
+                    WCR_is_korea_trigger = yes
+                }
+            }
+            WCR_has_completed_westernization_trigger = yes
+        }
+        AND = {
+            has_game_rule = WCR_vanilla_KOR_westernization
+            scope:person ?= {
+                owner ?= {
+                    WCR_is_korea_trigger = yes
+                    has_variable = KOR_korean_empire_declared
+                }
+            }
+        }
+    }
+}
+
+WCR_st_completed_westernization_japanese_empire = {
+    OR = {
+        scope:pop ?= {
+            save_temporary_scope_as = person
+        }
+        scope:character ?= {
+            save_temporary_scope_as = person
+        }
+    }
+    OR = {
+        AND = {
+            OR = {
+                has_game_rule = WCR_modded_JAP_westernization
+                has_game_rule = WCR_mixed_JAP_westernization
+            }
+            scope:person ?= {
+                owner ?= {
+                    WCR_is_japan_trigger = yes
+                }
+            }
+            WCR_has_completed_westernization_trigger = yes
+        }
+        AND = {
+            has_game_rule = WCR_vanilla_JAP_westernization
+            scope:person ?= {
+                owner ?= {
+                    WCR_is_japan_trigger = yes
+                    has_variable = meiji_restoration_complete
+                }
+            }
+        }
+    }
+}

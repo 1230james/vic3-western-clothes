@@ -1,9 +1,8 @@
 ﻿WCR_hairstyles = {
     usage = game
     selection_behavior = weighted_random
-    
-    # Purpose of this is to REMOVE the Japanese hairstyles when they westernize
-    WCR_westernized_japanese_hair_styles = {
+
+    WCR_westernized_asian_hair_styles = {
         dna_modifiers = {
             accessory = {
                 mode = replace
@@ -14,47 +13,26 @@
         }
         weight = {
             base = 0
+
+            # Purpose of this is to REMOVE the Japanese hairstyles when they westernize
             modifier = {
                 add = 10000
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
-                OR = {
-                    scope:pop ?= {
-                        culture = cu:japanese
-                    }
-                    scope:character ?= {
-                        culture = cu:japanese
-                    }
+                WCR_st_completed_westernization_japanese_empire = yes
+            }
+
+            # Remove Empress Myeongseong hair
+            modifier = {
+                add = 10000
+                WCR_st_completed_westernization_korean_empire = yes
+                scope:character ?= {
+                    has_template = KOR_empress_myeongseong
                 }
-                OR = {
-                    AND = {
-                        OR = {
-                            has_game_rule = WCR_modded_JAP_westernization
-                            has_game_rule = WCR_mixed_JAP_westernization
-                        }
-                        WCR_has_completed_westernization_trigger = yes
-                    }
-                    AND = {
-                        has_game_rule = WCR_vanilla_JAP_westernization
-                        OR = {
-                            scope:pop ?= {
-                                owner ?= {
-                                    WCR_is_japan_trigger = yes
-                                    has_variable = meiji_restoration_complete
-                                }
-                            }
-                            scope:character ?= {
-                                owner ?= {
-                                    WCR_is_japan_trigger = yes
-                                    has_variable = meiji_restoration_complete
-                                }
-                            }
-                        }
-                    }
-                }
+                monarchy_clothes_trigger = no # See `WCR_no_korean_queen_hairstyle` for monarchy-specific version
             }
         }
     }
-    
+
     # This one is for preserving unwesternized styles
     WCR_japanese_hair_styles = {
         dna_modifiers = {
@@ -80,30 +58,43 @@
                         culture = cu:japanese
                     }
                 }
-                NOR = { # Copypasted from WCR_westernized_japanese_hair_styles and made it NOR
-                    AND = {
-                        OR = {
-                            has_game_rule = WCR_modded_JAP_westernization
-                            has_game_rule = WCR_mixed_JAP_westernization
-                        }
-                        WCR_has_completed_westernization_trigger = yes
+                WCR_st_completed_westernization_japanese_empire = no
+            }
+        }
+    }
+
+    # Remove Empress Myeongseong hair from westernized Korean queens (or queen dowagers)
+    # Monarchy only
+    WCR_no_korean_queen_hairstyle = {
+        dna_modifiers = {
+            accessory = {
+                mode = replace
+                gene = hairstyles
+                template = east_asian_hairstyles
+                range = { 0 0.5 } # [0.5, 1] range mixed w/ `european_royal_headgear` causes unwanted use of drills hairstyle
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                WCR_st_completed_westernization_korean_empire = yes
+                monarchy_clothes_trigger = yes
+                OR = {
+                    scope:character ?= {
+                        has_template = KOR_empress_myeongseong
                     }
-                    AND = {
-                        has_game_rule = WCR_vanilla_JAP_westernization
-                        OR = {
-                            scope:pop ?= {
-                                owner ?= {
-                                    WCR_is_japan_trigger = yes
-                                    has_variable = meiji_restoration_complete
-                                }
+                    AND = { # Match w/ vanilla def for `korean_queen_hairstyle`
+                        scope:character ?= {
+                            culture = {
+                                has_discrimination_trait = heritage_korean
                             }
-                            scope:character ?= {
-                                owner ?= {
-                                    WCR_is_japan_trigger = yes
-                                    has_variable = meiji_restoration_complete
-                                }
+                            is_female = yes
+                            owner ?= {
+                                country_has_primary_culture = cu:korean
                             }
                         }
+                        # monarchy_clothes_trigger = yes
                     }
                 }
             }
