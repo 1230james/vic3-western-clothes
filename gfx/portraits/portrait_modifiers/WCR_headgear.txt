@@ -507,8 +507,8 @@
             accessory = {
                 mode = add
                 gene = headgear
-                template = german_military_headgear # peaked caps only # european_military_headgear
-                range = { 0 0.5 } # For the randomness to work correctly
+                template = european_military_headgear 
+                range = { 0 0.4 } # Kepis & peaked caps only
             }
         }
         weight = {
@@ -810,13 +810,13 @@
         }
     }
 
-    WCR_french_military_headgear = {
+    WCR_french_military_headgear_early = {
         dna_modifiers = {
             accessory = {
                 mode = add
                 gene = headgear
                 template = french_military_headgear
-                range = { 0 0.5 } # For the randomness to work correctly
+                accessory = male_headgear_european_military_05 # always have hat
             }
         }
         weight = {
@@ -824,7 +824,6 @@
             modifier = {
                 add = 100
                 agitator_character_trigger = no
-                soldier_clothes_pop_trigger = no
                 WCR_late_army_uniform_trigger = no
                 WCR_has_completed_westernization_trigger = yes
                 WCR_army_clothes_trigger = yes
@@ -837,6 +836,91 @@
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_french_influence_trigger = yes
                 military_clothes_trigger = yes
+            }
+            modifier = {
+                factor = 0
+                OR = {
+                    exists = scope:pop
+                    scope:character ?= {
+                        owner ?= {
+                            has_technology_researched = repeaters
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_french_military_headgear_early_soldier = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = french_military_headgear
+                accessory = male_headgear_shako_hat_01_french
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                agitator_character_trigger = no
+                WCR_late_army_uniform_trigger = no
+                WCR_has_completed_westernization_trigger = yes
+                WCR_army_clothes_trigger = yes
+                WCR_army_has_french_influence_trigger = yes
+                scope:pop ?= {
+                    owner ?= {
+                        NOT = {
+                            has_technology_researched = repeaters
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    WCR_french_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = french_military_headgear
+                accessory = male_headgear_european_military_02_red # always have hat
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                agitator_character_trigger = no
+                WCR_late_army_uniform_trigger = no
+                WCR_has_completed_westernization_trigger = yes
+                WCR_army_clothes_trigger = yes
+                WCR_army_has_french_influence_trigger = yes
+            }
+            modifier = {
+                add = 100
+                monarchy_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = no
+                WCR_has_completed_westernization_trigger = yes
+                WCR_ruler_has_french_influence_trigger = yes
+                military_clothes_trigger = yes
+            }
+            modifier = {
+                factor = 0
+                NOR = {
+                    scope:pop ?= {
+                        owner ?= {
+                            has_technology_researched = repeaters
+                        }
+                    }
+                    scope:character ?= {
+                        owner ?= {
+                            has_technology_researched = repeaters
+                        }
+                    }
+                }
             }
         }
     }
