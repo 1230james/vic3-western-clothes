@@ -2073,64 +2073,31 @@
                 add = 10000
                 COM_WCR_enable_outfit  = no # COM compatibility
                 JKUP_is_active_trigger = no # JKUP compatibility/deconflict
+                WCR_st_completed_westernization_korean_empire = yes
+                exists = scope:character
                 OR = {
                     AND = {
                         OR = {
-                            has_game_rule = WCR_modded_KOR_westernization
-                            has_game_rule = WCR_mixed_KOR_westernization
-                        }
-                        WCR_has_completed_westernization_trigger = yes
-                        scope:character ?= {
-                            exists = owner
-                            owner  = {
-                                WCR_is_korea_trigger = yes
-                            }
-                        }
-                        OR = {
-                            AND = {
-                                OR = {
-                                    monarchy_clothes_trigger = yes
-                                    AND = {
-                                        ruler_clothes_trigger    = yes
-                                        military_clothes_trigger = yes
-                                    }
-                                }
-                                OR = { # Needed because this is used for both the royal attire & the commander attire
-                                    WCR_late_army_uniform_trigger = no
-                                    military_clothes_trigger = no
-                                }
-                                WCR_ruler_has_domestic_influence_trigger = yes
-                            }
-                            AND = {
-                                WCR_army_clothes_trigger = yes
-                                WCR_late_army_uniform_trigger = no
-                                WCR_army_has_domestic_influence_trigger = yes
-                            }
-                            AND = {
-                                WCR_navy_clothes_trigger = yes
-                                WCR_navy_has_domestic_influence_trigger = yes
-                            }
-                        }
-                    }
-                    AND = {
-                        has_game_rule = WCR_vanilla_KOR_westernization
-                        scope:character ?= {
-                            # age > 10
-                            # culture = cu:korean
-                            owner ?= {
-                                WCR_is_korea_trigger = yes
-                                has_variable = KOR_korean_empire_declared
-                            }
-                            WCR_westernization_allowed_by_rules_trigger = yes
-                        }
-                        OR = {
-                            military_clothes_trigger = yes
                             monarchy_clothes_trigger = yes
                             AND = {
-                                armed_forces_clothes_trigger = yes
-                                politician_clothes_trigger = yes
+                                ruler_clothes_trigger    = yes
+                                military_clothes_trigger = yes
                             }
                         }
+                        OR = { # Needed because this is used for both the royal attire & the commander attire
+                            WCR_late_army_uniform_trigger = no
+                            military_clothes_trigger = no
+                        }
+                        WCR_ruler_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_late_army_uniform_trigger = no
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
                     }
                 }
             }
@@ -2158,45 +2125,21 @@
             modifier = {
                 add = 10000
                 JKUP_is_active_trigger = no # JKUP compatibility/deconflict
+                WCR_st_completed_westernization_korean_empire = yes
                 OR = {
                     AND = {
-                        OR = {
-                            has_game_rule = WCR_modded_KOR_westernization
-                            has_game_rule = WCR_mixed_KOR_westernization
-                        }
-                        WCR_has_completed_westernization_trigger = yes
-                        scope:pop ?= {
-                            exists = owner
-                            owner  = {
-                                WCR_is_korea_trigger = yes
-                            }
-                        }
-                        OR = {
-                            AND = {
-                                WCR_army_clothes_trigger = yes
-                                WCR_late_army_uniform_trigger = no
-                                WCR_army_has_domestic_influence_trigger = yes
-                            }
-                            AND = {
-                                WCR_navy_clothes_trigger = yes
-                                WCR_navy_has_domestic_influence_trigger = yes
-                            }
-                        }
+                        WCR_army_clothes_trigger = yes
+                        WCR_late_army_uniform_trigger = no
+                        WCR_army_has_domestic_influence_trigger = yes
                     }
                     AND = {
-                        has_game_rule = WCR_vanilla_KOR_westernization
-                        scope:pop ?= {
-                            # culture = cu:korean
-                            owner ?= {
-                                WCR_is_korea_trigger = yes
-                                has_variable = KOR_korean_empire_declared
-                            }
-                        }
-                        OR = {
-                            soldier_clothes_pop_trigger = yes
-                            officers_clothes_pop_trigger = yes
-                        }
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
                     }
+                }
+                OR = {
+                    soldier_clothes_pop_trigger = yes
+                    officers_clothes_pop_trigger = yes
                 }
             }
         }
@@ -2235,64 +2178,31 @@
                 add = 10000
                 COM_WCR_enable_outfit = no # COM compatibility
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                WCR_st_completed_westernization_japanese_empire = yes
+                exists = scope:character
                 OR = {
                     AND = {
                         OR = {
-                            has_game_rule = WCR_modded_JAP_westernization
-                            has_game_rule = WCR_mixed_JAP_westernization
-                        }
-                        WCR_has_completed_westernization_trigger = yes
-                        scope:character ?= {
-                            exists = owner
-                            owner  = {
-                                WCR_is_japan_trigger = yes
-                            }
-                        }
-                        OR = {
-                            AND = {
-                                OR = {
-                                    monarchy_clothes_trigger = yes
-                                    AND = {
-                                        ruler_clothes_trigger    = yes
-                                        military_clothes_trigger = yes
-                                    }
-                                }
-                                OR = { # Needed because this is used for both the royal attire & the commander attire
-                                    WCR_late_army_uniform_trigger = no
-                                    military_clothes_trigger = no
-                                }
-                                WCR_ruler_has_domestic_influence_trigger = yes
-                            }
-                            AND = {
-                                WCR_army_clothes_trigger = yes
-                                WCR_late_army_uniform_trigger = no
-                                WCR_army_has_domestic_influence_trigger = yes
-                            }
-                            AND = {
-                                WCR_navy_clothes_trigger = yes
-                                WCR_navy_has_domestic_influence_trigger = yes
-                            }
-                        }
-                    }
-                    AND = {
-                        has_game_rule = WCR_vanilla_JAP_westernization
-                        scope:character ?= {
-                            age > 10
-                            # culture = cu:japanese
-                            owner ?= {
-                                WCR_is_japan_trigger = yes
-                                has_variable = meiji_restoration_complete
-                            }
-                            WCR_westernization_allowed_by_rules_trigger = yes
-                        }
-                        OR = {
-                            military_clothes_trigger = yes
                             monarchy_clothes_trigger = yes
                             AND = {
-                                armed_forces_clothes_trigger = yes
-                                politician_clothes_trigger = yes
+                                ruler_clothes_trigger    = yes
+                                military_clothes_trigger = yes
                             }
                         }
+                        OR = { # Needed because this is used for both the royal attire & the commander attire
+                            WCR_late_army_uniform_trigger = no
+                            military_clothes_trigger = no
+                        }
+                        WCR_ruler_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_late_army_uniform_trigger = no
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
                     }
                 }
             }
@@ -2320,45 +2230,21 @@
             modifier = {
                 add = 10000
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                WCR_st_completed_westernization_japanese_empire = yes
                 OR = {
                     AND = {
-                        OR = {
-                            has_game_rule = WCR_modded_JAP_westernization
-                            has_game_rule = WCR_mixed_JAP_westernization
-                        }
-                        WCR_has_completed_westernization_trigger = yes
-                        scope:pop ?= {
-                            exists = owner
-                            owner  = {
-                                WCR_is_japan_trigger = yes
-                            }
-                        }
-                        OR = {
-                            AND = {
-                                WCR_army_clothes_trigger = yes
-                                WCR_late_army_uniform_trigger = no
-                                WCR_army_has_domestic_influence_trigger = yes
-                            }
-                            AND = {
-                                WCR_navy_clothes_trigger = yes
-                                WCR_navy_has_domestic_influence_trigger = yes
-                            }
-                        }
+                        WCR_army_clothes_trigger = yes
+                        WCR_late_army_uniform_trigger = no
+                        WCR_army_has_domestic_influence_trigger = yes
                     }
                     AND = {
-                        has_game_rule = WCR_vanilla_JAP_westernization
-                        scope:pop ?= {
-                            # culture = cu:japanese
-                            owner ?= {
-                                WCR_is_japan_trigger = yes
-                                has_variable = meiji_restoration_complete
-                            }
-                        }
-                        OR = {
-                            soldier_clothes_pop_trigger = yes
-                            officers_clothes_pop_trigger = yes
-                        }
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
                     }
+                }
+                OR = {
+                    soldier_clothes_pop_trigger = yes
+                    officers_clothes_pop_trigger = yes
                 }
             }
         }

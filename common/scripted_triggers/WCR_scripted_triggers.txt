@@ -669,6 +669,7 @@ WCR_st_completed_westernization_korean_empire = {
                     WCR_is_korea_trigger = yes
                     has_variable = KOR_korean_empire_declared
                 }
+                WCR_westernization_allowed_by_rules_trigger = yes
             }
         }
     }
@@ -703,6 +704,7 @@ WCR_st_completed_westernization_japanese_empire = {
                     WCR_is_japan_trigger = yes
                     has_variable = meiji_restoration_complete
                 }
+                WCR_westernization_allowed_by_rules_trigger = yes
             }
         }
     }
