@@ -27,11 +27,11 @@ l_polish:
     setting_WCR_disable_influences:      "#b Zawsze automatyczne#!"
     setting_WCR_disable_influences_desc: "Styl ubioru dla [Concept('concept_head_of_state', 'monarchów')] i wojska domyślnie zawsze będzie zwykłym Europejskim ubiorem. $WCR_AWC_behavior_text$"
     
-    rule_WCR_fake_late_uniforms:             "#yellow WCR#! | Use Fictional Late-Era Domestic Uniforms"
+    rule_WCR_fake_late_uniforms:             "#yellow WCR#! | Użyj Fikcyjnych Późniejszych Lokalnych Mundurów"
     setting_WCR_fake_late_uniforms_yes:      "$WCR_rule_yes$"
-    setting_WCR_fake_late_uniforms_yes_desc: "[Concept('concept_country', '$concept_countries$')] using a local uniform style (if available to them) #p will#! adopt fictional modern designs after sufficient [Concept('concept_technology','technological progress')]. #i Requires the #underline $dlc010$#! DLC.#!"
+    setting_WCR_fake_late_uniforms_yes_desc: "[Concept('concept_country', '$concept_countries$')] używające lokalnego stylu mundurów (jeśli są dostępne) #p zaadoptują#! fikcyjne współczesne wzory po osiągnięciu wystarczającego [Concept('concept_technology','postępu technologicznego')]. #i Wymaga DLC #underline $dlc010$#!.#!"
     setting_WCR_fake_late_uniforms_no:       "$WCR_rule_no$"
-    setting_WCR_fake_late_uniforms_no_desc:  "[Concept('concept_country', '$concept_countries$')] using a local uniform style (if available to them) #n will not#! adopt new uniforms later in the game."
+    setting_WCR_fake_late_uniforms_no_desc:  "[Concept('concept_country', '$concept_countries$')] używające lokalnego stylu mundurów (jeśli są dostępne) #n nie zaadoptują#! nowych mundurów w grze."
     
     rule_WCR_AI_westernization:               "#yellow WCR#! | Westernizacja: SI"
     setting_WCR_allow_AI_westernization:      "$WCR_rule_yes$"
