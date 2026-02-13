@@ -1141,17 +1141,9 @@
                 JKUP_is_active_trigger = no # JKUP compatibility/deconflict
                 WCR_st_completed_westernization_korean_empire = yes
                 agitator_character_trigger = no
-                OR = {
-                    AND = {
-                        WCR_army_clothes_trigger = yes
-                        WCR_late_army_uniform_trigger = no
-                        WCR_army_has_domestic_influence_trigger = yes
-                    }
-                    AND = {
-                        WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_domestic_influence_trigger = yes
-                    }
-                }
+                WCR_army_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = no
+                WCR_army_has_domestic_influence_trigger = yes
             }
             modifier = {
                 add = 100
@@ -1181,17 +1173,9 @@
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 WCR_st_completed_westernization_japanese_empire = yes
                 agitator_character_trigger = no
-                OR = {
-                    AND = {
-                        WCR_army_clothes_trigger = yes
-                        WCR_late_army_uniform_trigger = no
-                        WCR_army_has_domestic_influence_trigger = yes
-                    }
-                    AND = {
-                        WCR_navy_clothes_trigger = yes
-                        WCR_navy_has_domestic_influence_trigger = yes
-                    }
-                }
+                WCR_army_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = no
+                WCR_army_has_domestic_influence_trigger = yes
             }
             modifier = {
                 add = 100

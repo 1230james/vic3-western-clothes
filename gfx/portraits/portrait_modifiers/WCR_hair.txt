@@ -63,8 +63,7 @@
         }
     }
 
-    # Remove Empress Myeongseong hair from westernized Korean queens (or queen dowagers)
-    # Monarchy only
+    # Remove Empress Myeongseong hair from westernized Korean queens (or queen dowagers); monarchy only
     WCR_no_korean_queen_hairstyle = {
         dna_modifiers = {
             accessory = {
