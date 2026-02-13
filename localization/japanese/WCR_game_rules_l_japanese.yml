@@ -29,7 +29,7 @@ l_japanese:
     
     rule_WCR_fake_late_uniforms:             "#yellow WCR#! | 架空の後期時代の国家の制服を使う"
     setting_WCR_fake_late_uniforms_yes:      "$WCR_rule_yes$"
-    setting_WCR_fake_late_uniforms_yes_desc: "当地の制服スタイル(ある場合)を用いている[Concept('concept_country', '$concept_countries$')]は[Concept('concept_technology','technological progress')]を満たすと架空の近代風デザインに #p 変更#!を行う。 #i #underline $dlc010$#! DLCが必要#! 。"
+    setting_WCR_fake_late_uniforms_yes_desc: "当地の制服スタイル(ある場合)を用いている[Concept('concept_country', '$concept_countries$')]は[Concept('concept_technology','技術的進捗')]を満たすと架空の近代風デザインに #p 変更#!を行う。 #i #underline $dlc010$#! DLCが必要#! 。"
     setting_WCR_fake_late_uniforms_no:       "$WCR_rule_no$"
     setting_WCR_fake_late_uniforms_no_desc:  "当地の制服スタイル(ある場合)を用いている[Concept('concept_country', '$concept_countries$')]はゲーム終盤になっても新しい制服に #n 変更しない#! 。"
     
