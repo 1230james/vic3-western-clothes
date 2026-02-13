@@ -439,6 +439,7 @@ WCR_snori_can_westernize_trigger = {
 }
 
 # Checks if country is being handled by vanilla logic
+# Remember to update `WCR_st_owner_or_home_uses_vanilla_rules` if this is changed
 WCR_is_using_vanilla_rules = {
     OR = {
         AND = {
@@ -569,15 +570,15 @@ WCR_is_korea_trigger = {
     # Arranged in trigger_if blocks for nicer tooltipping
     trigger_if = { # They are Korea
         limit  = {
-            c:KOR ?= THIS
+            exists = c:KOR
         }
-        c:KOR ?= THIS # Repeating logic for nicer tooltipping
+        c:KOR ?= THIS
     }
     trigger_else_if = { # They were Korea
         limit = {
             was_formed_from = KOR
         }
-        was_formed_from = KOR
+        was_formed_from = KOR # Repeating logic for nicer tooltipping
     }
     trigger_else = { # If it walks like a duck and it quacks like a duck... (꽥꽥)
         OR = {
@@ -605,7 +606,7 @@ WCR_is_korea_trigger = {
 WCR_is_japan_trigger = {
     trigger_if = {
         limit  = {
-            c:JAP ?= THIS
+            exists = c:JAP
         }
         c:JAP ?= THIS
     }

@@ -51,76 +51,101 @@ WCR_has_domestic_influence_available_trigger = {
     }
 }
 
+# Character/pop scope
+WCR_st_owner_or_home_var_check = {
+    trigger_if = {
+        limit = {
+            exists = owner
+        }
+        owner ?= {
+            has_variable   = $VAR$
+            THIS.var:$VAR$ = $IS_EQ_TO$
+        }
+    }
+    trigger_else = {
+        home_country ?= {
+            has_variable   = $VAR$
+            THIS.var:$VAR$ = $IS_EQ_TO$
+        }
+    }
+}
+
+WCR_st_owner_or_home_uses_vanilla_rules = {
+    trigger_if = {
+        limit = {
+            OR = { # If the game rules aren't on then don't even bother to save CPU time
+                has_game_rule = WCR_vanilla_KOR_westernization
+                has_game_rule = WCR_vanilla_JAP_westernization
+            }
+        }
+        trigger_if = {
+            limit = {
+                exists = owner
+            }
+            owner ?= {
+                WCR_is_using_vanilla_rules = yes
+            }
+        }
+        trigger_else = {
+            home_country ?= {
+                WCR_is_using_vanilla_rules = yes
+            }
+        }
+    }
+    trigger_else = {
+        always = no
+    }
+}
+
 # Scope-agnostic
 WCR_ruler_has_american_influence_trigger = {
     scope:character ?= {
-        owner ?= {
-            has_variable = WCR_ruler_influence
-            THIS.var:WCR_ruler_influence = 1
-        }
-        home_country ?= {
-            has_variable = WCR_ruler_influence
-            THIS.var:WCR_ruler_influence = 1
+        WCR_st_owner_or_home_var_check = {
+            VAR      = WCR_ruler_influence
+            IS_EQ_TO = 1
         }
     }
 }
 WCR_ruler_has_british_influence_trigger = {
     scope:character ?= {
-        owner ?= {
-            has_variable = WCR_ruler_influence
-            THIS.var:WCR_ruler_influence = 2
-        }
-        home_country ?= {
-            has_variable = WCR_ruler_influence
-            THIS.var:WCR_ruler_influence = 2
+        WCR_st_owner_or_home_var_check = {
+            VAR      = WCR_ruler_influence
+            IS_EQ_TO = 2
         }
     }
 }
 WCR_ruler_has_french_influence_trigger = {
     scope:character ?= {
-        owner ?= {
-            has_variable = WCR_ruler_influence
-            THIS.var:WCR_ruler_influence = 3
-        }
-        home_country ?= {
-            has_variable = WCR_ruler_influence
-            THIS.var:WCR_ruler_influence = 3
+        WCR_st_owner_or_home_var_check = {
+            VAR      = WCR_ruler_influence
+            IS_EQ_TO = 3
         }
     }
 }
 WCR_ruler_has_german_influence_trigger = {
     scope:character ?= {
-        owner ?= {
-            has_variable = WCR_ruler_influence
-            THIS.var:WCR_ruler_influence = 4
-        }
-        home_country ?= {
-            has_variable = WCR_ruler_influence
-            THIS.var:WCR_ruler_influence = 4
+        WCR_st_owner_or_home_var_check = {
+            VAR      = WCR_ruler_influence
+            IS_EQ_TO = 4
         }
     }
 }
 WCR_ruler_has_russian_influence_trigger = {
     scope:character ?= {
-        owner ?= {
-            has_variable = WCR_ruler_influence
-            THIS.var:WCR_ruler_influence = 5
-        }
-        home_country ?= {
-            has_variable = WCR_ruler_influence
-            THIS.var:WCR_ruler_influence = 5
+        WCR_st_owner_or_home_var_check = {
+            VAR      = WCR_ruler_influence
+            IS_EQ_TO = 5
         }
     }
 }
 WCR_ruler_has_domestic_influence_trigger = {
     scope:character ?= {
-        owner ?= {
-            has_variable = WCR_ruler_influence
-            THIS.var:WCR_ruler_influence = -1
-        }
-        home_country ?= {
-            has_variable = WCR_ruler_influence
-            THIS.var:WCR_ruler_influence = -1
+        OR = {
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_ruler_influence
+                IS_EQ_TO = -1
+            }
+            WCR_st_owner_or_home_uses_vanilla_rules = yes
         }
     }
 }
@@ -136,23 +161,15 @@ WCR_ruler_has_no_influence_trigger = {
 WCR_army_has_american_influence_trigger = {
     OR = {
         scope:pop ?= {
-            owner ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 1
-            }
-            home_country ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 1
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_army_influence
+                IS_EQ_TO = 1
             }
         }
         scope:character ?= {
-            owner ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 1
-            }
-            home_country ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 1
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_army_influence
+                IS_EQ_TO = 1
             }
         }
     }
@@ -160,23 +177,15 @@ WCR_army_has_american_influence_trigger = {
 WCR_army_has_british_influence_trigger = {
     OR = {
         scope:pop ?= {
-            owner ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 2
-            }
-            home_country ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 2
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_army_influence
+                IS_EQ_TO = 2
             }
         }
         scope:character ?= {
-            owner ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 2
-            }
-            home_country ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 2
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_army_influence
+                IS_EQ_TO = 2
             }
         }
     }
@@ -184,23 +193,15 @@ WCR_army_has_british_influence_trigger = {
 WCR_army_has_french_influence_trigger = {
     OR = {
         scope:pop ?= {
-            owner ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 3
-            }
-            home_country ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 3
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_army_influence
+                IS_EQ_TO = 3
             }
         }
         scope:character ?= {
-            owner ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 3
-            }
-            home_country ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 3
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_army_influence
+                IS_EQ_TO = 3
             }
         }
     }
@@ -208,23 +209,15 @@ WCR_army_has_french_influence_trigger = {
 WCR_army_has_german_influence_trigger = {
     OR = {
         scope:pop ?= {
-            owner ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 4
-            }
-            home_country ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 4
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_army_influence
+                IS_EQ_TO = 4
             }
         }
         scope:character ?= {
-            owner ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 4
-            }
-            home_country ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 4
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_army_influence
+                IS_EQ_TO = 4
             }
         }
     }
@@ -232,23 +225,15 @@ WCR_army_has_german_influence_trigger = {
 WCR_army_has_russian_influence_trigger = {
     OR = {
         scope:pop ?= {
-            owner ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 5
-            }
-            home_country ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 5
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_army_influence
+                IS_EQ_TO = 5
             }
         }
         scope:character ?= {
-            owner ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 5
-            }
-            home_country ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = 5
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_army_influence
+                IS_EQ_TO = 5
             }
         }
     }
@@ -256,23 +241,21 @@ WCR_army_has_russian_influence_trigger = {
 WCR_army_has_domestic_influence_trigger = {
     OR = {
         scope:pop ?= {
-            owner ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = -1
-            }
-            home_country ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = -1
+            OR = {
+                WCR_st_owner_or_home_var_check = {
+                    VAR      = WCR_army_influence
+                    IS_EQ_TO = -1
+                }
+                WCR_st_owner_or_home_uses_vanilla_rules = yes
             }
         }
         scope:character ?= {
-            owner ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = -1
-            }
-            home_country ?= {
-                has_variable = WCR_army_influence
-                THIS.var:WCR_army_influence = -1
+            OR = {
+                WCR_st_owner_or_home_var_check = {
+                    VAR      = WCR_army_influence
+                    IS_EQ_TO = -1
+                }
+                WCR_st_owner_or_home_uses_vanilla_rules = yes
             }
         }
     }
@@ -289,23 +272,15 @@ WCR_army_has_no_influence_trigger = {
 WCR_navy_has_american_influence_trigger = {
     OR = {
         scope:pop ?= {
-            owner ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 1
-            }
-            home_country ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 1
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_navy_influence
+                IS_EQ_TO = 1
             }
         }
         scope:character ?= {
-            owner ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 1
-            }
-            home_country ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 1
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_navy_influence
+                IS_EQ_TO = 1
             }
         }
     }
@@ -313,23 +288,15 @@ WCR_navy_has_american_influence_trigger = {
 WCR_navy_has_british_influence_trigger = {
     OR = {
         scope:pop ?= {
-            owner ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 2
-            }
-            home_country ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 2
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_navy_influence
+                IS_EQ_TO = 2
             }
         }
         scope:character ?= {
-            owner ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 2
-            }
-            home_country ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 2
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_navy_influence
+                IS_EQ_TO = 2
             }
         }
     }
@@ -337,23 +304,15 @@ WCR_navy_has_british_influence_trigger = {
 WCR_navy_has_french_influence_trigger = {
     OR = {
         scope:pop ?= {
-            owner ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 3
-            }
-            home_country ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 3
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_navy_influence
+                IS_EQ_TO = 3
             }
         }
         scope:character ?= {
-            owner ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 3
-            }
-            home_country ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 3
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_navy_influence
+                IS_EQ_TO = 3
             }
         }
     }
@@ -361,23 +320,15 @@ WCR_navy_has_french_influence_trigger = {
 WCR_navy_has_german_influence_trigger = {
     OR = {
         scope:pop ?= {
-            owner ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 4
-            }
-            home_country ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 4
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_navy_influence
+                IS_EQ_TO = 4
             }
         }
         scope:character ?= {
-            owner ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 4
-            }
-            home_country ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 4
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_navy_influence
+                IS_EQ_TO = 4
             }
         }
     }
@@ -385,23 +336,15 @@ WCR_navy_has_german_influence_trigger = {
 WCR_navy_has_russian_influence_trigger = {
     OR = {
         scope:pop ?= {
-            owner ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 5
-            }
-            home_country ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 5
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_navy_influence
+                IS_EQ_TO = 5
             }
         }
         scope:character ?= {
-            owner ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 5
-            }
-            home_country ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = 5
+            WCR_st_owner_or_home_var_check = {
+                VAR      = WCR_navy_influence
+                IS_EQ_TO = 5
             }
         }
     }
@@ -409,23 +352,21 @@ WCR_navy_has_russian_influence_trigger = {
 WCR_navy_has_domestic_influence_trigger = {
     OR = {
         scope:pop ?= {
-            owner ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = -1
-            }
-            home_country ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = -1
+            OR = {
+                WCR_st_owner_or_home_var_check = {
+                    VAR      = WCR_navy_influence
+                    IS_EQ_TO = -1
+                }
+                WCR_st_owner_or_home_uses_vanilla_rules = yes
             }
         }
         scope:character ?= {
-            owner ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = -1
-            }
-            home_country ?= {
-                has_variable = WCR_navy_influence
-                THIS.var:WCR_navy_influence = -1
+            OR = {
+                WCR_st_owner_or_home_var_check = {
+                    VAR      = WCR_navy_influence
+                    IS_EQ_TO = -1
+                }
+                WCR_st_owner_or_home_uses_vanilla_rules = yes
             }
         }
     }
