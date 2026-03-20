@@ -16,18 +16,14 @@ EACP_is_active_trigger = {
 }
 
 # Community Outfit Mod
-com_is_active = {
-    always = no
-}
+# TEMPORARY - uncomment once COM fixes their file
+# com_is_active = {
+#     always = no
+# }
 
 # James's Korea Uniform Pack
 JKUP_is_active_trigger = {
     always = no
-}
-
-# Better Politics Mod
-bpm_ig_enabled = {
-    always = yes # This needs to be yes
 }
 
 # Japanese Uniform Pack

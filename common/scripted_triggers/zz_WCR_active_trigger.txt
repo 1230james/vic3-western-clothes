@@ -1,14 +1,14 @@
-﻿# USAGE:
-# Paste into a scripted_trigger file with a filename that comes ahead of this one in an alphanumeric sort (i.e. don't
-# make it start with z) the following definition:
-#
-# WCR_is_active_trigger = {
-#     always = no
-# }
-#
-# If WCR is inactive, that trigger definition should be the one used by your mod, but if WCR is active, it should be
-# overwritten with the definition below, allowing you to tell when WCR is active or not dynamically.
+﻿# Third-party modders:
+# See !!_WCR_active_trigger.txt for usage notes
 
-WCR_is_active_trigger = {
+REPLACE_OR_CREATE:WCR_is_active_trigger = {
     always = yes
+}
+
+REPLACE_OR_CREATE:WCR_TPM_is_westernized_trigger = {
+    WCR_is_westernized_trigger = yes
+}
+
+REPLACE_OR_CREATE:WCR_TPM_has_completed_westernization_trigger = {
+    WCR_has_completed_westernization_trigger = yes
 }

@@ -31,7 +31,7 @@
 #
 # ==================================================================================================================== #
 
-COM_WCR_enable_outfit = {
+REPLACE_OR_CREATE:COM_WCR_enable_outfit = {
     com_is_active = yes
     
     # Korean monarch
@@ -101,7 +101,7 @@ COM_WCR_enable_outfit = {
     }
 }
 
-COM_WCR_disable_outfit = {
+REPLACE_OR_CREATE:COM_WCR_disable_outfit = {
     com_is_active = yes
     
     # Korean monarch
