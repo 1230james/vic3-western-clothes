@@ -40,3 +40,8 @@ md_chinese_uniform_pack_active_trigger = {
 srm_is_active = {
     always = no
 }
+
+# Morgenrote
+morgenrote_is_active = {
+    always = no
+}

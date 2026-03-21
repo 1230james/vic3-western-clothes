@@ -11,3 +11,8 @@ com_is_active = {
 bpm_ig_enabled = {
     always = yes # This needs to be yes
 }
+
+# Morgenrote
+mr_special_characters_clothes_trigger = {
+    always = no
+}
