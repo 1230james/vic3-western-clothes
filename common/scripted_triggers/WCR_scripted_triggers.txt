@@ -301,6 +301,16 @@ WCR_army_clothes_trigger = {
                             has_role = admiral
                         }
                     }
+                    
+                    # Morgenrote compatibility - don't put uniforms on Armed Forces MR characters
+                    trigger_if = {
+                        limit = {
+                            morgenrote_is_active = yes
+                        }
+                        scope:character ?= {
+                            mr_special_characters_clothes_trigger = no
+                        }
+                    }
                 }
                 
                 # Generals

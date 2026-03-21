@@ -22,6 +22,14 @@ WCR_st_westernize_traditionalists = {
         AND = {
             has_role = politician
             interest_group ?= { is_interest_group_type = ig_armed_forces }
+            
+            # Morgenrote compatibility - don't put uniforms on Armed Forces MR characters
+            trigger_if = {
+                limit = {
+                    morgenrote_is_active = yes
+                }
+                mr_special_characters_clothes_trigger = no
+            }
         }
     }
 }
