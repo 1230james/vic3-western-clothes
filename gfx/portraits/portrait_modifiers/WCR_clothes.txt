@@ -2327,6 +2327,7 @@
             base = 0
             modifier = {
                 add = 10000
+                COM_WCR_enable_outfit = no # COM compatibility
                 WCR_has_completed_westernization_trigger = yes
                 OR = {
                     scope:character ?= {
@@ -2388,6 +2389,7 @@
             base = 0
             modifier = {
                 add = 10000
+                COM_WCR_enable_outfit = no # COM compatibility
                 WCR_has_completed_westernization_trigger = yes
                 scope:pop ?= {
                     owner ?= {

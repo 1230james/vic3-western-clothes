@@ -27,7 +27,7 @@
 #     Japan
 #
 #   Militaries
-#     None
+#     Ottomans/Turkey
 #
 # ==================================================================================================================== #
 
@@ -92,6 +92,41 @@ REPLACE_OR_CREATE:COM_WCR_enable_outfit = {
                 }
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_domestic_influence_trigger = yes
+            }
+        }
+    }
+    
+    # Ottoman military
+    trigger_else_if = {
+        limit = {
+            OR = {
+                scope:character ?= {
+                    owner ?= {
+                        WCR_st_is_country_tag = { TAG = TUR }
+                    }
+                }
+                scope:pop ?= {
+                    owner ?= {
+                        WCR_st_is_country_tag = { TAG = TUR }
+                    }
+                }
+            }
+        }
+        OR = {
+            AND = {
+                ruler_clothes_trigger    = yes
+                military_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = no
+                WCR_ruler_has_domestic_influence_trigger = yes
+            }
+            AND = {
+                WCR_army_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = no
+                WCR_army_has_domestic_influence_trigger = yes
+            }
+            AND = {
+                WCR_navy_clothes_trigger = yes
+                WCR_navy_has_domestic_influence_trigger = yes
             }
         }
     }
@@ -186,6 +221,45 @@ REPLACE_OR_CREATE:COM_WCR_disable_outfit = {
                     }
                 }
                 WCR_westernization_allowed_by_rules_trigger = no
+            }
+        }
+    }
+    
+    # Ottoman military
+    trigger_else_if = {
+        limit = {
+            OR = {
+                scope:character ?= {
+                    owner ?= {
+                        WCR_st_is_country_tag = { TAG = TUR }
+                    }
+                }
+                scope:pop ?= {
+                    owner ?= {
+                        WCR_st_is_country_tag = { TAG = TUR }
+                    }
+                }
+            }
+        }
+        OR = {
+            AND = {
+                ruler_clothes_trigger    = yes
+                military_clothes_trigger = yes
+                OR = {
+                    WCR_late_army_uniform_trigger = yes
+                    WCR_ruler_has_domestic_influence_trigger = no
+                }
+            }
+            AND = {
+                WCR_army_clothes_trigger = yes
+                OR = {
+                    WCR_late_army_uniform_trigger = yes
+                    WCR_army_has_domestic_influence_trigger = no
+                }
+            }
+            AND = {
+                WCR_navy_clothes_trigger = yes
+                WCR_navy_has_domestic_influence_trigger = no
             }
         }
     }
