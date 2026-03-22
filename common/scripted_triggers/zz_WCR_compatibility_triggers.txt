@@ -12,3 +12,15 @@ REPLACE_OR_CREATE:WCR_TPM_is_westernized_trigger = {
 REPLACE_OR_CREATE:WCR_TPM_has_completed_westernization_trigger = {
     WCR_has_completed_westernization_trigger = yes
 }
+
+REPLACE_OR_CREATE:WCR_TPM_branch_has_influence_type_trigger = {
+    WCR_$BRANCH$_has_$TYPE$_influence_trigger = yes
+}
+
+REPLACE_OR_CREATE:WCR_TPM_army_clothes_trigger = {
+    WCR_army_clothes_trigger = yes
+}
+
+REPLACE_OR_CREATE:WCR_TPM_navy_clothes_trigger = {
+    WCR_navy_clothes_trigger = yes
+}

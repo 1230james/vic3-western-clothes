@@ -18,10 +18,9 @@ EACP_is_active_trigger = {
 }
 
 # Community Outfit Mod
-# TEMPORARY - uncomment once COM fixes their file
-# com_is_active = {
-#     always = no
-# }
+com_is_active = {
+    always = no
+}
 
 # James's Korea Uniform Pack
 JKUP_is_active_trigger = {

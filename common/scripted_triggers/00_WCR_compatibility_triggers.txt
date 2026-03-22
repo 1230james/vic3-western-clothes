@@ -23,13 +23,57 @@
 # Wrapper for WCR_is_westernized_trigger
 # Check if country, character, or pop is considered westernized
 # To check for character or pop, `scope:character` or `scope:pop` must be defined
-# WCR_TPM_is_westernized_trigger = {
-#     always = no
-# }
+WCR_TPM_is_westernized_trigger = {
+    always = no
+}
 
 # Wrapper for WCR_has_completed_westernization_trigger
 # Check if country, character, or pop is considered westernized, but EXCLUDING those that begin westernized at game start
 # To check for character or pop, `scope:character` or `scope:pop` must be defined
-# WCR_TPM_has_completed_westernization_trigger = {
-#     always = no
-# }
+WCR_TPM_has_completed_westernization_trigger = {
+    always = no
+}
+
+# Function for the `WCR_X_has_Y_influence_trigger` triggers
+# Checks if the ruler, army, or navy has a specific influence type
+#
+# MUST specify the following arguments:
+#   BRANCH
+#     ruler - Checks for ruler influence
+#     army  - Checks for army influence
+#     navy  - Checks for navy influence
+#   TYPE
+#     american - Checks for American style influence
+#     british  - Checks for British style influence
+#     french   - Checks for French style influence
+#     german   - Checks for German style influence
+#     russian  - Checks for Russian style influence
+#     domestic - Checks for domestic influence (used for e.g., China, Korea, Japan, etc.)
+#     no       - Checks for none of the above (i.e. generic European design)
+#
+# See WCR_influence_triggers.txt for most up-to-date list
+#
+# Example usage:
+#   To invoke `WCR_ruler_has_domestic_influence_trigger` with this trigger, write:
+#     WCR_TPM_branch_has_influence_type_trigger = {
+#         BRANCH = ruler
+#         TYPE   = domestic
+#     }
+REPLACE_OR_CREATE:WCR_TPM_branch_has_influence_type_trigger = {
+    WCR_$BRANCH$_has_$TYPE$_influence_trigger = yes
+}
+
+# Wrapper for WCR_army_clothes_trigger
+# Checks if the character or pop is a member of the army.
+# EXCLUDES rulers.
+# `scope:character` or `scope:pop` must be defined.
+REPLACE_OR_CREATE:WCR_TPM_army_clothes_trigger = {
+    WCR_army_clothes_trigger = yes
+}
+
+# Wrapper for WCR_navy_clothes_trigger
+# Checks if the character or pop is a member of the navy.
+# `scope:character` or `scope:pop` must be defined.
+REPLACE_OR_CREATE:WCR_TPM_navy_clothes_trigger = {
+    WCR_navy_clothes_trigger = yes
+}
