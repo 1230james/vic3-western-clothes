@@ -1,18 +1,14 @@
-﻿# Mod compatibility triggers
-# [1.12] These ones need to load AFTER the parent mod since the parent mod doesn't use REPLACE_OR_CREATE for these
+﻿# Third-party modders:
+# See 00_WCR_compatibility_triggers.txt for usage notes
 
-# Community Outfit Mod
-# TEMPORARY - remove once COM fixes their file
-com_is_active = {
-    always = no
+REPLACE_OR_CREATE:WCR_is_active_trigger = {
+    always = yes
 }
 
-# Better Politics Mod
-bpm_ig_enabled = {
-    always = yes # This needs to be yes
+REPLACE_OR_CREATE:WCR_TPM_is_westernized_trigger = {
+    WCR_is_westernized_trigger = yes
 }
 
-# Morgenrote
-mr_special_characters_clothes_trigger = {
-    always = no
+REPLACE_OR_CREATE:WCR_TPM_has_completed_westernization_trigger = {
+    WCR_has_completed_westernization_trigger = yes
 }
