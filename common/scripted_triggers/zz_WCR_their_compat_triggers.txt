@@ -1,0 +1,15 @@
+﻿# Mod compatibility triggers
+# [1.12] These ones need to load AFTER the parent mod since the parent mod doesn't use REPLACE_OR_CREATE for these
+
+# This file is for triggers from *other* mods for WCR to use.
+# For triggers from WCR, see 00_WCR_compatibility_triggers.txt
+
+# Better Politics Mod
+bpm_ig_enabled = {
+    always = yes # This needs to be yes
+}
+
+# Morgenrote
+mr_special_characters_clothes_trigger = {
+    always = no
+}
