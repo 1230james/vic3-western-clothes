@@ -607,6 +607,7 @@
             base = 0
             modifier = {
                 add = 100
+                COM_WCR_enable_outfit = no # COM compatibility
                 agitator_character_trigger = no
                 soldier_clothes_pop_trigger = no
                 WCR_has_completed_westernization_trigger = yes
@@ -1209,6 +1210,7 @@
             base = 0
             modifier = {
                 add = 100
+                COM_WCR_enable_outfit = no # COM compatibility
                 WCR_has_completed_westernization_trigger = yes
                 OR = {
                     scope:character ?= {

@@ -127,6 +127,13 @@ REPLACE_OR_CREATE:COM_WCR_enable_outfit = {
             AND = {
                 WCR_navy_clothes_trigger = yes
                 WCR_navy_has_domestic_influence_trigger = yes
+                
+                # [2026-03-29] Temporary fix for Turkish admirals wearing nothing after late-era uniforms are phased in
+                # COM drops navy uniforms after researching Bolt Action Rifles for some reason, which conflicts with
+                # WCR's assumption that navy uniforms don't change into a late-game variety. Fixing this on COM's end
+                # would be more correct technically, but it's easier to patch it here.
+                # This should be removed once COM changes that behavior or adds late-game Ottoman uniforms.
+                WCR_late_army_uniform_trigger = no
             }
         }
     }
