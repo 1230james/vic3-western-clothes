@@ -65,6 +65,20 @@
                 }
                 WCR_has_completed_westernization_trigger = no
             }
+            modifier = { # EACR compatibility
+                add = -1000
+                EACR_is_active_trigger = yes
+                korean_clothes_trigger = yes
+                OR = {
+                    EACR_st_TPM_korean_court_base = yes
+                    scope:character ?= {
+                        is_heir = yes
+                        owner ?= {
+                            coa_monarchy_trigger = yes
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -86,7 +100,7 @@
                 ruler_clothes_trigger    = yes
                 monarchy_clothes_trigger = yes
                 WCR_has_completed_westernization_trigger = no
-                EACP_is_active_trigger = no
+                EACR_is_active_trigger = no
             }
             modifier = {
                 add = 1000
@@ -170,6 +184,16 @@
                     }
                 }
             }
+            modifier = { # EACR compatibility
+                add = -2000
+                EACR_is_active_trigger   = yes
+                monarchy_clothes_trigger = yes
+                scope:character ?= {
+                    owner ?= {
+                        WCR_is_japan_trigger = yes
+                    }
+                }
+            }
         }
     }
 
@@ -218,6 +242,12 @@
                     }
                 }
             }
+            modifier = { # EACR compatibility
+                add = -2000
+                EACR_is_active_trigger   = yes
+                japanese_clothes_trigger = yes
+                monarchy_clothes_trigger = yes
+            }
         }
     }
 
@@ -242,6 +272,7 @@
             base = 0
             modifier = {
                 add = 1900 # 2000
+                EACR_is_active_trigger = no # EACR compatibility
                 WCR_has_completed_westernization_trigger = no
                 scope:character ?= {
                     owner ?= {
@@ -489,6 +520,7 @@
                 WCR_has_completed_westernization_trigger = yes
                 ruler_clothes_trigger = yes
                 monarchy_clothes_trigger = no
+                military_clothes_trigger = no
             }
         }
     }

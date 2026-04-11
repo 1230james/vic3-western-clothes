@@ -154,6 +154,7 @@
                     }
                     scope:character ?= {
                         culture = cu:korean
+                        EACR_is_active_trigger = no
                     }
                 }
             }
@@ -173,6 +174,14 @@
                             has_role = agitator
                         }
                     }
+                }
+                
+                # EACR compatibility - exclude Japanese monarchy if EACR is active since they will handle their unwesternized clothes
+                trigger_if = {
+                    limit = {
+                        EACR_is_active_trigger = yes
+                    }
+                    monarchy_clothes_trigger = no
                 }
             }
         }

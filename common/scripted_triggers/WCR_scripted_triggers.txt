@@ -482,6 +482,9 @@ WCR_has_vanilla_uniform_rule = {
 WCR_is_scope_owner_qing_dynasty_trigger = {
     owner ?= {
         coa_monarchy_trigger = yes # Avoid checking law directly for compatibility with monarchy mods (e.g., RRK)
+        any_primary_culture = {
+            has_discrimination_trait = heritage_manchu
+        }
         ruler ?= {
             culture = {
                 has_discrimination_trait = heritage_manchu
