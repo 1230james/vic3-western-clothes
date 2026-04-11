@@ -61,6 +61,8 @@ WCR_TPM_has_completed_westernization_trigger = {
 #     }
 REPLACE_OR_CREATE:WCR_TPM_branch_has_influence_type_trigger = {
     always = no
+    has_variable = $BRANCH$ # Silences errors
+    has_variable = $TYPE$
 }
 
 # Wrapper for WCR_army_clothes_trigger

@@ -154,6 +154,7 @@
                     }
                     scope:character ?= {
                         culture = cu:korean
+                        EACR_is_active_trigger = no
                     }
                 }
             }
