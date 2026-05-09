@@ -273,7 +273,7 @@
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 scope:character ?= {
                     owner ?= {
-                        has_variable = meiji_restoration_complete
+                        has_variable = japan_restoration_complete
                         WCR_st_is_country_westernized = yes
                     }
                     has_ideology = ideology:ideology_traditionalist
@@ -343,7 +343,7 @@
                 armed_forces_clothes_trigger = no
                 military_clothes_trigger = no
                 scope:character ?= {
-                    is_heir = no
+                    is_heir_of_own_country = no
                     age > 12
                 }
             }
@@ -386,8 +386,8 @@
                     age >= define:NCharacters|ADULT_AGE
                     politician_clothes_trigger = yes
                     military_clothes_trigger   = no
-                    is_ruler = no
-                    is_heir  = no
+                    is_ruler_of_own_country = no
+                    is_heir_of_own_country  = no
                     OR = {
                         is_interest_group_type = ig_landowners
                         is_interest_group_type = ig_industrialists
@@ -1276,7 +1276,7 @@
                 WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
                 scope:character ?= {
-                    is_ruler = yes # Hat for ruler only
+                    is_ruler_of_own_country = yes # Hat for ruler only
                     owner ?= {
                         WCR_st_is_country_tag = { TAG = PER }
                     }

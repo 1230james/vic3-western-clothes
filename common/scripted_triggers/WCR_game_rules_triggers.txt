@@ -17,10 +17,10 @@ WCR_st_westernize_traditionalists = {
             has_ideology = ideology:ideology_traditionalist
             has_ideology = ideology:ideology_traditionalist_minoritarian
         }
-        has_role = general # If you're in the armed forces, you can cope and seethe! B)
-        has_role = admiral
+        has_role_of_type = general # If you're in the armed forces, you can cope and seethe! B)
+        has_role_of_type = admiral
         AND = {
-            has_role = politician
+            has_role_of_type = politician
             interest_group ?= { is_interest_group_type = ig_armed_forces }
             
             # Morgenrote compatibility - don't put uniforms on Armed Forces MR characters
@@ -38,8 +38,8 @@ WCR_st_westernize_rural_folk = {
     OR = {
         has_game_rule = WCR_westernize_ig_rural_folk_yes
         OR = {
-            has_role = general
-            has_role = admiral
+            has_role_of_type = general
+            has_role_of_type = admiral
             NOT = {
                 interest_group ?= { is_interest_group_type = ig_rural_folk }
             }
@@ -51,8 +51,8 @@ WCR_st_westernize_devout = {
     OR = {
         has_game_rule = WCR_westernize_ig_devout_yes
         OR = {
-            has_role = general
-            has_role = admiral
+            has_role_of_type = general
+            has_role_of_type = admiral
             NOT = {
                 interest_group ?= { is_interest_group_type = ig_devout }
             }

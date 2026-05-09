@@ -72,7 +72,7 @@
                 OR = {
                     EACR_st_TPM_korean_court_base = yes
                     scope:character ?= {
-                        is_heir = yes
+                        is_heir_of_own_country = yes
                         owner ?= {
                             coa_monarchy_trigger = yes
                         }
@@ -178,7 +178,7 @@
                 md_japanese_uniform_pack_active_trigger  = yes
                 WCR_has_completed_westernization_trigger = no
                 scope:character ?= {
-                    is_heir = yes
+                    is_heir_of_own_country = yes
                     owner ?= {
                         WCR_is_japan_trigger = yes
                     }
@@ -679,8 +679,8 @@
                 military_clothes_trigger = no # Prevent use when ruler is commanding an army
                 scope:character ?= {
                     OR = {
-                        is_ruler = yes
-                        is_heir  = yes
+                        is_ruler_of_own_country = yes
+                        is_heir_of_own_country  = yes
                     }
                     owner ?= {
                         c:HAW ?= THIS
@@ -830,14 +830,14 @@
                     OR = {
                         politician_clothes_trigger = yes
                         AND = {
-                            is_ruler = yes
+                            is_ruler_of_own_country = yes
                             republic_clothes_trigger = yes
                             owner ?= {
                                 is_in_power_bloc = no
                             }
                         }
                     }
-                    is_heir = no
+                    is_heir_of_own_country = no
                     OR = {
                         month < 3
                         month > 10
@@ -963,7 +963,7 @@
                 monarchy_clothes_trigger = yes
                 scope:character ?= {
                     is_female = yes
-                    is_ruler = yes
+                    is_ruler_of_own_country = yes
                 }
             }
         }
