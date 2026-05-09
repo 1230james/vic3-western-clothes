@@ -258,8 +258,10 @@ WCR_army_clothes_trigger = {
                     exists = workplace
                 }
                 workplace ?= {
-                    NOT = {
+                    NOR = {
                         is_building_type = building_naval_administration
+                        is_building_type = building_naval_fortification
+                        is_building_type = building_naval_logistics_center
                     }
                 }
             }
@@ -333,6 +335,12 @@ WCR_navy_clothes_trigger = {
         scope:pop ?= {
             workplace ?= {
                 is_building_type = building_naval_administration
+                is_building_type = building_naval_fortification
+                is_building_type = building_naval_logistics_center
+            }
+            OR = {
+                is_pop_type = soldiers
+                is_pop_type = officers
             }
         }
         scope:character ?= {

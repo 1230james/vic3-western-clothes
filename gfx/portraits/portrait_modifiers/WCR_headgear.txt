@@ -2,7 +2,7 @@
     usage = game
     selection_behavior = weighted_random
 
-    ## WCR - Vanilla Overrides ##
+    ## WCR - Vanilla Carry-ins ##
 
     # Ethnic hats to preserve poor pop westernization rule behaviors
     # Most or all of these should just be [near-]clones of vanilla definitions
@@ -277,6 +277,590 @@
                         WCR_st_is_country_westernized = yes
                     }
                     has_ideology = ideology:ideology_traditionalist
+                }
+            }
+        }
+    }
+
+    # [EP2 / Great Wave] Japanese headgears
+    WCR_japanese_eboshi_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_eboshi_hat
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                WCR_st_completed_westernization_japanese_empire = no
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                # Copied from vanilla logic
+                has_dlc_feature = ep2_cosmetics
+                scope:character ?= {
+                    culture = cu:japanese
+                    NOR = {
+                        has_role_of_type = ruler
+                        has_role_of_type = heir
+                        has_role_of_type = general
+                        has_role_of_type = admiral
+                    }
+                    OR = {
+                        has_role_of_type = politician
+                        has_role_of_type = magnate
+                    }
+                    NOR = { 
+                        is_interest_group_type = ig_devout
+                        is_interest_group_type = ig_armed_forces
+                    }
+                    # japanese_restoration_trigger = no
+                }
+            }
+        }
+    }
+
+    WCR_japanese_edo_soldier_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_edo_caps
+                range = { 0 0.66 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 11000
+                WCR_st_completed_westernization_japanese_empire = no
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                has_dlc_feature = ep2_cosmetics
+                scope:pop ?= {
+                    culture = cu:japanese
+                    is_pop_type = soldiers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    # japanese_restoration_trigger = no
+                }
+            }
+        }
+    }
+
+    WCR_japanese_edo_officer_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_edo_caps
+                range = { 0.67 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 11000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = no
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:pop ?= {
+                    culture = cu:japanese
+                    is_pop_type = officers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    # japanese_restoration_trigger = no
+                }
+            }
+            modifier = {
+                add  = 11000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = no
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:character ?= {
+                    is_adult = yes
+                    NOT = { has_role_of_type = ruler }
+                    NOT = { has_role = character_role_emperor_of_japan }
+                    OR = {
+                        has_role_of_type = general
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            politician_clothes_trigger = yes
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    # japanese_restoration_trigger = no
+                }
+            }
+        }
+    }
+
+    WCR_japanese_meiji_1886_soldier_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_meiji_1886_caps
+                range = { 0 0.375 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:pop ?= {
+                    culture = cu:japanese
+                    is_pop_type = soldiers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = rifling
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_meiji_1886_officer_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_meiji_1886_caps
+                range = { 0.625 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:pop ?= {
+                    culture = cu:japanese
+                    is_pop_type = officers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = rifling
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_meiji_1886_emperor = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = european_military_02_colors
+                accessory = male_headgear_european_military_02_red
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:character ?= {
+                    is_adult = yes
+                    has_role_of_type = ruler
+                    OR = {
+                        has_role_of_type = general
+                        owner ?= {
+                            is_at_war = yes
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = rifling
+                        NOT = { has_technology_researched = trench_works }
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_meiji_1886_general_rank1 = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_meiji_1886_commanders
+                range = { 0.25 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:character ?= {
+                    is_adult = yes
+                    NOT = { has_role_of_type = ruler }
+                    has_role_of_type = general
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = rifling
+                        NOT = { has_technology_researched = bolt_action_rifles }
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_meiji_1904_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_meiji_1904_caps
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 13000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:pop ?= {
+                    culture = cu:japanese
+                    OR = {
+                        is_pop_type = soldiers
+                        is_pop_type = officers
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = bolt_action_rifles
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+            modifier = {
+                add  = 13000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:character ?= {
+                    is_adult = yes
+                    NAND = { 
+                        has_role_of_type = ruler
+                        owner ?= { 
+                            has_law = law_type:law_monarchy
+                            has_variable = japan_restoration_complete
+                        }
+                    }
+                    OR = {
+                        has_role_of_type = general
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            politician_clothes_trigger = yes
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = bolt_action_rifles
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_taisho_1922_soldier_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_taisho_1922_caps
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 14000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:pop ?= {
+                    culture = cu:japanese
+                    is_pop_type = soldiers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = automatic_machine_guns
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_taisho_1922_officer_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_taisho_1922_caps
+                range = { 0 0.5 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 14000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:pop ?= {
+                    culture = cu:japanese
+                    is_pop_type = officers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = automatic_machine_guns
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+            modifier = {
+                add  = 14000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:character ?= {
+                    is_adult = yes
+                    NAND = { 
+                        has_role_of_type = ruler
+                        owner ?= { 
+                            has_law = law_type:law_monarchy
+                            has_variable = japan_restoration_complete
+                        }
+                    }
+                    OR = {
+                        has_role_of_type = general
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            politician_clothes_trigger = yes
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = automatic_machine_guns
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_showa_1938_soldier_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_showa_1938_caps
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 14000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:pop ?= {
+                    culture = cu:japanese
+                    is_pop_type = soldiers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        OR = {
+                            has_technology_researched = chemical_warfare
+                            has_technology_researched = concrete_fortifications
+                            has_technology_researched = military_aviation
+                            has_technology_researched = flamethrowers
+                            has_technology_researched = stormtroopers
+                            has_technology_researched = nco_training
+                        }
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_showa_pith_military_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_pith_helmets
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 14000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:character ?= {
+                    is_adult = yes
+                    NOT = { has_role_of_type = ruler }
+                    has_role_of_type = general
+                    is_in_hot_land_hq_trigger = yes
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        OR = {
+                            has_technology_researched = chemical_warfare
+                            has_technology_researched = concrete_fortifications
+                            has_technology_researched = military_aviation
+                            has_technology_researched = flamethrowers
+                            has_technology_researched = stormtroopers
+                            has_technology_researched = nco_training
+                        }
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_meiji_civilian_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_meiji_civilian_caps
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 14000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                japanese_clothes_pop_trigger = yes
+                OR = {
+                    middle_clothes_pop_trigger = yes
+                    upper_clothes_pop_trigger = yes
+                }
+                scope:pop ?= {
+                    NOR = {
+                        is_pop_type = soldiers
+                        is_pop_type = officers
+                        is_pop_type = clergymen
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_sailor_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_sailor_caps
+                range = { 0 0.5 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 14500
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:pop ?= {
+                    OR = {
+                        is_pop_type = soldiers
+                        is_pop_type = laborers
+                    }
+                    workplace ?= {
+                        OR = {
+                            is_building_type = building_naval_fortification
+                            is_building_type = building_naval_administration
+                            is_building_type = building_naval_logistics_center
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_admiral_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = japanese_sailor_caps
+                range = { 0.5 1 }
+            }
+        }
+        weight = {
+            base = 0   
+            modifier = {
+                add  = 12000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:character ?= {
+                    is_adult = yes
+                    has_role_of_type = admiral
+                    NOR = { 
+                        has_role_of_type = ruler
+                        has_role_of_type = heir
+                        has_role_of_type = politician
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    # japanese_restoration_trigger = yes
                 }
             }
         }
@@ -807,6 +1391,60 @@
                 WCR_has_completed_westernization_trigger = yes
                 WCR_ruler_has_british_influence_trigger = yes
                 military_clothes_trigger = yes
+            }
+        }
+    }
+    
+    WCR_british_military_late_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template  = late_military_cap
+                accessory = male_headgear_european_late_military_04
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                agitator_character_trigger = no
+                soldier_clothes_pop_trigger = no
+                WCR_late_army_uniform_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                WCR_army_clothes_trigger = yes
+                WCR_army_has_british_influence_trigger = yes
+            }
+            modifier = {
+                add = 100
+                monarchy_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                WCR_ruler_has_british_influence_trigger = yes
+                military_clothes_trigger = yes
+            }
+        }
+    }
+    
+    WCR_british_military_soldier_headgear_late = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = brodie_helmet
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                agitator_character_trigger = no
+                soldier_clothes_pop_trigger = yes
+                WCR_late_army_uniform_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+                WCR_army_clothes_trigger = yes
+                WCR_army_has_british_influence_trigger = yes
             }
         }
     }
