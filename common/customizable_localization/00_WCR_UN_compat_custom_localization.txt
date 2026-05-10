@@ -22,35 +22,35 @@ GetUniversalTitle = {
 
     text = {
         trigger = {
-            is_ruler = yes
+            is_ruler_of_own_country = yes
         }
         localization_key = WCR_UN_title_ruler
     }
     text = {
         trigger = {
-            is_heir = yes
+            is_heir_of_own_country = yes
         }
         localization_key = WCR_UN_title_heir
     }
     text = {
         trigger = {
-            has_role = general
+            has_role_of_type = general
         }
         localization_key = WCR_UN_title_general
     }
     text = {
         trigger = {
-            has_role = admiral
+            has_role_of_type = admiral
         }
         localization_key = WCR_UN_title_admiral
     }
     text = {
         trigger = { # logic is kind of broken without this for some reason?
-            is_ruler = no
-            is_heir  = no
+            is_ruler_of_own_country = no
+            is_heir_of_own_country  = no
             NOR = {
-                has_role = general
-                has_role = admiral
+                has_role_of_type = general
+                has_role_of_type = admiral
             }
         }
         localization_key = WCR_UN_title_none

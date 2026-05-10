@@ -258,8 +258,10 @@ WCR_army_clothes_trigger = {
                     exists = workplace
                 }
                 workplace ?= {
-                    NOT = {
-                        is_building_type = building_naval_base
+                    NOR = {
+                        is_building_type = building_naval_administration
+                        is_building_type = building_naval_fortification
+                        is_building_type = building_naval_logistics_center
                     }
                 }
             }
@@ -298,7 +300,7 @@ WCR_army_clothes_trigger = {
                     politician_clothes_trigger = yes
                     scope:character ?= {
                         NOT = {
-                            has_role = admiral
+                            has_role_of_type = admiral
                         }
                     }
                     
@@ -315,13 +317,13 @@ WCR_army_clothes_trigger = {
                 
                 # Generals
                 scope:character ?= {
-                    has_role = general
+                    has_role_of_type = general
                 }
             }
             
             # Exclude rulers
             scope:character ?= {
-                is_ruler = no
+                is_ruler_of_own_country = no
             }
         }
     }
@@ -332,11 +334,19 @@ WCR_navy_clothes_trigger = {
     OR = {
         scope:pop ?= {
             workplace ?= {
-                is_building_type = building_naval_base
+                OR = {
+                    is_building_type = building_naval_administration
+                    is_building_type = building_naval_fortification
+                    is_building_type = building_naval_logistics_center
+                }
+            }
+            OR = {
+                is_pop_type = soldiers
+                is_pop_type = officers
             }
         }
         scope:character ?= {
-            has_role = admiral
+            has_role_of_type = admiral
         }
     }
 }
@@ -362,7 +372,7 @@ WCR_can_start_westernizing_trigger = {
             }
             custom_tooltip = {
                 text = WCR_tt_JAP_req_bypass
-                has_variable = meiji_restoration_complete
+                has_variable = japan_restoration_complete
             }
         }
         
@@ -497,7 +507,17 @@ WCR_is_scope_owner_qing_dynasty_trigger = {
 WCR_late_army_uniform_trigger = {
     trigger_if = {
         limit = {
-            has_dlc_feature = ep1_cosmetics # Vanilla paywalls it; we'll respect it too
+            # Vanilla paywalls it; we'll respect it too
+            # Japan stuff is only paywalled behind ep2_cosmetics (TGW), other stuff is behind ep1_cosmtics (SoI)
+            trigger_if = {
+                limit = {
+                    WCR_st_completed_westernization_japanese_empire = yes
+                }
+                has_dlc_feature = ep2_cosmetics
+            }
+            trigger_else = {
+                has_dlc_feature = ep1_cosmetics
+            }
         }
         OR = {
             scope:pop ?= {
@@ -716,7 +736,7 @@ WCR_st_completed_westernization_japanese_empire = {
             scope:person ?= {
                 owner ?= {
                     WCR_is_japan_trigger = yes
-                    has_variable = meiji_restoration_complete
+                    has_variable = japan_restoration_complete
                 }
                 WCR_westernization_allowed_by_rules_trigger = yes
             }

@@ -3,7 +3,7 @@
 WCR_accessories = {
     usage = game
     selection_behavior = weighted_random
-    
+
     WCR_european_shopkeeper_clothes = {
         dna_modifiers = {
             accessory = {
@@ -12,7 +12,7 @@ WCR_accessories = {
                 template = all_misc
                 range = { 0 1 } # For the randomness to work correctly
             }
-        } 
+        }
         weight = {
             base = 0
             modifier = {
@@ -27,7 +27,7 @@ WCR_accessories = {
 WCR_sash_accessories = {
     usage = game
     selection_behavior = weighted_random
-    
+
     WCR_generic_sashes = {
         dna_modifiers = {
             accessory = {
@@ -101,6 +101,24 @@ WCR_sash_accessories = {
                     }
                 }
             }
+            modifier = { # 1.13 Japanese assets clip with the existing sashes
+                add = -2000
+                WCR_st_completed_westernization_japanese_empire = yes
+                OR = {
+                    AND = {
+                        WCR_ruler_clothes_trigger = yes
+                        WCR_ruler_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_army_clothes_trigger = yes
+                        WCR_army_has_domestic_influence_trigger = yes
+                    }
+                    AND = {
+                        WCR_navy_clothes_trigger = yes
+                        WCR_navy_has_domestic_influence_trigger = yes
+                    }
+                }
+            }
         }
     }
 }
@@ -108,7 +126,7 @@ WCR_sash_accessories = {
 WCR_medals_accessories = {
     usage = game
     selection_behavior = weighted_random
-    
+
     WCR_generic_medals = {
         dna_modifiers = {
             accessory = {
@@ -144,12 +162,15 @@ WCR_medals_accessories = {
                     }
                 }
             }
-            modifier = { # Exclude China due to clipping problems
+            modifier = { # Exclude China and Japan due to clipping problems
                 add = -2000
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
                     owner ?= {
-                        WCR_st_is_country_tag = { TAG = CHI }
+                        OR = {
+                            WCR_st_is_country_tag = { TAG = CHI }
+                            WCR_st_is_country_tag = { TAG = JAP }
+                        }
                     }
                 }
                 OR = {
@@ -178,7 +199,7 @@ WCR_medals_accessories = {
 WCR_belts_accessories = {
     usage = game
     selection_behavior = weighted_random
-    
+
     # Belts only for characters
     # NOT for use with late era uniforms
     WCR_generic_belts = {
@@ -220,12 +241,15 @@ WCR_belts_accessories = {
                     }
                 }
             }
-            modifier = { # Exclude China (they have their own)
+            modifier = { # Exclude China and Japan (they have their own)
                 add = -2000
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
                     owner ?= {
-                        WCR_st_is_country_tag = { TAG = CHI }
+                        OR = {
+                            WCR_st_is_country_tag = { TAG = CHI }
+                            WCR_st_is_country_tag = { TAG = JAP }
+                        }
                     }
                 }
                 OR = {
@@ -254,7 +278,7 @@ WCR_belts_accessories = {
 WCR_eyewear_accessories = {
     usage = game
     selection_behavior = weighted_random
-    
+
     WCR_european_fancy_eyewear = {
         dna_modifiers = {
             accessory = {
@@ -296,7 +320,7 @@ WCR_eyewear_accessories = {
             }
         }
     }
-    
+
     WCR_european_common_eyewear = {
         dna_modifiers = {
             accessory = {

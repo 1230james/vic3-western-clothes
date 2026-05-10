@@ -171,7 +171,7 @@
                     scope:character ?= {
                         culture = cu:japanese
                         NOT     = { # also not agitators (they have their own clothing definitions that otherwise arent messed with)
-                            has_role = agitator
+                            has_role_of_type = agitator
                         }
                     }
                 }
