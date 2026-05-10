@@ -64,7 +64,30 @@
             }
         }
     }
-
+    
+    WCR_japanese_imperial_headgear = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = Japanese_imperial_headgear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100
+                EACR_is_active_trigger = no # EACR compatibility
+                WCR_st_completed_westernization_japanese_empire = no
+                OR = {
+                    japanese_imperial_clothes_trigger = yes
+                    japanese_shogun_clothes_trigger = yes
+                }
+            }
+        }
+    }
+    
     WCR_native_american_bandanna = {
         dna_modifiers = {
             accessory = {

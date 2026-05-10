@@ -113,7 +113,7 @@
         }
     }
 
-    WCR_japanese_military_clothes = {
+    WCR_japanese_military_clothes = { # now called `japanese_pre_restoration_military_clothes` in 1.13+
         dna_modifiers = {
             accessory = {
                 mode = add
@@ -140,48 +140,23 @@
             modifier = {
                 add  = 1100
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
-                WCR_has_completed_westernization_trigger = no
-                OR = {
-                    scope:pop ?= {
-                        owner ?= {
-                            WCR_is_japan_trigger = yes
-                        }
-                    }
-                    scope:character ?= {
-                        owner ?= {
-                            WCR_is_japan_trigger = yes
-                        }
+                WCR_st_completed_westernization_japanese_empire = no
+                scope:person ?= { # Scope defined by `WCR_st_completed_westernization_japanese_empire`
+                    owner ?= { # Need to explicitly check for owner in case `WCR_st_completed_westernization_japanese_empire` is false because it's not Japan
+                        WCR_is_japan_trigger = yes
                     }
                 }
                 OR = {
-                    AND = {
-                        exists = scope:pop
-                        scope:pop = {
-                            culture = cu:japanese
-                        }
-                        OR = {
-                            soldier_clothes_pop_trigger = yes
-                            officers_clothes_pop_trigger = yes
-                        }
-                    }
-                    AND = {
-                        exists = scope:character
-                        scope:character = {
-                            has_culture = cu:japanese
-                            monarchy_clothes_trigger = yes
-                        }
-                    }
+                    soldier_clothes_pop_trigger = yes
+                    monarchy_clothes_trigger = yes # for heirs
                 }
             }
             modifier = { # [JUP] keep heir's clothes
                 add = 100
-                md_japanese_uniform_pack_active_trigger  = yes
-                WCR_has_completed_westernization_trigger = no
+                md_japanese_uniform_pack_active_trigger = yes
+                WCR_st_completed_westernization_japanese_empire = no
                 scope:character ?= {
                     is_heir_of_own_country = yes
-                    owner ?= {
-                        WCR_is_japan_trigger = yes
-                    }
                 }
             }
             modifier = { # EACR compatibility
@@ -197,7 +172,7 @@
         }
     }
 
-    WCR_japanese_officers_clothes = {
+    WCR_japanese_officers_clothes = { # now called `japanese_officers_clothes_old` in 1.13+
         dna_modifiers = {
             accessory = {
                 mode = add
@@ -220,8 +195,8 @@
             accessory = {
                 mode = add
                 gene = top_layer
-                template = japanese_top_layer
-                range = { 0 1 } # For the randomness to work correctly
+                template  = japanese_top_layer
+                accessory = male_top_layer_japanese_common_01
             }
         }
 
@@ -229,15 +204,24 @@
             base = 0
             modifier = {
                 add  = 1200
+                NOT  = { has_dlc_feature = ep2_cosmetics }
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
-                WCR_has_completed_westernization_trigger = no
-                AND = {
-                    japanese_clothes_trigger = yes
-                    OR = {
-                        military_clothes_trigger = yes
-                        AND = {
-                            armed_forces_clothes_trigger = yes
-                            politician_clothes_trigger = yes
+                WCR_st_completed_westernization_japanese_empire = no
+                scope:person ?= { # Scope defined by `WCR_st_completed_westernization_japanese_empire`
+                    owner ?= { # Need to explicitly check for owner in case `WCR_st_completed_westernization_japanese_empire` is false because it's not Japan
+                        WCR_is_japan_trigger = yes
+                    }
+                }
+                OR = {
+                    officers_clothes_pop_trigger = yes
+                    AND = {
+                        japanese_clothes_trigger = yes
+                        OR = {
+                            military_clothes_trigger = yes
+                            AND = {
+                                armed_forces_clothes_trigger = yes
+                                politician_clothes_trigger = yes
+                            }
                         }
                     }
                 }
@@ -251,6 +235,26 @@
         }
     }
 
+    WCR_japanese_shogun_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = japanese_shogun_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+                EACR_is_active_trigger = no # EACR compatibility
+                WCR_st_completed_westernization_japanese_empire = no
+                japanese_shogun_clothes_trigger = yes
+            }
+        }
+    }
+    
     WCR_japanese_imperial_clothes = {
         dna_modifiers = {
             accessory = {
@@ -259,29 +263,15 @@
                 template = japanese_imperial_outfits
                 range = { 0 1 } # For the randomness to work correctly
             }
-
-            accessory = {
-                mode = add
-                gene = headgear
-                template = Japanese_imperial_headgear # stolen from vanilla headgear
-                range = { 0 1 }
-            }
         }
 
         weight = {
             base = 0
             modifier = {
-                add = 1900 # 2000
+                add = 2000
                 EACR_is_active_trigger = no # EACR compatibility
-                WCR_has_completed_westernization_trigger = no
-                scope:character ?= {
-                    owner ?= {
-                        WCR_is_japan_trigger = yes
-                    }
-                    monarchy_clothes_trigger = yes
-                    # Do not use `japanese_imperial_clothes_trigger` because it starts to evaluate to false once
-                    # the restoration complete variable is set
-                }
+                WCR_st_completed_westernization_japanese_empire = no
+                japanese_imperial_clothes_trigger = yes
             }
         }
     }
@@ -307,7 +297,7 @@
                 mode = add
                 gene = top_layer
                 template = japanese_top_layer
-                range = { 0 1 } # For the randomness to work correctly
+                accessory = male_top_layer_japanese_common_01
             }
         }
 
@@ -319,6 +309,7 @@
                     AND = {
                         japanese_clothes_pop_trigger = yes
                         poor_clothes_pop_trigger = no
+                        clergy_clothes_pop_trigger = no
                     }
                     AND = {
                         japanese_clothes_trigger = yes
@@ -359,7 +350,7 @@
                 mode = add
                 gene = top_layer
                 template = japanese_top_layer
-                range = { 0 1 } # For the randomness to work correctly
+                accessory = male_top_layer_japanese_common_01
             }
         }
 
@@ -367,21 +358,1035 @@
             base = 0
             modifier = {
                 add = 100
-                agitator_character_trigger = no
-                scope:character ?= {
-                    OR = {
-                        AND = {
-                            has_culture = cu:japanese
-                            monarchy_clothes_trigger = no
-                        }
-                        has_culture = cu:ainu
-                    }
-                }
+                japanese_clothes_trigger = yes
                 WCR_has_completed_westernization_trigger = no
             }
         }
     }
 
+    # [EP2 / Great Wave] Japanese outfits
+    WCR_japanese_pre_restoration_officers_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = japanese_common_outfits
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = japanese_legwear
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = japanese_belts
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = ep2_character_top_layers
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 1200
+                has_dlc_feature = ep2_cosmetics
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                WCR_st_completed_westernization_japanese_empire = no
+                scope:person ?= { # Scope defined by `WCR_st_completed_westernization_japanese_empire`
+                    owner ?= { # Need to explicitly check for owner in case `WCR_st_completed_westernization_japanese_empire` is false because it's not Japan
+                        WCR_is_japan_trigger = yes
+                    }
+                }
+                OR = {
+                    officers_clothes_pop_trigger = yes
+                    AND = {
+                        japanese_clothes_trigger = yes
+                        OR = {
+                            military_clothes_trigger = yes
+                            AND = {
+                                armed_forces_clothes_trigger = yes
+                                politician_clothes_trigger = yes
+                            }
+                        }
+                    }
+                }
+            }
+            modifier = { # EACR compatibility
+                add = -2000
+                EACR_is_active_trigger   = yes
+                japanese_clothes_trigger = yes
+                monarchy_clothes_trigger = yes
+            }
+        }
+    }
+    
+    WCR_japanese_meiji_1886_soldier_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_1886_uniforms
+                range = { 0 0.5 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_02
+            }
+            accessory = {
+                mode = add
+                gene = sashes
+                template = soldier_bedroll_sash
+                accessory = male_sashes_md_jap_bedroll_white
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 12000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:pop ?= {
+                    is_pop_type = soldiers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = rifling
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_meiji_1886_officer_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_1886_uniforms
+                range = { 0.5 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_02
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:pop ?= {
+                    is_pop_type = officers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = rifling
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_meiji_1886_commander_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_commander_uniforms
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_02
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = gloves
+                accessory = male_prop_md_gloves_white
+            }
+            accessory = {
+                mode = add
+                gene = sashes
+                template = male_sashes_meiji_red
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:character ?= {
+                    is_adult = yes
+                    NAND = {
+                        has_role_of_type = ruler
+                        owner ?= { 
+                            has_law = law_type:law_monarchy
+                            has_variable = japan_restoration_complete
+                        }
+                    }
+                    OR = {
+                        has_role_of_type = general
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            politician_clothes_trigger = yes
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = rifling
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_meiji_1886_winter_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_1886_winter_uniforms
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = no_epaulette
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = top_layer
+                template = gloves
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12500
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:character ?= {
+                    is_adult = yes
+                    NOT = { has_role_of_type = ruler }
+                    has_role_of_type = general
+                    OR = {
+                        is_in_cold_land_hq_trigger = yes
+                        AND = {
+                            is_in_hot_land_hq_trigger = no
+                            OR = {
+                                month < 3
+                                month > 10
+                            }
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_meiji_1904_soldier_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_late_military_legwear
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_1904_uniforms
+                accessory = male_coat_md_jap_coat_soldier_pink_khaki
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = late_military_belts
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = no_epaulette
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = sashes
+                template = soldier_bedroll_sash
+                accessory = male_sashes_md_jap_bedroll_black
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 13000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:pop ?= {
+                    is_pop_type = soldiers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = bolt_action_rifles
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_meiji_1904_officer_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_1904_uniforms
+                accessory = male_coat_md_jap_coat_officer_pink_khaki
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_late_military_legwear
+                range = { 0 1 }
+            }   
+            accessory = {
+                mode = add
+                gene = belts
+                template = late_military_belts
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = no_epaulette
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 13000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:pop ?= {
+                    is_pop_type = officers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = bolt_action_rifles
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+            modifier = {
+                add  = 13000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:character ?= {
+                    is_adult = yes
+                    NAND = { 
+                        has_role_of_type = ruler
+                        owner ?= { 
+                            has_law = law_type:law_monarchy
+                            has_variable = japan_restoration_complete
+                        }
+                    }
+                    OR = {
+                        has_role_of_type = general
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            politician_clothes_trigger = yes
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = bolt_action_rifles
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_meiji_1911_soldier_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_1911_uniforms
+                accessory = male_coat_md_jap_coat_soldier_khaki
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_late_military_legwear
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = late_military_belts
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = no_epaulette
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = sashes
+                template = soldier_bedroll_sash
+                accessory = male_sashes_md_jap_bedroll_khaki
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 13500
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:pop ?= {
+                    is_pop_type = soldiers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = automatic_machine_guns
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_meiji_1911_officer_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_1911_uniforms
+                accessory = male_coat_md_jap_coat_officer_khaki
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_late_military_legwear
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = late_military_belts
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = no_epaulette
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 13500
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:pop ?= {
+                    culture = cu:japanese
+                    is_pop_type = officers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = automatic_machine_guns
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+            modifier = {
+                add  = 13500
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:character ?= {
+                    is_adult = yes
+                    NAND = { 
+                        has_role_of_type = ruler
+                        owner ?= { 
+                            has_law = law_type:law_monarchy
+                            has_variable = japan_restoration_complete
+                        }
+                    }
+                    OR = {
+                        has_role_of_type = general
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            politician_clothes_trigger = yes
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        has_technology_researched = automatic_machine_guns
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_showa_1938_soldier_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_showa_1938_uniforms
+                range = { 0 0.625 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_late_military_legwear
+                range = { 0 1 }
+            }   
+            accessory = {
+                mode = add
+                gene = belts
+                template = late_military_belts
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_08
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 14000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:pop ?= {
+                    is_pop_type = soldiers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        OR = {
+                            has_technology_researched = chemical_warfare
+                            has_technology_researched = concrete_fortifications
+                            has_technology_researched = military_aviation
+                            has_technology_researched = flamethrowers
+                            has_technology_researched = stormtroopers
+                            has_technology_researched = nco_training
+                        }
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_showa_1938_officer_military_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_showa_1938_uniforms
+                range = { 0.625 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_late_military_legwear
+                range = { 0 1 }
+            }   
+            accessory = {
+                mode = add
+                gene = belts
+                template = late_military_belts
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_08
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 14000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:pop ?= {
+                    is_pop_type = officers
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        OR = {
+                            has_technology_researched = chemical_warfare
+                            has_technology_researched = concrete_fortifications
+                            has_technology_researched = military_aviation
+                            has_technology_researched = flamethrowers
+                            has_technology_researched = stormtroopers
+                            has_technology_researched = nco_training
+                        }
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+            modifier = {
+                add  = 14000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:character ?= {
+                    is_adult = yes
+                    NAND = { 
+                        has_role_of_type = ruler
+                        owner ?= { 
+                            has_law = law_type:law_monarchy
+                            has_variable = japan_restoration_complete
+                        }
+                    }
+                    OR = {
+                        has_role_of_type = general
+                        AND = {
+                            armed_forces_clothes_trigger = yes
+                            politician_clothes_trigger = yes
+                        }
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                        OR = {
+                            has_technology_researched = chemical_warfare
+                            has_technology_researched = concrete_fortifications
+                            has_technology_researched = military_aviation
+                            has_technology_researched = flamethrowers
+                            has_technology_researched = stormtroopers
+                            has_technology_researched = nco_training
+                        }
+                    }
+                    # japanese_restoration_trigger = yes
+                }
+            }
+        }
+    }
+
+    WCR_japanese_meiji_admiral_rank1_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_admiral
+                range = { 0 0.25 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_04
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:character ?= {
+                    is_adult = yes
+                    has_role_of_type = admiral
+                    NOR = { 
+                        has_role_of_type = ruler
+                        has_role_of_type = heir
+                        has_role_of_type = politician
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    # japanese_restoration_trigger = yes
+
+                    commander_rank = 1
+                }
+            }
+        }
+    }
+    
+    WCR_japanese_meiji_admiral_rank2_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_admiral
+                range = { 0.25 0.5 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_04
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:character ?= {
+                    is_adult = yes
+                    has_role_of_type = admiral
+                    NOR = { 
+                        has_role_of_type = ruler
+                        has_role_of_type = heir
+                        has_role_of_type = politician
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    # japanese_restoration_trigger = yes
+                    
+                    commander_rank = 2
+                }
+            }
+        }
+    }
+    
+    WCR_japanese_meiji_admiral_rank3_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_admiral
+                range = { 0.5 0.75 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_04
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:character ?= {
+                    is_adult = yes
+                    has_role_of_type = admiral
+                    NOR = { 
+                        has_role_of_type = ruler
+                        has_role_of_type = heir
+                        has_role_of_type = politician
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    # japanese_restoration_trigger = yes
+                    
+                    commander_rank = 3
+                }
+            }
+        }
+    }
+    
+    WCR_japanese_meiji_admiral_rank4_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_admiral
+                range = { 0.75 1 }
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_generic_01
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_04
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 12000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
+                
+                scope:character ?= {
+                    is_adult = yes
+                    has_role_of_type = admiral
+                    NOR = { 
+                        has_role_of_type = ruler
+                        has_role_of_type = heir
+                        has_role_of_type = politician
+                    }
+                    owner ?= {
+                        country_has_primary_culture = cu:japanese
+                    }
+                    # japanese_restoration_trigger = yes
+                    
+                    commander_rank = 4
+                }
+            }
+        }
+    }
+    
+    WCR_japanese_meiji_emperor_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_coats
+                accessory = male_coat_japanese_meiji_court_01
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_white
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = no_aiguillettes
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_04
+            }
+            accessory = {
+                mode = add
+                gene = sashes
+                template = male_sashes_meiji_red
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 90000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                japanese_imperial_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = no
+                scope:character ?= {
+                    is_adult = yes
+                    is_female = no
+                }
+            }
+        }
+    }
+
+    WCR_japanese_taisho_emperor_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = japanese_meiji_commander_uniforms
+                accessory = male_coat_japanese_08_general
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = all_epaulettes
+                accessory = male_epaulettes_03
+            }
+            accessory = {
+                mode = add
+                gene = aiguillettes
+                template = no_aiguillettes
+                range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = all_belts
+                accessory = male_belt_generic_02
+            }
+            accessory = {
+                mode = add
+                gene = sashes
+                template = male_sashes_meiji_red
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 90000
+                has_dlc_feature = ep2_cosmetics
+                WCR_st_completed_westernization_japanese_empire = yes
+                japanese_imperial_clothes_trigger = yes
+                WCR_late_army_uniform_trigger = yes
+                scope:character ?= {
+                    is_adult = yes
+                    is_female = no
+                }
+            }
+        }
+    }
+    
     ## WCR - Additions ##
 
     WCR_european_child_clothes = {
@@ -400,7 +1405,7 @@
 
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
-                    age < define:NCharacters|ADULT_AGE
+                    is_adult = no
                 }
             }
         }
@@ -877,6 +1882,7 @@
                 WCR_has_completed_westernization_trigger = yes
                 OR = {
                     executive_clothes_trigger = yes
+                    magnate_clothes_trigger   = yes
                     AND = {
                         politician_clothes_trigger = yes
                         scope:character ?= {
@@ -2182,8 +3188,8 @@
             accessory = {
                 mode = add
                 gene = coats
-                template = french_uniform_coats
-                range = { 0 0.5 } # Limited to single-breasted jacket so the aiguillette works properly
+                template  = french_uniform_coats
+                accessory = male_coat_french_01 # Limited to single-breasted jacket so the aiguillette works properly
             }
             accessory = {
                 mode = add
@@ -2247,7 +3253,7 @@
                 mode = add
                 gene = coats
                 template = japanese_meiji_coats
-                range = { 0 1 } # For the randomness to work correctly
+                range = { 0 0.66 } # For the randomness to work correctly
             }
             accessory = {
                 mode = add
@@ -3025,6 +4031,60 @@
                     AND = {
                         WCR_navy_clothes_trigger = yes
                         WCR_navy_has_domestic_influence_trigger = yes
+                    }
+                }
+            }
+        }
+    }
+
+    # 1.13 Navy sailor clothes
+    WCR_salty_sailor_clothes = { # TODO
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = coats
+                template = EP2_coats
+                accessory = male_outfits_naval_01
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = male_legwear_navy
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add  = 0 # 14000 # TODO
+                has_dlc_feature = ep2_cosmetics
+                scope:pop ?= {
+                    OR = {
+                        is_pop_type = soldiers
+                        is_pop_type = laborers
+                    }
+                    workplace ?= {
+                        OR = {
+                            is_building_type = building_naval_fortification
+                            is_building_type = building_naval_administration
+                            is_building_type = building_naval_logistics_center
+                        }
+                    }
+                    OR = {
+                        AND = {
+                            owner ?= {
+                                country_has_primary_culture = cu:japanese
+                            }
+                            # japanese_restoration_trigger = yes
+                        }
+                        owner ?= {
+                            any_primary_culture = {
+                                OR = {
+                                    has_discrimination_trait_group = heritage_group_european
+                                    has_discrimination_trait = heritage_african_diaspora
+                                }
+                            }
+                        }
                     }
                 }
             }
