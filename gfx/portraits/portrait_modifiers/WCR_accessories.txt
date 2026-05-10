@@ -3,7 +3,7 @@
 WCR_accessories = {
     usage = game
     selection_behavior = weighted_random
-    
+
     WCR_european_shopkeeper_clothes = {
         dna_modifiers = {
             accessory = {
@@ -12,7 +12,7 @@ WCR_accessories = {
                 template = all_misc
                 range = { 0 1 } # For the randomness to work correctly
             }
-        } 
+        }
         weight = {
             base = 0
             modifier = {
@@ -27,7 +27,7 @@ WCR_accessories = {
 WCR_sash_accessories = {
     usage = game
     selection_behavior = weighted_random
-    
+
     WCR_generic_sashes = {
         dna_modifiers = {
             accessory = {
@@ -126,7 +126,7 @@ WCR_sash_accessories = {
 WCR_medals_accessories = {
     usage = game
     selection_behavior = weighted_random
-    
+
     WCR_generic_medals = {
         dna_modifiers = {
             accessory = {
@@ -199,7 +199,7 @@ WCR_medals_accessories = {
 WCR_belts_accessories = {
     usage = game
     selection_behavior = weighted_random
-    
+
     # Belts only for characters
     # NOT for use with late era uniforms
     WCR_generic_belts = {
@@ -278,7 +278,7 @@ WCR_belts_accessories = {
 WCR_eyewear_accessories = {
     usage = game
     selection_behavior = weighted_random
-    
+
     WCR_european_fancy_eyewear = {
         dna_modifiers = {
             accessory = {
@@ -320,7 +320,7 @@ WCR_eyewear_accessories = {
             }
         }
     }
-    
+
     WCR_european_common_eyewear = {
         dna_modifiers = {
             accessory = {
