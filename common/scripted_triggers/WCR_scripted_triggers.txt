@@ -334,9 +334,11 @@ WCR_navy_clothes_trigger = {
     OR = {
         scope:pop ?= {
             workplace ?= {
-                is_building_type = building_naval_administration
-                is_building_type = building_naval_fortification
-                is_building_type = building_naval_logistics_center
+                OR = {
+                    is_building_type = building_naval_administration
+                    is_building_type = building_naval_fortification
+                    is_building_type = building_naval_logistics_center
+                }
             }
             OR = {
                 is_pop_type = soldiers
@@ -505,7 +507,17 @@ WCR_is_scope_owner_qing_dynasty_trigger = {
 WCR_late_army_uniform_trigger = {
     trigger_if = {
         limit = {
-            has_dlc_feature = ep1_cosmetics # Vanilla paywalls it; we'll respect it too
+            # Vanilla paywalls it; we'll respect it too
+            # Japan stuff is only paywalled behind ep2_cosmetics (TGW), other stuff is behind ep1_cosmtics (SoI)
+            trigger_if = {
+                limit = {
+                    WCR_st_completed_westernization_japanese_empire = yes
+                }
+                has_dlc_feature = ep2_cosmetics
+            }
+            trigger_else = {
+                has_dlc_feature = ep1_cosmetics
+            }
         }
         OR = {
             scope:pop ?= {

@@ -1238,9 +1238,15 @@
             modifier = {
                 add = 90000
                 has_dlc_feature = ep2_cosmetics
+                COM_WCR_enable_outfit = no # COM compatibility
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 WCR_st_completed_westernization_japanese_empire = yes
                 japanese_imperial_clothes_trigger = yes
                 WCR_late_army_uniform_trigger = no
+                OR = { # If Japan decides to wear something else for the ruler, the emperor will switch to that upon being restored as ruler
+                    ruler_clothes_trigger = no
+                    WCR_ruler_has_domestic_influence_trigger = yes
+                }
                 scope:character ?= {
                     is_adult = yes
                     is_female = no
@@ -1293,10 +1299,16 @@
             modifier = {
                 add = 90000
                 has_dlc_feature = ep2_cosmetics
+                COM_WCR_enable_outfit = no # COM compatibility
+                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 WCR_st_completed_westernization_japanese_empire = yes
                 japanese_imperial_clothes_trigger = yes
                 WCR_late_army_uniform_trigger = yes
                 military_clothes_trigger = no # Resolve clashing w/ 1904+ uniforms
+                OR = { # If Japan decides to wear something else for the ruler, the emperor will switch to that upon being restored as ruler
+                    ruler_clothes_trigger = no
+                    WCR_ruler_has_domestic_influence_trigger = yes
+                }
                 scope:character ?= {
                     is_adult = yes
                     is_female = no
@@ -3956,7 +3968,7 @@
     }
 
     # 1.13 Navy sailor clothes
-    WCR_salty_sailor_clothes = { # TODO
+    WCR_sailor_clothes = { # Vanilla calls it `salty_sailor_clothes` lol
         dna_modifiers = {
             accessory = {
                 mode = add
@@ -3974,36 +3986,18 @@
         weight = {
             base = 0
             modifier = {
-                add  = 0 # 14000 # TODO
+                add  = 14000
                 has_dlc_feature = ep2_cosmetics
-                scope:pop ?= {
-                    OR = {
-                        is_pop_type = soldiers
-                        is_pop_type = laborers
+                WCR_navy_clothes_trigger = yes
+                soldier_clothes_pop_trigger = yes
+                WCR_has_completed_westernization_trigger = yes
+
+                trigger_if = {
+                    limit = {
+                        WCR_navy_has_domestic_influence_trigger = yes
+                        WCR_st_completed_westernization_japanese_empire = yes
                     }
-                    workplace ?= {
-                        OR = {
-                            is_building_type = building_naval_fortification
-                            is_building_type = building_naval_administration
-                            is_building_type = building_naval_logistics_center
-                        }
-                    }
-                    OR = {
-                        AND = {
-                            owner ?= {
-                                country_has_primary_culture = cu:japanese
-                            }
-                            # japanese_restoration_trigger = yes
-                        }
-                        owner ?= {
-                            any_primary_culture = {
-                                OR = {
-                                    has_discrimination_trait_group = heritage_group_european
-                                    has_discrimination_trait = heritage_african_diaspora
-                                }
-                            }
-                        }
-                    }
+                    md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 }
             }
         }
