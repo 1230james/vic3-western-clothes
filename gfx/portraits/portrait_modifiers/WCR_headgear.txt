@@ -1797,6 +1797,52 @@
                     }
                 }
             }
+            modifier = { # Turkish characters & pops (excluding clergy) should wear the fez
+                add  = 100
+                WCR_has_completed_westernization_trigger = yes
+                OR = {
+                    scope:character ?= {
+                        owner ?= {
+                            WCR_st_is_country_tag = { TAG = TUR }
+                        }
+                        monarchy_clothes_trigger = no
+                        military_clothes_trigger = no # Exclude military since they have their own logic
+                        WCR_army_clothes_trigger = no
+                        WCR_navy_clothes_trigger = no
+                        
+                        # Morgenrote compatibility - avoid clipping problems with the fez & academic hats
+                        trigger_if = {
+                            limit = {
+                                morgenrote_is_active = yes
+                            }
+                            scope:character ?= {
+                                mr_special_characters_clothes_trigger = no
+                            }
+                        }
+                    }
+                    scope:pop ?= {
+                        owner ?= {
+                            WCR_st_is_country_tag = { TAG = TUR }
+                        }
+                        clergy_clothes_pop_trigger = no
+                    }
+                }
+            }
+            modifier = { # Turkish government employees should always wear fez
+                add  = 200 # Make bigger than the weight in `WCR_european_bowler_hat`
+                WCR_has_completed_westernization_trigger = yes
+                scope:pop ?= {
+                    owner ?= {
+                        WCR_st_is_country_tag = { TAG = TUR }
+                    }
+                }
+                OR = {
+                    WCR_st_is_government_pop = yes
+                    bureaucrats_clothes_pop_trigger = yes
+                }
+                WCR_army_clothes_trigger = no # Exclude military since they have their own logic
+                WCR_navy_clothes_trigger = no
+            }
         }
     }
 
