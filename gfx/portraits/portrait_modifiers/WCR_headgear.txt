@@ -440,14 +440,13 @@
             base = 0
             modifier = {
                 add  = 12000
-                has_dlc_feature = ep2_cosmetics
                 WCR_st_completed_westernization_japanese_empire = yes
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 soldier_clothes_pop_trigger = yes
                 OR = {
                     AND = {
                         WCR_army_clothes_trigger = yes
-                        WCR_late_army_uniform_trigger = no
+                        WCR_st_japan_use_1886_uniforms = yes
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                     AND = {
@@ -472,14 +471,13 @@
             base = 0
             modifier = {
                 add  = 12000
-                has_dlc_feature = ep2_cosmetics
                 WCR_st_completed_westernization_japanese_empire = yes
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 officers_clothes_pop_trigger = yes
                 OR = {
                     AND = {
                         WCR_army_clothes_trigger = yes
-                        WCR_late_army_uniform_trigger = no
+                        WCR_st_japan_use_1886_uniforms = yes
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                     AND = {
@@ -509,7 +507,7 @@
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 ruler_clothes_trigger = yes
                 military_clothes_trigger = yes # Here to make sure it only applies when the ruler is commanding an army
-                WCR_late_army_uniform_trigger = no
+                WCR_st_japan_use_1886_uniforms = yes
                 WCR_ruler_has_domestic_influence_trigger = yes
                 # base game has a check for being at war; idk if i want to keep it?
             }
@@ -534,7 +532,7 @@
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 exists = scope:character
                 WCR_army_clothes_trigger = yes
-                WCR_late_army_uniform_trigger = no
+                WCR_st_japan_use_1886_uniforms = yes
                 WCR_army_has_domestic_influence_trigger = yes
             }
         }
@@ -557,7 +555,7 @@
                 WCR_st_completed_westernization_japanese_empire = yes
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 WCR_army_clothes_trigger = yes
-                WCR_late_army_uniform_trigger = yes
+                WCR_st_japan_use_1904_uniforms = yes
                 WCR_army_has_domestic_influence_trigger = yes
             }
             modifier = {
@@ -565,7 +563,7 @@
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 WCR_st_completed_westernization_japanese_empire = yes
                 monarchy_clothes_trigger = yes
-                WCR_late_army_uniform_trigger = yes
+                WCR_st_japan_use_1904_uniforms = yes
                 WCR_ruler_has_domestic_influence_trigger = yes
                 military_clothes_trigger = yes
             }
@@ -590,13 +588,8 @@
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 soldier_clothes_pop_trigger = yes
                 WCR_army_clothes_trigger = yes
-                WCR_late_army_uniform_trigger = yes
+                WCR_st_japan_use_1911_uniforms = yes # yes i know the year is different but the logic is actually the same
                 WCR_army_has_domestic_influence_trigger = yes
-                scope:person ?= { # Scope defined by `WCR_st_completed_westernization_japanese_empire`
-                    owner ?= {
-                        has_technology_researched = automatic_machine_guns
-                    }
-                }
             }
         }
     }
@@ -622,19 +615,16 @@
                     AND = {
                         ruler_clothes_trigger    = yes
                         military_clothes_trigger = yes
-                        WCR_late_army_uniform_trigger = yes
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {
                         WCR_army_clothes_trigger = yes
-                        WCR_late_army_uniform_trigger = yes
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                 }
-                scope:person ?= { # Scope defined by `WCR_st_completed_westernization_japanese_empire`
-                    owner ?= {
-                        has_technology_researched = automatic_machine_guns
-                    }
+                OR = {
+                    WCR_st_japan_use_1911_uniforms = yes
+                    WCR_st_japan_use_1938_uniforms = yes # There is no new hat for 1938 uniforms; this is used as a fallback
                 }
             }
         }
@@ -658,22 +648,8 @@
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 soldier_clothes_pop_trigger = yes
                 WCR_army_clothes_trigger = yes
-                WCR_late_army_uniform_trigger = yes
+                WCR_st_japan_use_1938_uniforms = yes
                 WCR_army_has_domestic_influence_trigger = yes
-                scope:person ?= { # Scope defined by `WCR_st_completed_westernization_japanese_empire`
-                    owner ?= {
-                        country_has_primary_culture = cu:japanese
-                        OR = {
-                            has_technology_researched = chemical_warfare
-                            has_technology_researched = concrete_fortifications
-                            has_technology_researched = military_aviation
-                            has_technology_researched = flamethrowers
-                            has_technology_researched = stormtroopers
-                            has_technology_researched = nco_training
-                        }
-                    }
-                    # japanese_restoration_trigger = yes
-                }
             }
         }
     }
@@ -698,28 +674,17 @@
                     AND = {
                         ruler_clothes_trigger    = yes
                         military_clothes_trigger = yes
-                        WCR_late_army_uniform_trigger = yes
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {
                         WCR_army_clothes_trigger = yes
-                        WCR_late_army_uniform_trigger = yes
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                 }
                 scope:character ?= {
                     is_in_hot_land_hq_trigger = yes
-                    owner ?= {
-                        OR = {
-                            has_technology_researched = chemical_warfare
-                            has_technology_researched = concrete_fortifications
-                            has_technology_researched = military_aviation
-                            has_technology_researched = flamethrowers
-                            has_technology_researched = stormtroopers
-                            has_technology_researched = nco_training
-                        }
-                    }
                 }
+                WCR_st_japan_use_1938_uniforms = yes
             }
         }
     }

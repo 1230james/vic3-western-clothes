@@ -508,16 +508,7 @@ WCR_late_army_uniform_trigger = {
     trigger_if = {
         limit = {
             # Vanilla paywalls it; we'll respect it too
-            # Japan stuff is only paywalled behind ep2_cosmetics (TGW), other stuff is behind ep1_cosmtics (SoI)
-            trigger_if = {
-                limit = {
-                    WCR_st_completed_westernization_japanese_empire = yes
-                }
-                has_dlc_feature = ep2_cosmetics
-            }
-            trigger_else = {
-                has_dlc_feature = ep1_cosmetics
-            }
+            has_dlc_feature = ep1_cosmetics
         }
         OR = {
             scope:pop ?= {
@@ -596,6 +587,76 @@ WCR_late_army_uniform_trigger = {
     trigger_else = {
         always = no
     }
+}
+
+# Triggers intended for use only with Japan to avoid complicating `WCR_late_army_uniform_trigger`
+# Japanese uniforms are borrowed from the Japanese Uniform Pack mod & as of 1.13.7 are supposed to be free for all, so
+# no DLC check should be done.
+WCR_st_japan_use_1938_uniforms = {
+    OR = {
+        scope:pop ?= {
+            owner ?= {
+                OR = {
+                    has_technology_researched = chemical_warfare
+                    has_technology_researched = concrete_fortifications
+                    has_technology_researched = military_aviation
+                    has_technology_researched = flamethrowers
+                    has_technology_researched = stormtroopers
+                    has_technology_researched = nco_training
+                }
+            }
+        }
+        scope:character ?= {
+            owner ?= {
+                OR = {
+                    has_technology_researched = chemical_warfare
+                    has_technology_researched = concrete_fortifications
+                    has_technology_researched = military_aviation
+                    has_technology_researched = flamethrowers
+                    has_technology_researched = stormtroopers
+                    has_technology_researched = nco_training
+                }
+            }
+        }
+    }
+}
+
+WCR_st_japan_use_1911_uniforms = {
+    WCR_st_japan_use_1938_uniforms = no
+    OR = {
+        scope:pop ?= {
+            owner ?= {
+                has_technology_researched = automatic_machine_guns
+            }
+        }
+        scope:character ?= {
+            owner ?= {
+                has_technology_researched = automatic_machine_guns
+            }
+        }
+    }
+}
+
+WCR_st_japan_use_1904_uniforms = {
+    WCR_st_japan_use_1911_uniforms = no
+    OR = {
+        scope:pop ?= {
+            owner ?= {
+                has_technology_researched = bolt_action_rifles
+            }
+        }
+        scope:character ?= {
+            owner ?= {
+                has_technology_researched = bolt_action_rifles
+            }
+        }
+    }
+}
+
+WCR_st_japan_use_1886_uniforms = {
+    WCR_st_japan_use_1904_uniforms = no
+    WCR_st_japan_use_1911_uniforms = no
+    WCR_st_japan_use_1938_uniforms = no
 }
 
 # Country triggers

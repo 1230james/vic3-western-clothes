@@ -464,14 +464,13 @@
             base = 0
             modifier = {
                 add = 12000
-                has_dlc_feature = ep2_cosmetics
                 WCR_st_completed_westernization_japanese_empire = yes
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 soldier_clothes_pop_trigger = yes
                 OR = {
                     AND = {
                         WCR_army_clothes_trigger = yes
-                        WCR_late_army_uniform_trigger = no
+                        WCR_st_japan_use_1886_uniforms = yes
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                     AND = {
@@ -514,14 +513,13 @@
             base = 0
             modifier = {
                 add  = 12000
-                has_dlc_feature = ep2_cosmetics
                 WCR_st_completed_westernization_japanese_empire = yes
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 officers_clothes_pop_trigger = yes
                 OR = {
                     AND = {
                         WCR_army_clothes_trigger = yes
-                        WCR_late_army_uniform_trigger = no
+                        WCR_st_japan_use_1886_uniforms = yes
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                     AND = {
@@ -576,7 +574,6 @@
             base = 0
             modifier = {
                 add  = 12000
-                has_dlc_feature = ep2_cosmetics
                 WCR_st_completed_westernization_japanese_empire = yes
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 exists = scope:character
@@ -589,15 +586,14 @@
                                 military_clothes_trigger = yes
                             }
                         }
-                        WCR_late_army_uniform_trigger = no
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {
                         WCR_army_clothes_trigger = yes
-                        WCR_late_army_uniform_trigger = no
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                 }
+                WCR_st_japan_use_1886_uniforms = yes
             }
         }
     }
@@ -639,19 +635,18 @@
             base = 0
             modifier = {
                 add  = 12500
-                has_dlc_feature = ep2_cosmetics
                 WCR_st_completed_westernization_japanese_empire = yes
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 OR = {
                     AND = {
                         ruler_clothes_trigger = yes
                         military_clothes_trigger = yes # Here to make sure it only applies when the ruler is commanding an army
-                        WCR_late_army_uniform_trigger = no
+                        WCR_st_japan_use_1886_uniforms = yes
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {
                         WCR_army_clothes_trigger = yes
-                        WCR_late_army_uniform_trigger = no
+                        WCR_st_japan_use_1886_uniforms = yes
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                     AND = {
@@ -712,12 +707,11 @@
             base = 0
             modifier = {
                 add = 13000
-                has_dlc_feature = ep2_cosmetics
                 WCR_st_completed_westernization_japanese_empire = yes
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 soldier_clothes_pop_trigger = yes
                 WCR_army_clothes_trigger = yes
-                WCR_late_army_uniform_trigger = yes
+                WCR_st_japan_use_1904_uniforms = yes
                 WCR_army_has_domestic_influence_trigger = yes
             }
         }
@@ -754,7 +748,6 @@
             base = 0
             modifier = {
                 add  = 13000
-                has_dlc_feature = ep2_cosmetics
                 WCR_st_completed_westernization_japanese_empire = yes
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 soldier_clothes_pop_trigger = no
@@ -762,15 +755,14 @@
                     AND = {
                         ruler_clothes_trigger = yes
                         military_clothes_trigger = yes # Here to make sure it only applies when the ruler is commanding an army
-                        WCR_late_army_uniform_trigger = yes
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {
                         WCR_army_clothes_trigger = yes
-                        WCR_late_army_uniform_trigger = yes
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                 }
+                WCR_st_japan_use_1904_uniforms = yes
             }
         }
     }
@@ -812,18 +804,12 @@
             base = 0
             modifier = {
                 add  = 13500
-                has_dlc_feature = ep2_cosmetics
                 WCR_st_completed_westernization_japanese_empire = yes
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 soldier_clothes_pop_trigger = yes
                 WCR_army_clothes_trigger = yes
-                WCR_late_army_uniform_trigger = yes
+                WCR_st_japan_use_1911_uniforms = yes
                 WCR_army_has_domestic_influence_trigger = yes
-                scope:person ?= { # Scope defined by `WCR_st_completed_westernization_japanese_empire`
-                    owner ?= {
-                        has_technology_researched = automatic_machine_guns
-                    }
-                }
             }
         }
     }
@@ -859,7 +845,6 @@
             base = 0
             modifier = {
                 add  = 13500
-                has_dlc_feature = ep2_cosmetics
                 WCR_st_completed_westernization_japanese_empire = yes
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 soldier_clothes_pop_trigger = no
@@ -872,20 +857,14 @@
                                 military_clothes_trigger = yes
                             }
                         }
-                        WCR_late_army_uniform_trigger = yes
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {
                         WCR_army_clothes_trigger = yes
-                        WCR_late_army_uniform_trigger = yes
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                 }
-                scope:person ?= { # Scope defined by `WCR_st_completed_westernization_japanese_empire`
-                    owner ?= {
-                        has_technology_researched = automatic_machine_guns
-                    }
-                }
+                WCR_st_japan_use_1911_uniforms = yes
             }
         }
     }
@@ -921,25 +900,12 @@
             base = 0
             modifier = {
                 add  = 14000
-                has_dlc_feature = ep2_cosmetics
                 WCR_st_completed_westernization_japanese_empire = yes
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 soldier_clothes_pop_trigger = yes
                 WCR_army_clothes_trigger = yes
-                WCR_late_army_uniform_trigger = yes
+                WCR_st_japan_use_1938_uniforms = yes
                 WCR_army_has_domestic_influence_trigger = yes
-                scope:person ?= { # Scope defined by `WCR_st_completed_westernization_japanese_empire`
-                    owner ?= {
-                        OR = {
-                            has_technology_researched = chemical_warfare
-                            has_technology_researched = concrete_fortifications
-                            has_technology_researched = military_aviation
-                            has_technology_researched = flamethrowers
-                            has_technology_researched = stormtroopers
-                            has_technology_researched = nco_training
-                        }
-                    }
-                }
             }
         }
     }
@@ -975,7 +941,6 @@
             base = 0
             modifier = {
                 add  = 14000
-                has_dlc_feature = ep2_cosmetics
                 WCR_st_completed_westernization_japanese_empire = yes
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 soldier_clothes_pop_trigger = no
@@ -983,27 +948,14 @@
                     AND = {
                         ruler_clothes_trigger = yes
                         military_clothes_trigger = yes # Here to make sure it only applies when the ruler is commanding an army
-                        WCR_late_army_uniform_trigger = yes
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {
                         WCR_army_clothes_trigger = yes
-                        WCR_late_army_uniform_trigger = yes
                         WCR_army_has_domestic_influence_trigger = yes
                     }
                 }
-                scope:person ?= { # Scope defined by `WCR_st_completed_westernization_japanese_empire`
-                    owner ?= {
-                        OR = {
-                            has_technology_researched = chemical_warfare
-                            has_technology_researched = concrete_fortifications
-                            has_technology_researched = military_aviation
-                            has_technology_researched = flamethrowers
-                            has_technology_researched = stormtroopers
-                            has_technology_researched = nco_training
-                        }
-                    }
-                }
+                WCR_st_japan_use_1938_uniforms = yes
             }
         }
     }
@@ -1039,7 +991,6 @@
             base = 0
             modifier = {
                 add  = 13000
-                has_dlc_feature = ep2_cosmetics
                 WCR_st_completed_westernization_japanese_empire = yes
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 WCR_navy_clothes_trigger = yes
@@ -1087,7 +1038,6 @@
             base = 0
             modifier = {
                 add  = 13000
-                has_dlc_feature = ep2_cosmetics
                 WCR_st_completed_westernization_japanese_empire = yes
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 WCR_navy_clothes_trigger = yes
@@ -1135,7 +1085,6 @@
             base = 0
             modifier = {
                 add  = 13000
-                has_dlc_feature = ep2_cosmetics
                 WCR_st_completed_westernization_japanese_empire = yes
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 WCR_navy_clothes_trigger = yes
@@ -1183,7 +1132,6 @@
             base = 0
             modifier = {
                 add  = 13000
-                has_dlc_feature = ep2_cosmetics
                 WCR_st_completed_westernization_japanese_empire = yes
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 WCR_navy_clothes_trigger = yes
@@ -1237,12 +1185,11 @@
             base = 0
             modifier = {
                 add = 90000
-                has_dlc_feature = ep2_cosmetics
                 COM_WCR_enable_outfit = no # COM compatibility
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 WCR_st_completed_westernization_japanese_empire = yes
                 japanese_imperial_clothes_trigger = yes
-                WCR_late_army_uniform_trigger = no
+                WCR_st_japan_use_1886_uniforms = yes
                 OR = { # If Japan decides to wear something else for the ruler, the emperor will switch to that upon being restored as ruler
                     ruler_clothes_trigger = no
                     WCR_ruler_has_domestic_influence_trigger = yes
@@ -1298,12 +1245,11 @@
             base = 0
             modifier = {
                 add = 90000
-                has_dlc_feature = ep2_cosmetics
                 COM_WCR_enable_outfit = no # COM compatibility
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 WCR_st_completed_westernization_japanese_empire = yes
                 japanese_imperial_clothes_trigger = yes
-                WCR_late_army_uniform_trigger = yes
+                WCR_st_japan_use_1886_uniforms = no
                 military_clothes_trigger = no # Resolve clashing w/ 1904+ uniforms
                 OR = { # If Japan decides to wear something else for the ruler, the emperor will switch to that upon being restored as ruler
                     ruler_clothes_trigger = no
