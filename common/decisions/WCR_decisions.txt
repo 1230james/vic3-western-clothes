@@ -111,7 +111,7 @@
         }
         if = {
             limit = {
-                has_variable = meiji_restoration_complete
+                has_variable = japan_restoration_complete
             }
             add = 1000
         }
@@ -253,7 +253,7 @@ WCR_de_start_westernization = {
         }
         if = {
             limit = {
-                has_variable = meiji_restoration_complete
+                has_variable = japan_restoration_complete
             }
             add = 1000
         }

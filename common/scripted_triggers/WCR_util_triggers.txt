@@ -15,7 +15,7 @@ WCR_st_is_country_westernized_by_vanilla = {
         AND = { # Japan - Vanilla westernization upon completing the Restoration
             WCR_is_japan_trigger = yes
             has_game_rule = WCR_vanilla_JAP_westernization
-            has_variable  = meiji_restoration_complete
+            has_variable  = japan_emperor_restored
         }
     }
 }
@@ -304,8 +304,8 @@ WCR_st_is_part_west_character_westernized_trigger = {
                             owner.var:WCR_westernization_progress >= 0
                             scope:character = {
                                 OR = {
-                                    is_ruler = yes
-                                    is_heir  = yes
+                                    is_ruler_of_own_country = yes
+                                    is_heir_of_own_country  = yes
                                 }
                             }
                         }
@@ -313,8 +313,8 @@ WCR_st_is_part_west_character_westernized_trigger = {
                             owner.var:WCR_westernization_progress >= 5
                             scope:character = {
                                 OR = {
-                                    has_role = general
-                                    has_role = admiral
+                                    has_role_of_type = general
+                                    has_role_of_type = admiral
                                     interest_group ?= { is_interest_group_type = ig_armed_forces }
                                 }
                             }

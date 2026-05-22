@@ -258,8 +258,10 @@ WCR_army_clothes_trigger = {
                     exists = workplace
                 }
                 workplace ?= {
-                    NOT = {
-                        is_building_type = building_naval_base
+                    NOR = {
+                        is_building_type = building_naval_administration
+                        is_building_type = building_naval_fortification
+                        is_building_type = building_naval_logistics_center
                     }
                 }
             }
@@ -298,30 +300,20 @@ WCR_army_clothes_trigger = {
                     politician_clothes_trigger = yes
                     scope:character ?= {
                         NOT = {
-                            has_role = admiral
-                        }
-                    }
-                    
-                    # Morgenrote compatibility - don't put uniforms on Armed Forces MR characters
-                    trigger_if = {
-                        limit = {
-                            morgenrote_is_active = yes
-                        }
-                        scope:character ?= {
-                            mr_special_characters_clothes_trigger = no
+                            has_role_of_type = admiral
                         }
                     }
                 }
                 
                 # Generals
                 scope:character ?= {
-                    has_role = general
+                    has_role_of_type = general
                 }
             }
             
             # Exclude rulers
             scope:character ?= {
-                is_ruler = no
+                is_ruler_of_own_country = no
             }
         }
     }
@@ -332,11 +324,19 @@ WCR_navy_clothes_trigger = {
     OR = {
         scope:pop ?= {
             workplace ?= {
-                is_building_type = building_naval_base
+                OR = {
+                    is_building_type = building_naval_administration
+                    is_building_type = building_naval_fortification
+                    is_building_type = building_naval_logistics_center
+                }
+            }
+            OR = {
+                is_pop_type = soldiers
+                is_pop_type = officers
             }
         }
         scope:character ?= {
-            has_role = admiral
+            has_role_of_type = admiral
         }
     }
 }
@@ -362,7 +362,7 @@ WCR_can_start_westernizing_trigger = {
             }
             custom_tooltip = {
                 text = WCR_tt_JAP_req_bypass
-                has_variable = meiji_restoration_complete
+                has_variable = japan_restoration_complete
             }
         }
         
@@ -497,7 +497,8 @@ WCR_is_scope_owner_qing_dynasty_trigger = {
 WCR_late_army_uniform_trigger = {
     trigger_if = {
         limit = {
-            has_dlc_feature = ep1_cosmetics # Vanilla paywalls it; we'll respect it too
+            # Vanilla paywalls it; we'll respect it too
+            has_dlc_feature = ep1_cosmetics
         }
         OR = {
             scope:pop ?= {
@@ -576,6 +577,76 @@ WCR_late_army_uniform_trigger = {
     trigger_else = {
         always = no
     }
+}
+
+# Triggers intended for use only with Japan to avoid complicating `WCR_late_army_uniform_trigger`
+# Japanese uniforms are borrowed from the Japanese Uniform Pack mod & as of 1.13.7 are supposed to be free for all, so
+# no DLC check should be done.
+WCR_st_japan_use_1938_uniforms = {
+    OR = {
+        scope:pop ?= {
+            owner ?= {
+                OR = {
+                    has_technology_researched = chemical_warfare
+                    has_technology_researched = concrete_fortifications
+                    has_technology_researched = military_aviation
+                    has_technology_researched = flamethrowers
+                    has_technology_researched = stormtroopers
+                    has_technology_researched = nco_training
+                }
+            }
+        }
+        scope:character ?= {
+            owner ?= {
+                OR = {
+                    has_technology_researched = chemical_warfare
+                    has_technology_researched = concrete_fortifications
+                    has_technology_researched = military_aviation
+                    has_technology_researched = flamethrowers
+                    has_technology_researched = stormtroopers
+                    has_technology_researched = nco_training
+                }
+            }
+        }
+    }
+}
+
+WCR_st_japan_use_1911_uniforms = {
+    WCR_st_japan_use_1938_uniforms = no
+    OR = {
+        scope:pop ?= {
+            owner ?= {
+                has_technology_researched = automatic_machine_guns
+            }
+        }
+        scope:character ?= {
+            owner ?= {
+                has_technology_researched = automatic_machine_guns
+            }
+        }
+    }
+}
+
+WCR_st_japan_use_1904_uniforms = {
+    WCR_st_japan_use_1911_uniforms = no
+    OR = {
+        scope:pop ?= {
+            owner ?= {
+                has_technology_researched = bolt_action_rifles
+            }
+        }
+        scope:character ?= {
+            owner ?= {
+                has_technology_researched = bolt_action_rifles
+            }
+        }
+    }
+}
+
+WCR_st_japan_use_1886_uniforms = {
+    WCR_st_japan_use_1904_uniforms = no
+    WCR_st_japan_use_1911_uniforms = no
+    WCR_st_japan_use_1938_uniforms = no
 }
 
 # Country triggers
@@ -716,7 +787,7 @@ WCR_st_completed_westernization_japanese_empire = {
             scope:person ?= {
                 owner ?= {
                     WCR_is_japan_trigger = yes
-                    has_variable = meiji_restoration_complete
+                    has_variable = japan_restoration_complete
                 }
                 WCR_westernization_allowed_by_rules_trigger = yes
             }
