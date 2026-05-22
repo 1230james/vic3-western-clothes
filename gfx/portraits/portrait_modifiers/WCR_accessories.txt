@@ -302,6 +302,7 @@ WCR_eyewear_accessories = {
                 OR = {
                     politician_clothes_trigger = yes
                     executive_clothes_trigger  = yes
+                    magnate_clothes_trigger    = yes
                 }
                 scope:character ?= {
                     age >= define:NCharacters|ADULT_AGE
@@ -345,7 +346,11 @@ WCR_eyewear_accessories = {
                     age >= define:NCharacters|ADULT_AGE
                     is_historical = no # Do not disrupt characters with DNA
                     OR = {
-                        politician_clothes_trigger = no
+                        AND = {
+                            politician_clothes_trigger = no
+                            executive_clothes_trigger  = no
+                            magnate_clothes_trigger    = no
+                        }
                         NOR = {
                             is_interest_group_type = ig_landowners
                             is_interest_group_type = ig_industrialists
