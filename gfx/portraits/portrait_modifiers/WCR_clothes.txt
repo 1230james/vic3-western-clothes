@@ -151,14 +151,6 @@
                     monarchy_clothes_trigger = yes # for heirs
                 }
             }
-            modifier = { # [JUP] keep heir's clothes
-                add = 100
-                md_japanese_uniform_pack_active_trigger = yes
-                WCR_st_completed_westernization_japanese_empire = no
-                scope:character ?= {
-                    is_heir_of_own_country = yes
-                }
-            }
             modifier = { # EACR compatibility
                 add = -2000
                 EACR_is_active_trigger   = yes
