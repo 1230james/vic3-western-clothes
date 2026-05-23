@@ -1,7 +1,7 @@
 {
     "name" : "Western Clothes: Redux",
     "id" : "xyz.1230james.western_clothes",
-    "version" : "2.10.6",
+    "version" : "2.10.7",
     "game_id" : "victoria3",
     "supported_game_version" : "1.13.*",
     "short_description" : "",

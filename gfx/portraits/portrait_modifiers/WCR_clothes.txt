@@ -248,7 +248,6 @@
             base = 0
             modifier = {
                 add = 2000
-                EACR_is_active_trigger = no # EACR compatibility
                 WCR_st_completed_westernization_japanese_empire = no
                 japanese_shogun_clothes_trigger = yes
             }
@@ -269,7 +268,6 @@
             base = 0
             modifier = {
                 add = 2000
-                EACR_is_active_trigger = no # EACR compatibility
                 WCR_st_completed_westernization_japanese_empire = no
                 japanese_imperial_clothes_trigger = yes
             }
