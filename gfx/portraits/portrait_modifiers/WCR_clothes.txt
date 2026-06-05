@@ -1689,6 +1689,11 @@
                     military_clothes_trigger = yes
                     armed_forces_clothes_trigger = yes
                 }
+                OR = {
+                    politician_clothes_trigger = yes
+                    executive_clothes_trigger = yes
+                    magnate_clothes_trigger = yes
+                }
                 scope:character ?= {
                     OR = {
                         is_interest_group_type = ig_landowners
@@ -1697,7 +1702,7 @@
                         is_interest_group_type = ig_petty_bourgeoisie
                     }
                     OR = {
-                        politician_clothes_trigger = yes
+                        is_ruler_of_own_country = no
                         AND = {
                             is_ruler_of_own_country = yes
                             republic_clothes_trigger = yes
