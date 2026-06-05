@@ -176,12 +176,20 @@
                     }
                 }
                 
-                # EACR compatibility - exclude Japanese monarchy if EACR is active since they will handle their unwesternized clothes
+                # EACR compatibility - exclude Japanese imperial heirs if EACR is active since they will handle their unwesternized clothes
                 trigger_if = {
                     limit = {
                         EACR_is_active_trigger = yes
                     }
-                    monarchy_clothes_trigger = no
+                    NAND = {
+                        scope:character ?= {
+                            is_heir_of_own_country = yes
+                            owner ?= {
+                                NOT = { has_law = law_type:law_bakufu }
+                                WCR_is_japan_trigger = yes
+                            }
+                        }
+                    }
                 }
             }
         }

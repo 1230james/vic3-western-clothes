@@ -146,20 +146,7 @@
                         WCR_is_japan_trigger = yes
                     }
                 }
-                OR = {
-                    soldier_clothes_pop_trigger = yes
-                    monarchy_clothes_trigger = yes # for heirs
-                }
-            }
-            modifier = { # EACR compatibility
-                add = -2000
-                EACR_is_active_trigger   = yes
-                monarchy_clothes_trigger = yes
-                scope:character ?= {
-                    owner ?= {
-                        WCR_is_japan_trigger = yes
-                    }
-                }
+                soldier_clothes_pop_trigger = yes
             }
         }
     }
@@ -350,6 +337,17 @@
                 add = 100
                 japanese_clothes_trigger = yes
                 WCR_has_completed_westernization_trigger = no
+            }
+            modifier = { # EACR compatibility
+                add = -1000
+                EACR_is_active_trigger = yes
+                scope:character ?= {
+                    is_heir_of_own_country = yes
+                    owner ?= {
+                        NOT = { has_law = law_type:law_bakufu }
+                        WCR_is_japan_trigger = yes
+                    }
+                }
             }
         }
     }
