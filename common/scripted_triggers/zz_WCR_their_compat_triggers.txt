@@ -13,3 +13,11 @@ bpm_ig_enabled = {
 mr_special_characters_clothes_trigger = {
     always = no
 }
+
+# Japanese Uniform Pack
+md_japanese_modern_shogunate_trigger = {
+    always = no
+}
+md_japanese_modern_ruler_tech_trigger = {
+    always = no
+}

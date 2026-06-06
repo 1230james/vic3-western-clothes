@@ -146,20 +146,7 @@
                         WCR_is_japan_trigger = yes
                     }
                 }
-                OR = {
-                    soldier_clothes_pop_trigger = yes
-                    monarchy_clothes_trigger = yes # for heirs
-                }
-            }
-            modifier = { # EACR compatibility
-                add = -2000
-                EACR_is_active_trigger   = yes
-                monarchy_clothes_trigger = yes
-                scope:character ?= {
-                    owner ?= {
-                        WCR_is_japan_trigger = yes
-                    }
-                }
+                soldier_clothes_pop_trigger = yes
             }
         }
     }
@@ -350,6 +337,17 @@
                 add = 100
                 japanese_clothes_trigger = yes
                 WCR_has_completed_westernization_trigger = no
+            }
+            modifier = { # EACR compatibility
+                add = -1000
+                EACR_is_active_trigger = yes
+                scope:character ?= {
+                    is_heir_of_own_country = yes
+                    owner ?= {
+                        NOT = { has_law = law_type:law_bakufu }
+                        WCR_is_japan_trigger = yes
+                    }
+                }
             }
         }
     }
@@ -1271,7 +1269,10 @@
 
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
-                    is_adult = no
+                    OR = {
+                        is_adult = no
+                        age < define:NCharacters|ADULT_AGE # Shouldn't be needed in practice, but as a fallback, esp. when doing debug shenanigans
+                    }
                 }
             }
         }
@@ -1691,6 +1692,11 @@
                     military_clothes_trigger = yes
                     armed_forces_clothes_trigger = yes
                 }
+                OR = {
+                    politician_clothes_trigger = yes
+                    executive_clothes_trigger = yes
+                    magnate_clothes_trigger = yes
+                }
                 scope:character ?= {
                     OR = {
                         is_interest_group_type = ig_landowners
@@ -1699,7 +1705,7 @@
                         is_interest_group_type = ig_petty_bourgeoisie
                     }
                     OR = {
-                        politician_clothes_trigger = yes
+                        is_ruler_of_own_country = no
                         AND = {
                             is_ruler_of_own_country = yes
                             republic_clothes_trigger = yes

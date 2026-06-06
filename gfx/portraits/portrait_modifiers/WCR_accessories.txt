@@ -106,7 +106,7 @@ WCR_sash_accessories = {
                 WCR_st_completed_westernization_japanese_empire = yes
                 OR = {
                     AND = {
-                        WCR_ruler_clothes_trigger = yes
+                        ruler_clothes_trigger = yes
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {

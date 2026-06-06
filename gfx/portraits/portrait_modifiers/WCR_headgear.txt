@@ -78,11 +78,40 @@
             base = 0
             modifier = {
                 add = 100
-                EACR_is_active_trigger = no # EACR compatibility
                 WCR_st_completed_westernization_japanese_empire = no
-                OR = {
-                    japanese_imperial_clothes_trigger = yes
+                trigger_if = {
+                    limit = {
+                        EACR_is_active_trigger = no
+                    }
+                    OR = {
+                        japanese_imperial_clothes_trigger = yes
+                        japanese_shogun_clothes_trigger = yes
+                    }
+                }
+                trigger_else = { # EACR compatibility
                     japanese_shogun_clothes_trigger = yes
+                }
+                
+                # JUP compatibility
+                trigger_if = {
+                    limit = {
+                        md_japanese_uniform_pack_active_trigger = yes
+                    }
+                    OR = {
+                        scope:character ?= {
+                            has_ideology = ideology:ideology_traditionalist
+                        }
+                        trigger_if = {
+                            limit = {
+                                EACR_is_active_trigger = no
+                            }
+                            md_japanese_modern_ruler_tech_trigger = no
+                            md_japanese_modern_shogunate_trigger  = no
+                        }
+                        trigger_else = {
+                            md_japanese_modern_shogunate_trigger = no
+                        }
+                    }
                 }
             }
         }
@@ -320,7 +349,6 @@
             modifier = {
                 add = 1000
                 WCR_st_completed_westernization_japanese_empire = no
-                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
 
                 # Copied from vanilla logic
                 has_dlc_feature = ep2_cosmetics
@@ -704,7 +732,6 @@
                 add  = 14000
                 has_dlc_feature = ep2_cosmetics
                 WCR_st_completed_westernization_japanese_empire = yes
-                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
 
                 japanese_clothes_pop_trigger = yes
                 OR = {
@@ -824,27 +851,16 @@
         weight = {
             base = 0
             modifier = {
-                add = 100
+                add  = 100
                 WCR_has_completed_westernization_trigger = yes
-                politician_clothes_trigger = yes
-                armed_forces_clothes_trigger = no
-                military_clothes_trigger = no
-                scope:character ?= {
-                    is_heir_of_own_country = no
-                    age > 12
+                OR = {
+                    politician_clothes_trigger = yes
+                    ruler_clothes_trigger      = yes
                 }
-            }
-            modifier = {
-                add = 100
-                WCR_has_completed_westernization_trigger = yes
-                ruler_clothes_trigger = yes
-                republic_clothes_trigger = yes
-                military_clothes_trigger = no
-            }
-            modifier = { # Don't have female characters wear the bonnet
-                add = -1000
+                generic_military_uniform_clothes_trigger = no
                 scope:character ?= {
-                    is_female = yes
+                    is_adult  = yes
+                    is_female = no # Don't have female characters wear the bonnet
                 }
             }
         }
@@ -870,46 +886,54 @@
                 add = 1000
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
-                    age >= define:NCharacters|ADULT_AGE
-                    politician_clothes_trigger = yes
-                    military_clothes_trigger   = no
-                    is_ruler_of_own_country = no
-                    is_heir_of_own_country  = no
+                    is_adult = yes
                     OR = {
-                        is_interest_group_type = ig_landowners
-                        is_interest_group_type = ig_industrialists
+                        AND = {
+                            politician_clothes_trigger = yes
+                            OR = {
+                                is_interest_group_type = ig_landowners
+                                is_interest_group_type = ig_industrialists
+                            }
+                        }
+                        executive_clothes_trigger = yes
+                        magnate_clothes_trigger   = yes
                     }
+                    generic_military_uniform_clothes_trigger = no
                 }
             }
         }
     }
 
-    WCR_european_executive_headgear = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = headgear
-                template = european_executive_hats
-                range = { 0 1 }
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 10000
-                WCR_has_completed_westernization_trigger = yes
-                OR = {
-                    executive_clothes_trigger = yes
-                    # AND = { # As of 1.9.2, this is just 50% top hat & 50% no hat, so exclude politicians for now
-                        # politician_clothes_trigger = yes
-                        # scope:character ?= {
-                            # is_interest_group_type = ig_industrialists
-                        # }
-                    # }
-                }
-            }
-        }
-    }
+    # As of 1.9.2, this is just 50% top hat and 50% no hat
+    # As of 1.13.8, it's still 50/50 top hat/no hat + I think having a hat looks better, so this will be unused.
+    #     WCR-westernized executives will be covered in `WCR_european_capitalist_headgear` instead until a unique hat
+    #     is added to the executive hats gene that warrants using it.
+    # WCR_european_executive_headgear = {
+    #     dna_modifiers = {
+    #         accessory = {
+    #             mode = add
+    #             gene = headgear
+    #             template = european_executive_hats
+    #             range = { 0 1 }
+    #         }
+    #     }
+    #     weight = {
+    #         base = 0
+    #         modifier = {
+    #             add = 10000
+    #             WCR_has_completed_westernization_trigger = yes
+    #             OR = {
+    #                 executive_clothes_trigger = yes
+    #                 AND = { # As of 1.9.2, this is just 50% top hat & 50% no hat, so exclude politicians for now
+    #                     politician_clothes_trigger = yes
+    #                     scope:character ?= {
+    #                         is_interest_group_type = ig_industrialists
+    #                     }
+    #                 }
+    #             }
+    #         }
+    #     }
+    # }
 
     WCR_european_bowler_hat = {
         dna_modifiers = {
