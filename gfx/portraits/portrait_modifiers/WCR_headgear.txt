@@ -78,11 +78,40 @@
             base = 0
             modifier = {
                 add = 100
-                EACR_is_active_trigger = no # EACR compatibility
                 WCR_st_completed_westernization_japanese_empire = no
-                OR = {
-                    japanese_imperial_clothes_trigger = yes
+                trigger_if = {
+                    limit = {
+                        EACR_is_active_trigger = no
+                    }
+                    OR = {
+                        japanese_imperial_clothes_trigger = yes
+                        japanese_shogun_clothes_trigger = yes
+                    }
+                }
+                trigger_else = { # EACR compatibility
                     japanese_shogun_clothes_trigger = yes
+                }
+                
+                # JUP compatibility
+                trigger_if = {
+                    limit = {
+                        md_japanese_uniform_pack_active_trigger = yes
+                    }
+                    OR = {
+                        scope:character ?= {
+                            has_ideology = ideology:ideology_traditionalist
+                        }
+                        trigger_if = {
+                            limit = {
+                                EACR_is_active_trigger = no
+                            }
+                            md_japanese_modern_ruler_tech_trigger = no
+                            md_japanese_modern_shogunate_trigger  = no
+                        }
+                        trigger_else = {
+                            md_japanese_modern_shogunate_trigger = no
+                        }
+                    }
                 }
             }
         }
@@ -320,7 +349,6 @@
             modifier = {
                 add = 1000
                 WCR_st_completed_westernization_japanese_empire = no
-                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
 
                 # Copied from vanilla logic
                 has_dlc_feature = ep2_cosmetics
@@ -704,7 +732,6 @@
                 add  = 14000
                 has_dlc_feature = ep2_cosmetics
                 WCR_st_completed_westernization_japanese_empire = yes
-                md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
 
                 japanese_clothes_pop_trigger = yes
                 OR = {
