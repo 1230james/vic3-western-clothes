@@ -1269,7 +1269,10 @@
 
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
-                    is_adult = no
+                    OR = {
+                        is_adult = no
+                        age < define:NCharacters|ADULT_AGE # Shouldn't be needed in practice, but as a fallback, esp. when doing debug shenanigans
+                    }
                 }
             }
         }

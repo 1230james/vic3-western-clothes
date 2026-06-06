@@ -261,6 +261,42 @@ WCR_de_DEBUG_dec_overlord_relations = {
     }
 }
 
+WCR_de_DEBUG_cycle_ruler_trad_ideology = {
+    is_shown = {
+        has_global_variable = WCR_debug_mode
+    }
+    
+    possible = {
+        always = yes
+    }
+    
+    when_taken = {
+        ruler = {
+            if = {
+                limit = {
+                    NOR = {
+                        has_ideology = ideology:ideology_traditionalist
+                        has_ideology = ideology:ideology_traditionalist_minoritarian
+                    }
+                }
+                set_ideology = ideology:ideology_traditionalist
+            }
+            else_if = {
+                limit = {
+                    has_ideology = ideology:ideology_traditionalist
+                }
+                set_ideology = ideology:ideology_traditionalist_minoritarian
+            }
+            else = {
+                set_ideology = ideology:ideology_moderate
+            }
+        }
+    }
+    
+    ai_chance = {
+        value = 0
+    }
+}
 
 # WCR_de_DEBUG_create_morgenrote_characters = {
 #     is_shown = {
