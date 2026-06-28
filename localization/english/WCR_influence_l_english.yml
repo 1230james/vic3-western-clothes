@@ -29,13 +29,13 @@ l_english:
     WCR_tt_russian_army:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_barracks').GetName] and [Concept('concept_general', '$concept_generals$')] will wear #v Russian uniforms#!."
     WCR_tt_generic_army:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_barracks').GetName] and [Concept('concept_general', '$concept_generals$')] will wear #v generic European uniforms#!."
     
-    WCR_tt_domestic_navy: "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_base').GetName] and [Concept('concept_admiral', '$concept_admirals$')] will wear the #v [GetPlayer.GetAdjectiveNoFormatting] uniform#!."
-    WCR_tt_american_navy: "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_base').GetName] and [Concept('concept_admiral', '$concept_admirals$')] will wear #v American uniforms#!."
-    WCR_tt_british_navy:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_base').GetName] and [Concept('concept_admiral', '$concept_admirals$')] will wear #v British uniforms#!."
-    WCR_tt_french_navy:   "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_base').GetName] and [Concept('concept_admiral', '$concept_admirals$')] will wear #v French uniforms#!."
-    WCR_tt_german_navy:   "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_base').GetName] and [Concept('concept_admiral', '$concept_admirals$')] will wear #v German uniforms#!."
-    WCR_tt_russian_navy:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_base').GetName] and [Concept('concept_admiral', '$concept_admirals$')] will wear #v Russian uniforms#!."
-    WCR_tt_generic_navy:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_base').GetName] and [Concept('concept_admiral', '$concept_admirals$')] will wear #v generic European uniforms#!."
+    WCR_tt_domestic_navy: "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_administration').GetName] and [Concept('concept_admiral', '$concept_admirals$')] will wear the #v [GetPlayer.GetAdjectiveNoFormatting] uniform#!."
+    WCR_tt_american_navy: "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_administration').GetName] and [Concept('concept_admiral', '$concept_admirals$')] will wear #v American uniforms#!."
+    WCR_tt_british_navy:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_administration').GetName] and [Concept('concept_admiral', '$concept_admirals$')] will wear #v British uniforms#!."
+    WCR_tt_french_navy:   "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_administration').GetName] and [Concept('concept_admiral', '$concept_admirals$')] will wear #v French uniforms#!."
+    WCR_tt_german_navy:   "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_administration').GetName] and [Concept('concept_admiral', '$concept_admirals$')] will wear #v German uniforms#!."
+    WCR_tt_russian_navy:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_administration').GetName] and [Concept('concept_admiral', '$concept_admirals$')] will wear #v Russian uniforms#!."
+    WCR_tt_generic_navy:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] working in [GetBuildingType('building_naval_administration').GetName] and [Concept('concept_admiral', '$concept_admirals$')] will wear #v generic European uniforms#!."
     
     # Event text
     WCR_sire:     "sire"

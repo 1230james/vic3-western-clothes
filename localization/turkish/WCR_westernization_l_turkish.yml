@@ -45,7 +45,7 @@ l_turkish:
     WCR_ig_westernized_modifier:      "Westernized Nation"
     
     # Events
-    WCR_ev_1_title:  "Westernize!"
+    WCR_ev_1_title:  "Batılılaş!"
     WCR_ev_1_desc:   "After sufficiently long exposure to western technology, society, and culture, elements of their way of life have been integrated into ours."
     WCR_ev_1_flavor: ""The West leads the world in industry, academics, and culture. The world we once knew is collapsing. It's time to join the way of the great powers!""
     WCR_ev_1_a:      "Now we are ready to stand on the world stage!"
@@ -151,4 +151,4 @@ l_turkish:
     WCR_je_westernization_status_90_pb:   "The ever-stubborn [GetInterestGroupVariant('ig_petty_bourgeoisie', GetPlayer).GetLeader.GetCustom('GetUniversalFullName')] and [GetPopType('farmers').GetName] finally accept western fashion as the new norm."
     WCR_je_westernization_status_90_none: "The ever-stubborn [GetPopType('farmers').GetName] finally accept western fashion as the new norm."
     
-    WCR_je_westernization_status_100: "Westernization is complete!"
+    WCR_je_westernization_status_100: "Batılılaşma tamamlandı!"
