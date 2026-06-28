@@ -103,7 +103,7 @@
                     
                     # Poor pops w/ game rule to not westernize poor pops
                     AND = {
-                        poor_clothes_pop_trigger = yes
+                        WCR_st_poor_clothes_pop = yes
                         machinists_clothes_pop_trigger = no
                         has_game_rule = WCR_westernize_poor_pop_clothing_no
                     }
@@ -165,7 +165,7 @@
                     scope:pop ?= {
                         culture = cu:japanese
                         owner = { # but not the poors because WCR doesn't override any of their clothing
-                            poor_clothes_pop_trigger = no
+                            WCR_st_poor_clothes_pop = no
                         }
                     }
                     scope:character ?= {

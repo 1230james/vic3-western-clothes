@@ -20,7 +20,7 @@
             modifier = {
                 add = 100
                 chinese_manchu_queue_hairstyle_pops_trigger = yes
-                poor_clothes_pop_trigger = yes
+                WCR_st_poor_clothes_pop = yes
                 machinists_clothes_pop_trigger = no
             }
             modifier = {
@@ -133,7 +133,7 @@
                 add = 100
                 native_american_clothes_pop_trigger = yes
                 machinists_clothes_pop_trigger = no
-                poor_clothes_pop_trigger = yes
+                WCR_st_poor_clothes_pop = yes
             }
             modifier = {
                 add = -1000
@@ -158,7 +158,7 @@
                 add = 100
                 arabic_clothes_pop_trigger = yes
                 machinists_clothes_pop_trigger = no
-                poor_clothes_pop_trigger = yes
+                WCR_st_poor_clothes_pop = yes
             }
             modifier = {
                 add = -1000
@@ -182,7 +182,7 @@
             modifier = {
                 add = 100
                 machinists_clothes_pop_trigger = no
-                poor_clothes_pop_trigger = yes
+                WCR_st_poor_clothes_pop = yes
                 scope:pop ?= {
                     culture = {
                         OR = {
@@ -214,7 +214,7 @@
             modifier = {
                 add = 100
                 machinists_clothes_pop_trigger = no
-                poor_clothes_pop_trigger = yes
+                WCR_st_poor_clothes_pop = yes
                 scope:pop ?= {
                     culture = {
                         OR = {
@@ -246,7 +246,7 @@
             modifier = {
                 add = 100
                 machinists_clothes_pop_trigger = no
-                poor_clothes_pop_trigger = yes
+                WCR_st_poor_clothes_pop = yes
                 scope:pop ?= {
                     culture = {
                         OR = {
@@ -283,7 +283,7 @@
             modifier = {
                 add = 100
                 arabic_clothes_pop_trigger = yes
-                poor_clothes_pop_trigger = yes
+                WCR_st_poor_clothes_pop = yes
                 machinists_clothes_pop_trigger = no
                 scope:pop ?= {
                     religion = {
@@ -735,8 +735,8 @@
 
                 japanese_clothes_pop_trigger = yes
                 OR = {
-                    middle_clothes_pop_trigger = yes
-                    upper_clothes_pop_trigger = yes
+                    WCR_st_middle_clothes_pop = yes
+                    WCR_st_upper_clothes_pop = yes
                 }
                 scope:pop ?= {
                     NOR = {
@@ -880,7 +880,7 @@
             modifier = {
                 add = 100
                 WCR_has_completed_westernization_trigger = yes
-                upper_clothes_pop_trigger = yes
+                WCR_st_upper_clothes_pop = yes
             }
             modifier = {
                 add = 1000
@@ -949,7 +949,7 @@
             modifier = {
                 add = 100
                 WCR_has_completed_westernization_trigger = yes
-                middle_clothes_pop_trigger = yes
+                WCR_st_middle_clothes_pop = yes
             }
         }
     }
@@ -968,7 +968,7 @@
             modifier = {
                 add = 100 # Leave at 100 so laborers have flatcaps or their culturally-relevant hats
                 WCR_has_completed_westernization_trigger = yes
-                poor_clothes_pop_trigger = yes
+                WCR_st_poor_clothes_pop = yes
                 peasants_clothes_pop_trigger = no
             }
         }

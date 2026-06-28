@@ -24,8 +24,8 @@
                 add = 500
                 korean_clothes_pop_trigger = yes
                 OR = {
-                    poor_clothes_pop_trigger = yes
-                    middle_clothes_pop_trigger = yes
+                    WCR_st_poor_clothes_pop = yes
+                    WCR_st_middle_clothes_pop = yes
                     soldier_clothes_pop_trigger = yes
                 }
                 WCR_has_completed_westernization_trigger = no
@@ -58,7 +58,7 @@
                     AND = {
                         korean_clothes_pop_trigger = yes
                         OR = {
-                            upper_clothes_pop_trigger = yes
+                            WCR_st_upper_clothes_pop = yes
                             officers_clothes_pop_trigger = yes
                         }
                     }
@@ -285,7 +285,7 @@
                 OR = {
                     AND = {
                         japanese_clothes_pop_trigger = yes
-                        poor_clothes_pop_trigger = no
+                        WCR_st_poor_clothes_pop = no
                         clergy_clothes_pop_trigger = no
                     }
                     AND = {
@@ -1471,7 +1471,7 @@
             modifier = {
                 add = 100
                 WCR_has_completed_westernization_trigger = yes
-                upper_clothes_pop_trigger = yes
+                WCR_st_upper_clothes_pop = yes
             }
 
             # Match with WCR_european_politician_clothes
@@ -1588,7 +1588,7 @@
             modifier = {
                 add = 100
                 WCR_has_completed_westernization_trigger = yes
-                poor_clothes_pop_trigger = yes
+                WCR_st_poor_clothes_pop = yes
 
                 # Farmers, Peasants, and Laborers westernization game rule
                 OR = {
@@ -1627,7 +1627,7 @@
             base = 0
             modifier = {
                 add = 100
-                middle_clothes_pop_trigger = yes
+                WCR_st_middle_clothes_pop = yes
                 clergy_clothes_pop_trigger = no
                 WCR_has_completed_westernization_trigger = yes
             }
@@ -1660,7 +1660,7 @@
             modifier = {
                 add = 100
                 WCR_has_completed_westernization_trigger = yes
-                upper_clothes_pop_trigger = yes
+                WCR_st_upper_clothes_pop = yes
             }
         }
     }

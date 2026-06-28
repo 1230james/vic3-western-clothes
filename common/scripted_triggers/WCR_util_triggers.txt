@@ -196,6 +196,28 @@ WCR_st_is_country_tag = {
     }
 }
 
+# Returns true if the pop has a vanilla job type; used for some third-party mod compatibility logic fallbacks
+# Scope: pop
+WCR_st_is_vanilla_pop_type = {
+    OR = {
+        is_pop_type = academics
+        is_pop_type = aristocrats
+        is_pop_type = bureaucrats
+        is_pop_type = capitalists
+        is_pop_type = clergymen
+        is_pop_type = clerks
+        is_pop_type = engineers
+        is_pop_type = farmers
+        is_pop_type = laborers
+        is_pop_type = machinists
+        is_pop_type = officers
+        is_pop_type = peasants
+        is_pop_type = shopkeepers
+        is_pop_type = slaves
+        is_pop_type = soldiers
+    }
+}
+
 # Will return true if the owner of this pop's westernization progress is high enough to westernize this pop
 WCR_st_is_part_west_pop_westernized_trigger = {
     scope:pop ?= {

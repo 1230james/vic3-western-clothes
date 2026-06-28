@@ -341,6 +341,47 @@ WCR_navy_clothes_trigger = {
     }
 }
 
+# Wrappers for base game's poor/middle/upper_clothes_pop_triggers but will fall back to a strata check if using a modded job type
+WCR_st_poor_clothes_pop = {
+    scope:pop ?= {
+        trigger_if = {
+            limit = {
+                WCR_st_is_vanilla_pop_type = yes
+            }
+            poor_clothes_pop_trigger = yes
+        }
+        trigger_else = {
+            strata = lower
+        }
+    }
+}
+WCR_st_middle_clothes_pop = {
+    scope:pop ?= {
+        trigger_if = {
+            limit = {
+                WCR_st_is_vanilla_pop_type = yes
+            }
+            middle_clothes_pop_trigger = yes
+        }
+        trigger_else = {
+            strata = middle
+        }
+    }
+}
+WCR_st_upper_clothes_pop = {
+    scope:pop ?= {
+        trigger_if = {
+            limit = {
+                WCR_st_is_vanilla_pop_type = yes
+            }
+            upper_clothes_pop_trigger = yes
+        }
+        trigger_else = {
+            strata = upper
+        }
+    }
+}
+
 # Used to control if westernization decision can be taken
 WCR_can_start_westernizing_trigger = {
     OR = {
