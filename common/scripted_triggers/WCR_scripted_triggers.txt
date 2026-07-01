@@ -11,6 +11,7 @@ WCR_is_westernized_trigger = {
         OR = {
             WCR_st_is_part_west_pop_westernized_trigger       = yes
             WCR_st_is_part_west_character_westernized_trigger = yes
+            WCR_st_is_overlord_character_westernized_trigger  = yes
         }
     }
     trigger_else = {
@@ -32,6 +33,7 @@ WCR_has_completed_westernization_trigger = {
     OR = {
         WCR_st_is_part_west_pop_westernized_trigger       = yes
         WCR_st_is_part_west_character_westernized_trigger = yes
+        WCR_st_is_overlord_character_westernized_trigger  = yes
         trigger_if = {
             limit = {
                 NOR = {
