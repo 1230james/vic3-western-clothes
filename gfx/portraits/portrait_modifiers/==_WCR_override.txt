@@ -139,6 +139,17 @@
                             russian_empire_clothes_pop_trigger = yes
                         }
                     }
+                    
+                    # Morgenrote Special Characters
+                    # TEMPORARILY DISABLED - Re-enable once MR fixes their issue with base game weights overpowering them
+                    # trigger_if = {
+                    #     limit = {
+                    #         morgenrote_is_active = yes
+                    #     }
+                    #     scope:character ?= {
+                    #         mr_special_characters_clothes_trigger = yes
+                    #     }
+                    # }
                 }
             }
             modifier = { # Catch-all for most of WCR

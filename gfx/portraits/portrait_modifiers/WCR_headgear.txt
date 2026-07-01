@@ -2566,4 +2566,22 @@
             }
         }
     }
+
+    ## WCR - Third Party Compatibility ##
+
+    WCR_morgenrote_special_character_blocker = {
+        dna_modifiers = {}
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                morgenrote_is_active = yes
+                WCR_has_completed_westernization_trigger = yes
+                scope:character ?= {
+                    mr_special_characters_clothes_trigger = yes
+                }
+            }
+        }
+    }
+
 }

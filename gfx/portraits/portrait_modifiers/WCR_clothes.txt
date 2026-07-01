@@ -4126,4 +4126,99 @@
         }
     }
 
+    ## WCR - Third Party Compatibility ##
+
+    # WCR_morgenrote_special_character_blocker = {
+    #     dna_modifiers = {}
+    #     weight = {
+    #         base = 0
+    #         modifier = {
+    #             add = 1000
+    #             morgenrote_is_active = yes
+    #             WCR_has_completed_westernization_trigger = yes
+    #             scope:character ?= {
+    #                 mr_special_characters_clothes_trigger = yes
+    #             }
+    #         }
+    #     }
+    # }
+    
+    # Temporary fix to Morgenrote special characters not westernizing due to base game weights overpowering them
+    # Remove once Morgenrote figures out what they want to do about it
+    WCR_TEMP_morgenrote_westernized_painter_male_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = shirt
+                template = european_shirt
+                accessory = male_shirt_european_01
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear
+                accessory = male_legwear_european_01
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1100
+                morgenrote_is_active = yes
+                WCR_has_completed_westernization_trigger = yes
+                scope:character ?= {
+                    mr_special_characters_clothes_trigger = yes
+                    is_female = no
+                    trigger_if = {
+                        limit = {
+                            exists = owner
+                        }
+                        owner ?= {
+                            var:klimt_painter_var ?= PREV
+                        }
+                    }
+                    trigger_else = {
+                        home_country ?= {
+                            var:klimt_painter_var ?= PREV
+                        }
+                    }
+                }
+            }
+        }
+    }
+    WCR_TEMP_morgenrote_westernized_painter_female_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = outfits
+                template = european_working_class_outfits
+                range = { 0 1 }
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1100
+                morgenrote_is_active = yes
+                WCR_has_completed_westernization_trigger = yes
+                scope:character ?= {
+                    mr_special_characters_clothes_trigger = yes
+                    is_female = yes
+                    trigger_if = {
+                        limit = {
+                            exists = owner
+                        }
+                        owner ?= {
+                            var:klimt_painter_var ?= PREV
+                        }
+                    }
+                    trigger_else = {
+                        home_country ?= {
+                            var:klimt_painter_var ?= PREV
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

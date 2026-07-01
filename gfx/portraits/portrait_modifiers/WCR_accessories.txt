@@ -319,6 +319,13 @@ WCR_eyewear_accessories = {
                     }
                 }
             }
+            modifier = { # Morgenrote compatibility - MR already applies eyewear on westernized special characters
+                factor = 0
+                morgenrote_is_active = yes
+                scope:character ?= {
+                    mr_special_characters_clothes_trigger = yes
+                }
+            }
         }
     }
 
@@ -357,6 +364,13 @@ WCR_eyewear_accessories = {
                             is_interest_group_type = ig_petty_bourgeoisie
                         }
                     }
+                }
+            }
+            modifier = { # Morgenrote compatibility
+                factor = 0
+                morgenrote_is_active = yes
+                scope:character ?= {
+                    mr_special_characters_clothes_trigger = yes
                 }
             }
         }
