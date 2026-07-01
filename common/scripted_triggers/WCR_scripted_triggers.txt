@@ -382,6 +382,20 @@ WCR_st_upper_clothes_pop = {
     }
 }
 
+# Check if character is a ruler & should wear military clothes. This EXCLUDES monarchs who are NOT in command of troops.
+WCR_st_ruler_in_military_clothes = {
+    ruler_clothes_trigger = yes
+    trigger_if = {
+        limit = {
+            monarchy_clothes_trigger = yes
+        }
+        military_clothes_trigger = yes # Here to make sure it only applies when the monarch is commanding an army
+    }
+    trigger_else = {
+        generic_military_uniform_clothes_trigger = yes
+    }
+}
+
 # Used to control if westernization decision can be taken
 WCR_can_start_westernizing_trigger = {
     OR = {

@@ -311,11 +311,11 @@ WCR_eyewear_accessories = {
                         limit = {
                             politician_clothes_trigger = yes
                         }
-                    }
-                    OR = {
-                        is_interest_group_type = ig_landowners
-                        is_interest_group_type = ig_industrialists
-                        is_interest_group_type = ig_petty_bourgeoisie
+                        OR = {
+                            is_interest_group_type = ig_landowners
+                            is_interest_group_type = ig_industrialists
+                            is_interest_group_type = ig_petty_bourgeoisie
+                        }
                     }
                 }
             }
