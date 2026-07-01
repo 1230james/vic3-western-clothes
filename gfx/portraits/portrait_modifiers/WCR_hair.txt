@@ -52,7 +52,7 @@
                         scope:pop ?= {
                             culture = cu:japanese
                         }
-                        poor_clothes_pop_trigger = no
+                        WCR_st_poor_clothes_pop = no
                     }
                     scope:character ?= {
                         culture = cu:japanese

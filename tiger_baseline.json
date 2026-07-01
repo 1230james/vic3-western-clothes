@@ -7,11 +7,12 @@
     {
       "column": 17,
       "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
-      "length": 45,
-      "line": "                WCR_st_completed_westernization_korean_empire = yes",
-      "linenr": 2076,
-      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_accessories.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 106,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_accessories.txt",
+      "stage": null,
       "tag": null
     },
     {
@@ -20,62 +21,24 @@
       "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
       "length": 15,
       "line": "            was_formed_from = KOR",
-      "linenr": 579,
+      "linenr": 704,
       "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
-      "tag": "expected scope was scope was deduced from `was_formed_from` here"
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
     },
     {
       "column": 1,
       "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
-      "length": 11,
-      "line": "WCR_clothes = {",
-      "linenr": 1,
-      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
-      "tag": "actual scope was scope was supplied by the game engine"
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_accessories.txt",
+      "length": 20,
+      "line": "WCR_sash_accessories = {",
+      "linenr": 27,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_accessories.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
     }
   ],
-  "message": "`WCR_st_completed_westernization_korean_empire` expects scope to be country but scope seems to be character",
-  "severity": "warning",
-  "wiki": null
-},
-{
-  "confidence": "reasonable",
-  "info": null,
-  "key": "scopes",
-  "locations": [
-    {
-      "column": 17,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
-      "length": 45,
-      "line": "                WCR_st_completed_westernization_korean_empire = yes",
-      "linenr": 2128,
-      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
-      "tag": null
-    },
-    {
-      "column": 13,
-      "from": "MOD",
-      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
-      "length": 15,
-      "line": "            was_formed_from = KOR",
-      "linenr": 579,
-      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
-      "tag": "expected scope was scope was deduced from `was_formed_from` here"
-    },
-    {
-      "column": 1,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
-      "length": 11,
-      "line": "WCR_clothes = {",
-      "linenr": 1,
-      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
-      "tag": "actual scope was scope was supplied by the game engine"
-    }
-  ],
-  "message": "`WCR_st_completed_westernization_korean_empire` expects scope to be country but scope seems to be character",
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
   "severity": "warning",
   "wiki": null
 },
@@ -89,9 +52,10 @@
       "from": "MOD",
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
       "length": 47,
-      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
-      "linenr": 2181,
+      "line": "                WCR_st_completed_westernization_japanese_empire = no",
+      "linenr": 143,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
       "tag": null
     },
     {
@@ -100,9 +64,10 @@
       "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
       "length": 15,
       "line": "            was_formed_from = KOR",
-      "linenr": 579,
+      "linenr": 704,
       "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
-      "tag": "expected scope was scope was deduced from `was_formed_from` here"
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
     },
     {
       "column": 1,
@@ -112,7 +77,180 @@
       "line": "WCR_clothes = {",
       "linenr": 1,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
-      "tag": "actual scope was scope was supplied by the game engine"
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = no",
+      "linenr": 188,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = no",
+      "linenr": 230,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = no",
+      "linenr": 250,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = no",
+      "linenr": 389,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
     }
   ],
   "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
@@ -130,8 +268,9 @@
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
       "length": 47,
       "line": "                WCR_st_completed_westernization_japanese_empire = yes",
-      "linenr": 2233,
+      "linenr": 455,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
       "tag": null
     },
     {
@@ -140,9 +279,10 @@
       "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
       "length": 15,
       "line": "            was_formed_from = KOR",
-      "linenr": 579,
+      "linenr": 704,
       "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
-      "tag": "expected scope was scope was deduced from `was_formed_from` here"
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
     },
     {
       "column": 1,
@@ -152,7 +292,868 @@
       "line": "WCR_clothes = {",
       "linenr": 1,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
-      "tag": "actual scope was scope was supplied by the game engine"
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 504,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 565,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 626,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 698,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 739,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 795,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 836,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 891,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 932,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 982,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 1029,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 1076,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 1123,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 1178,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 1238,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 45,
+      "line": "                WCR_st_completed_westernization_korean_empire = yes",
+      "linenr": 2986,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_korean_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 45,
+      "line": "                WCR_st_completed_westernization_korean_empire = yes",
+      "linenr": 3038,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_korean_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 3091,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 3143,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 25,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 47,
+      "line": "                        WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 3940,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "length": 11,
+      "line": "WCR_clothes = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
     }
   ],
   "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
@@ -172,6 +1173,7 @@
       "line": "                WCR_st_completed_westernization_japanese_empire = yes",
       "linenr": 21,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_hair.txt",
+      "stage": null,
       "tag": null
     },
     {
@@ -180,9 +1182,10 @@
       "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
       "length": 15,
       "line": "            was_formed_from = KOR",
-      "linenr": 579,
+      "linenr": 704,
       "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
-      "tag": "expected scope was scope was deduced from `was_formed_from` here"
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
     },
     {
       "column": 1,
@@ -192,7 +1195,8 @@
       "line": "WCR_hairstyles = {",
       "linenr": 1,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_hair.txt",
-      "tag": "actual scope was scope was supplied by the game engine"
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
     }
   ],
   "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
@@ -212,6 +1216,7 @@
       "line": "                WCR_st_completed_westernization_korean_empire = yes",
       "linenr": 27,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_hair.txt",
+      "stage": null,
       "tag": null
     },
     {
@@ -220,9 +1225,10 @@
       "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
       "length": 15,
       "line": "            was_formed_from = KOR",
-      "linenr": 579,
+      "linenr": 704,
       "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
-      "tag": "expected scope was scope was deduced from `was_formed_from` here"
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
     },
     {
       "column": 1,
@@ -232,7 +1238,8 @@
       "line": "WCR_hairstyles = {",
       "linenr": 1,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_hair.txt",
-      "tag": "actual scope was scope was supplied by the game engine"
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
     }
   ],
   "message": "`WCR_st_completed_westernization_korean_empire` expects scope to be country but scope seems to be character",
@@ -252,6 +1259,7 @@
       "line": "                WCR_st_completed_westernization_japanese_empire = no",
       "linenr": 61,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_hair.txt",
+      "stage": null,
       "tag": null
     },
     {
@@ -260,9 +1268,10 @@
       "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
       "length": 15,
       "line": "            was_formed_from = KOR",
-      "linenr": 579,
+      "linenr": 704,
       "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
-      "tag": "expected scope was scope was deduced from `was_formed_from` here"
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
     },
     {
       "column": 1,
@@ -272,7 +1281,8 @@
       "line": "WCR_hairstyles = {",
       "linenr": 1,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_hair.txt",
-      "tag": "actual scope was scope was supplied by the game engine"
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
     }
   ],
   "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
@@ -292,6 +1302,7 @@
       "line": "                WCR_st_completed_westernization_korean_empire = yes",
       "linenr": 80,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_hair.txt",
+      "stage": null,
       "tag": null
     },
     {
@@ -300,9 +1311,10 @@
       "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
       "length": 15,
       "line": "            was_formed_from = KOR",
-      "linenr": 579,
+      "linenr": 704,
       "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
-      "tag": "expected scope was scope was deduced from `was_formed_from` here"
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
     },
     {
       "column": 1,
@@ -312,87 +1324,8 @@
       "line": "WCR_hairstyles = {",
       "linenr": 1,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_hair.txt",
-      "tag": "actual scope was scope was supplied by the game engine"
-    }
-  ],
-  "message": "`WCR_st_completed_westernization_korean_empire` expects scope to be country but scope seems to be character",
-  "severity": "warning",
-  "wiki": null
-},
-{
-  "confidence": "reasonable",
-  "info": null,
-  "key": "scopes",
-  "locations": [
-    {
-      "column": 17,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
-      "length": 45,
-      "line": "                WCR_st_completed_westernization_korean_empire = yes",
-      "linenr": 1142,
-      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
-      "tag": null
-    },
-    {
-      "column": 13,
-      "from": "MOD",
-      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
-      "length": 15,
-      "line": "            was_formed_from = KOR",
-      "linenr": 579,
-      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
-      "tag": "expected scope was scope was deduced from `was_formed_from` here"
-    },
-    {
-      "column": 1,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
-      "length": 12,
-      "line": "WCR_headgear = {",
-      "linenr": 1,
-      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
-      "tag": "actual scope was scope was supplied by the game engine"
-    }
-  ],
-  "message": "`WCR_st_completed_westernization_korean_empire` expects scope to be country but scope seems to be character",
-  "severity": "warning",
-  "wiki": null
-},
-{
-  "confidence": "reasonable",
-  "info": null,
-  "key": "scopes",
-  "locations": [
-    {
-      "column": 17,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
-      "length": 45,
-      "line": "                WCR_st_completed_westernization_korean_empire = yes",
-      "linenr": 1151,
-      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
-      "tag": null
-    },
-    {
-      "column": 13,
-      "from": "MOD",
-      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
-      "length": 15,
-      "line": "            was_formed_from = KOR",
-      "linenr": 579,
-      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
-      "tag": "expected scope was scope was deduced from `was_formed_from` here"
-    },
-    {
-      "column": 1,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
-      "length": 12,
-      "line": "WCR_headgear = {",
-      "linenr": 1,
-      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
-      "tag": "actual scope was scope was supplied by the game engine"
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
     }
   ],
   "message": "`WCR_st_completed_westernization_korean_empire` expects scope to be country but scope seems to be character",
@@ -409,9 +1342,10 @@
       "from": "MOD",
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
       "length": 47,
-      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
-      "linenr": 1174,
+      "line": "                WCR_st_completed_westernization_japanese_empire = no",
+      "linenr": 81,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
       "tag": null
     },
     {
@@ -420,9 +1354,10 @@
       "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
       "length": 15,
       "line": "            was_formed_from = KOR",
-      "linenr": 579,
+      "linenr": 704,
       "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
-      "tag": "expected scope was scope was deduced from `was_formed_from` here"
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
     },
     {
       "column": 1,
@@ -432,7 +1367,180 @@
       "line": "WCR_headgear = {",
       "linenr": 1,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
-      "tag": "actual scope was scope was supplied by the game engine"
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = no",
+      "linenr": 351,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = no",
+      "linenr": 390,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = no",
+      "linenr": 420,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = no",
+      "linenr": 435,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
     }
   ],
   "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
@@ -450,8 +1558,9 @@
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
       "length": 47,
       "line": "                WCR_st_completed_westernization_japanese_empire = yes",
-      "linenr": 1183,
+      "linenr": 471,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
       "tag": null
     },
     {
@@ -460,9 +1569,10 @@
       "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
       "length": 15,
       "line": "            was_formed_from = KOR",
-      "linenr": 579,
+      "linenr": 704,
       "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
-      "tag": "expected scope was scope was deduced from `was_formed_from` here"
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
     },
     {
       "column": 1,
@@ -472,7 +1582,696 @@
       "line": "WCR_headgear = {",
       "linenr": 1,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
-      "tag": "actual scope was scope was supplied by the game engine"
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 502,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 534,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 559,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 583,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 592,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 615,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 639,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 675,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 699,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 734,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 767,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 790,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 45,
+      "line": "                WCR_st_completed_westernization_korean_empire = yes",
+      "linenr": 1708,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_korean_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 45,
+      "line": "                WCR_st_completed_westernization_korean_empire = yes",
+      "linenr": 1717,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_korean_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 1740,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
+    }
+  ],
+  "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
+  "severity": "warning",
+  "wiki": null
+},
+{
+  "confidence": "reasonable",
+  "info": null,
+  "key": "scopes",
+  "locations": [
+    {
+      "column": 17,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 47,
+      "line": "                WCR_st_completed_westernization_japanese_empire = yes",
+      "linenr": 1749,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": null
+    },
+    {
+      "column": 13,
+      "from": "MOD",
+      "fullpath": ".\\common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "length": 15,
+      "line": "            was_formed_from = KOR",
+      "linenr": 704,
+      "path": "common\\scripted_triggers\\WCR_scripted_triggers.txt",
+      "stage": null,
+      "tag": "expected scope was deduced from `was_formed_from` here"
+    },
+    {
+      "column": 1,
+      "from": "MOD",
+      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "length": 12,
+      "line": "WCR_headgear = {",
+      "linenr": 1,
+      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
+      "tag": "actual scope was supplied by the game engine"
     }
   ],
   "message": "`WCR_st_completed_westernization_japanese_empire` expects scope to be country but scope seems to be character",
@@ -492,6 +2291,7 @@
       "line": "    OR = {",
       "linenr": 42,
       "path": "common\\scripted_triggers\\WCR_util_triggers.txt",
+      "stage": null,
       "tag": null
     }
   ],
@@ -510,8 +2310,9 @@
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
       "length": 1,
       "line": "                        OR = {",
-      "linenr": 3141,
+      "linenr": 4089,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
+      "stage": null,
       "tag": null
     }
   ],
@@ -530,28 +2331,9 @@
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
       "length": 1,
       "line": "                        OR = {",
-      "linenr": 3218,
+      "linenr": 4166,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_clothes.txt",
-      "tag": null
-    }
-  ],
-  "message": "OR with only one item inside is probably not what you intended",
-  "severity": "warning",
-  "wiki": null
-},
-{
-  "confidence": "weak",
-  "info": null,
-  "key": "logic",
-  "locations": [
-    {
-      "column": 22,
-      "from": "MOD",
-      "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
-      "length": 1,
-      "line": "                OR = {",
-      "linenr": 414,
-      "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
       "tag": null
     }
   ],
@@ -570,8 +2352,9 @@
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
       "length": 1,
       "line": "                        OR = {",
-      "linenr": 1820,
+      "linenr": 2433,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
       "tag": null
     }
   ],
@@ -590,8 +2373,9 @@
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
       "length": 1,
       "line": "                        OR = {",
-      "linenr": 1874,
+      "linenr": 2487,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
       "tag": null
     }
   ],
@@ -610,8 +2394,9 @@
       "fullpath": ".\\gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
       "length": 1,
       "line": "                        OR = {",
-      "linenr": 1918,
+      "linenr": 2531,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_headgear.txt",
+      "stage": null,
       "tag": null
     }
   ],
@@ -632,6 +2417,7 @@
       "line": "                    AND = { # Match w/ vanilla def for `korean_queen_hairstyle`",
       "linenr": 86,
       "path": "gfx\\portraits\\portrait_modifiers\\WCR_hair.txt",
+      "stage": null,
       "tag": null
     }
   ],

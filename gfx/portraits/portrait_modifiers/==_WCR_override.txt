@@ -103,7 +103,7 @@
                     
                     # Poor pops w/ game rule to not westernize poor pops
                     AND = {
-                        poor_clothes_pop_trigger = yes
+                        WCR_st_poor_clothes_pop = yes
                         machinists_clothes_pop_trigger = no
                         has_game_rule = WCR_westernize_poor_pop_clothing_no
                     }
@@ -139,6 +139,17 @@
                             russian_empire_clothes_pop_trigger = yes
                         }
                     }
+                    
+                    # Morgenrote Special Characters
+                    # TEMPORARILY DISABLED - Re-enable once MR fixes their issue with base game weights overpowering them
+                    # trigger_if = {
+                    #     limit = {
+                    #         morgenrote_is_active = yes
+                    #     }
+                    #     scope:character ?= {
+                    #         mr_special_characters_clothes_trigger = yes
+                    #     }
+                    # }
                 }
             }
             modifier = { # Catch-all for most of WCR
@@ -165,7 +176,7 @@
                     scope:pop ?= {
                         culture = cu:japanese
                         owner = { # but not the poors because WCR doesn't override any of their clothing
-                            poor_clothes_pop_trigger = no
+                            WCR_st_poor_clothes_pop = no
                         }
                     }
                     scope:character ?= {

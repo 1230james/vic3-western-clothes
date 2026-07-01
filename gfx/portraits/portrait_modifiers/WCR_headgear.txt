@@ -20,7 +20,7 @@
             modifier = {
                 add = 100
                 chinese_manchu_queue_hairstyle_pops_trigger = yes
-                poor_clothes_pop_trigger = yes
+                WCR_st_poor_clothes_pop = yes
                 machinists_clothes_pop_trigger = no
             }
             modifier = {
@@ -133,7 +133,7 @@
                 add = 100
                 native_american_clothes_pop_trigger = yes
                 machinists_clothes_pop_trigger = no
-                poor_clothes_pop_trigger = yes
+                WCR_st_poor_clothes_pop = yes
             }
             modifier = {
                 add = -1000
@@ -158,7 +158,7 @@
                 add = 100
                 arabic_clothes_pop_trigger = yes
                 machinists_clothes_pop_trigger = no
-                poor_clothes_pop_trigger = yes
+                WCR_st_poor_clothes_pop = yes
             }
             modifier = {
                 add = -1000
@@ -182,7 +182,7 @@
             modifier = {
                 add = 100
                 machinists_clothes_pop_trigger = no
-                poor_clothes_pop_trigger = yes
+                WCR_st_poor_clothes_pop = yes
                 scope:pop ?= {
                     culture = {
                         OR = {
@@ -214,7 +214,7 @@
             modifier = {
                 add = 100
                 machinists_clothes_pop_trigger = no
-                poor_clothes_pop_trigger = yes
+                WCR_st_poor_clothes_pop = yes
                 scope:pop ?= {
                     culture = {
                         OR = {
@@ -246,7 +246,7 @@
             modifier = {
                 add = 100
                 machinists_clothes_pop_trigger = no
-                poor_clothes_pop_trigger = yes
+                WCR_st_poor_clothes_pop = yes
                 scope:pop ?= {
                     culture = {
                         OR = {
@@ -283,7 +283,7 @@
             modifier = {
                 add = 100
                 arabic_clothes_pop_trigger = yes
-                poor_clothes_pop_trigger = yes
+                WCR_st_poor_clothes_pop = yes
                 machinists_clothes_pop_trigger = no
                 scope:pop ?= {
                     religion = {
@@ -533,8 +533,7 @@
                 has_dlc_feature = ep2_cosmetics
                 WCR_st_completed_westernization_japanese_empire = yes
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
-                ruler_clothes_trigger = yes
-                military_clothes_trigger = yes # Here to make sure it only applies when the ruler is commanding an army
+                WCR_st_ruler_in_military_clothes = yes
                 WCR_st_japan_use_1886_uniforms = yes
                 WCR_ruler_has_domestic_influence_trigger = yes
                 # base game has a check for being at war; idk if i want to keep it?
@@ -641,8 +640,7 @@
                 soldier_clothes_pop_trigger = no
                 OR = {
                     AND = {
-                        ruler_clothes_trigger    = yes
-                        military_clothes_trigger = yes
+                        WCR_st_ruler_in_military_clothes = yes
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {
@@ -700,8 +698,7 @@
                 md_japanese_uniform_pack_active_trigger = no # JUP compatibility/deconflict
                 OR = {
                     AND = {
-                        ruler_clothes_trigger    = yes
-                        military_clothes_trigger = yes
+                        WCR_st_ruler_in_military_clothes = yes
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {
@@ -735,8 +732,8 @@
 
                 japanese_clothes_pop_trigger = yes
                 OR = {
-                    middle_clothes_pop_trigger = yes
-                    upper_clothes_pop_trigger = yes
+                    WCR_st_middle_clothes_pop = yes
+                    WCR_st_upper_clothes_pop = yes
                 }
                 scope:pop ?= {
                     NOR = {
@@ -829,7 +826,7 @@
         weight = {
             base = 0
             modifier = { # Try to guarantee queen's crown
-                add = 100
+                add = 200
                 WCR_has_completed_westernization_trigger = yes
                 monarchy_clothes_trigger = yes
                 scope:character ?= {
@@ -853,11 +850,8 @@
             modifier = {
                 add  = 100
                 WCR_has_completed_westernization_trigger = yes
-                OR = {
-                    politician_clothes_trigger = yes
-                    ruler_clothes_trigger      = yes
-                }
                 generic_military_uniform_clothes_trigger = no
+                COM_WCR_enable_outfit = no # Block conflicts with westernized heirs using an outfit from COM
                 scope:character ?= {
                     is_adult  = yes
                     is_female = no # Don't have female characters wear the bonnet
@@ -880,7 +874,7 @@
             modifier = {
                 add = 100
                 WCR_has_completed_westernization_trigger = yes
-                upper_clothes_pop_trigger = yes
+                WCR_st_upper_clothes_pop = yes
             }
             modifier = {
                 add = 1000
@@ -949,7 +943,7 @@
             modifier = {
                 add = 100
                 WCR_has_completed_westernization_trigger = yes
-                middle_clothes_pop_trigger = yes
+                WCR_st_middle_clothes_pop = yes
             }
         }
     }
@@ -968,7 +962,7 @@
             modifier = {
                 add = 100 # Leave at 100 so laborers have flatcaps or their culturally-relevant hats
                 WCR_has_completed_westernization_trigger = yes
-                poor_clothes_pop_trigger = yes
+                WCR_st_poor_clothes_pop = yes
                 peasants_clothes_pop_trigger = no
             }
         }
@@ -1799,10 +1793,7 @@
                     AND = {
                         OR = {
                             monarchy_clothes_trigger = yes
-                            AND = {
-                                ruler_clothes_trigger    = yes
-                                military_clothes_trigger = yes
-                            }
+                            WCR_st_ruler_in_military_clothes = yes
                         }
                         OR = { # Needed because this is used for both the royal attire & the commander attire
                             WCR_late_army_uniform_trigger = no
@@ -2001,8 +1992,7 @@
                 }
                 OR = {
                     AND = {
-                        ruler_clothes_trigger = yes
-                        military_clothes_trigger = yes
+                        WCR_st_ruler_in_military_clothes = yes
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {
@@ -2118,8 +2108,7 @@
                 }
                 OR = {
                     AND = {
-                        ruler_clothes_trigger    = yes
-                        military_clothes_trigger = yes
+                        WCR_st_ruler_in_military_clothes = yes
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {
@@ -2162,8 +2151,7 @@
                 }
                 OR = {
                     AND = {
-                        ruler_clothes_trigger    = yes
-                        military_clothes_trigger = yes
+                        WCR_st_ruler_in_military_clothes = yes
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {
@@ -2347,8 +2335,7 @@
                 WCR_late_army_uniform_trigger = yes
                 OR = {
                     AND = {
-                        ruler_clothes_trigger = yes
-                        military_clothes_trigger = yes
+                        WCR_st_ruler_in_military_clothes = yes
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {
@@ -2409,8 +2396,7 @@
                 WCR_late_army_uniform_trigger = yes
                 OR = {
                     AND = {
-                        ruler_clothes_trigger = yes
-                        military_clothes_trigger = yes
+                        WCR_st_ruler_in_military_clothes = yes
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {
@@ -2463,8 +2449,7 @@
                 WCR_late_army_uniform_trigger = yes
                 OR = {
                     AND = {
-                        ruler_clothes_trigger = yes
-                        military_clothes_trigger = yes
+                        WCR_st_ruler_in_military_clothes = yes
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {
@@ -2513,8 +2498,7 @@
                 WCR_late_army_uniform_trigger = yes
                 OR = {
                     AND = {
-                        ruler_clothes_trigger = yes
-                        military_clothes_trigger = yes
+                        WCR_st_ruler_in_military_clothes = yes
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {
@@ -2554,8 +2538,7 @@
                 WCR_late_army_uniform_trigger = yes
                 OR = {
                     AND = {
-                        ruler_clothes_trigger = yes
-                        military_clothes_trigger = yes
+                        WCR_st_ruler_in_military_clothes = yes
                         WCR_ruler_has_domestic_influence_trigger = yes
                     }
                     AND = {
@@ -2583,4 +2566,22 @@
             }
         }
     }
+
+    ## WCR - Third Party Compatibility ##
+
+    WCR_morgenrote_special_character_blocker = {
+        dna_modifiers = {}
+        weight = {
+            base = 0
+            modifier = {
+                add = 10000
+                morgenrote_is_active = yes
+                WCR_has_completed_westernization_trigger = yes
+                scope:character ?= {
+                    mr_special_characters_clothes_trigger = yes
+                }
+            }
+        }
+    }
+
 }

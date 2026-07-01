@@ -29,13 +29,13 @@ l_polish:
     WCR_tt_russian_army:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] pracujący w [GetBuildingType('building_barracks').GetName] oraz [Concept('concept_general', 'generałowie')] będą nosić #v Rosyjskie mundury#!."
     WCR_tt_generic_army:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] pracujący w [GetBuildingType('building_barracks').GetName] oraz [Concept('concept_general', 'generałowie')] będą nosić #v generyczne europejskie mundury#!."
     
-    WCR_tt_domestic_navy: "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] pracujący w [GetBuildingType('building_naval_base').GetName] oraz [Concept('concept_admiral', 'admirałowie')] będą nosić #v [GetPlayer.GetAdjectiveNoFormatting] mundury#!."
-    WCR_tt_american_navy: "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] pracujący w [GetBuildingType('building_naval_base').GetName] oraz [Concept('concept_admiral', 'admirałowie')] będą nosić #v Amerykańskie mundury#!."
-    WCR_tt_british_navy:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] pracujący w [GetBuildingType('building_naval_base').GetName] oraz [Concept('concept_admiral', 'admirałowie')] będą nosić #v Brytyjskie mundury#!."
-    WCR_tt_french_navy:   "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] pracujący w [GetBuildingType('building_naval_base').GetName] oraz [Concept('concept_admiral', 'admirałowie')] będą nosić #v Francuskie mundury#!."
-    WCR_tt_german_navy:   "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] pracujący w [GetBuildingType('building_naval_base').GetName] oraz [Concept('concept_admiral', 'admirałowie')] będą nosić #v Niemieckie mundury#!."
-    WCR_tt_russian_navy:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] pracujący w [GetBuildingType('building_naval_base').GetName] oraz [Concept('concept_admiral', 'admirałowie')] będą nosić #v Rosyjskie mundury#!."
-    WCR_tt_generic_navy:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] pracujący w [GetBuildingType('building_naval_base').GetName] oraz [Concept('concept_admiral', 'admirałowie')] będą nosić #v generyczne europejskie mundury#!."
+    WCR_tt_domestic_navy: "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] pracujący w [GetBuildingType('building_naval_administration').GetName] oraz [Concept('concept_admiral', 'admirałowie')] będą nosić #v [GetPlayer.GetAdjectiveNoFormatting] mundury#!."
+    WCR_tt_american_navy: "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] pracujący w [GetBuildingType('building_naval_administration').GetName] oraz [Concept('concept_admiral', 'admirałowie')] będą nosić #v Amerykańskie mundury#!."
+    WCR_tt_british_navy:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] pracujący w [GetBuildingType('building_naval_administration').GetName] oraz [Concept('concept_admiral', 'admirałowie')] będą nosić #v Brytyjskie mundury#!."
+    WCR_tt_french_navy:   "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] pracujący w [GetBuildingType('building_naval_administration').GetName] oraz [Concept('concept_admiral', 'admirałowie')] będą nosić #v Francuskie mundury#!."
+    WCR_tt_german_navy:   "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] pracujący w [GetBuildingType('building_naval_administration').GetName] oraz [Concept('concept_admiral', 'admirałowie')] będą nosić #v Niemieckie mundury#!."
+    WCR_tt_russian_navy:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] pracujący w [GetBuildingType('building_naval_administration').GetName] oraz [Concept('concept_admiral', 'admirałowie')] będą nosić #v Rosyjskie mundury#!."
+    WCR_tt_generic_navy:  "[GetPopType('officers').GetName] & [GetPopType('soldiers').GetName] pracujący w [GetBuildingType('building_naval_administration').GetName] oraz [Concept('concept_admiral', 'admirałowie')] będą nosić #v generyczne europejskie mundury#!."
     
     # Event text
     WCR_sire:     "Sir"
