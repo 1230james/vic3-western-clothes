@@ -4178,7 +4178,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 1100
+                add = 90000
                 morgenrote_is_active = yes
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
@@ -4213,7 +4213,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 1100
+                add = 90000
                 morgenrote_is_active = yes
                 WCR_has_completed_westernization_trigger = yes
                 scope:character ?= {
