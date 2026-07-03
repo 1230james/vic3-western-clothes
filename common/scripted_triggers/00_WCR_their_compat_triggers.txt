@@ -21,6 +21,10 @@ EACR_st_TPM_korean_court_base = {
     always = no
 }
 
+EACR_st_TPM_ryukyuan_court_base = {
+    always = no
+}
+
 # Community Outfit Mod
 com_is_active = {
     always = no
