@@ -338,7 +338,7 @@
                 japanese_clothes_trigger = yes
                 WCR_has_completed_westernization_trigger = no
             }
-            modifier = { # EACR compatibility
+            modifier = { # EACR compatibility - Japanese princes
                 add = -1000
                 EACR_is_active_trigger = yes
                 scope:character ?= {
@@ -346,6 +346,21 @@
                     owner ?= {
                         NOT = { has_law = law_type:law_bakufu }
                         WCR_is_japan_trigger = yes
+                    }
+                }
+            }
+            modifier = { # EACR compatibility - Ryukyuan royalty & court
+                factor = 0
+                EACR_is_active_trigger = yes
+                OR = {
+                    EACR_st_TPM_ryukyuan_court_base = yes
+                    AND = {
+                        monarchy_clothes_trigger = yes
+                        scope:character ?= {
+                            owner ?= {
+                                WCR_st_is_country_tag = { TAG = RYU }
+                            }
+                        }
                     }
                 }
             }
